@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Name - Data Analyst Portfolio</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    },
+                    colors: {
+                        'primary': '#38BDF8', // A bright sky blue/teal
+                        'secondary': '#1F2937', // A dark slate gray
+                        'accent': '#34D399', // A vibrant emerald green
+                        'neutral': '#F9FAFB', // A very light gray for text
+                        'base': '#111827', // A very dark gray for background
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        /* Simple animation for cards on hover */
+        .project-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+        }
+        .project-card {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+    </style>
+</head>
+<body class="bg-base text-neutral font-sans antialiased">
+
+    <!-- Header & Navigation -->
+    <header class="bg-secondary/80 backdrop-blur-md sticky top-0 z-50 shadow-lg">
+        <nav class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <a href="#" class="text-2xl font-bold text-primary">Your Name</a>
+            <div class="hidden md:flex space-x-8 items-center">
+                <a href="#about" class="text-neutral hover:text-primary transition duration-300">About</a>
+                <a href="#skills" class="text-neutral hover:text-primary transition duration-300">Skills</a>
+                <a href="#projects" class="text-neutral hover:text-primary transition duration-300">Projects</a>
+                <a href="#contact" class="bg-primary text-base px-4 py-2 rounded-md hover:bg-sky-600 transition duration-300">Contact</a>
+            </div>
+            <button id="mobile-menu-button" class="md:hidden text-neutral focus:outline-none">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path></svg>
+            </button>
+        </nav>
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden px-6 pb-4">
+            <a href="#about" class="block py-2 text-neutral hover:text-primary">About</a>
+            <a href="#skills" class="block py-2 text-neutral hover:text-primary">Skills</a>
+            <a href="#projects" class="block py-2 text-neutral hover:text-primary">Projects</a>
+            <a href="#contact" class="block mt-2 bg-primary text-base text-center px-4 py-2 rounded-md hover:bg-sky-600">Contact</a>
+        </div>
+    </header>
+
+    <main class="container mx-auto px-6 py-12 md:py-20">
+
+        <!-- Hero Section -->
+        <section class="text-center">
+            <div class="max-w-3xl mx-auto">
+                <h1 class="text-4xl md:text-6xl font-bold text-neutral leading-tight mb-4">Transforming Data into Actionable Insights</h1>
+                <p class="text-lg md:text-xl text-gray-400 mb-8">Data Analyst specializing in SQL, Python, and data visualization. I help businesses make smarter decisions by uncovering the stories hidden in their data.</p>
+                <div class="flex justify-center space-x-4">
+                    <a href="#projects" class="bg-primary text-base px-8 py-3 rounded-md text-lg font-semibold hover:bg-sky-600 transition duration-300">View My Work</a>
+                    <a href="https://github.com/your-username" target="_blank" class="bg-secondary text-neutral px-8 py-3 rounded-md text-lg font-semibold hover:bg-gray-700 transition duration-300">My GitHub</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- About Me Section -->
+        <section id="about" class="py-20 md:py-32">
+            <div class="grid md:grid-cols-5 gap-10 items-center">
+                <div class="md:col-span-2">
+                    <img src="https://placehold.co/400x400/1F2937/38BDF8?text=Your+Photo" alt="A professional headshot of Your Name" class="rounded-lg shadow-lg w-full">
+                </div>
+                <div class="md:col-span-3">
+                    <h2 class="text-3xl font-bold text-primary mb-4">About Me</h2>
+                    <p class="text-gray-400 mb-4 leading-relaxed">
+                        Hello! I'm a passionate and detail-oriented Data Analyst with a knack for translating complex datasets into clear, compelling narratives. My journey into data began with a fascination for patterns and a drive to solve puzzles.
+                    </p>
+                    <p class="text-gray-400 mb-4 leading-relaxed">
+                        With experience in industries like e-commerce and finance, I've honed my skills in data cleaning, exploratory data analysis, and building insightful dashboards. I believe that data is most powerful when it's accessible and understandable to everyone, not just the experts.
+                    </p>
+                    <p class="text-gray-400 leading-relaxed">
+                        When I'm not wrangling data, you can find me exploring hiking trails or trying out new recipes.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Skills Section -->
+        <section id="skills" class="py-20 bg-secondary rounded-lg shadow-md px-8">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-bold text-primary">Technical Skills</h2>
+                <p class="text-gray-400 mt-2">The tools and technologies I use to bring data to life.</p>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 text-left">
+                <div>
+                    <h3 class="font-bold text-lg text-neutral mb-3">Languages & Databases</h3>
+                    <p class="text-gray-400"><strong>Python:</strong> Pandas, NumPy</p>
+                    <p class="text-gray-400"><strong>SQL:</strong> MySQL, PostgreSQL, SQL Server</p>
+                    <p class="text-gray-400"><strong>Concepts:</strong> ETL, DDL, DML, DCL, TCL, CTE, Joins, Stored Procedures, Views, Triggers, Window Functions, Case Statements</p>
+                </div>
+                <div>
+                    <h3 class="font-bold text-lg text-neutral mb-3">Visualization & Analysis</h3>
+                    <p class="text-gray-400"><strong>Tableau & Power BI</strong></p>
+                    <p class="text-gray-400"><strong>Excel:</strong> PivotTables, Power Query, XLOOKUP, DAX, Nested Functions</p>
+                </div>
+                <div>
+                    <h3 class="font-bold text-lg text-neutral mb-3">Business & Tools</h3>
+                     <p class="text-gray-400">Business Intelligence, Process Improvement, Stakeholder Communication, Salesforce, CRM</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Projects Section -->
+        <section id="projects" class="py-20 md:py-32">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-bold text-primary">Data Analytics Projects</h2>
+                <p class="text-gray-400 mt-2">A selection of my work. Click to see the case study.</p>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <!-- Project Card 1 -->
+                <div class="project-card bg-secondary rounded-lg shadow-lg overflow-hidden flex flex-col">
+                    <img src="https://placehold.co/600x400/111827/38BDF8?text=Supply+Chain+Dashboard" alt="Screenshot of Supply Chain Dashboard" class="w-full h-48 object-cover">
+                    <div class="p-6 flex flex-col flex-grow">
+                        <p class="text-sm text-gray-500 mb-1">Jun 2025 – Jul 2025</p>
+                        <h3 class="font-bold text-xl text-neutral mb-2">Global Supply Chain Performance & Cost Optimization</h3>
+                        <ul class="text-gray-400 mb-4 list-disc list-inside flex-grow">
+                            <li>Designed a Tableau dashboard for a global logistics team, providing interactive reports on delivery performance and cost efficiency.</li>
+                            <li>Cleaned and transformed data in Python, engineering metrics like On-Time Delivery Rate and Delivery Lead Time.</li>
+                            <li>Identified two product groups responsible for 99% of logistics costs.</li>
+                        </ul>
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="bg-base text-primary text-xs font-semibold px-2.5 py-0.5 rounded-full">Tableau</span>
+                            <span class="bg-base text-primary text-xs font-semibold px-2.5 py-0.5 rounded-full">Python</span>
+                            <span class="bg-base text-primary text-xs font-semibold px-2.5 py-0.5 rounded-full">SQL</span>
+                        </div>
+                        <a href="supply-chain-project.html" target="_blank" class="font-semibold text-primary hover:underline mt-auto">View Project &rarr;</a>
+                    </div>
+                </div>
+                <!-- Project Card 2 -->
+                <div class="project-card bg-secondary rounded-lg shadow-lg overflow-hidden flex flex-col">
+                    <img src="https://placehold.co/600x400/111827/38BDF8?text=Bank+Customer+Churn" alt="Screenshot of Bank Customer Churn Analysis" class="w-full h-48 object-cover">
+                    <div class="p-6 flex flex-col flex-grow">
+                        <p class="text-sm text-gray-500 mb-1">Apr 2025 – May 2025</p>
+                        <h3 class="font-bold text-xl text-neutral mb-2">Bank Customer Churn Analysis</h3>
+                        <ul class="text-gray-400 mb-4 list-disc list-inside flex-grow">
+                            <li>Engineered a machine learning pipeline using Python to predict customer churn; Gradient Boosting model achieved 74% recall.</li>
+                            <li>Created new variables revealing geographic churn drivers and optimized the model via hyperparameter tuning.</li>
+                            <li>Translated model insights into a strategy for a targeted retention campaign.</li>
+                        </ul>
+                         <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="bg-base text-primary text-xs font-semibold px-2.5 py-0.5 rounded-full">Python</span>
+                            <span class="bg-base text-primary text-xs font-semibold px-2.5 py-0.5 rounded-full">Machine Learning</span>
+                        </div>
+                        <a href="churn-analysis.html" target="_blank" class="font-semibold text-primary hover:underline mt-auto">View Project &rarr;</a>
+                    </div>
+                </div>
+                <!-- Project Card 3 -->
+                <div class="project-card bg-secondary rounded-lg shadow-lg overflow-hidden flex flex-col">
+                    <img src="https://placehold.co/600x400/111827/38BDF8?text=CRM+Dashboard" alt="Screenshot of CRM Dashboard" class="w-full h-48 object-cover">
+                    <div class="p-6 flex flex-col flex-grow">
+                        <p class="text-sm text-gray-500 mb-1">Mar 2025 – Apr 2025</p>
+                        <h3 class="font-bold text-xl text-neutral mb-2">CRM Dashboard: Sales Performance Analysis</h3>
+                        <ul class="text-gray-400 mb-4 list-disc list-inside flex-grow">
+                            <li>Developed an interactive Tableau dashboard tracking pipeline metrics and conversion rates, revealing bottlenecks in late-stage deals.</li>
+                            <li>Benchmarked sales teams and identified high-performing agents and product sectors.</li>
+                            <li>Proposed funnel optimization strategies based on a 49% drop-off post-engagement.</li>
+                        </ul>
+                         <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="bg-base text-primary text-xs font-semibold px-2.5 py-0.5 rounded-full">Tableau</span>
+                            <span class="bg-base text-primary text-xs font-semibold px-2.5 py-0.5 rounded-full">Salesforce</span>
+                            <span class="bg-base text-primary text-xs font-semibold px-2.5 py-0.5 rounded-full">SQL</span>
+                        </div>
+                        <a href="crm-dashboard.html" target="_blank" class="font-semibold text-primary hover:underline mt-auto">View Project &rarr;</a>
+                    </div>
+                </div>
+                 <!-- Project Card 4 -->
+                <div class="project-card bg-secondary rounded-lg shadow-lg overflow-hidden flex flex-col">
+                    <img src="https://placehold.co/600x400/111827/38BDF8?text=Passenger+Satisfaction" alt="Screenshot of Passenger Satisfaction Analysis" class="w-full h-48 object-cover">
+                    <div class="p-6 flex flex-col flex-grow">
+                        <p class="text-sm text-gray-500 mb-1">Feb 2025</p>
+                        <h3 class="font-bold text-xl text-neutral mb-2">Passenger Satisfaction Analysis</h3>
+                        <ul class="text-gray-400 mb-4 list-disc list-inside flex-grow">
+                            <li>Led a Power BI dashboard project analyzing airline satisfaction surveys, identifying top pain points and strengths.</li>
+                            <li>Segmented passengers by demographics and behavior, revealing opportunities in service experience improvement.</li>
+                            <li>Visualized Likert scale data to prioritize interventions based on dissatisfaction trends.</li>
+                        </ul>
+                         <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="bg-base text-primary text-xs font-semibold px-2.5 py-0.5 rounded-full">Power BI</span>
+                            <span class="bg-base text-primary text-xs font-semibold px-2.5 py-0.5 rounded-full">Python</span>
+                        </div>
+                        <a href="passenger-satisfaction.html" target="_blank" class="font-semibold text-primary hover:underline mt-auto">View Project &rarr;</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact" class="py-20 text-center bg-secondary rounded-lg">
+            <div class="max-w-2xl mx-auto px-4">
+                <h2 class="text-3xl font-bold text-primary mb-4">Let's Connect</h2>
+                <p class="text-gray-400 mb-8">I'm currently available for freelance opportunities and full-time roles. If you have a project in mind or just want to chat about data, feel free to reach out!</p>
+                <div class="flex justify-center">
+                    <!-- LinkedIn -->
+                    <a href="https://linkedin.com/in/your-profile" target="_blank" class="bg-primary text-base px-6 py-3 rounded-md text-lg font-semibold hover:bg-sky-600 transition duration-300 inline-flex items-center gap-2 w-full sm:w-auto justify-center">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/>
+                        </svg>
+                        Connect on LinkedIn
+                    </a>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-secondary text-gray-400 py-8">
+        <div class="container mx-auto px-6 text-center">
+            <p>&copy; 2025 Your Name. All Rights Reserved.</p>
+            <div class="flex justify-center space-x-4 mt-4">
+                <a href="https://github.com/your-username" target="_blank" class="hover:text-accent">GitHub</a>
+                <a href="https://linkedin.com/in/your-profile" target="_blank" class="hover:text-accent">LinkedIn</a>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile menu toggle
+        const mobileMenuButton = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        mobileMenuButton.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+    </script>
+
+</body>
+</html>
