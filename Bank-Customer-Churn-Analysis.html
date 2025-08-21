@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bank Customer Churn Analysis - Michael Campbell</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    },
+                    colors: {
+                        'primary': '#38BDF8', // A bright sky blue/teal
+                        'secondary': '#1F2937', // A dark slate gray
+                        'accent': '#ceffff', // A vibrant emerald green
+                        'neutral': '#F9FAFB', // A very light gray for text
+                        'base': '#0F1C2E', // A very dark gray for background
+                        'base_secondary': '#1F3A5F'
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        /* Custom spacing for the case study article for better readability */
+        .prose h2 {
+            font-weight: bold;
+            font-style: italic;
+        }
+        .prose h3 {
+            margin-top: 2.5em;
+            font-size: 1.5em;
+            font-weight: bold;
+        }
+        .prose h4 {
+            margin-top: 2em;
+            font-size: 1.25em;
+            font-weight: bold;
+        }
+        .prose ul > li {
+            margin-top: 0.5em;
+            margin-bottom: 0.5em;
+        }
+    </style>
+</head>
+<body class="bg-gradient-to-br from-base to-secondary text-neutral font-sans antialiased">
+
+    <!-- Header -->
+    <header class="bg-secondary/80 backdrop-blur-md sticky top-0 z-50 shadow-lg">
+        <nav class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <a href="index.html" class="text-2xl font-bold text-primary">Michael Campbell</a>
+            <a href="index.html#projects" class="bg-primary text-base px-4 py-2 rounded-md hover:bg-sky-600 transition duration-300">&larr; Back to All Projects</a>
+        </nav>
+    </header>
+
+    <main class="container mx-auto px-6 py-12 md:py-20">
+
+        <!-- Project Header -->
+        <section class="text-center mb-16">
+            <h1 class="text-4xl md:text-5xl font-bold text-neutral mb-4">Bank Customer Churn: Predictive Analysis</h1>
+            <p class="text-lg md:text-xl text-gray-400 max-w-3xl mx-auto">A machine learning pipeline to predict customer churn and inform targeted retention strategies.</p>
+        </section>
+
+        <!-- Project Overview -->
+        <section class="bg-secondary p-8 rounded-lg shadow-md mb-12">
+            <div class="grid md:grid-cols-3 gap-8">
+                <div>
+                    <h3 class="font-bold text-primary text-lg mb-2">Objective</h3>
+                    <p class="text-gray-400">A major bank faced a significant 20% customer churn rate, leading to substantial revenue loss. The bank's existing retention efforts were reactive and ineffective, prompting this project to create a predictive tool. The goal was to anticipate customer departures, allowing for timely and effective retention efforts.</p>
+                </div>
+                <div>
+                    <h3 class="font-bold text-primary text-lg mb-2">Tools Used</h3>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="bg-base text-primary text-sm font-semibold px-3 py-1 rounded-full">Python</span>
+                        <span class="bg-base text-primary text-sm font-semibold px-3 py-1 rounded-full">Scikit-learn</span>
+                        <span class="bg-base text-primary text-sm font-semibold px-3 py-1 rounded-full">Pandas</span>
+                        <span class="bg-base text-primary text-sm font-semibold px-3 py-1 rounded-full">Matplotlib</span>
+                        <span class="bg-base text-primary text-sm font-semibold px-3 py-1 rounded-full">Seaborn</span>
+                        <span class="bg-base text-primary text-sm font-semibold px-3 py-1 rounded-full">Jupyter Notebook</span>
+                    </div>
+                </div>
+                <div>
+                    <h3 class="font-bold text-primary text-lg mb-2">Data Source</h3>
+                    <p class="text-gray-400">
+                        <a href="#" target="_blank" class="underline hover:text-accent">Bank Customer Churn Dataset </a>
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Image Gallery -->
+        <section class="mb-12">
+             <h2 class="text-3xl font-bold text-primary text-center mb-8">Key Visualizations</h2>
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-8">
+                <div class="bg-secondary p-4 rounded-lg shadow-lg">
+                    <img src="images\feature_importance_chart.png" alt="Placeholder image for a feature importance chart" class="rounded-lg w-full">
+                </div>
+                <div class="bg-secondary p-4 rounded-lg shadow-lg">
+                    <img src="images\corr_heatmap.png" alt="Placeholder image for a confusion matrix" class="rounded-lg w-full">
+                </div>
+                <div class="bg-secondary p-4 rounded-lg shadow-lg">
+                    <img src="images\churn.png" alt="Placeholder image for churn by geography" class="rounded-lg w-full">
+                </div>
+                <div class="bg-secondary p-4 rounded-lg shadow-lg">
+                    <img src="images\PRC_baseline_model.png" alt="Placeholder image for an ROC curve" class="rounded-lg w-full">
+                </div>
+            </div>
+        </section>
+
+        <!-- Main Content - The Case Study -->
+        <article class="prose prose-invert lg:prose-xl max-w-none bg-secondary p-8 rounded-lg shadow-md">
+            
+            <h4>Analysis Workflow</h4>
+            <p>The project followed a comprehensive analytical workflow to ensure the final solution was both statistically sound and aligned with business goals.</p>
+            <ul class="list-disc list-inside">
+                <li><strong>Data Preparation:</strong> The initial dataset was cleaned and prepared for analysis. This involved handling missing values, correcting data types, and ensuring overall data integrity.</li>
+                <li><strong>Feature Creation:</strong> To uncover deeper patterns, new features were created from the existing data. Key features included BalanceSalaryRatio to measure financial health and an interaction term, Germany_X_Balance, to test a hypothesis that the account balance of German customers had a unique relationship with their likelihood to churn.</li>
+                <li><strong>Modeling:</strong> Several classification algorithms were evaluated, with Random Forest and Gradient Boosting emerging as the top performers. To handle the class imbalance (more non-churners than churners), the SMOTE technique was integrated into a Pipeline with the Gradient Boosting model.</li>
+                <li><strong>Model Optimization:</strong> The top models underwent extensive hyperparameter tuning using RandomizedSearchCV and GridSearchCV to find their most effective settings.</li>
+                <li><strong>Threshold Tuning:</strong> A final analysis was performed on the champion model to select a decision threshold that best met the business goal of capturing the most potential churners. A threshold of 0.45 was chosen, as it maximized churn detection while maintaining a precision rate above 50%.</li>
+            </ul>
+
+            <h4>Final Model Performance</h4>
+            <p>The final, optimized Gradient Boosting model was selected as the champion. At the chosen 0.45 threshold, its performance on unseen test data was:</p>
+            <ul class="list-disc list-inside">
+                <li><strong>Recall: 0.74</strong> (Successfully identifies 74% of all customers who will actually churn)</li>
+                <li><strong>Precision: 0.52</strong> (When the model flags a customer, it is correct 52% of the time)</li>
+            </ul>
+
+            <h4>The Key Drivers of Churn</h4>
+            <p>The model revealed the specific factors that most influence a customer's decision to leave:</p>
+            <ul class="list-disc list-inside">
+                <li><strong>Age:</strong> Overwhelmingly the most important predictor.</li>
+                <li><strong>Number of Products:</strong> A direct measure of a customer's integration with the bank.</li>
+                <li><strong>Has Credit Card:</strong> A critical indicator of being anchored in the bank's ecosystem.</li>
+                <li><strong>Is Active Member:</strong> A powerful behavioral signal of engagement.</li>
+                <li><strong>The German Customer's Balance:</strong> The feature created for this analysis proved to be a top driver, confirming our hypothesis.</li>
+            </ul>
+
+            <h4>Profile of a Customer Likely to Churn</h4>
+            <p>These findings allow us to paint a clear picture of a customer who shows patterns of leaving: A typical customer who is likely to churn is heavily defined by their <strong>Age</strong>. They are weakly integrated into the bank, holding a low <strong>Number of Products</strong> and often not possessing a bank-issued <strong>Credit Card</strong>. They are frequently <strong>inactive</strong>. Furthermore, if the customer is from <strong>Germany</strong>, their account <strong>balance</strong> becomes a uniquely critical factor in their likelihood to churn.</p>
+
+            <h4>Recommendations</h4>
+            <p><em>Based on the findings from the analysis, we recommend the following strategies:</em></p>
+            <ul class="list-disc list-inside">
+                
+                    <h2>Launch an "Ecosystem Deepening" Campaign:</h2>
+                    <p><strong>Observation:</strong> Low product count (#2) and no credit card (#3) are top churn drivers.</p>
+                    <p><strong>Action:</strong> Offer customers with only one product a pre-approved credit card with a bonus offer. This single action addresses two of the top three churn drivers.</p>
+                     <br>
+                
+                    <h2>Implement an Automated "Activity Nudge":</h2>
+                    <p><strong>Observation:</strong> Inactivity (#4) is a major red flag.</p>
+                    <p><strong>Action:</strong> Trigger an automated communication to customers who have been inactive for a set period, offering an incentive to re-engage with their account.</p>
+                     <br>
+                    <h2>Create a Specialized German Retention Desk:</h2>
+                    <p><strong>Observation:</strong> The financial profile of German customers is a unique churn signal.</p>
+                    <p><strong>Action:</strong> Empower a specialized team to contact German customers identified by the model with tailored financial advice or competitive rates on their deposits.</p>
+               
+            </ul>
+            
+            <div class="text-center mt-12">
+                 <a href="https://github.com/michaelcampbell215/churn-analysis-repo" target="_blank" class="bg-neutral text-base px-6 py-3 rounded-md font-semibold hover:bg-gray-200 transition duration-300 no-underline">View Code on GitHub</a>
+            </div>
+
+        </article>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-secondary text-gray-400 py-8 mt-16">
+        <div class="container mx-auto px-6 text-center">
+            <p>&copy; 2025 Michael Campbell. All Rights Reserved.</p>
+            <div class="flex justify-center space-x-4 mt-4">
+                <a href="https://github.com/michaelcampbell215" target="_blank" class="hover:text-accent">GitHub</a>
+                <a href="https://linkedin.com/in/michaelcampbell215" target="_blank" class="hover:text-accent">LinkedIn</a>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>
