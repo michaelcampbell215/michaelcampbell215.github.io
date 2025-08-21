@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Global Supply Chain Performance - Your Name</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    },
+                    colors: {
+                        'primary': '#38BDF8', // A bright sky blue/teal
+                        'secondary': '#1F2937', // A dark slate gray
+                        'accent': '#ceffff', // A vibrant emerald green
+                        'neutral': '#F9FAFB', // A very light gray for text
+                        'base': '#0F1C2E', // A very dark gray for background
+                        'base_secondary': '#1F3A5F'
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        /* Custom spacing for the case study article for better readability */
+        .prose h2 {
+            font-weight: bold; /* Added bold style */
+            font-style: italic; /* Added italic style */
+        }
+        .prose h3 {
+            margin-top: 2.5em;
+            font-size: 1.15em; /* Increased font size */
+            font-weight: bold; /* Added bold style */
+        }
+        .prose h4 {
+            margin-top: 2em;
+            font-size: 1.25em; /* Increased font size */
+            font-weight: bold; /* Added bold style */
+        }
+        .prose ul > li {
+            margin-top: 0.5em;
+            margin-bottom: 0.5em;
+        }
+    </style>
+</head>
+<body class="bg-base text-neutral font-sans antialiased">
+
+    <!-- Header -->
+    <header class="bg-secondary/80 backdrop-blur-md sticky top-0 z-50 shadow-lg">
+        <nav class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <a href="index.html" class="text-2xl font-bold text-primary">Michael Campbell</a>
+            <a href="index.html#projects" class="bg-primary text-base px-4 py-2 rounded-md hover:bg-sky-600 transition duration-300">&larr; Back to All Projects</a>
+        </nav>
+    </header>
+
+    <main class="container mx-auto px-6 py-12 md:py-20">
+
+        <!-- Project Header -->
+        <section class="text-center mb-16">
+            <h1 class="text-4xl md:text-5xl font-bold text-neutral mb-4">CRM Dashboard: Sales Performance Analysis</h1>
+            <p class="text-lg md:text-xl text-gray-400 max-w-3xl mx-auto">An interactive Tableau dashboard to track pipeline metrics, benchmark team performance, and optimize the sales funnel.</p>
+        </section>
+
+        <!-- Project Overview -->
+        <section class="bg-secondary p-8 rounded-lg shadow-md mb-12">
+            <div class="grid md:grid-cols-3 gap-8">
+                <div>
+                    <h3 class="font-bold text-primary text-lg mb-2">Objective</h3>
+                    <p class="text-gray-400">To develop a comprehensive dashboard that provides sales leadership with a clear view of the sales pipeline, identifies bottlenecks, and highlights high-performing agents and products.</p>
+                </div>
+                <div>
+                    <h3 class="font-bold text-primary text-lg mb-2">Tools Used</h3>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="bg-base text-primary text-sm font-semibold px-3 py-1 rounded-full">Tableau</span>
+                        <span class="bg-base text-primary text-sm font-semibold px-3 py-1 rounded-full">Salesforce</span>
+                        <span class="bg-base text-primary text-sm font-semibold px-3 py-1 rounded-full">SQL</span>
+                        <span class="bg-base text-primary text-sm font-semibold px-3 py-1 rounded-full">Excel</span>
+                    </div>
+                </div>
+                <div>
+                    <h3 class="font-bold text-primary text-lg mb-2">Data Source</h3>
+                    <p class="text-gray-400">Anonymized sales data exported from a Salesforce CRM instance.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- The Live Dashboard -->
+        <section class="mb-12">
+            <h2 class="text-3xl font-bold text-primary text-center mb-8">The Live Dashboard</h2>
+            <div class="bg-secondary p-4 rounded-lg shadow-lg flex justify-center">
+                <iframe 
+                    src="YOUR_TABLEAU_LINK_HERE?:showVizHome=no&:embed=true" 
+                    width="1280" 
+                    height="800" 
+                    frameborder="0" 
+                    allowfullscreen
+                    class="rounded-lg max-w-full">
+                </iframe>
+            </div>
+        </section>
+
+        <!-- Image Gallery -->
+        <section class="mb-12">
+             <h2 class="text-3xl font-bold text-primary text-center mb-8">Supporting Visualizations</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <div class="bg-secondary p-4 rounded-lg shadow-lg">
+                    <img src="https://placehold.co/800x600/1F2937/F9FAFB?text=Sales+Funnel+Chart" alt="Placeholder image for a sales funnel chart" class="rounded-lg w-full">
+                </div>
+                <div class="bg-secondary p-4 rounded-lg shadow-lg">
+                    <img src="https://placehold.co/800x600/1F2937/F9FAFB?text=Team+Performance+Leaderboard" alt="Placeholder image for a team performance leaderboard" class="rounded-lg w-full">
+                </div>
+            </div>
+        </section>
+
+        <!-- Main Content - The Case Study -->
+        <article class="prose prose-invert lg:prose-xl max-w-none bg-secondary p-8 rounded-lg shadow-md">
+            
+            <h3>Data Integration & Analysis</h3>
+            <p>The project started by connecting directly to Salesforce data via SQL to extract raw sales pipeline information. This data was then cleaned and structured to create a reliable foundation for analysis. I analyzed conversion rates at each stage of the sales funnel, benchmarked performance across different sales teams, and investigated the impact of pricing elasticity on deal closure rates.</p>
+
+            <h3>Key Findings & Dashboard Features</h3>
+            <p>The analysis revealed a significant bottleneck in the sales process, with a **49% drop-off rate** after the initial engagement stage. The interactive Tableau dashboard was designed to highlight these insights, featuring:</p>
+            <ul class="list-disc list-inside">
+                <li>A dynamic sales funnel visualization to track deal progression.</li>
+                <li>Leaderboards to benchmark team and individual agent performance.</li>
+                <li>Filters for product sectors to identify top-performing product lines.</li>
+            </ul>
+
+            <h2>Recommendations & Business Impact</h2>
+            <p>Based on the findings, I proposed several funnel optimization strategies, including targeted training for mid-funnel deal progression and a re-evaluation of the lead qualification process. The dashboard is now used by sales leadership to monitor team performance in real-time and make data-driven decisions to improve conversion rates.</p>
+            
+            <div class="text-center mt-12">
+                 <a href="https://github.com/your-username/crm-dashboard-repo" target="_blank" class="bg-neutral text-base px-6 py-3 rounded-md font-semibold hover:bg-gray-200 transition duration-300 no-underline">View Code on GitHub</a>
+            </div>
+
+        </article>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-secondary text-gray-400 py-8 mt-16">
+        <div class="container mx-auto px-6 text-center">
+            <p>&copy; 2025 Michael Campbell. All Rights Reserved.</p>
+            <div class="flex justify-center space-x-4 mt-4">
+                <a href="https://github.com/michaelcampbell215" target="_blank" class="hover:text-accent">GitHub</a>
+                <a href="https://linkedin.com/in/michaelcampbell215" target="_blank" class="hover:text-accent">LinkedIn</a>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>
