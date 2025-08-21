@@ -78,14 +78,12 @@
                     <h3 class="font-bold text-primary text-lg mb-2">Tools Used</h3>
                     <div class="flex flex-wrap gap-2">
                         <span class="bg-base text-primary text-sm font-semibold px-3 py-1 rounded-full">Tableau</span>
-                        <span class="bg-base text-primary text-sm font-semibold px-3 py-1 rounded-full">Salesforce</span>
-                        <span class="bg-base text-primary text-sm font-semibold px-3 py-1 rounded-full">SQL</span>
                         <span class="bg-base text-primary text-sm font-semibold px-3 py-1 rounded-full">Excel</span>
                     </div>
                 </div>
                 <div>
                     <h3 class="font-bold text-primary text-lg mb-2">Data Source</h3>
-                    <p class="text-gray-400">Anonymized sales data exported from a Salesforce CRM instance.</p>
+                    <a href="https://github.com/michaelcampbell215/crm-dashboard-repo" target="_blank" class="underline hover:text-accent">CRM Dataset </a>
                 </div>
             </div>
         </section>
@@ -95,7 +93,7 @@
             <h2 class="text-3xl font-bold text-primary text-center mb-8">The Live Dashboard</h2>
             <div class="bg-secondary p-4 rounded-lg shadow-lg flex justify-center">
                 <iframe 
-                    src="YOUR_TABLEAU_LINK_HERE?:showVizHome=no&:embed=true" 
+                    src="https://public.tableau.com/views/crmdashboard2/PipelineOverview?:showVizHome=no&:embed=true" 
                     width="1280" 
                     height="800" 
                     frameborder="0" 
@@ -110,33 +108,65 @@
              <h2 class="text-3xl font-bold text-primary text-center mb-8">Supporting Visualizations</h2>
             <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
                 <div class="bg-secondary p-4 rounded-lg shadow-lg">
-                    <img src="https://placehold.co/800x600/1F2937/F9FAFB?text=Sales+Funnel+Chart" alt="Placeholder image for a sales funnel chart" class="rounded-lg w-full">
+                    <img src="images\crm (1).png" alt="Placeholder image for a sales funnel chart" class="rounded-lg w-full">
                 </div>
                 <div class="bg-secondary p-4 rounded-lg shadow-lg">
-                    <img src="https://placehold.co/800x600/1F2937/F9FAFB?text=Team+Performance+Leaderboard" alt="Placeholder image for a team performance leaderboard" class="rounded-lg w-full">
+                    <img src="images\crm (2).png" alt="Placeholder image for a team performance leaderboard" class="rounded-lg w-full">
                 </div>
             </div>
         </section>
 
-        <!-- Main Content - The Case Study -->
+       <!-- Main Content - The Case Study -->
         <article class="prose prose-invert lg:prose-xl max-w-none bg-secondary p-8 rounded-lg shadow-md">
             
-            <h3>Data Integration & Analysis</h3>
-            <p>The project started by connecting directly to Salesforce data via SQL to extract raw sales pipeline information. This data was then cleaned and structured to create a reliable foundation for analysis. I analyzed conversion rates at each stage of the sales funnel, benchmarked performance across different sales teams, and investigated the impact of pricing elasticity on deal closure rates.</p>
-
-            <h3>Key Findings & Dashboard Features</h3>
-            <p>The analysis revealed a significant bottleneck in the sales process, with a **49% drop-off rate** after the initial engagement stage. The interactive Tableau dashboard was designed to highlight these insights, featuring:</p>
+            <h3>Dashboard Key Features</h3>
+            <h4>Pipeline Overview</h4>
             <ul class="list-disc list-inside">
-                <li>A dynamic sales funnel visualization to track deal progression.</li>
-                <li>Leaderboards to benchmark team and individual agent performance.</li>
-                <li>Filters for product sectors to identify top-performing product lines.</li>
+                <li><strong>Funnel Metrics:</strong> Visualized the sales funnel from Prospecting → Engaging → Won/Lost</li>
+                <li><strong>Conversion Rates:</strong> 94% of prospecting deals progressed to Engaging, but only 51% were ultimately won</li>
+                <li><strong>Cycle Time Analysis:</strong> Calculated average deal cycle length (48 days), identifying the fastest and slowest closers</li>
             </ul>
 
-            <h2>Recommendations & Business Impact</h2>
-            <p>Based on the findings, I proposed several funnel optimization strategies, including targeted training for mid-funnel deal progression and a re-evaluation of the lead qualification process. The dashboard is now used by sales leadership to monitor team performance in real-time and make data-driven decisions to improve conversion rates.</p>
+            <h4>Sales Team Performance</h4>
+            <ul class="list-disc list-inside">
+                <li><strong>Performance by Region, Manager, and Sales Agent:</strong> Built side-by-side comparisons and dynamic filters to benchmark performance at all levels</li>
+                <li><strong>Top Performer Spotlight:</strong> Darcel Schlecht outperformed peers by 60%, influencing Central region success under manager Melvin Marxen</li>
+                <li><strong>Win Rate & Time-to-Close Metrics:</strong> Evaluated efficiency alongside revenue impact</li>
+            </ul>
+
+            <h4>Product & Pricing Analysis</h4>
+            <ul class="list-disc list-inside">
+                <li><strong>Revenue by Product & Sector:</strong> GTX Pro led sales, while MG Special underperformed</li>
+                <li><strong>Pricing Insight:</strong> Created a calculated field to compare actual close price vs. list price to detect markups or discounts</li>
+                <li><strong>Elasticity View:</strong> Built a scatter plot showing product level pricing behavior across sectors</li>
+                <li><strong>Sector Preference Mapping:</strong> Visualized which products performed best in different industries</li>
+            </ul>
+
+            <h3>Key Business Insights</h3>
+            <ul class="list-disc list-inside">
+                <li>Q2 drove the highest revenue ($3.09M), while Q4 lagged despite similar volume suggesting pricing issues</li>
+                <li>MG Special and GTX Plus Pro were the only products closed above targeted list price, hinting at value or positioning gaps in other products</li>
+                <li>Bottleneck detected in late funnel conversions, warranting improved negotiation training or support</li>
+                <li>Strong correlation between agent/manager pairing and region level success</li>
+            </ul>
+
+            <h3>Recommendations</h3>
+            <ul class="list-disc list-inside">
+                <li>Investigate Q4 discounts and re-evaluate pricing strategies for underperforming products</li>
+                <li>Replicate high performing agent behaviors (e.g., Darcel’s approach) across regions</li>
+                <li>Provide training support for managers with low performing teams</li>
+                <li>Implement more rigorous CRM data entry practices to avoid gaps in funnel reporting</li>
+            </ul>
+
+            <h3>Tools & Techniques</h3>
+            <ul class="list-disc list-inside">
+                <li><strong>Tableau:</strong> Advanced dashboard interactivity using parameters, filters and calculated fields </li>
+                <li><strong>Excel:</strong> Initial data cleaning and preparation </li>
+                <li><strong>Data Storytelling:</strong> Designed with stakeholders in mind executives, regional managers, and product leads</li>
+            </ul>
             
             <div class="text-center mt-12">
-                 <a href="https://github.com/your-username/crm-dashboard-repo" target="_blank" class="bg-neutral text-base px-6 py-3 rounded-md font-semibold hover:bg-gray-200 transition duration-300 no-underline">View Code on GitHub</a>
+                 <a href="https://github.com/michaelcampbell215/crm-dashboard-repo" target="_blank" class="bg-neutral text-base px-6 py-3 rounded-md font-semibold hover:bg-gray-200 transition duration-300 no-underline">View Code on GitHub</a>
             </div>
 
         </article>
