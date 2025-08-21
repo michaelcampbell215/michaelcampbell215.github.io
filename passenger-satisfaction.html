@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Passenger Satisfaction Analysis - Your Name</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    },
+                    colors: {
+                        'primary': '#38BDF8', // A bright sky blue/teal
+                        'secondary': '#1F2937', // A dark slate gray
+                        'accent': '#ceffff', // A vibrant emerald green
+                        'neutral': '#F9FAFB', // A very light gray for text
+                        'base': '#0F1C2E', // A very dark gray for background
+                        'base_secondary': '#1F3A5F'
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        /* Custom spacing for the case study article for better readability */
+        .prose h2 {
+            font-weight: bold; /* Added bold style */
+            font-style: italic; /* Added italic style */
+        }
+        .prose h3 {
+            margin-top: 2.5em;
+            font-size: 1.15em; /* Increased font size */
+            font-weight: bold; /* Added bold style */
+        }
+        .prose h4 {
+            margin-top: 2em;
+            font-size: 1.25em; /* Increased font size */
+            font-weight: bold; /* Added bold style */
+        }
+        .prose ul > li {
+            margin-top: 0.5em;
+            margin-bottom: 0.5em;
+        }
+    </style>
+</head>
+<body class="bg-base text-neutral font-sans antialiased">
+
+    <!-- Header -->
+    <header class="bg-secondary/80 backdrop-blur-md sticky top-0 z-50 shadow-lg">
+        <nav class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <a href="index.html" class="text-2xl font-bold text-primary">Michael Campbell </a>
+            <a href="index.html#projects" class="bg-primary text-base px-4 py-2 rounded-md hover:bg-sky-600 transition duration-300">&larr; Back to All Projects</a>
+        </nav>
+    </header>
+
+    <main class="container mx-auto px-6 py-12 md:py-20">
+
+        <!-- Project Header -->
+        <section class="text-center mb-16">
+            <h1 class="text-4xl md:text-5xl font-bold text-neutral mb-4">Passenger Satisfaction Analysis</h1>
+            <p class="text-lg md:text-xl text-gray-400 max-w-3xl mx-auto">A Power BI dashboard analyzing airline satisfaction surveys to identify key drivers of passenger experience.</p>
+        </section>
+
+        <!-- Project Overview -->
+        <section class="bg-secondary p-8 rounded-lg shadow-md mb-12">
+            <div class="grid md:grid-cols-3 gap-8">
+                <div>
+                    <h3 class="font-bold text-primary text-lg mb-2">Objective</h3>
+                    <p class="text-gray-400">To analyze passenger survey data to uncover the top pain points and strengths in the airline's service, providing actionable recommendations for improvement.</p>
+                </div>
+                <div>
+                    <h3 class="font-bold text-primary text-lg mb-2">Tools Used</h3>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="bg-base text-primary text-sm font-semibold px-3 py-1 rounded-full">Power BI</span>
+                        <span class="bg-base text-primary text-sm font-semibold px-3 py-1 rounded-full">DAX</span>
+                    </div>
+                </div>
+                <div>
+                    <h3 class="font-bold text-primary text-lg mb-2">Data Source</h3>
+                    <p class="text-gray-400">
+                        <a href="https://github.com/michaelcampbell215/passenger-satisfaction-repo/airline_passenger_satisfaction.csv" target="_blank" class="underline hover:text-accent"> Passenger Satisfaction Dataset </a>
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- The Live Dashboard -->
+        <section class="mb-12">
+            <h2 class="text-3xl font-bold text-primary text-center mb-8">The Live Dashboard</h2>
+            <div class="bg-secondary p-4 rounded-lg shadow-lg flex justify-center">
+                <iframe 
+                    src="https://app.powerbi.com/view?r=eyJrIjoiMjQ0YTFjMDQtNjQxOC00YWJiLThlYzMtMTQwMzk1NTZjYjNiIiwidCI6ImRmODY3OWNkLWE4MGUtNDVkOC05OWFjLWM4M2VkN2ZmOTVhMCJ9" 
+                    width="1280" 
+                    height="800" 
+                    frameborder="0" 
+                    allowfullscreen
+                    class="rounded-lg max-w-full">
+                </iframe>
+            </div>
+        </section>
+
+        <!-- Image Gallery -->
+        <section class="mb-12">
+             <h2 class="text-3xl font-bold text-primary text-center mb-8">Supporting Visualizations</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <div class="bg-secondary p-4 rounded-lg shadow-lg">
+                    <img src="images/ps1.png" alt="Placeholder image for satisfaction by demographics chart" class="rounded-lg w-full">
+                </div>
+                <div class="bg-secondary p-4 rounded-lg shadow-lg">
+                    <img src="images/ps2.png" alt="Placeholder image for Likert scale analysis" class="rounded-lg w-full">
+                </div>
+            </div>
+        </section>
+
+        <!-- Main Content - The Case Study -->
+        <article class="prose prose-invert lg:prose-xl max-w-none bg-secondary p-8 rounded-lg shadow-md">
+            
+            <h3>Objectives:</h3>
+            <ul class="list-disc list-inside">
+                <li>Identify factors influencing passenger satisfaction.</li>
+                <li>Analyze trends in traveler demographics and preferences.</li>
+                <li>Develop actionable recommendations to improve customer experience.</li>
+            </ul>
+
+            <h3>Data Sources</h3>
+            <h4>Primary Dataset:</h4>
+            <ul class="list-disc list-inside">
+                <li><strong>Survey Data:</strong> Includes passenger feedback on various aspects of the travel experience.</li>
+                <li><strong>Key Variables:</strong> Ticket class, customer demographics, travel purpose (business vs. personal), first-time vs. returning travelers.</li>
+            </ul>
+
+            <h3>Process</h3>
+            <h4>Tools & Technologies:</h4>
+            <ul class="list-disc list-inside">
+                <li><strong>Power BI</strong> for visualization and dashboard creation.</li>
+                <li><strong>Power Query</strong> for data transformation, including: Standardizing data formats, Pivoting columns for better aggregation, Creating new calculated columns.</li>
+            </ul>
+            <h4>Data Analysis Techniques:</h4>
+            <ul class="list-disc list-inside">
+                <li><strong>Likert Scale Chart:</strong> Used to visualize satisfaction levels across different service categories.</li>
+                <li><strong>Comparative Analysis:</strong> Examining differences between business vs. personal travelers, and first-time vs. returning passengers.</li>
+            </ul>
+
+            <h3>Key Findings</h3>
+            <h4>Top Drivers of Satisfaction:</h4>
+            <ul class="list-disc list-inside">
+                <li>In-flight service</li>
+                <li>Baggage handling</li>
+                <li>Seat comfort</li>
+            </ul>
+            <h4>Top Passenger Complaints:</h4>
+            <ul class="list-disc list-inside">
+                <li>In-flight Wi-Fi service</li>
+                <li>Gate location convenience</li>
+                <li>Ease of online booking</li>
+            </ul>
+            <h4>Demographic Insights:</h4>
+            <ul class="list-disc list-inside">
+                <li><strong>Business travelers</strong> make up <strong>70%</strong> of all passengers.</li>
+                <li><strong>First-time travelers</strong> report <strong>70% dissatisfaction</strong>, indicating a need for a smoother onboarding experience.</li>
+            </ul>
+
+            <h3>Recommendations</h3>
+            <ol class="list-decimal list-inside">
+                <li><strong>Improve Online Booking Experience:</strong> Redesign the booking app and website for better usability based on customer feedback. Conduct usability testing to ensure a seamless and intuitive booking process.</li>
+                <li><strong>Enhance Airport Navigation:</strong> Integrate a <strong>real-time airport navigation feature</strong> in the airline’s mobile app. Use <strong>GPS and indoor mapping technology</strong> to provide step-by-step gate directions.</li>
+                <li><strong>Upgrade In-Flight Wi-Fi:</strong> Partner with leading Wi-Fi providers to enhance network reliability. Introduce <strong>tiered pricing models</strong>, offering free basic messaging and paid options for streaming. Implement <strong>real-time diagnostics</strong> to monitor and quickly resolve connectivity issues.</li>
+                <li><strong>Identify and Address Causes of Travel Delays:</strong> Conduct an in-depth <strong>analysis of historical flight delay data</strong> to identify common causes. Improve <strong>real-time communication</strong> with passengers through app notifications about delay reasons and expected resolutions.</li>
+            </ol>
+
+            <h3>Next Steps & Action Plan</h3>
+            <ul class="list-disc list-inside">
+                <li>Conduct A/B testing on the new booking system for usability improvements.</li>
+                <li>Monitor Wi-Fi system performance and gather feedback on the proposed tiered pricing model.</li>
+            </ul>
+            
+            <div class="text-center mt-12">
+                 <a href="https://github.com/michaelcampbell215/passenger-satisfaction-repo" target="_blank" class="bg-neutral text-base px-6 py-3 rounded-md font-semibold hover:bg-gray-200 transition duration-300 no-underline">View Code on GitHub</a>
+            </div>
+
+        </article>
+
+    </main>
+
+ <!-- Footer -->
+    <footer class="bg-secondary text-gray-400 py-8 mt-16">
+        <div class="container mx-auto px-6 text-center">
+            <p>&copy; 2025 Michael Campbell. All Rights Reserved.</p>
+            <div class="flex justify-center space-x-4 mt-4">
+                <a href="https://github.com/michaelcampbell215" target="_blank" class="hover:text-accent">GitHub</a>
+                <a href="https://linkedin.com/in/michaelcampbell215" target="_blank" class="hover:text-accent">LinkedIn</a>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>
