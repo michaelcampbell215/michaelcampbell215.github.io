@@ -16,26 +16,50 @@
                         sans: ['Inter', 'sans-serif'],
                     },
                     colors: {
-                        'primary': '#38BDF8', // A bright sky blue/teal
+                         'primary': '#38BDF8', // A bright sky blue/teal
                         'secondary': '#1F2937', // A dark slate gray
-                        'accent': '#ceffff', // A vibrant emerald green
+                        'accent': '#41aae0', // A vibrant cyan
                         'neutral': '#F9FAFB', // A very light gray for text
-                        'base': '#0F1C2E', // A very dark gray for background
-                        'base_secondary': '#1F3A5F'
+                        'base': '#0F1C2E', // A deep navy blue
+                        'base_secondary': '#1F3A5F' //  A complementary dark blue
                     }
                 }
             }
         }
     </script>
-    <style>
-        /* Simple animation for cards on hover */
-        .project-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+ <style>
+        /* Define the fade-in animation */
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
         }
-        .project-card {
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
+
+        /* Apply the animation to sections */
+        .fade-in-section {
+            animation: fadeIn 0.8s ease-out forwards;
         }
+        
+        /* Enhanced hover effect for cards and buttons */
+        .interactive-element {
+            transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
+        }
+        .interactive-element:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+        }
+        
+        /* Specific hover for the contact button */
+        .contact-button:hover {
+             background-color: #008dc5; /* A darker shade of the accent color */
+        }
+       
+
     </style>
 </head>
 <body class="bg-base text-neutral font-sans antialiased">
@@ -48,7 +72,8 @@
                 <a href="#about" class="text-neutral hover:text-primary transition duration-300">About</a>
                 <a href="#skills" class="text-neutral hover:text-primary transition duration-300">Skills</a>
                 <a href="#projects" class="text-neutral hover:text-primary transition duration-300">Projects</a>
-                <a href="#contact" class="bg-primary text-base px-4 py-2 rounded-md hover:bg-sky-600 transition duration-300">Contact</a>
+                <a href="#contact" class="text-neutral hover:text-primary transition duration-300">Contact</a>
+                <a href="assets/cv.docx" target="_blank" class="bg-accent text-black px-4 py-2 rounded-md font-semibold interactive-element contact-button">Download CV</a>
             </div>
             <button id="mobile-menu-button" class="md:hidden text-neutral focus:outline-none">
                 <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path></svg>
@@ -60,19 +85,21 @@
             <a href="#skills" class="block py-2 text-neutral hover:text-primary">Skills</a>
             <a href="#projects" class="block py-2 text-neutral hover:text-primary">Projects</a>
             <a href="#contact" class="block mt-2 bg-primary text-base text-center px-4 py-2 rounded-md hover:bg-sky-600">Contact</a>
+            <a href="assets/cv.pdf" target="_blank" class="block mt-2 bg-accent text-black text-center px-4 py-2 rounded-md">Download CV</a> CV</a>
         </div>
     </header>
 
     <main class="container mx-auto px-6 py-12 md:py-20">
 
         <!-- Hero Section -->
-        <section class="text-center">
+        <section class="text-center fade-in-section">
             <div class="max-w-3xl mx-auto">
                 <h1 class="text-4xl md:text-6xl font-bold text-neutral leading-tight mb-4">Transforming Data into Actionable Insights</h1>
                 <p class="text-lg md:text-xl text-gray-400 mb-8">Business Intelligence Analyst specializing in Excel, SQL, Python, and data visualization. I help businesses make smarter decisions by uncovering the stories hidden in their data.</p>
                 <div class="flex justify-center space-x-4">
-                    <a href="#projects" class="bg-primary text-base px-8 py-3 rounded-md text-lg font-semibold hover:bg-sky-600 transition duration-300">View My Work</a>
-                    <a href="https://github.com/michaelcampbell215" target="_blank" class="bg-secondary text-neutral px-8 py-3 rounded-md text-lg font-semibold hover:bg-gray-700 transition duration-300">My GitHub</a>
+                    <a href="#projects" class="bg-primary text-base px-8 py-3 rounded-md text-lg font-semibold hover:bg-sky-600 transition duration-300 interactive-element">View My Work</a>
+                    <a href="cv_page.html" class="bg-secondary text-neutral px-8 py-3 rounded-md text-lg font-semibold hover:bg-slate-700 interactive-element">View CV</a>
+                    <a href="https://github.com/michaelcampbell215" target="_blank" class="bg-secondary text-white px-8 py-3 rounded-md text-lg font-semibold hover:bg-slate-700 transition duration-300 interactive-element">My GitHub</a>
                 </div>
             </div>
         </section>
@@ -130,14 +157,14 @@
         </section>
 
         <!-- Projects Section -->
-        <section id="projects" class="py-20 md:py-32">
+        <section id="projects" class="py-20 fade-in-section" style="animation-delay: 600ms;">
             <div class="text-center mb-12">
                 <h2 class="text-3xl font-bold text-primary">Data Analytics Projects</h2>
-                <p class="text-gray-400 mt-2">A selection of my work. Click to see the case study.</p>
             </div>
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-8">
+
                 <!-- Project Card 1 -->
-                <div class="project-card bg-secondary rounded-lg shadow-lg overflow-hidden flex flex-col">
+                <div class="bg-secondary/80 backdrop-blur-sm rounded-lg shadow-lg overflow-hidden flex flex-col interactive-element">
                     <img src="images/supplychaindashboard.png" alt="Screenshot of Supply Chain Dashboard" class="w-full h-48 object-cover">
                     <div class="p-6 flex flex-col flex-grow">
                         <p class="text-sm text-gray-500 mb-1">Jun 2025 – Jul 2025</p>
@@ -160,7 +187,7 @@
                     </div>
                 </div>
                 <!-- Project Card 2 -->
-                <div class="project-card bg-secondary rounded-lg shadow-lg overflow-hidden flex flex-col">
+                <div class="bg-secondary/80 backdrop-blur-sm rounded-lg shadow-lg overflow-hidden flex flex-col interactive-element">
                     <img src="images/7_Recommendations-for-Retention.png" alt="Screenshot of Bank Customer Churn Analysis" class="w-full h-48 object-cover">
                     <div class="p-6 flex flex-col flex-grow">
                         <p class="text-sm text-gray-500 mb-1">Apr 2025 – May 2025</p>
@@ -186,7 +213,7 @@
                     </div>
                 </div>
                 <!-- Project Card 3 -->
-                <div class="project-card bg-secondary rounded-lg shadow-lg overflow-hidden flex flex-col">
+                <div class="bg-secondary/80 backdrop-blur-sm rounded-lg shadow-lg overflow-hidden flex flex-col interactive-element">
                     <img src="images/crmdashboard.png" alt="Screenshot of CRM Dashboard" class="w-full h-48 object-cover">
                     <div class="p-6 flex flex-col flex-grow">
                         <p class="text-sm text-gray-500 mb-1">Mar 2025 – Apr 2025</p>
@@ -206,7 +233,7 @@
                     </div>
                 </div>
                  <!-- Project Card 4 -->
-                <div class="project-card bg-secondary rounded-lg shadow-lg overflow-hidden flex flex-col">
+                <div class="bg-secondary/80 backdrop-blur-sm rounded-lg shadow-lg overflow-hidden flex flex-col interactive-element">
                     <img src="images\passengersatisfactiondashboard.png" alt="Screenshot of Passenger Satisfaction Analysis" class="w-full h-48 object-cover">
                     <div class="p-6 flex flex-col flex-grow">
                         <p class="text-sm text-gray-500 mb-1">Feb 2025</p>
@@ -236,7 +263,7 @@
                 <p class="text-gray-400 mb-8">I'm currently available for freelance opportunities and full-time roles. If you have a project in mind or just want to chat about data, feel free to reach out!</p>
                 <div class="flex justify-center">
                     <!-- LinkedIn -->
-                    <a href="https://linkedin.com/in/michaelcampbell215" target="_blank" class="bg-primary text-base px-6 py-3 rounded-md text-lg font-semibold hover:bg-sky-600 transition duration-300 inline-flex items-center gap-2 w-full sm:w-auto justify-center">
+                    <a href="https://linkedin.com/in/michaelcampbell215" target="_blank" class="bg-primary text-white px-6 py-3 rounded-md text-lg font-semibold hover:bg-sky-600 transition duration-300 inline-flex items-center gap-2 w-full sm:w-auto justify-center interactive-element">
                         <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24">
                             <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/>
                         </svg>

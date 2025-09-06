@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CV - Your Name</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    },
+                     colors: {
+                         'primary': '#38BDF8', // A bright sky blue/teal
+                        'secondary': '#1F2937', // A dark slate gray
+                        'accent': '#41aae0', // A vibrant cyan
+                        'neutral': '#F9FAFB', // A very light gray for text
+                        'base': '#0F1C2E', // A deep navy blue
+                        'base_secondary': '#1F3A5F' //  A complementary dark blue
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        /* Define the fade-in animation */
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Apply the animation to sections */
+        .fade-in-section {
+            animation: fadeIn 0.8s ease-out forwards;
+        }
+        
+        /* Enhanced hover effect for cards and buttons */
+        .interactive-element {
+            transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
+        }
+        .interactive-element:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+        }
+        
+        /* Specific hover for the contact button */
+        .contact-button:hover {
+             background-color: #a7f5f5; /* A slightly darker shade of the accent color */
+        }
+        
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: -31px;
+            top: 4px;
+            width: 1.25rem;
+            height: 1.25rem;
+            border-radius: 50%;
+            background-color: #1F2937;
+            border: 4px solid #38BDF8;
+        }
+    </style>
+</head>
+<body class="bg-gradient-to-bl from-base via-base-secondary to-secondary text-neutral font-sans antialiased">
+
+    <!-- Header -->
+    <header class="bg-secondary/80 backdrop-blur-md sticky top-0 z-50 shadow-lg">
+        <nav class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <a href="index.html" class="text-2xl font-bold text-primary">Michael Campbell</a>
+            <a href="index.html#projects" class="bg-primary text-base px-4 py-2 rounded-md hover:bg-sky-600 transition duration-300 interactive-element">&larr; Back to Portfolio</a>
+        </nav>
+    </header>
+
+    <main class="container mx-auto px-6 py-12 md:py-20">
+
+        <!-- CV Header -->
+        <section class="text-center mb-12 fade-in-section"> 
+            <h1 class="text-4xl md:text-5xl font-bold text-neutral mb-4">Professional Profile</h1>
+            <p class="text-lg md:text-xl text-gray-400">Data Analyst | BI Analyst | SQL • Python • Tableau • Power BI • Excel</p>
+            <a href="assets/cv.pdf" target="_blank" class="mt-8 inline-block bg-accent text-neutral px-6 py-3 rounded-md font-semibold hover:bg-sky-600  transition duration-300 interactive-element contact-button">
+                Download PDF Version
+            </a>
+        </section>
+        
+        <div class="max-w-4xl mx-auto bg-secondary p-8 rounded-lg shadow-md">
+
+            <!-- Professional Summary -->
+            <section class="mb-10">
+                <h2 class="text-2xl font-bold text-primary border-b-2 border-primary/20 pb-2 mb-4">Professional Summary</h2>
+                <p class="text-gray-300">Operations and Analytics professional transitioning into Data Analytics with 8+ years of experience in hospitality and operations management. Offers newly acquired expertise in Python, SQL, Tableau, and Power BI, combined with a track record of driving efficiency, enhancing customer satisfaction, and improving business strategy. Demonstrates data driven decision making through portfolio projects in customer churn, sales performance, and supply chain analytics.</p>
+            </section>
+
+            <!-- Technical Skills Section -->
+            <section class="mb-10 fade-in-section" style="animation-delay: 300ms;">
+                <h2 class="text-2xl font-bold text-primary border-b-2 border-primary/20 pb-2 mb-4">Technical Skills</h2>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                    <div>
+                        <h3 class="font-semibold text-lg text-accent mb-2">Languages & Databases</h3>
+                        <p class="text-gray-300">Python (Pandas, NumPy), SQL (MySQL, PostgreSQL, SQL Server)</p>
+                    </div>
+                    <div>
+                        <h3 class="font-semibold text-lg text-accent mb-2">Visualization & Analysis</h3>
+                        <p class="text-gray-300">Tableau, Power BI, Excel (PivotTables, Power Query, XLOOKUP, DAX)</p>
+                    </div>
+                    <div>
+                        <h3 class="font-semibold text-lg text-accent mb-2">Business & Tools</h3>
+                        <p class="text-gray-300">Business Intelligence, Process Improvement, Stakeholder Communication, Salesforce, CRM</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Data Analytics Projects -->
+            <section class="mb-10 fade-in-section" style="animation-delay: 400ms;">
+                <h2 class="text-2xl font-bold text-primary border-b-2 border-primary/20 pb-2 mb-6">Data Analytics Projects</h2>
+                <div class="relative border-l-2 border-primary/20 ml-4">
+                    <!-- Project Item -->
+                    <div class="mb-8 ml-8 timeline-item">
+                        <h3 class="text-xl font-semibold text-accent">Global Supply Chain Performance & Cost Optimization</h3>
+                        <p class="text-sm text-gray-500 mb-2">Jun 2025 – Jul 2025</p>
+                        <ul class="list-disc list-inside text-gray-300 space-y-1">
+                            <li>Designed and implemented a Tableau dashboard for a global logistics team, providing interactive reports on delivery performance and cost efficiency.</li>
+                            <li>Performed data cleaning and transformation in Python, engineering metrics like On-Time Delivery Rate and Delivery Lead Time.</li>
+                            <li>Analyzed drivers of performance and cost, identifying two product groups responsible for 99% of logistics costs.</li>
+                            <li>Delivered an analytical tool for vendor management, underperforming shipment identification, and cost negotiation support.</li>
+                        </ul>
+                    </div>
+                     <!-- Project Item -->
+                    <div class="mb-8 ml-8 timeline-item">
+                        <h3 class="text-xl font-semibold text-accent">Bank Customer Churn Analysis</h3>
+                        <p class="text-sm text-gray-500 mb-2">Apr 2025 – May 2025</p>
+                        <ul class="list-disc list-inside text-gray-300 space-y-1">
+                            <li>Engineered a machine learning pipeline using Python to predict customer churn; Gradient Boosting model achieved 74% recall.</li>
+                            <li>Created new variables revealing geographic churn drivers; optimized model via hyperparameter tuning.</li>
+                            <li>Translated model insights into a strategy including a targeted retention campaign for high-risk segments.</li>
+                        </ul>
+                    </div>
+                     <!-- Project Item -->
+                    <div class="mb-8 ml-8 timeline-item">
+                        <h3 class="text-xl font-semibold text-accent">CRM Dashboard: Sales Performance Analysis</h3>
+                        <p class="text-sm text-gray-500 mb-2">Mar 2025 – Apr 2025</p>
+                        <ul class="list-disc list-inside text-gray-300 space-y-1">
+                            <li>Developed an interactive Tableau dashboard tracking pipeline metrics and conversion rates; revealed bottlenecks in late-stage deals.</li>
+                            <li>Benchmarked sales teams and identified high-performing agents and product sectors; analyzed pricing elasticity impacts.</li>
+                            <li>Proposed funnel optimization strategies based on 49% drop-off post-engagement stage.</li>
+                        </ul>
+                    </div>
+                     <!-- Project Item -->
+                    <div class="mb-8 ml-8 timeline-item">
+                        <h3 class="text-xl font-semibold text-accent">Passenger Satisfaction Analysis</h3>
+                        <p class="text-sm text-gray-500 mb-2">Feb 2025</p>
+                        <ul class="list-disc list-inside text-gray-300 space-y-1">
+                            <li>Led a Power BI dashboard project analyzing airline satisfaction surveys, identifying top pain points and strengths.</li>
+                            <li>Segmented passengers by demographics and behavior, revealing opportunities in service experience improvement.</li>
+                            <li>Visualized Likert scale data to prioritize interventions based on dissatisfaction trends.</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Experience -->
+            <section class="mb-10">
+                <h2 class="text-2xl font-bold text-primary border-b-2 border-primary/20 pb-2 mb-6">EXPERIENCE</h2>
+                <div class="relative border-l-2 border-primary/20 ml-4">
+                    <!-- Timeline Item -->
+                    <div class="mb-8 ml-8 timeline-item">
+                        <h3 class="text-xl font-semibold text-accent">Managing Partner | Operations & Analytics</h3>
+                        <p class="font-medium text-gray-400">Marquez MMA | Philadelphia, PA</p>
+                        <p class="text-sm text-gray-500 mb-2">Aug 2014 – Apr 2025</p>
+                        <ul class="list-disc list-inside text-gray-300 space-y-1">
+                            <li>Directed financial strategy by analyzing revenue and expense data, leading to improved digital marketing ROI.</li>
+                            <li>Designed athlete performance dashboards to inform training enhancements based on visual data insights.</li>
+                            <li>Optimized scheduling and client communication through data-driven adjustments, improving satisfaction by 10%.</li>
+                        </ul>
+                    </div>
+                    <!-- Timeline Item -->
+                    <div class="mb-8 ml-8 timeline-item">
+                        <h3 class="text-xl font-semibold text-accent">Hospitality Agent | Data-Driven Operations</h3>
+                        <p class="font-medium text-gray-400">Sonder Inc. | Philadelphia, PA</p>
+                        <p class="text-sm text-gray-500 mb-2">Dec 2021 – Dec 2023</p>
+                        <ul class="list-disc list-inside text-gray-300 space-y-1">
+                            <li>Analyzed operational metrics and implemented workflow improvements that increased efficiency by 8%.</li>
+                            <li>Built custom Excel reports to track customer engagement and revenue retention using Salesforce data.</li>
+                            <li>Managed a team of 10 agents as Manager on Duty, enhancing customer experience through team coaching.</li>
+                        </ul>
+                    </div>
+                    <!-- Timeline Item -->
+                    <div class="mb-8 ml-8 timeline-item">
+                        <h3 class="text-xl font-semibold text-accent">Night Auditor | Financial & Operations Analysis</h3>
+                        <p class="font-medium text-gray-400">Cambria Hotel & Suites | Philadelphia, PA</p>
+                        <p class="text-sm text-gray-500 mb-2">Feb 2018 – Sep 2021</p>
+                        <ul class="list-disc list-inside text-gray-300 space-y-1">
+                            <li>Analyzed guest satisfaction surveys to identify service issues, leading to a 25% increase in satisfaction scores.</li>
+                            <li>Monitored credit card transactions to reduce fraud-related chargebacks by 15%.</li>
+                            <li>Resolved over 100 annual billing disputes through transaction analysis and customer communication.</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Education -->
+            <section class="mb-10">
+                <h2 class="text-2xl font-bold text-primary border-b-2 border-primary/20 pb-2 mb-4">EDUCATION</h2>
+                <div class="mb-6">
+                    <h3 class="text-xl font-semibold text-accent">Bachelor of Science in Business Administration</h3>
+                    <p class="font-medium text-gray-400">Cheyney University</p>
+                    <p class="text-sm text-gray-500">Sep 2005 – May 2009</p>
+                </div>
+                <div class="mb-6">
+                    <h3 class="text-xl font-semibold text-accent">Google Data Analytics Professional Certificate</h3>
+                    <p class="font-medium text-gray-400">Coursera</p>
+                    <p class="text-sm text-gray-500">Jan 2023 – May 2023</p>
+                </div>
+                <div>
+                    <h3 class="text-xl font-semibold text-accent">Business Intelligence Analyst Certificate</h3>
+                    <p class="font-medium text-gray-400">Maven Analytics</p>
+                    <p class="text-sm text-gray-500">Sep 2023 – Present</p>
+                </div>
+            </section>
+            
+            <!-- Skills & Projects could go here as well -->
+
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-secondary text-gray-400 py-8 mt-16">
+        <div class="container mx-auto px-6 text-center">
+            <p>&copy; 2025 Michael Campbell. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+</body>
+</html>

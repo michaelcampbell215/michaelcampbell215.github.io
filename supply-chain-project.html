@@ -18,7 +18,7 @@
                     colors: {
                         'primary': '#38BDF8', // A bright sky blue/teal
                         'secondary': '#1F2937', // A dark slate gray
-                        'accent': '#ceffff', // A vibrant emerald green
+                        'accent': '#71c4ef', // A vibrant emerald green
                         'neutral': '#F9FAFB', // A very light gray for text
                         'base': '#0F1C2E', // A very dark gray for background
                         'base_secondary': '#1F3A5F'
@@ -27,6 +27,40 @@
             }
         }
     </script>
+    <style>
+        /* Define the fade-in animation */
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Apply the animation to sections */
+        .fade-in-section {
+            animation: fadeIn 0.8s ease-out forwards;
+        }
+        
+        /* Enhanced hover effect for cards and buttons */
+        .interactive-element {
+            transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
+        }
+        .interactive-element:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+        }
+        
+        /* Specific hover for the contact button */
+        .contact-button:hover {
+             background-color: #008dc5; /* A darker shade of the accent color */
+        }
+       
+
+    </style>
     <style>
         /* Custom spacing for the case study article for better readability */
         .prose h2 {
@@ -55,7 +89,7 @@
     <header class="bg-secondary/80 backdrop-blur-md sticky top-0 z-50 shadow-lg">
         <nav class="container mx-auto px-6 py-4 flex justify-between items-center">
             <a href="index.html" class="text-2xl font-bold text-primary">Michael Campbell</a>
-            <a href="index.html#projects" class="bg-primary text-base px-4 py-2 rounded-md hover:bg-sky-600 transition duration-300">&larr; Back to All Projects</a>
+            <a href="index.html#projects" class="bg-sky-600 text-white px-4 py-2 rounded-md hover:bg-primary font-semibold transition duration-300 interactive-element">&larr; Back to Portfolio</a>
         </nav>
     </header>
 
@@ -179,7 +213,7 @@
            </ul>
 
             <div class="text-center mt-12">
-                 <a href="https://github.com/michaelcampbell215/Supply-Chain-Performance-Project" target="_blank" class="bg-neutral text-base px-6 py-3 rounded-md font-semibold hover:bg-gray-200 transition duration-300 no-underline">View Code on GitHub</a>
+                 <a href="https://github.com/michaelcampbell215/Supply-Chain-Performance-Project" target="_blank" class=" bg-accent text-base px-6 py-3 rounded-md font-semibold hover:bg-sky-600 transition duration-300 no-underline interactive-element">View Code on GitHub</a>
             </div>
 
         </article>
