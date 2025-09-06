@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CV - Your Name</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    },
+                    colors: {
+                        'primary': '#38BDF8', // A bright sky blue/teal
+                        'secondary': '#1F2937', // A dark slate gray
+                        'accent': '#34D399', // A vibrant emerald green
+                        'neutral': '#F9FAFB', // A very light gray for text
+                        'base': '#111827', // A very dark gray for background
+                        'base-secondary': '#1E293B'
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: -31px;
+            top: 4px;
+            width: 1.25rem;
+            height: 1.25rem;
+            border-radius: 50%;
+            background-color: #1F2937;
+            border: 4px solid #38BDF8;
+        }
+    </style>
+</head>
+<body class="bg-gradient-to-bl from-base via-base-secondary to-secondary text-neutral font-sans antialiased">
+
+    <!-- Header -->
+    <header class="bg-secondary/80 backdrop-blur-md sticky top-0 z-50 shadow-lg">
+        <nav class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <a href="index.html" class="text-2xl font-bold text-primary">Your Name</a>
+            <a href="index.html#projects" class="bg-primary text-base px-4 py-2 rounded-md hover:bg-sky-600 transition duration-300">&larr; Back to Portfolio</a>
+        </nav>
+    </header>
+
+    <main class="container mx-auto px-6 py-12 md:py-20">
+
+        <!-- CV Header -->
+        <section class="text-center mb-12">
+            <h1 class="text-4xl md:text-5xl font-bold text-neutral mb-4">Curriculum Vitae</h1>
+            <p class="text-lg md:text-xl text-gray-400">A summary of my professional experience, skills, and projects.</p>
+            <a href="assets/Your-CV.pdf" target="_blank" class="mt-8 inline-block bg-accent text-neutral px-6 py-3 rounded-md font-semibold hover:bg-emerald-500 transition duration-300">
+                Download PDF Version
+            </a>
+        </section>
+        
+        <div class="max-w-4xl mx-auto bg-secondary p-8 rounded-lg shadow-md">
+
+            <!-- Professional Summary -->
+            <section class="mb-10">
+                <h2 class="text-2xl font-bold text-primary border-b-2 border-primary/20 pb-2 mb-4">Professional Summary</h2>
+                <p class="text-gray-300">Data-driven and detail-oriented analyst with 8+ years of experience in operations and hospitality leadership. Proven ability to translate complex data into actionable business strategies, leading to significant improvements in service scores and fraud reduction. Seeking to leverage a unique blend of operational insight and technical expertise in a challenging data analytics role.</p>
+            </section>
+
+            <!-- Experience -->
+            <section class="mb-10">
+                <h2 class="text-2xl font-bold text-primary border-b-2 border-primary/20 pb-2 mb-6">Work Experience</h2>
+                <div class="relative border-l-2 border-primary/20 ml-4">
+                    <!-- Timeline Item -->
+                    <div class="mb-8 ml-8 timeline-item">
+                        <h3 class="text-xl font-semibold text-accent">Your Most Recent Job Title</h3>
+                        <p class="font-medium text-gray-400">Company Name | City, State</p>
+                        <p class="text-sm text-gray-500 mb-2">Month Year - Month Year</p>
+                        <ul class="list-disc list-inside text-gray-300 space-y-1">
+                            <li>Key accomplishment or responsibility. Used a specific skill to achieve a measurable result.</li>
+                            <li>Another key accomplishment. Led a project or initiative that had a positive impact.</li>
+                            <li>Quantifiable achievement that showcases your abilities.</li>
+                        </ul>
+                    </div>
+                    <!-- Timeline Item -->
+                    <div class="mb-8 ml-8 timeline-item">
+                        <h3 class="text-xl font-semibold text-accent">Your Previous Job Title</h3>
+                        <p class="font-medium text-gray-400">Company Name | City, State</p>
+                        <p class="text-sm text-gray-500 mb-2">Month Year - Month Year</p>
+                        <ul class="list-disc list-inside text-gray-300 space-y-1">
+                            <li>Key accomplishment or responsibility. Used a specific skill to achieve a measurable result.</li>
+                            <li>Another key accomplishment. Led a project or initiative that had a positive impact.</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Education -->
+            <section class="mb-10">
+                <h2 class="text-2xl font-bold text-primary border-b-2 border-primary/20 pb-2 mb-4">Education</h2>
+                <div>
+                    <h3 class="text-xl font-semibold text-accent">Your Degree or Certificate</h3>
+                    <p class="font-medium text-gray-400">Cheyney University  | Cheyney, PA</p>
+                    <p class="text-sm text-gray-500">2009</p>
+                </div>
+            </section>
+            
+            <!-- Skills & Projects could go here as well -->
+
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-secondary text-gray-400 py-8 mt-16">
+        <div class="container mx-auto px-6 text-center">
+            <p>&copy; 2025 Michael Campbell. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+</body>
+</html>
