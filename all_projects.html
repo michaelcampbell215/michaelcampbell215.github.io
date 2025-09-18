@@ -30,44 +30,20 @@
         }
     </script>
     <style>
-        
         body {
             background-color: #0F1C2E;
         }
-        .skill-card {
+        .skill-card, .project-card {
             transition: all 0.3s ease;
             border: 1px solid #1F2937;
-        }
-        .skill-card:hover {
-            transform: scale(1.05);
-            border-color: #38BDF8;
-            box-shadow: 0 0 25px rgba(56, 189, 248, 0.3);
-        }
-        .project-card {
-            transition: all 0.3s ease;
-            border: 1px solid #1F2937;
-        }
-        .project-card:hover {
-            transform: scale(1.05);
-            border-color: #38BDF8;
-            box-shadow: 0 0 25px rgba(56, 189, 248, 0.3);
-        }
-        .mini-project-card {
-            transition: all 0.3s ease;
-            border: 1px solid #1F2937;
-        }
-        .mini-project-card:hover {
-            border-color: #38BDF8;
-            background-color: #1a2c42;
         }
         .filter-btn {
             transition: all 0.3s ease;
         }
+        .skill-card:hover,
+        .project-card:hover,
         .filter-btn:hover,
-        .filter-btn.active {
-            background-color: #38BDF8;
-            color: #1F2937;
-        }
+        .filter-btn.active,
         .interactive-element:hover {
             transform: scale(1.05);
             border-color: #38BDF8;
@@ -105,13 +81,31 @@
             </div>
 
             <!-- Filter Buttons -->
-            <div class="flex justify-center flex-wrap gap-4 mb-12">
-                <button class="filter-btn active bg-secondary text-neutral px-4 py-2 rounded-md font-semibold interactive-element" data-filter="all">All</button>
-                <button class="filter-btn bg-secondary text-neutral px-4 py-2 rounded-md font-semibold interactive-element" data-filter="Tableau">Tableau</button>
-                <button class="filter-btn bg-secondary text-neutral px-4 py-2 rounded-md font-semibold interactive-element" data-filter="Power BI">Power BI</button>
-                <button class="filter-btn bg-secondary text-neutral px-4 py-2 rounded-md font-semibold interactive-element" data-filter="Python">Python</button>
-                <button class="filter-btn bg-secondary text-neutral px-4 py-2 rounded-md font-semibold interactive-element" data-filter="SQL">SQL</button>
-                <button class="filter-btn bg-secondary text-neutral px-4 py-2 rounded-md font-semibold interactive-element" data-filter="Excel">Excel</button>
+            <div class="flex justify-center flex-wrap gap-6 mb-16" >
+                <div class="skill-card filter-btn active p-6 rounded-lg flex flex-col items-center justify-center" data-filter="all">
+                    <i class="fas fa-layer-group fa-3x text-primary mb-4"></i>
+                    <h3 class="text-lg font-semibold">All</h3>
+                </div>
+                <div class="skill-card filter-btn p-6 rounded-lg flex flex-col items-center justify-center" data-filter="Tableau">
+                    <img src="images/skills_icons/tableau.png" alt="Tableau icon" class="w-12 h-12 object-contain mb-4">
+                    <h3 class="text-lg font-semibold">Tableau</h3>
+                </div>
+                <div class="skill-card filter-btn p-6 rounded-lg flex flex-col items-center justify-center" data-filter="Power BI">
+                     <img src="images/skills_icons/powebi.png" alt="Power BI icon" class="w-12 h-12 object-contain mb-4">
+                    <h3 class="text-lg font-semibold">Power BI</h3>
+                </div>
+                <div class="skill-card filter-btn p-6 rounded-lg flex flex-col items-center justify-center" data-filter="Python">
+                    <i class="fab fa-python fa-3x text-primary mb-4"></i>
+                    <h3 class="text-lg font-semibold">Python</h3>
+                </div>
+                <div class="skill-card filter-btn p-6 rounded-lg flex flex-col items-center justify-center" data-filter="SQL">
+                    <i class="fas fa-database fa-3x text-primary mb-4"></i>
+                    <h3 class="text-lg font-semibold">SQL</h3>
+                </div>
+                <div class="skill-card filter-btn p-6 rounded-lg flex flex-col items-center justify-center" data-filter="Excel">
+                    <i class="fas fa-file-excel fa-3x text-primary mb-4"></i>
+                    <h3 class="text-lg font-semibold">Excel</h3>
+                </div>
             </div>
 
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-8">
