@@ -8,6 +8,9 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <script>
         tailwind.config = {
             theme: {
@@ -16,50 +19,44 @@
                         sans: ['Inter', 'sans-serif'],
                     },
                     colors: {
-                         'primary': '#38BDF8', // A bright sky blue/teal
+                        'primary': '#38BDF8', // A bright sky blue/teal
                         'secondary': '#1F2937', // A dark slate gray
-                        'accent': '#41aae0', // A vibrant cyan
+                        'accent': '#ceffff', // A very light cyan
                         'neutral': '#F9FAFB', // A very light gray for text
-                        'base': '#0F1C2E', // A deep navy blue
-                        'base_secondary': '#1F3A5F' //  A complementary dark blue
+                        'base': '#0F1C2E', // A very dark gray for background
                     }
                 }
             }
         }
     </script>
- <style>
-        /* Define the fade-in animation */
+    <style>
         @keyframes fadeIn {
-            from {
-                opacity: 0;
-                transform: translateY(20px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
         }
-
-        /* Apply the animation to sections */
         .fade-in-section {
+            opacity: 0;
             animation: fadeIn 0.8s ease-out forwards;
         }
-        
-        /* Enhanced hover effect for cards and buttons */
-        .interactive-element {
-            transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
+        body {
+            background-color: #0F1C2E;
         }
+        .skill-card,
+        .mini-project-card {
+            transition: all 0.3s ease;
+            border: 1px solid #1F2937;
+        }
+        .skill-card:hover,
+        .project-card:hover,
         .interactive-element:hover {
-            transform: translateY(-8px);
-            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+            transform: scale(1.05);
+            border-color: #38BDF8;
+            box-shadow: 0 0 25px rgba(56, 189, 248, 0.3);
         }
-        
-        /* Specific hover for the contact button */
-        .contact-button:hover {
-             background-color: #008dc5; /* A darker shade of the accent color */
+        .mini-project-card:hover {
+            border-color: #38BDF8;
+            background-color: #1a2c42;          
         }
-       
-
     </style>
 </head>
 <body class="bg-base text-neutral font-sans antialiased">
@@ -67,115 +64,203 @@
     <!-- Header & Navigation -->
     <header class="bg-secondary/80 backdrop-blur-md sticky top-0 z-50 shadow-lg">
         <nav class="container mx-auto px-6 py-4 flex justify-between items-center">
-            <a href="#" class="text-2xl font-bold text-primary">Michael Campbell</a>
+            <a href="#home" class="text-2xl font-bold text-primary">Michael Campbell</a>
             <div class="hidden md:flex space-x-8 items-center">
-                <a href="#about" class="text-neutral hover:text-primary transition duration-300">About</a>
-                <a href="#skills" class="text-neutral hover:text-primary transition duration-300">Skills</a>
-                <a href="#projects" class="text-neutral hover:text-primary transition duration-300">Projects</a>
-                <a href="#contact" class="text-neutral hover:text-primary transition duration-300">Contact</a>
-                <a href="assets/cv.pdf" target="_blank" class="bg-accent text-white px-4 py-2 rounded-md font-semibold interactive-element contact-button">Download CV</a>
+                <a href="#about" class="text-neutral hover:text-primary transition duration-300 ">About</a>
+                <a href="#skills" class="text-neutral hover:text-primary transition duration-300 ">Skills</a>
+                <a href="#experience" class="text-neutral hover:text-primary transition duration-300 ">Experience</a>
+                <a href="#projects" class="text-neutral hover:text-primary transition duration-300 ">Projects</a>
+                <a href="#contact" class="text-neutral hover:text-primary transition duration-300 ">Contact</a>
             </div>
-            <button id="mobile-menu-button" class="md:hidden text-neutral focus:outline-none">
-                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path></svg>
+             <button id="mobile-menu-button" class="md:hidden text-neutral focus:outline-none px-4 py-2 rounded-lg bg-gradient-to-r from-secondary/50 to-secondary backdrop-blur-sm border border-secondary/30 hover:border-primary/30 transition duration-300">
+                <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path></svg>
             </button>
         </nav>
         <!-- Mobile Menu -->
-        <div id="mobile-menu" class="hidden md:hidden px-6 pb-4">
-            <a href="#about" class="block py-2 text-neutral hover:text-primary">About</a>
-            <a href="#skills" class="block py-2 text-neutral hover:text-primary">Skills</a>
-            <a href="#projects" class="block py-2 text-neutral hover:text-primary">Projects</a>
-            <a href="#contact" class="block mt-2 bg-primary text-base text-center px-4 py-2 rounded-md hover:bg-sky-600">Contact</a>
-            <a href="assets/cv.pdf" target="_blank" class="block mt-2 bg-accent text-white text-center px-4 py-2 rounded-md">Download CV</a> CV</a>
+        <div id="mobile-menu" class="hidden md:hidden px-6 pb-4 space-y-3">
+            <a href="#about" class="block py-2 px-4 text-neutral hover:text-primary transition duration-300 bg-gradient-to-r from-secondary/50 to-secondary rounded-lg backdrop-blur-sm border border-secondary/30 hover:border-primary/30 interactive-element">About</a>
+            <a href="#skills" class="block py-2 px-4 text-neutral hover:text-primary transition duration-300 bg-gradient-to-r from-secondary/50 to-secondary rounded-lg backdrop-blur-sm border border-secondary/30 hover:border-primary/30 interactive-element">Skills</a>
+            <a href="#experience" class="block py-2 px-4 text-neutral hover:text-primary transition duration-300 bg-gradient-to-r from-secondary/50 to-secondary rounded-lg backdrop-blur-sm border border-secondary/30 hover:border-primary/30 interactive-element">Experience</a>
+            <a href="#projects" class="block py-2 px-4 text-neutral hover:text-primary transition duration-300 bg-gradient-to-r from-secondary/50 to-secondary rounded-lg backdrop-blur-sm border border-secondary/30 hover:border-primary/30 interactive-element">Projects</a>
+            <a href="#contact" class="block py-2 px-4 text-neutral hover:text-primary transition duration-300 bg-gradient-to-r from-secondary/50 to-secondary rounded-lg backdrop-blur-sm border border-secondary/30 hover:border-primary/30 interactive-element">Contact</a>
         </div>
     </header>
 
-    <main class="container mx-auto px-6 py-12 md:py-20">
+    <main class="container mx-auto px-6">
 
-        <!-- Hero Section -->
-        <section class="text-center fade-in-section">
+
+        <!-- About Me Section -->
+        <section id="about" class="py-20 md:py-32" data-aos="fade-up">
+            <div class="grid md:grid-cols-5 gap-18 items-center">
+                <div class="md:col-span-2" data-aos="fade-right" data-aos-delay="200">
+                    <img src="images/headshot.png" alt="A professional headshot of Michael Campbell" class="rounded-lg w-3/4 h-auto object-cover shadow-2xl border-4 border-secondary">
+                </div>
+                <div class="md:col-span-3" data-aos="fade-left" data-aos-delay="400">
+                    <h2 class="text-3xl md:text-4xl font-bold text-primary mb-6">About Me </h2>
+                    <div class="space-y-4 text-gray-300 text-lg">
+                        <p>Data has always been central to how I approach problems. For over 8 years in operations and hospitality leadership, I used analytics to uncover opportunities, improve processes, and influence outcomes long before officially becoming a Data Analyst.</p>
+                        <p>From analyzing guest surveys that drove a 25% improvement in service scores to spotting fraud patterns that cut chargebacks by 15%, I’ve seen how clean data, clear metrics, and compelling storytelling can transform business performance.</p>
+                        <p>Today, I combine that operational insight with a focus on actionable analytics. I design interactive dashboards, build predictive models, and deliver insights that guide strategy. Recent projects include churn modeling, global supply chain optimization, and CRM funnel analysis.</p>
+                        <p>I’m particularly drawn to roles where I can bridge the gap between business and data teams, helping stakeholders ask the right questions, making complex data usable, and turning messy datasets into actionable insights.</p>
+                        <p>If you’re hiring or looking to collaborate on BI, CRM, product, or operations analytics, let’s connect.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Skills Section -->
+        <section id="skills" class="py-20 md:py-32" data-aos="fade-up">
+            <h2 class="text-3xl md:text-4xl font-bold text-center text-primary mb-16">Core Competencies</h2>
+            <div class="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-5 lg:grid-cols-9 gap-8 max-w-6xl mx-auto text-center">
+                <div class="skill-card bg-secondary p-6 rounded-lg" data-aos="fade-up" data-aos-delay="100">
+                    <i class="fab fa-python fa-3x text-primary mb-4"></i>
+                    <h3 class="text-lg font-semibold">Python</h3>
+                </div>
+                <div class="skill-card bg-secondary p-6 rounded-lg" data-aos="fade-up" data-aos-delay="200">
+                    <i class="fas fa-database fa-3x text-primary mb-4"></i>
+                    <h3 class="text-lg font-semibold">SQL</h3>
+                </div>
+                 <div class="skill-card bg-secondary p-6 rounded-lg" data-aos="fade-up" data-aos-delay="300">
+                    <i class="fas fa-brain fa-3x text-primary mb-4"></i>
+                    <h3 class="text-lg font-semibold">Machine Learning</h3>
+                </div>
+                <div class="skill-card bg-secondary p-6 rounded-lg" data-aos="fade-up" data-aos-delay="400">
+                    <i class="fas fa-chart-bar fa-3x text-primary mb-4"></i>
+                    <h3 class="text-lg font-semibold">Tableau</h3>
+                </div>
+                <div class="skill-card bg-secondary p-6 rounded-lg" data-aos="fade-up" data-aos-delay="500">
+                    <i class="fas fa-chart-line fa-3x text-primary mb-4"></i>
+                    <h3 class="text-lg font-semibold">Power BI</h3>
+                </div>
+                <div class="skill-card bg-secondary p-6 rounded-lg" data-aos="fade-up" data-aos-delay="600">
+                    <i class="fas fa-file-excel fa-3x text-primary mb-4"></i>
+                    <h3 class="text-lg font-semibold">Excel</h3>
+                </div>
+                <div class="skill-card bg-secondary p-6 rounded-lg" data-aos="fade-up" data-aos-delay="700">
+                    <i class="fab fa-slack fa-3x text-primary mb-4"></i>
+                    <h3 class="text-lg font-semibold">Slack</h3>
+                </div>
+                <div class="skill-card bg-secondary p-6 rounded-lg" data-aos="fade-up" data-aos-delay="800">
+                    <i class="fab fa-asana fa-3x text-primary mb-4"></i>
+                    <h3 class="text-lg font-semibold">Asana</h3>
+                </div>
+                <div class="skill-card bg-secondary p-6 rounded-lg" data-aos="fade-up" data-aos-delay="900">
+                    <i class="fab fa-jira fa-3x text-primary mb-4"></i>
+                    <h3 class="text-lg font-semibold">Jira</h3>
+                </div>
+            </div>
+        </section>
+
+        <!-- Work Experience Section -->
+        <section id="experience" class="py-20 md:py-32" data-aos="fade-up">
+            <h2 class="text-3xl md:text-4xl font-bold text-center text-primary mb-8">Work Experience</h2>
+            <div class="text-center mb-16">
+                <a href="assets/cv.pdf" target="_blank" class="bg-primary text-white px-6 py-3 rounded-md text-lg font-semibold hover:bg-sky-600 transition duration-300 inline-block interactive-element">
+                    <i class="fas fa-download mr-2"></i>Download CV
+                </a>
+            </div>
             <div class="max-w-3xl mx-auto">
-                <h1 class="text-4xl md:text-6xl font-bold text-neutral leading-tight mb-4">Driving Smarter Decisions with Data</h1>
-                <p class="text-lg md:text-xl text-gray-400 mb-8">Business Intelligence Analyst turning complex data into clear insights through SQL, Python, Excel, and visualization.</p>
-                <div class="flex justify-center space-x-4">
-                    <a href="#projects" class="bg-primary text-white px-8 py-3 rounded-md text-lg font-semibold hover:bg-sky-600 transition duration-300 interactive-element">View My Work</a>
-                    <a href="cv_page.html" class="bg-secondary text-neutral px-8 py-3 rounded-md text-lg font-semibold hover:bg-slate-700 interactive-element">View CV</a>
-                    <a href="https://github.com/michaelcampbell215" target="_blank" class="bg-secondary text-white px-8 py-3 rounded-md text-lg font-semibold hover:bg-slate-700 transition duration-300 interactive-element">My GitHub</a>
+                <div class="relative border-l-2 border-secondary pl-10">
+                    <!-- Timeline Item 1 -->
+                    <div class="mb-12 relative" data-aos="fade-up" data-aos-delay="200">
+                        <div class="absolute -left-11 top-1.5 w-5 h-5 bg-primary rounded-full border-4 border-secondary"></div>
+                        <h3 class="text-xl font-bold text-neutral">Managing Partner | Operations & Analytics</h3>
+                        <p class="text-primary font-semibold mb-1">Marquez MMA – Philadelphia, PA</p>
+                        <p class="text-gray-400 text-sm mb-4">Aug 2014 – Apr 2025</p>
+                        <ul class="list-disc list-inside text-gray-300 space-y-2">
+                            <li data-aos="fade-up" data-aos-delay="300">Built Google Sheets + SQL dashboards to track attendance, memberships, churn, and revenue, providing leadership daily visibility into performance.</li>
+                            <li data-aos="fade-up" data-aos-delay="400">Increased class fill rates by 20% by analyzing attendance trends and optimizing scheduling.</li>
+                            <li data-aos="fade-up" data-aos-delay="500">Conducted competitor and market analysis to refine pricing and services, driving revenue growth.</li>
+                            <li data-aos="fade-up" data-aos-delay="600">Automated weekly reporting with Google Sheets (PivotTables, formulas), reducing manual reporting time by 40%.</li>
+                        </ul>
+                    </div>
+                    <!-- Timeline Item 2 -->
+                    <div class="mb-12 relative" data-aos="fade-up" data-aos-delay="700">
+                        <div class="absolute -left-11 top-1.5 w-5 h-5 bg-primary rounded-full border-4 border-secondary"></div>
+                        <h3 class="text-xl font-bold text-neutral">Hospitality Agent | Data-Driven Operations</h3>
+                        <p class="text-primary font-semibold mb-1">Sonder Inc. – Philadelphia, PA</p>
+                        <p class="text-gray-400 text-sm mb-4">Dec 2021 – Dec 2023</p>
+                        <ul class="list-disc list-inside text-gray-300 space-y-2">
+                            <li data-aos="fade-up" data-aos-delay="800">Improved operational efficiency by 8% through workflow analysis using SQL and trend reporting.</li>
+                            <li data-aos="fade-up" data-aos-delay="900">Built and maintained 5+ Tableau and Excel dashboards, enabling executives to monitor KPIs across finance, operations, and customer experience.</li>
+                            <li data-aos="fade-up" data-aos-delay="1000">Applied anomaly detection to transactional data, strengthening compliance and fraud prevention.</li>
+                            <li data-aos="fade-up" data-aos-delay="1100">Partnered with Operations, Warehouse, and Housekeeping to translate business needs into BI requirements and deliver actionable solutions.</li>
+                            <li data-aos="fade-up" data-aos-delay="1200">Documented data hygiene standards that improved dataset quality and reporting reliability.</li>
+                        </ul>
+                    </div>
+                    <!-- Timeline Item 3 -->
+                    <div class="relative" data-aos="fade-up" data-aos-delay="1300">
+                        <div class="absolute -left-11 top-1.5 w-5 h-5 bg-primary rounded-full border-4 border-secondary"></div>
+                        <h3 class="text-xl font-bold text-neutral">Night Auditor | Financial & Operations Analysis</h3>
+                        <p class="text-primary font-semibold mb-1">Cambria Hotel & Suites – Philadelphia, PA</p>
+                        <p class="text-gray-400 text-sm mb-4">Feb 2018 – Sep 2021</p>
+                        <ul class="list-disc list-inside text-gray-300 space-y-2">
+                            <li data-aos="fade-up" data-aos-delay="1400">Analyzed high-volume transaction data to improve reconciliation accuracy and financial compliance.</li>
+                            <li data-aos="fade-up" data-aos-delay="1500">Reduced unresolved balances by 15% by investigating payment discrepancies with financial reporting.</li>
+                            <li data-aos="fade-up" data-aos-delay="1600">Built Excel reports (PivotTables, Power Query) to reconcile payments and track discrepancies, improving reporting efficiency.</li>
+                        </ul>
+                    </div>
                 </div>
             </div>
         </section>
 
-         <!-- About Me Section -->
-        <section id="about" class="py-20 md:py-32">
-            <div class="grid md:grid-cols-5 gap-10 items-center">
-                <div class="md:col-span-2">
-                    <img src="images\Image.png" alt="A professional headshot of Your Name" class="rounded-lg shadow-lg w-3/4 mx-auto">
-                </div>
-                <div class="md:col-span-3">
-                    <h2 class="text-3xl font-bold text-primary mb-4">About Me</h2>
-                    <p class="text-gray-400 mb-4 leading-relaxed">
-                        Data has always been central to how I approach problems. For over 8 years in operations and hospitality leadership, I used analytics to uncover opportunities, improve processes, and influence outcomes long before officially becoming a Data Analyst.
-                    </p>
-                    <p class="text-gray-400 mb-4 leading-relaxed">
-                        From analyzing guest surveys that drove a 25% improvement in service scores to spotting fraud patterns that cut chargebacks by 15%, I’ve seen how clean data, clear metrics, and compelling storytelling can transform business performance.
-                    </p>
-                    <p class="text-gray-400 mb-4 leading-relaxed">
-                        Today, I combine that operational insight with a focus on actionable analytics. I design interactive dashboards, build predictive models, and deliver insights that guide strategy. Recent projects include churn modeling, global supply chain optimization, and CRM funnel analysis.
-                    </p>
-                    <p class="text-gray-400 mb-4 leading-relaxed">
-                        I’m particularly drawn to roles where I can bridge the gap between business and data teams, helping stakeholders ask the right questions, making complex data usable, and turning messy datasets into actionable insights.
-                    </p>
-                    <p class="text-gray-400 leading-relaxed">
-                        If you’re hiring or looking to collaborate on BI, CRM, product, or operations analytics, let’s connect.
-                    </p>
-                </div>
-            </div>
-        </section>
-
-         <!-- Skills Section -->
-        <section id="skills" class="py-20 bg-secondary rounded-lg shadow-md px-8">
-            <div class="text-center mb-12">
-                <h2 class="text-3xl font-bold text-primary">Technical Skills</h2>
-                <p class="text-gray-400 mt-2">The tools and technologies I use to bring data to life.</p>
-            </div>
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 text-left">
-                <div>
-                    <h3 class="font-bold text-lg text-neutral mb-3">Programming & Databases</h3>
-                    <p class="text-gray-400"><strong>Python:</strong> Pandas, NumPy</p>
-                    <p class="text-gray-400"><strong>SQL:</strong> MySQL, PostgreSQL, SQL Server</p>
-                    <p class="text-gray-400"><strong>Database Concepts:</strong> ETL, DDL/DML/DCL/TCL, CTEs, Joins, Views, Stored Procedures, Triggers, Window Functions, Case Statements</p>
-                </div>
-                <div>
-                    <h3 class="font-bold text-lg text-neutral mb-3">Data Visualization & Analysis</h3>
-                    <p class="text-gray-400"><strong>Tableau, Power BI</strong></p>
-                    <p class="text-gray-400"><strong>Excel:</strong> PivotTables, Power Query, XLOOKUP, DAX, Nested Functions</p>
-                </div>
-                <div>
-                    <h3 class="font-bold text-lg text-neutral mb-3">Business & Tools</h3>
-                    <p class="text-gray-400">Business Intelligence & Analytics</p>
-                    <p class="text-gray-400">Process Improvement & KPI Tracking</p>
-                    <p class="text-gray-400">Stakeholder Communication & Reporting</p>
-                    <p class="text-gray-400">Salesforce & CRM Platforms</p>
+        <!-- Education Section -->
+        <section id="education" class="py-20 md:py-32" data-aos="fade-up">
+            <h2 class="text-3xl md:text-4xl font-bold text-center text-primary mb-16">Education & Certifications</h2>
+            <div class="max-w-3xl mx-auto">
+                <div class="relative border-l-2 border-secondary pl-10">
+                    <!-- Education Item 1 -->
+                    <div class="mb-12 relative" data-aos="fade-up" data-aos-delay="200">
+                        <div class="absolute -left-11 top-1.5 w-5 h-5 bg-primary rounded-full border-4 border-secondary"></div>
+                        <h3 class="text-xl font-bold text-neutral">B.S., Business Administration</h3>
+                        <p class="text-primary font-semibold mb-1">Cheyney University</p>
+                        <p class="text-gray-400 text-sm mb-4">2009</p>
+                    </div>
+                    <!-- Education Item 2 -->
+                    <div class="mb-12 relative" data-aos="fade-up" data-aos-delay="400">
+                        <div class="absolute -left-11 top-1.5 w-5 h-5 bg-primary rounded-full border-4 border-secondary"></div>
+                        <h3 class="text-xl font-bold text-neutral">Google Data Analytics Specialization</h3>
+                        <p class="text-primary font-semibold mb-1">Coursera</p>
+                        <p class="text-gray-400 text-sm mb-4">2023</p>
+                    </div>
+                    <!-- Education Item 3 -->
+                    <div class="relative" data-aos="fade-up" data-aos-delay="600">
+                        <div class="absolute -left-11 top-1.5 w-5 h-5 bg-primary rounded-full border-4 border-secondary"></div>
+                        <h3 class="text-xl font-bold text-neutral">Business Intelligence Analyst Track</h3>
+                        <p class="text-primary font-semibold mb-1">Maven Analytics</p>
+                        <p class="text-gray-400 text-sm mb-4">2023</p>
+                        <div class="grid grid-cols-3 gap-4 mt-8">
+                            <img src="images/maven_badges/5beb5891-9a96-4090-aaaa-8a54325bb692.png" alt="Maven Badge" class="w-24 h-24">
+                            <img src="images/maven_badges/6568eb1d-0d66-48c1-a121-861642e76ddd.png" alt="Maven Badge" class="w-24 h-24">
+                            <img src="images/maven_badges/7ac6c6f9-43c3-4227-ac85-b166ab804d41.png" alt="Maven Badge" class="w-24 h-24">
+                            <img src="images/maven_badges/8dfa0816-902b-43fb-a2d0-8480982e3d0f.png" alt="Maven Badge" class="w-24 h-24">
+                            <img src="images/maven_badges/ba94862b-8be3-4e72-8d77-ea27877cf1f4.png" alt="Maven Badge" class="w-24 h-24">
+                            <img src="images/maven_badges/e8ca0729-0a2a-44c7-b4f8-ccd30c3ad3a8.png" alt="Maven Badge" class="w-24 h-24">
+                            <img src="images/maven_badges/f651bef5-b75c-4e35-b6c1-93f83f50e3af.png" alt="Maven Badge" class="w-24 h-24">
+                        </div>
+                    </div>
                 </div>
             </div>
         </section>
 
         <!-- Projects Section -->
-        <section id="projects" class="py-20 fade-in-section" style="animation-delay: 600ms;">
-            <div class="text-center mb-12">
-                <h2 class="text-3xl font-bold text-primary">Featured Projects</h2>
+        <section id="projects" class="py-20 md:py-32" data-aos="fade-up">
+            <div class="text-center">
+                <h2 class="text-3xl md:text-4xl font-bold text-primary mb-8">Featured Projects</h2>
+                <a href="all_projects.html" class="inline-block mb-16 text-neutral hover:text-sky-400 font-semibold transition duration-300 ">
+                    View All Projects <span class="ml-1">→</span>
+                </a>
             </div>
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-8">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
 
                 <!-- Project Card 1 -->
-                <div class="bg-secondary/80 backdrop-blur-sm rounded-lg shadow-lg overflow-hidden flex flex-col interactive-element">
-                    <img src="images/supplychaindashboard.png" alt="Screenshot of Supply Chain Dashboard" class="w-full h-48 object-cover">
+                <div class="project-card bg-secondary/80 backdrop-blur-sm rounded-lg shadow-lg overflow-hidden flex flex-col interactive-element" data-aos="fade-up" data-aos-delay="200">
+                    <img src="images/project_images/supplychaindashboard.png" alt="Screenshot of Supply Chain Dashboard" class="w-full h-48 object-cover">
                     <div class="p-6 flex flex-col flex-grow">
                         <p class="text-sm text-gray-500 mb-1">Jun 2025 – Jul 2025</p>
                         <h3 class="font-bold text-xl text-neutral mb-2">Global Supply Chain Performance & Cost Optimization</h3>
                         <ul class="text-gray-400 mb-4 list-disc list-inside flex-grow">
-                            <li>Designed a Tableau dashboard for a global logistics team, providing interactive reports on delivery performance and cost efficiency.</li>
-                            <li>Cleaned and transformed data in Python, engineering metrics like On-Time Delivery Rate and Delivery Lead Time.</li>
-                            <li>Identified two product groups responsible for 99% of logistics costs.</li>
+                            <p>Built an interactive logistics dashboard in Tableau that identified two product groups responsible for 99% of costs. Performed data cleaning and metric engineering (e.g., Delivery Lead Time) in Python to power the analysis.</p>
                         </ul>
                         <div class="flex flex-wrap gap-2 mb-4">
                             <span class="bg-base text-primary text-xs font-semibold px-2.5 py-0.5 rounded-full">Tableau</span>
@@ -190,15 +275,13 @@
                     </div>
                 </div>
                 <!-- Project Card 2 -->
-                <div class="bg-secondary/80 backdrop-blur-sm rounded-lg shadow-lg overflow-hidden flex flex-col interactive-element">
-                    <img src="images/7_Recommendations-for-Retention.png" alt="Screenshot of Bank Customer Churn Analysis" class="w-full h-48 object-cover">
+                <div class="project-card bg-secondary/80 backdrop-blur-sm rounded-lg shadow-lg overflow-hidden flex flex-col interactive-element" data-aos="fade-up" data-aos-delay="400">
+                    <img src="images/project_images/7_Recommendations-for-Retention.png" alt="Screenshot of Bank Customer Churn Analysis" class="w-full h-48 object-cover">
                     <div class="p-6 flex flex-col flex-grow">
                         <p class="text-sm text-gray-500 mb-1">Apr 2025 – May 2025</p>
                         <h3 class="font-bold text-xl text-neutral mb-2">Bank Customer Churn Analysis</h3>
                         <ul class="text-gray-400 mb-4 list-disc list-inside flex-grow">
-                            <li>Engineered a machine learning pipeline using Python to predict customer churn; Gradient Boosting model achieved 74% recall.</li>
-                            <li>Created new variables revealing geographic churn drivers and optimized the model via hyperparameter tuning.</li>
-                            <li>Translated model insights into a strategy for a targeted retention campaign.</li>
+                            <p>Achieved 74% recall in predicting customer churn by engineering a machine learning pipeline in Python. A tuned Gradient Boosting model revealed geographic drivers, directly informing a new, targeted retention strategy.</p>
                         </ul>
                          <div class="flex flex-wrap gap-2 mb-4">
                             <span class="bg-base text-primary text-xs font-semibold px-2.5 py-0.5 rounded-full">Python</span>
@@ -216,15 +299,13 @@
                     </div>
                 </div>
                 <!-- Project Card 3 -->
-                <div class="bg-secondary/80 backdrop-blur-sm rounded-lg shadow-lg overflow-hidden flex flex-col interactive-element">
-                    <img src="images/crmdashboard.png" alt="Screenshot of CRM Dashboard" class="w-full h-48 object-cover">
+                <div class="project-card bg-secondary/80 backdrop-blur-sm rounded-lg shadow-lg overflow-hidden flex flex-col interactive-element" data-aos="fade-up" data-aos-delay="600">
+                    <img src="images/project_images/crmdashboard.png" alt="Screenshot of CRM Dashboard" class="w-full h-48 object-cover">
                     <div class="p-6 flex flex-col flex-grow">
                         <p class="text-sm text-gray-500 mb-1">Mar 2025 – Apr 2025</p>
                         <h3 class="font-bold text-xl text-neutral mb-2">CRM Dashboard: Sales Performance Analysis</h3>
                         <ul class="text-gray-400 mb-4 list-disc list-inside flex-grow">
-                            <li>Developed an interactive Tableau dashboard tracking pipeline metrics and conversion rates, revealing bottlenecks in late-stage deals.</li>
-                            <li>Benchmarked sales teams and identified high-performing agents and product sectors.</li>
-                            <li>Proposed funnel optimization strategies based on a 49% drop-off post-engagement.</li>
+                            <p>Revealed a critical 49% post-engagement drop-off by developing an interactive Tableau dashboard to analyze the sales funnel. Insights were used to benchmark teams and propose targeted optimization strategies.</p>
                         </ul>
                          <div class="flex flex-wrap gap-2 mb-4">
                             <span class="bg-base text-primary text-xs font-semibold px-2.5 py-0.5 rounded-full">Tableau</span>
@@ -236,15 +317,13 @@
                     </div>
                 </div>
                  <!-- Project Card 4 -->
-                <div class="bg-secondary/80 backdrop-blur-sm rounded-lg shadow-lg overflow-hidden flex flex-col interactive-element">
-                    <img src="images\passengersatisfactiondashboard.png" alt="Screenshot of Passenger Satisfaction Analysis" class="w-full h-48 object-cover">
+                <div class="project-card bg-secondary/80 backdrop-blur-sm rounded-lg shadow-lg overflow-hidden flex flex-col interactive-element" data-aos="fade-up" data-aos-delay="800">
+                    <img src="images/project_images/passengersatisfactiondashboard.png" alt="Screenshot of Passenger Satisfaction Analysis" class="w-full h-48 object-cover">
                     <div class="p-6 flex flex-col flex-grow">
                         <p class="text-sm text-gray-500 mb-1">Feb 2025</p>
                         <h3 class="font-bold text-xl text-neutral mb-2">Passenger Satisfaction Analysis</h3>
                         <ul class="text-gray-400 mb-4 list-disc list-inside flex-grow">
-                            <li>Led a Power BI dashboard project analyzing airline satisfaction surveys, identifying top pain points and strengths.</li>
-                            <li>Segmented passengers by demographics and behavior, revealing opportunities in service experience improvement.</li>
-                            <li>Visualized Likert scale data to prioritize interventions based on dissatisfaction trends.</li>
+                            <p>Directed a Power BI dashboard project that translated airline satisfaction survey data into actionable insights. Passenger segmentation and trend analysis identified top pain points, enabling data-driven prioritization of service enhancements.</p>
                         </ul>
                          <div class="flex flex-wrap gap-2 mb-4">
                             <span class="bg-base text-primary text-xs font-semibold px-2.5 py-0.5 rounded-full">Power BI</span>
@@ -256,52 +335,75 @@
                         <a href="passenger-satisfaction.html" class="font-semibold text-primary hover:underline mt-auto">View Project &rarr;</a>
                     </div>
                 </div>
+
             </div>
-            <div class="text-center mt-12">
-                <a href="all_projects.html" class="bg-primary text-white px-8 py-3 rounded-md text-lg font-semibold hover:bg-sky-600 interactive-element">View All Projects</a>
+        </section>
+
+        <!-- Other Projects Section -->
+        <section id="other-projects" class="py-20 md:py-32" data-aos="fade-up">
+            <h2 class="text-3xl md:text-4xl font-bold text-center text-neutral mb-16">Other Noteworthy <span class="text-primary">Projects</span></h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Example Mini Project Card -->
+                <div class="mini-project-card bg-secondary p-6 rounded-lg" data-aos="fade-up" data-aos-delay="200">
+                    <h3 class="font-bold text-xl text-neutral mb-2">E-commerce Sales Analysis</h3>
+                    <p class="text-gray-400 mb-4">An exploratory data analysis in Python to find top-selling products and customer segments.</p>
+                    <a href="https://github.com/michaelcampbell215" target="_blank" class="font-semibold text-primary hover:underline">View on GitHub &rarr;</a>
+                </div>
+                <!-- Example Mini Project Card -->
+                <div class="mini-project-card bg-secondary p-6 rounded-lg" data-aos="fade-up" data-aos-delay="400">
+                    <h3 class="font-bold text-xl text-neutral mb-2">SQL Database for a Library</h3>
+                    <p class="text-gray-400 mb-4">Designed and implemented a relational database schema for a library management system.</p>
+                    <a href="https://github.com/michaelcampbell215" target="_blank" class="font-semibold text-primary hover:underline">View on GitHub &rarr;</a>
+                </div>
+                <!-- Example Mini Project Card -->
+                <div class="mini-project-card bg-secondary p-6 rounded-lg" data-aos="fade-up" data-aos-delay="600">
+                    <h3 class="font-bold text-xl text-neutral mb-2">Website A/B Test Analysis</h3>
+                    <p class="text-gray-400 mb-4">A statistical analysis to determine the winner of a website landing page A/B test.</p>
+                    <a href="https://github.com/michaelcampbell215" target="_blank" class="font-semibold text-primary hover:underline">View on GitHub &rarr;</a>
+                </div>
             </div>
         </section>
 
         <!-- Contact Section -->
-        <section id="contact" class="py-20 text-center bg-secondary rounded-lg">
-            <div class="max-w-2xl mx-auto px-4">
-                <h2 class="text-3xl font-bold text-primary mb-4">Let's Connect</h2>
-                <p class="text-gray-400 mb-8">I'm currently available for freelance opportunities and full-time roles. If you have a project in mind or just want to chat about data, feel free to reach out!</p>
-                <div class="flex justify-center">
-
-                    <!-- LinkedIn -->
-                    <a href="https://linkedin.com/in/michaelcampbell215" target="_blank" class="bg-primary text-white px-6 py-3 rounded-md text-lg font-semibold hover:bg-sky-600 transition duration-300 inline-flex items-center gap-2 w-full sm:w-auto justify-center interactive-element">
-                        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24">
-                            <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/>
-                        </svg>
-                        Connect on LinkedIn
-                    </a>
-                </div>
+        <section id="contact" class="py-20 md:py-32 text-center" data-aos="fade-up">
+            <h2 class="text-3xl md:text-4xl font-bold text-neutral mb-4">Get In <span class="text-primary">Touch</span></h2>
+            <p class="text-lg text-gray-400 mb-8">Whether you have a question or just want to say hi, I’ll try my best to get back to you!</p>
+            <div class="flex justify-center space-x-6">
+                <a href="https://linkedin.com/in/michaelcampbell215" target="_blank" class="text-gray-400 hover:text-primary transition duration-300 interactive-element">
+                    <i class="fab fa-linkedin fa-3x"></i>
+                </a>
+                <a href="https://github.com/michaelcampbell215" target="_blank" class="text-gray-400 hover:text-primary transition duration-300 interactive-element">
+                    <i class="fab fa-github fa-3x"></i>
+                </a>
+                <a href="mailto:michaelcampbell215@gmail.com" class="text-gray-400 hover:text-primary transition duration-300 interactive-element">
+                    <i class="fas fa-envelope fa-3x"></i>
+                </a>
             </div>
         </section>
 
     </main>
 
     <!-- Footer -->
-    <footer class="bg-secondary text-gray-400 py-8 mt-16">
+    <footer class="text-gray-400 py-8 mt-16">
         <div class="container mx-auto px-6 text-center">
             <p>&copy; 2025 Michael Campbell. All Rights Reserved.</p>
-            <div class="flex justify-center space-x-4 mt-4">
-                <a href="https://github.com/michaelcampbell215" target="_blank" class="hover:text-accent">GitHub</a>
-                <a href="https://linkedin.com/in/michaelcampbell215" target="_blank" class="hover:text-accent">LinkedIn</a>
-            </div>
         </div>
     </footer>
 
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script>
         // Mobile menu toggle
         const mobileMenuButton = document.getElementById('mobile-menu-button');
         const mobileMenu = document.getElementById('mobile-menu');
-
         mobileMenuButton.addEventListener('click', () => {
             mobileMenu.classList.toggle('hidden');
         });
-    </script>
 
+        // Initialize AOS
+        AOS.init({
+            duration: 800,
+            once: true,
+        });
+    </script>
 </body>
 </html>

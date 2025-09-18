@@ -3,11 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>All Projects - Your Name</title>
+    <title>Michael Campbell - Data Analyst Portfolio</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <script>
         tailwind.config = {
             theme: {
@@ -21,7 +24,6 @@
                         'accent': '#ceffff', // A very light cyan
                         'neutral': '#F9FAFB', // A very light gray for text
                         'base': '#0F1C2E', // A very dark gray for background
-                        'base_secondary': '#1F3A5F'
                     }
                 }
             }
@@ -33,64 +35,97 @@
             to { opacity: 1; transform: translateY(0); }
         }
         .fade-in-section {
+            opacity: 0;
             animation: fadeIn 0.8s ease-out forwards;
         }
-        .interactive-element {
-            transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
-        }
-        .interactive-element:hover {
-            transform: translateY(-8px);
-            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
-        }
         body {
-            background-image: url('images/background.jpg');
-            background-size: cover;
-            background-position: center center;
-            background-attachment: fixed;
+            background-color: #0F1C2E;
+        }
+        .skill-card {
+            transition: all 0.3s ease;
+            border: 1px solid #1F2937;
+        }
+        .skill-card:hover {
+            transform: scale(1.05);
+            border-color: #38BDF8;
+            box-shadow: 0 0 25px rgba(56, 189, 248, 0.3);
+        }
+        .project-card {
+            transition: all 0.3s ease;
+            border: 1px solid #1F2937;
+        }
+        .project-card:hover {
+            transform: scale(1.05);
+            border-color: #38BDF8;
+            box-shadow: 0 0 25px rgba(56, 189, 248, 0.3);
+        }
+        .mini-project-card {
+            transition: all 0.3s ease;
+            border: 1px solid #1F2937;
+        }
+        .mini-project-card:hover {
+            border-color: #38BDF8;
+            background-color: #1a2c42;
         }
         .filter-btn {
             transition: all 0.3s ease;
         }
+        .filter-btn:hover,
         .filter-btn.active {
             background-color: #38BDF8;
             color: #1F2937;
-            font-weight: 600;
+        }
+        .interactive-element:hover {
+            transform: scale(1.05);
+            border-color: #38BDF8;
+            box-shadow: 0 0 25px rgba(56, 189, 248, 0.3);
         }
     </style>
 </head>
 <body class="bg-base text-neutral font-sans antialiased">
 
-    <!-- Header -->
+    <!-- Header & Navigation -->
     <header class="bg-secondary/80 backdrop-blur-md sticky top-0 z-50 shadow-lg">
         <nav class="container mx-auto px-6 py-4 flex justify-between items-center">
             <a href="index.html" class="text-2xl font-bold text-primary">Michael Campbell</a>
-            <a href="index.html#projects" class="bg-sky-600 text-white px-4 py-2 rounded-md hover:bg-primary font-semibold transition duration-300 interactive-element">&larr; Back to Home</a>
+            <div class="hidden md:flex space-x-8 items-center">                
+                <a href="#contact" class="text-neutral hover:text-primary transition duration-300">Contact</a>
+                <a href="index.html" class="text-neutral hover:text-primary transition duration-300">Home</a>
+            </div>
+             <button id="mobile-menu-button" class="md:hidden text-neutral focus:outline-none px-4 py-2 rounded-lg bg-gradient-to-r from-secondary/50 to-secondary backdrop-blur-sm border border-secondary/30 hover:border-primary/30 transition duration-300">
+                <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path></svg>
+            </button>
         </nav>
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden px-6 pb-4 space-y-3">
+            <a href="#contact" class="block py-2 px-4 text-neutral hover:text-primary transition duration-300 bg-gradient-to-r from-secondary/50 to-secondary rounded-lg backdrop-blur-sm border border-secondary/30 hover:border-primary/30">Contact</a>
+            <a href="index.html" class="block py-2 px-4 text-neutral hover:text-primary transition duration-300 bg-gradient-to-r from-secondary/50 to-secondary rounded-lg backdrop-blur-sm border border-secondary/30 hover:border-primary/30">Home</a>
+        </div>
     </header>
 
     <main class="container mx-auto px-6 py-12 md:py-20">
 
         <!-- Projects Section -->
-        <section id="projects" class="fade-in-section">
+        <section id="projects" data-aos="fade-up">
             <div class="text-center mb-12">
                 <h1 class="text-4xl md:text-5xl font-bold text-neutral">Data Analytics Projects</h1>
             </div>
 
             <!-- Filter Buttons -->
             <div class="flex justify-center flex-wrap gap-4 mb-12">
-                <button class="filter-btn active bg-secondary text-neutral px-4 py-2 rounded-md font-semibold" data-filter="all">All</button>
-                <button class="filter-btn bg-secondary text-neutral px-4 py-2 rounded-md font-semibold" data-filter="Tableau">Tableau</button>
-                <button class="filter-btn bg-secondary text-neutral px-4 py-2 rounded-md font-semibold" data-filter="Power BI">Power BI</button>
-                <button class="filter-btn bg-secondary text-neutral px-4 py-2 rounded-md font-semibold" data-filter="Python">Python</button>
-                <button class="filter-btn bg-secondary text-neutral px-4 py-2 rounded-md font-semibold" data-filter="SQL">SQL</button>
-                <button class="filter-btn bg-secondary text-neutral px-4 py-2 rounded-md font-semibold" data-filter="Excel">Excel</button>
+                <button class="filter-btn active bg-secondary text-neutral px-4 py-2 rounded-md font-semibold interactive-element" data-filter="all">All</button>
+                <button class="filter-btn bg-secondary text-neutral px-4 py-2 rounded-md font-semibold interactive-element" data-filter="Tableau">Tableau</button>
+                <button class="filter-btn bg-secondary text-neutral px-4 py-2 rounded-md font-semibold interactive-element" data-filter="Power BI">Power BI</button>
+                <button class="filter-btn bg-secondary text-neutral px-4 py-2 rounded-md font-semibold interactive-element" data-filter="Python">Python</button>
+                <button class="filter-btn bg-secondary text-neutral px-4 py-2 rounded-md font-semibold interactive-element" data-filter="SQL">SQL</button>
+                <button class="filter-btn bg-secondary text-neutral px-4 py-2 rounded-md font-semibold interactive-element" data-filter="Excel">Excel</button>
             </div>
 
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-8">
 
                 <!-- Project Card 1 -->
-                <div class="bg-secondary/80 backdrop-blur-sm rounded-lg shadow-lg overflow-hidden flex flex-col interactive-element project-card" data-skills="Tableau,Python,SQL">
-                    <img src="images/supplychaindashboard.png" alt="Screenshot of Supply Chain Dashboard" class="w-full h-48 object-cover">
+                <div class="project-card bg-secondary/80 backdrop-blur-sm rounded-lg shadow-lg overflow-hidden flex flex-col" data-skills="Tableau,Python,SQL">
+                    <img src="images/project_images/supplychaindashboard.png" alt="Screenshot of Supply Chain Dashboard" class="w-full h-48 object-cover">
                     <div class="p-6 flex flex-col flex-grow">
                         <p class="text-sm text-gray-500 mb-1">Jun 2025 – Jul 2025</p>
                         <h3 class="font-bold text-xl text-neutral mb-2">Global Supply Chain Performance & Cost Optimization</h3>
@@ -112,8 +147,8 @@
                     </div>
                 </div>
                 <!-- Project Card 2 -->
-                <div class="bg-secondary/80 backdrop-blur-sm rounded-lg shadow-lg overflow-hidden flex flex-col interactive-element project-card" data-skills="Python,Scikit-learn,Machine Learning">
-                    <img src="images/7_Recommendations-for-Retention.png" alt="Screenshot of Bank Customer Churn Analysis" class="w-full h-48 object-cover">
+                <div class="project-card bg-secondary/80 backdrop-blur-sm rounded-lg shadow-lg overflow-hidden flex flex-col" data-skills="Python,Scikit-learn,Machine Learning">
+                    <img src="images/project_images/7_Recommendations-for-Retention.png" alt="Screenshot of Bank Customer Churn Analysis" class="w-full h-48 object-cover">
                     <div class="p-6 flex flex-col flex-grow">
                         <p class="text-sm text-gray-500 mb-1">Apr 2025 – May 2025</p>
                         <h3 class="font-bold text-xl text-neutral mb-2">Bank Customer Churn Analysis</h3>
@@ -138,8 +173,8 @@
                     </div>
                 </div>
                 <!-- Project Card 3 -->
-                <div class="bg-secondary/80 backdrop-blur-sm rounded-lg shadow-lg overflow-hidden flex flex-col interactive-element project-card" data-skills="Tableau,Salesforce,SQL">
-                    <img src="images/crmdashboard.png" alt="Screenshot of CRM Dashboard" class="w-full h-48 object-cover">
+                <div class="project-card bg-secondary/80 backdrop-blur-sm rounded-lg shadow-lg overflow-hidden flex flex-col" data-skills="Tableau,Salesforce,SQL">
+                    <img src="images/project_images/crmdashboard.png" alt="Screenshot of CRM Dashboard" class="w-full h-48 object-cover">
                     <div class="p-6 flex flex-col flex-grow">
                         <p class="text-sm text-gray-500 mb-1">Mar 2025 – Apr 2025</p>
                         <h3 class="font-bold text-xl text-neutral mb-2">CRM Dashboard: Sales Performance Analysis</h3>
@@ -158,8 +193,8 @@
                     </div>
                 </div>
                  <!-- Project Card 4 -->
-                <div class="bg-secondary/80 backdrop-blur-sm rounded-lg shadow-lg overflow-hidden flex flex-col interactive-element project-card" data-skills="Power BI,Power Query,DAX">
-                    <img src="images\passengersatisfactiondashboard.png" alt="Screenshot of Passenger Satisfaction Analysis" class="w-full h-48 object-cover">
+                <div class="project-card bg-secondary/80 backdrop-blur-sm rounded-lg shadow-lg overflow-hidden flex flex-col" data-skills="Power BI,Power Query,DAX">
+                    <img src="images\project_images\passengersatisfactiondashboard.png" alt="Screenshot of Passenger Satisfaction Analysis" class="w-full h-48 object-cover">
                     <div class="p-6 flex flex-col flex-grow">
                         <p class="text-sm text-gray-500 mb-1">Feb 2025</p>
                         <h3 class="font-bold text-xl text-neutral mb-2">Passenger Satisfaction Analysis</h3>
@@ -181,16 +216,47 @@
             </div>
         </section>
 
+        <!-- Contact Section -->
+        <section id="contact" class="py-20 md:py-32 text-center" data-aos="fade-up">
+            <h2 class="text-3xl md:text-4xl font-bold text-neutral mb-4">Get In <span class="text-primary">Touch</span></h2>
+            <p class="text-lg text-gray-400 mb-8">Whether you have a question or just want to say hi, I’ll try my best to get back to you!</p>
+            <div class="flex justify-center space-x-6">
+                <a href="https://linkedin.com/in/michaelcampbell215" target="_blank" class="text-gray-400 hover:text-primary transition duration-300 interactive-element">
+                    <i class="fab fa-linkedin fa-3x"></i>
+                </a>
+                <a href="https://github.com/michaelcampbell215" target="_blank" class="text-gray-400 hover:text-primary transition duration-300 interactive-element">
+                    <i class="fab fa-github fa-3x"></i>
+                </a>
+                <a href="mailto:michaelcampbell215@gmail.com" class="text-gray-400 hover:text-primary transition duration-300 interactive-element">
+                    <i class="fas fa-envelope fa-3x"></i>
+                </a>
+            </div>
+        </section>
+
     </main>
 
     <!-- Footer -->
-    <footer class="bg-secondary/80 backdrop-blur-sm text-gray-400 py-8 mt-16">
+    <footer class="text-gray-400 py-8 mt-16">
         <div class="container mx-auto px-6 text-center">
             <p>&copy; 2025 Michael Campbell. All Rights Reserved.</p>
         </div>
     </footer>
-    
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script>
+        // Mobile menu toggle
+        const mobileMenuButton = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+        mobileMenuButton.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // Initialize AOS
+        AOS.init({
+            duration: 800,
+            once: true,
+        });
+
         document.addEventListener('DOMContentLoaded', () => {
             const filterButtons = document.querySelectorAll('.filter-btn');
             const projectCards = document.querySelectorAll('.project-card');
@@ -205,8 +271,8 @@
 
                     projectCards.forEach(card => {
                         const skills = card.dataset.skills;
-                        if (filter === 'all' || skills.includes(filter)) {
-                            card.style.display = 'flex'; 
+                        if (filter === 'all' || (skills && skills.includes(filter))) {
+                            card.style.display = 'flex';
                         } else {
                             card.style.display = 'none';
                         }
@@ -215,7 +281,5 @@
             });
         });
     </script>
-
 </body>
 </html>
-
