@@ -84,16 +84,21 @@
 
         <!-- Project Header -->
         <section class="text-center mb-16" data-aos="fade-up">
-            <h1 class="text-4xl md:text-5xl font-bold text-neutral mb-4">Restaurant Order Analysis with SQL</h1>
-            <p class="text-lg md:text-xl text-gray-400 max-w-3xl mx-auto">An exploratory data analysis of menu items and customer orders to identify sales trends and top-performing products.</p>
+            <h1 class="text-4xl md:text-5xl font-bold text-neutral mb-4">Restaurant Order Analysis</h1>
+            <p class="text-lg md:text-xl text-gray-400 max-w-3xl mx-auto">A deep-dive SQL analysis that transforms raw sales data into a strategic roadmap for menu engineering, marketing, and profitability.</p>
         </section>
         
         <!-- Project Overview -->
         <section id="overview" class="bg-secondary p-8 rounded-lg shadow-md mb-12" data-aos="fade-up">
             <div class="grid md:grid-cols-2 gap-8">
                 <div>
-                    <h3 class="font-bold text-primary text-lg mb-2">Objective</h3>
-                    <p class="text-gray-400">To analyze customer behavior and item popularity by exploring and combining menu item and order detail tables.</p>
+                    <h3 class="font-bold text-primary text-lg mb-2">Objectives</h3>
+                    <ul class="text-gray-400 list-disc list-inside space-y-1">
+                        <li>Analyze sales patterns to optimize staffing and operations.</li>
+                        <li>Evaluate menu performance to identify top and bottom performers.</li>
+                        <li>Uncover customer behavior by analyzing item pairings.</li>
+                        <li>Deliver a data-driven strategy for marketing and menu engineering.</li>
+                    </ul>
                 </div>
                 <div>
                     <h3 class="font-bold text-primary text-lg mb-2">Tools Used</h3>
@@ -104,8 +109,8 @@
                 </div>
                 <div>
                     <h3 class="font-bold text-primary text-lg mb-2">Data Source</h3>
-                    <p class="text-gray-400">      
-                        <a href="https://github.com/michaelcampbell215/Restaurant-Analysis/blob/05b9d7d678fee6278a397655d9c334d344e2ccd7/Restaurant%2BOrders%2BMySQL.zip" target="_blank" class="underline hover:text-accent">Restaurant Orders Dataset </a>    
+                    <p class="text-gray-400">    
+                        <a href="https://github.com/michaelcampbell215/Restaurant-Analysis/blob/05b9d7d678fee6278a397655d9c334d344e2ccd7/Restaurant%2BOrders%2BMySQL.zip" target="_blank" class="underline hover:text-accent">Restaurant Orders Dataset</a>    
                     </p>
                 </div>
                 <div>
@@ -113,157 +118,196 @@
                     <div class="flex flex-wrap gap-2">
                         <span class="bg-base text-primary text-sm font-semibold px-3 py-1 rounded-full">Hospitality</span>
                         <span class="bg-base text-primary text-sm font-semibold px-3 py-1 rounded-full">Food & Beverage</span>
+                        <span class="bg-base text-primary text-sm font-semibold px-3 py-1 rounded-full">Business Intelligence</span>
                         <span class="bg-base text-primary text-sm font-semibold px-3 py-1 rounded-full">Retail Analytics</span>
                     </div>
                 </div>
             </div>
         </section>
 
-         <!-- Queries & Insights -->
+         <!-- Queries & Insights -->
         <section id="sql-showcase" class="mb-12">
-            <h2 class="text-3xl font-bold text-primary text-center mb-8" data-aos="fade-up">Key Queries & Insights</h2>
+                    <h2 class="text-3xl font-bold text-primary text-center mb-8" data-aos="fade-up">Key Queries & Insights</h2>
 
-            <div class="bg-secondary p-6 rounded-lg shadow-lg mb-8" data-aos="fade-up" data-aos-delay="100">
-                <h3 class="text-xl font-bold text-neutral mb-3">❓ Question 1: How many dishes are in each category and what is the average price?</h3>
-                <p class="text-gray-400 mb-4">This query provides a high-level overview of the menu's composition, showing the diversity of offerings and the price points for each food category.</p>
-                <pre><code class="language-sql">
-SELECT
-    category,
-    COUNT(menu_item_id) AS number_of_dishes,
-    ROUND(AVG(price), 2) AS avg_dish_price
-FROM menu_items
-GROUP BY category;
-                </code></pre>
-                <div class="mt-4 bg-base p-4 rounded-md">
-                    <h4 class="font-semibold text-accent mb-2">💡 Result & Insight:</h4>
-                    <p class="text-gray-300">The analysis shows that Italian dishes are the most expensive on average ($16.75), while American dishes are the most affordable ($10.07). This information is crucial for menu pricing strategies.</p>
-                </div>
-            </div>
+                    <div class="bg-secondary p-6 rounded-lg shadow-lg mb-8" data-aos="fade-up" data-aos-delay="100">
+                        <h3 class="text-xl font-bold text-neutral mb-3">❓ Question 1: What are the busiest days and times for the restaurant?</h3>
+                        <p class="text-gray-400 mb-4">This query identifies peak customer traffic patterns by counting distinct orders, first by day of the week and then by hour within each day. The use of `DAYOFWEEK()` in the `ORDER BY` clause ensures the results are presented in a natural, chronological order rather than alphabetically.</p>
+                        <pre><code class="language-sql">
+        SELECT 
+        DAYNAME(order_date) AS day_of_week, 
+        HOUR(order_time) AS hour_of_day, 
+        COUNT(DISTINCT order_id) AS number_of_orders 
+        FROM 
+        fact_orders 
+        GROUP BY 
+        DAYOFWEEK(order_date), 
+        day_of_week, 
+        hour_of_day 
+        ORDER BY 
+        DAYOFWEEK(order_date), 
+        number_of_orders DESC;
+                        </code></pre>
+                        <div class="mt-4 bg-base p-4 rounded-md">
+                            <h4 class="font-semibold text-accent mb-2">💡 Result & Insight:</h4>
+                            <p class="text-gray-300">The analysis revealed that lunchtimes on Mondays, Fridays, and Sundays are the absolute peak periods. This insight allows management to optimize staffing schedules and pre-prep popular dishes to handle the rush, improving service speed and customer satisfaction.</p>
+                        </div>
+                    </div>
 
-            <div class="bg-secondary p-6 rounded-lg shadow-lg mb-8" data-aos="fade-up" data-aos-delay="200">
-                <h3 class="text-xl font-bold text-neutral mb-3">❓ Question 2: How many orders had more than 12 items?</h3>
-                <p class="text-gray-400 mb-4">By using a subquery with a `HAVING` clause, I can identify the number of exceptionally large orders, which might represent catering or large parties.</p>
-                <pre><code class="language-sql">
-SELECT COUNT(*) AS total_large_orders
-FROM (
-    SELECT
-        order_id,
-        COUNT(item_id) AS item_count
-    FROM order_details
-    GROUP BY order_id
-    HAVING COUNT(item_id) > 12
-) AS large_orders;
-                </code></pre>
-                <div class="mt-4 bg-base p-4 rounded-md">
-                    <h4 class="font-semibold text-accent mb-2">💡 Result & Insight:</h4>
-                    <p class="text-gray-300">There were 20 orders containing more than 12 items. While a small fraction of the 5,370 total orders, these high-volume orders are valuable and could be targeted for special promotions.</p>
-                </div>
-            </div>
+                    <div class="bg-secondary p-6 rounded-lg shadow-lg mb-8" data-aos="fade-up" data-aos-delay="200">
+                        <h3 class="text-xl font-bold text-neutral mb-3">❓ Question 2: How can we segment the menu for strategic analysis?</h3>
+                        <p class="text-gray-400 mb-4">This advanced query uses multiple CTEs and the `NTILE(2)` window function to segment the entire menu into a 2x2 matrix based on popularity and revenue. Each item is categorized as a "Star," "Workhorse," "Puzzle," or "Dud," providing a clear framework for strategic decision-making.</p>
+                        <pre><code class="language-sql">
+        WITH total_order_revenue AS (
+        SELECT 
+            m.item_name, 
+            COUNT(o.order_id) AS total_orders, 
+            SUM(m.price) AS total_revenue 
+        FROM 
+            dim_menu_items m 
+            INNER JOIN fact_orders o ON m.menu_item_id = o.item_id 
+        GROUP BY 
+            m.item_name
+        ), 
+        ItemRanks AS (
+        SELECT 
+            item_name, 
+            total_orders, 
+            total_revenue, 
+            NTILE(2) OVER (
+            ORDER BY 
+                total_orders DESC
+            ) AS order_ntile, 
+            NTILE(2) OVER (
+            ORDER BY 
+                total_revenue DESC
+            ) AS revenue_ntile 
+        FROM 
+            total_order_revenue
+        ) 
+        SELECT 
+        item_name, 
+        total_orders, 
+        total_revenue, 
+        CASE WHEN order_ntile = 1 
+        AND revenue_ntile = 1 THEN 'Star' WHEN order_ntile = 1 
+        AND revenue_ntile = 2 THEN 'Workhorse' WHEN order_ntile = 2 
+        AND revenue_ntile = 1 THEN 'Puzzle' WHEN order_ntile = 2 
+        AND revenue_ntile = 2 THEN 'Dud' END AS item_category 
+        FROM 
+        ItemRanks 
+        ORDER BY 
+        item_category, 
+        total_revenue DESC;
 
-            <div class="bg-secondary p-6 rounded-lg shadow-lg mb-8" data-aos="fade-up" data-aos-delay="300">
-                <h3 class="text-xl font-bold text-neutral mb-3">❓ Question 3: What were the least and most ordered items?</h3>
-                <p class="text-gray-400 mb-4">After joining the tables, I calculated the order count for each menu item to find the most popular (fan favorite) and least popular dishes.</p>
-                <pre><code class="language-sql">
--- Most ordered item
-SELECT
-    item_name,
-    category,
-    COUNT(order_details_id) AS num_orders
-FROM menu_orders
-GROUP BY item_name, category
-ORDER BY num_orders DESC
-LIMIT 1;
+                        </code></pre>
+                        <div class="mt-4 bg-base p-4 rounded-md">
+                            <h4 class="font-semibold text-accent mb-2">💡 Result & Insight:</h4>
+                            <p class="text-gray-300">The most popular item (Hamburger) is not the most profitable. The analysis identified the "Korean Beef Bowl" as a key "Star" and the entire Italian category as a high-revenue "Puzzle." This segmentation directly informs which items to promote, re-price, or potentially remove from the menu.</p>
+                        </div>
+                    </div>
 
--- Least ordered item
-SELECT
-    item_name,
-    category,
-    COUNT(order_details_id) AS num_orders
-FROM menu_orders
-GROUP BY item_name, category
-ORDER BY num_orders ASC
-LIMIT 1;
-                </code></pre>
-                <div class="mt-4 bg-base p-4 rounded-md">
-                    <h4 class="font-semibold text-accent mb-2">💡 Result & Insight:</h4>
-                    <p class="text-gray-300">The Hamburger (American) was the most popular item with 622 orders, while the Chicken Tacos (Mexican) were the least popular with only 123 orders. This suggests an opportunity to either promote the tacos or replace them.</p>
-                </div>
-            </div>
+                    <div class="bg-secondary p-6 rounded-lg shadow-lg mb-8" data-aos="fade-up" data-aos-delay="300">
+                        <h3 class="text-xl font-bold text-neutral mb-3">❓ Question 3: Do customers pair items from the same cuisine or mix-and-match?</h3>
+                        <p class="text-gray-400 mb-4">This query uses a self-join to find which items are most frequently ordered together. By joining to the menu table twice, it retrieves the category for each item in the pair, allowing us to identify "Same-Category" vs. "Cross-Category" (Fusion) purchasing behavior.</p>
+                        <pre><code class="language-sql">
+WITH order_items AS (
+  SELECT 
+    o.order_id, 
+    o.item_id, 
+    m.item_name, 
+    m.category 
+  FROM 
+    dim_menu_items m 
+    INNER JOIN fact_orders o ON m.menu_item_id = o.item_id
+), 
+item_pairs AS (
+  SELECT 
+    a.item_name AS item_1, 
+    a.category AS category_1, 
+    b.item_name AS item_2, 
+    b.category AS category_2 
+  FROM 
+    order_items a 
+    JOIN order_items b ON a.order_id = b.order_id 
+  WHERE 
+    a.item_id < b.item_id
+) 
+SELECT 
+  item_1, 
+  category_1, 
+  item_2, 
+  category_2, 
+  COUNT(*) as pair_frequency 
+FROM 
+  item_pairs 
+GROUP BY 
+  item_1, 
+  category_1, 
+  item_2, 
+  category_2 
+ORDER BY 
+  pair_frequency DESC 
+LIMIT 
+  5;
 
-            <div class="bg-secondary p-6 rounded-lg shadow-lg mb-8" data-aos="fade-up" data-aos-delay="400">
-                <h3 class="text-xl font-bold text-neutral mb-3">❓ Question 4: What are the details of the top 5 highest-spending orders?</h3>
-                <p class="text-gray-400 mb-4">This query identifies the top 5 orders by total revenue and then breaks down the composition of those orders by food category to understand what drives high-value purchases.</p>
-                <pre><code class="language-sql">
-SELECT
-    order_id,
-    category,
-    COUNT(item_name) AS total_items
-FROM menu_orders
-WHERE order_id IN (440, 2075, 1957, 330, 2675)
-GROUP BY order_id, category
-ORDER BY order_id, total_items DESC;
-                </code></pre>
-                <div class="mt-4 bg-base p-4 rounded-md">
-                    <h4 class="font-semibold text-accent mb-2">💡 Result & Insight:</h4>
-                    <p class="text-gray-300">The highest-spending orders are not dominated by a single category. For example, order #440 (the highest at $192.15) was primarily Italian food (8 items), but also included items from every other category. This shows that high-value customers tend to order a variety of items.</p>
-                </div>
-            </div>
-        </section>
+                        </code></pre>
+                        <div class="mt-4 bg-base p-4 rounded-md">
+                            <h4 class="font-semibold text-accent mb-2">💡 Result & Insight:</h4>
+                            <p class="text-gray-300">A top pairing was an American "Hamburger" with an Asian "Edamame." This surprising cross-category behavior reveals a huge marketing opportunity: creating and promoting unique "Fusion Combos" that cater to the adventurous tastes of the customer base.</p>
+                        </div>
+                    </div>
+                </section>
         
         <!-- Main Content - About This Project -->
         <section id="documentation" class="mb-12" data-aos="fade-up">
             <h2 class="text-3xl font-bold text-primary text-center mb-8">About This Project</h2>
-            <div class="text-center mt-12 mb-12">
+             <div class="text-center mt-12 mb-12">
                 <a href="https://github.com/michaelcampbell215/Restaurant-Analysis.git" target="_blank" class="bg-primary text-white px-6 py-3 rounded-md font-semibold hover:bg-sky-600 transition duration-300 inline-block interactive-element">View Code on GitHub</a>
             </div>
             <div class="relative border-l-2 border-secondary pl-10">
                 
                 <div class="mb-12 relative" data-aos="fade-up">
                     <div class="absolute -left-11 top-1.5 w-5 h-5 bg-primary rounded-full border-4 border-secondary"></div>
-                    <h3 class="text-xl font-bold text-neutral">1. Initial Data Exploration</h3>
-                    <p class="text-gray-300">The first step involved exploring the `menu_items` and `order_details` tables independently. I ran queries to find the total number of items, price ranges, and category distributions from the menu. I also determined the date range and order volume from the order details.</p>
+                    <h3 class="text-xl font-bold text-neutral">1. Building a Strong Foundation</h3>
+                    <p class="text-gray-300">Every good analysis starts with clean data. The first step was to take the raw sales information and organize it into a clean, reliable structure. This meant connecting the menu details (like price and category) to every single order, ensuring our analysis was built on a solid and accurate foundation.</p>
                 </div>
 
                 <div class="mb-12 relative" data-aos="fade-up">
                     <div class="absolute -left-11 top-1.5 w-5 h-5 bg-primary rounded-full border-4 border-secondary"></div>
-                    <h3 class="text-xl font-bold text-neutral">2. Table Combination for Deeper Analysis</h3>
-                    <p class="text-gray-300">To analyze customer behavior, I combined the two tables using an `INNER JOIN` on the item ID. This created a comprehensive `menu_orders` table that linked every ordered item to its menu details, including category and price.</p>
+                    <h3 class="text-xl font-bold text-neutral">2. Answering the Big Questions</h3>
+                    <p class="text-gray-300">Once the data was organized, I started asking the most important business questions: When are we busiest? What are our most popular dishes? Where is our revenue really coming from? Answering these gave us a clear picture of the restaurant's day to day performance and customer habits.</p>
                 </div>
                 
                 <div class="mb-12 relative" data-aos="fade-up">
                     <div class="absolute -left-11 top-1.5 w-5 h-5 bg-primary rounded-full border-4 border-secondary"></div>
-                    <h3 class="text-xl font-bold text-neutral">3. Customer Behavior Analysis</h3>
-                    <p class="text-gray-300">With the combined data, I focused on answering key business questions. I wrote queries to identify the most and least frequently ordered items and to calculate the total spend for each order, allowing me to pinpoint the highest-value transactions.</p>
+                    <h3 class="text-xl font-bold text-neutral">3. Uncovering Hidden Patterns</h3>
+                    <p class="text-gray-300">To find deeper insights, I looked for hidden patterns in the sales data. I analyzed which dishes customers love to order together, revealing natural pairings and combo opportunities. I also developed a system to automatically categorize every menu item from "Stars" to "Duds" based on its unique sales and revenue performance.</p>
                 </div>
 
                 <div class="mb-12 relative" data-aos="fade-up">
                     <div class="absolute -left-11 top-1.5 w-5 h-5 bg-primary rounded-full border-4 border-secondary"></div>
-                    <h3 class="text-xl font-bold text-neutral">4. Key Findings & Insights</h3>
+                    <h3 class="text-xl font-bold text-neutral">4. From Data to Decisions</h3>
                     <ul class="list-disc list-inside text-gray-300 space-y-2">
-                        <li>The menu has a balanced distribution of dishes across categories, but a significant price variance, with Italian dishes being the most premium.</li>
-                        <li>The "Hamburger" is a key driver of sales volume, while "Chicken Tacos" underperform significantly.</li>
-                        <li>High-value orders are not from a single category but are composed of a wide variety of items, indicating that top customers enjoy exploring the entire menu.</li>
+                        <li><strong>Insight 1:</strong> I discovered that the most popular items aren't always the most profitable. While the Hamburger sells the most, the Italian dishes generate the most revenue overall.</li>
+                        <li><strong>Insight 2:</strong> The restaurant's busiest times are highly concentrated around lunchtime on Mondays and weekends, providing a clear window for focused marketing and operational efforts.</li>
+                        <li><strong>Insight 3:</strong> A surprising trend emerged where customers love mixing cuisines, like pairing an American Hamburger with Asian Edamame.</li>
                     </ul>
                 </div>
 
                 <div class="mb-12 relative" data-aos="fade-up">
                     <div class="absolute -left-11 top-1.5 w-5 h-5 bg-primary rounded-full border-4 border-secondary"></div>
-                    <h3 class="text-xl font-bold text-neutral">5. Recommendations</h3>
+                    <h3 class="text-xl font-bold text-neutral">5. A Clear Path to Growth</h3>
                     <ul class="list-disc list-inside text-gray-300 space-y-2">
-                        <li><strong>Optimize the Menu:</strong>
+                        <li><strong>Menu Strategy:</strong>
                             <ul class="list-disc list-inside pl-6">
-                                <li>Prominently feature popular dishes like the Hamburger.</li>
-                                <li>Re-evaluate underperforming items like the Chicken Tacos by adjusting the recipe, price, or replacing them.</li>
+                                <li>Capitalize on high-revenue items by promoting the entire Italian category and "Star" dishes like the Korean Beef Bowl.</li>
+                                <li>Increase the profitability of popular items like the Hamburger by bundling them in combo deals.</li>
                             </ul>
                         </li>
-                        <li><strong>Pricing Strategy:</strong>
+                        <li><strong>Marketing Strategy:</strong>
                             <ul class="list-disc list-inside pl-6">
-                                <li>Adjust pricing or portion sizes based on category performance and cost.</li>
-                            </ul>
-                        </li>
-                        <li><strong>Marketing & Promotions:</strong>
-                            <ul class="list-disc list-inside pl-6">
-                                <li>Introduce seasonal specials or bundles, potentially featuring a mix of items from the popular Italian category.</li>
+                                <li>Launch a unique "Fusion Combo" campaign to capitalize on the cross cuisine trend, setting the cafe apart from competitors.</li>
+                                <li>Create targeted lunch specials to maximize revenue during the identified peak hours.</li>
                             </ul>
                         </li>
                     </ul>
