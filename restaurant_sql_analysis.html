@@ -132,7 +132,7 @@
                     <div class="bg-secondary p-6 rounded-lg shadow-lg mb-8" data-aos="fade-up" data-aos-delay="100">
                         <h3 class="text-xl font-bold text-neutral mb-3">❓ Question 1: What are the busiest days and times for the restaurant?</h3>
                         <p class="text-gray-400 mb-4">This query identifies peak customer traffic patterns by counting distinct orders, first by day of the week and then by hour within each day. The use of `DAYOFWEEK()` in the `ORDER BY` clause ensures the results are presented in a natural, chronological order rather than alphabetically.</p>
-                        <pre><code class="language-sql">
+                        <pre class="hidden md:block"><code class="language-sql">
         SELECT 
         DAYNAME(order_date) AS day_of_week, 
         HOUR(order_time) AS hour_of_day, 
@@ -156,7 +156,7 @@
                     <div class="bg-secondary p-6 rounded-lg shadow-lg mb-8" data-aos="fade-up" data-aos-delay="200">
                         <h3 class="text-xl font-bold text-neutral mb-3">❓ Question 2: How can we segment the menu for strategic analysis?</h3>
                         <p class="text-gray-400 mb-4">This advanced query uses multiple CTEs and the `NTILE(2)` window function to segment the entire menu into a 2x2 matrix based on popularity and revenue. Each item is categorized as a "Star," "Workhorse," "Puzzle," or "Dud," providing a clear framework for strategic decision-making.</p>
-                        <pre><code class="language-sql">
+                        <pre class="hidden md:block"><code class="language-sql">
         WITH total_order_revenue AS (
         SELECT 
             m.item_name, 
@@ -209,7 +209,7 @@
                     <div class="bg-secondary p-6 rounded-lg shadow-lg mb-8" data-aos="fade-up" data-aos-delay="300">
                         <h3 class="text-xl font-bold text-neutral mb-3">❓ Question 3: Do customers pair items from the same cuisine or mix-and-match?</h3>
                         <p class="text-gray-400 mb-4">This query uses a self-join to find which items are most frequently ordered together. By joining to the menu table twice, it retrieves the category for each item in the pair, allowing us to identify "Same-Category" vs. "Cross-Category" (Fusion) purchasing behavior.</p>
-                        <pre><code class="language-sql">
+                        <pre class="hidden md:block"><code class="language-sql">
 WITH order_items AS (
   SELECT 
     o.order_id, 
