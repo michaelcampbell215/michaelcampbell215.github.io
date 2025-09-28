@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Michael Campbell - Manufacturing Line Productivity Analysis</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" xintegrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    },
+                    colors: {
+                        'primary': '#38BDF8', // A bright sky blue/teal
+                        'secondary': '#1F2937', // A dark slate gray
+                        'accent': '#ceffff', // A very light cyan
+                        'neutral': '#F9FAFB', // A very light gray for text
+                        'base': '#0F1C2E', // A very dark gray for background                                 
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body {
+            background-color: #0F1C2E;
+        }
+        .interactive-element:hover {
+            transform: scale(1.05);
+            border-color: #38BDF8;
+            box-shadow: 0 0 25px rgba(56, 189, 248, 0.3);
+        }
+    </style>
+</head>
+<body class="bg-base text-neutral font-sans antialiased">
+
+    <!-- Header & Navigation -->
+    <header class="bg-secondary/80 backdrop-blur-md sticky top-0 z-50 shadow-lg">
+        <nav class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <a href="index.html" class="text-2xl font-bold text-primary">Michael Campbell</a>
+            <div class="hidden md:flex space-x-8 items-center">
+                <a href="index.html" class="text-neutral hover:text-primary transition duration-300">Home</a>
+                <a href="all_projects.html" class="text-neutral hover:text-primary transition duration-300">All Projects</a>
+                <a href="#live-dashboard" class="text-neutral hover:text-primary transition duration-300">Dashboard</a>
+                <a href="#visualizations" class="text-neutral hover:text-primary transition duration-300">Image Gallery</a>
+                <a href="#documentation" class="text-neutral hover:text-primary transition duration-300">Documentation</a>
+                <a href="#contact" class="text-neutral hover:text-primary transition duration-300">Contact</a>
+            </div>
+             <button id="mobile-menu-button" class="md:hidden text-neutral focus:outline-none px-4 py-2 rounded-lg bg-gradient-to-r from-secondary/50 to-secondary backdrop-blur-sm border border-secondary/30 hover:border-primary/30 transition duration-300">
+                <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path></svg>
+            </button>
+        </nav>
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden px-6 pb-4 space-y-3">
+            <a href="index.html" class="block py-2 px-4 text-neutral hover:text-primary transition duration-300 bg-gradient-to-r from-secondary/50 to-secondary rounded-lg backdrop-blur-sm border border-secondary/30 hover:border-primary/30">Home</a>
+            <a href="all_projects.html" class="block py-2 px-4 text-neutral hover:text-primary transition duration-300 bg-gradient-to-r from-secondary/50 to-secondary rounded-lg backdrop-blur-sm border border-secondary/30 hover:border-primary/30">All Projects</a>
+            <a href="#live-dashboard" class="block py-2 px-4 text-neutral hover:text-primary transition duration-300 bg-gradient-to-r from-secondary/50 to-secondary rounded-lg backdrop-blur-sm border border-secondary/30 hover:border-primary/30">Dashboard</a>
+            <a href="#visualizations" class="block py-2 px-4 text-neutral hover:text-primary transition duration-300 bg-gradient-to-r from-secondary/50 to-secondary rounded-lg backdrop-blur-sm border border-secondary/30 hover:border-primary/30">Image Gallery</a>
+            <a href="#documentation" class="block py-2 px-4 text-neutral hover:text-primary transition duration-300 bg-gradient-to-r from-secondary/50 to-secondary rounded-lg backdrop-blur-sm border border-secondary/30 hover:border-primary/30">Documentation</a>
+            <a href="#contact" class="block py-2 px-4 text-neutral hover:text-primary transition duration-300 bg-gradient-to-r from-secondary/50 to-secondary rounded-lg backdrop-blur-sm border border-secondary/30 hover:border-primary/30">Contact</a>
+        </div>
+    </header>
+
+    <main class="container mx-auto px-6 py-12 md:py-20">
+
+        <!-- Project Header -->
+        <section class="text-center mb-16" data-aos="fade-up">
+            <h1 class="text-4xl md:text-5xl font-bold text-neutral mb-4">Manufacturing Line Productivity Analysis</h1>
+            <p class="text-lg md:text-xl text-gray-400 max-w-3xl mx-auto">An Excel-based analysis to identify the root causes of production downtime and provide data-driven recommendations.</p>
+        </section>
+        
+        <!-- Project Overview -->
+        <section id="overview" class="bg-secondary p-8 rounded-lg shadow-md mb-12" data-aos="fade-up">
+            <div class="grid md:grid-cols-2 gap-8">
+                <div>
+                    <h3 class="font-bold text-primary text-lg mb-2">Objectives</h3>
+                    <ul class="text-gray-400 list-disc list-inside space-y-1">
+                        <li>Transform and merge multiple data sources into a single dataset.</li>
+                        <li>Identify the primary drivers of downtime (reasons, products, operators).</li>
+                        <li>Provide data-driven recommendations to improve line efficiency.</li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="font-bold text-primary text-lg mb-2">Tools Used</h3>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="bg-base text-primary text-sm font-semibold px-3 py-1 rounded-full">Excel</span>
+                        <span class="bg-base text-primary text-sm font-semibold px-3 py-1 rounded-full">Power Query</span>
+                    </div>
+                </div>
+                <div>
+                    <h3 class="font-bold text-primary text-lg mb-2">Data Source</h3>
+                    <a href="https://github.com/michaelcampbell215/manufacturing-line-productivity-analysis/blob/cf139f469a84adaf3cc30dbe0a1395a0cf4b86d3/Manufacturing%20Line%20Productivity.zip" target="_blank" class="underline hover:text-accent">Manufacturing Dataset</a>
+                    <p class="text-gray-400">Internal dataset from a beverage bottling line.</p>
+                </div>
+                <div>
+                    <h3 class="font-bold text-primary text-lg mb-2">Related Industries</h3>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="bg-base text-primary text-sm font-semibold px-3 py-1 rounded-full">Manufacturing</span>
+                        <span class="bg-base text-primary text-sm font-semibold px-3 py-1 rounded-full">Supply Chain</span>
+                        <span class="bg-base text-primary text-sm font-semibold px-3 py-1 rounded-full">Operations Management</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- The Live Dashboard -->
+        <section id="live-dashboard" class="mb-12">
+            <h2 class="text-3xl font-bold text-primary text-center mb-8" data-aos="fade-up">Interactive Dashboard</h2>
+            <div class="bg-secondary p-4 rounded-lg shadow-lg flex justify-center" data-aos="fade-up" data-aos-delay="200">
+                <iframe src="https://1drv.ms/x/c/8513fca8776bf8ff/EWFEu8OwyMZPuvGi3fApGyUBrtukm-uuS1mHpcvOiV0WTA" width="100%" height="800" frameborder="0" scrolling="no"></iframe>
+            </div>
+        </section>
+
+        <!-- Supporting Visualizations -->
+        <section id="visualizations" class="mb-12">
+             <h2 class="text-3xl font-bold text-primary text-center mb-8" data-aos="fade-up">Supporting Visualizations</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8" data-aos="fade-up" data-aos-delay="200">
+                <div class="bg-secondary p-4 rounded-lg shadow-lg">
+                    <img src="images\project_images\ma1.png" alt="Pareto Chart of downtime reasons" class="rounded-lg w-full h-full object-cover">
+                </div>
+                <div class="bg-secondary p-4 rounded-lg shadow-lg">
+                    <img src="images\project_images\ma2.png" alt="Line and column combo chart of downtime by hour" class="rounded-lg w-full h-full object-cover">
+                </div>
+            </div>
+        </section>
+        
+        <!-- Main Content - About This Project -->
+        <section id="documentation" class="mb-12" data-aos="fade-up">
+            <h2 class="text-3xl font-bold text-primary text-center mb-8">About This Project</h2>
+            <div class="text-center mt-12 mb-12">
+                 <a href="https://github.com/michaelcampbell215/manufacturing-line-productivity-analysis.git" target="_blank" class="bg-primary text-white no-underline px-6 py-3 rounded-md font-semibold hover:bg-sky-600 transition duration-300 inline-block interactive-element">View on GitHub</a>
+            </div>
+            <div class="relative border-l-2 border-secondary pl-10">
+                <div class="mb-12 relative" data-aos="fade-up" data-aos-delay="200">
+                    <div class="absolute -left-11 top-1.5 w-5 h-5 bg-primary rounded-full border-4 border-secondary"></div>
+                    <h3 class="text-xl font-bold text-neutral">ETL - Data Cleaning & Transformation (Power Query)</h3>
+                    <ul class="list-disc list-inside text-gray-300 space-y-2">
+                        <li><strong>Unpivoting Downtime Data:</strong> Transformed 12 separate columns for downtime factors into two, creating a "tall" table for easier aggregation.</li>
+                        <li><strong>Merging Data Sources:</strong> Merged downtime data with downtime factors and line productivity data to create a single, comprehensive fact table.</li>
+                        <li><strong>Handling Complex Calculations:</strong> Created custom columns to handle overnight shifts and calculate an efficiency metric.</li>
+                    </ul>
+                </div>
+                <div class="mb-12 relative" data-aos="fade-up" data-aos-delay="400">
+                    <div class="absolute -left-11 top-1.5 w-5 h-5 bg-primary rounded-full border-4 border-secondary"></div>
+                    <h3 class="text-xl font-bold text-neutral">Analysis & Visualization (PivotTables & Charts)</h3>
+                    <div class="grid md:grid-cols-2 gap-8">
+                        <div>
+                            <h4 class="font-semibold text-accent text-lg mb-2">Insights:</h4>
+                            <ul class="list-disc list-inside text-gray-300 space-y-2">
+                                <li>A Pareto Chart revealed that the top 3 downtime reasons (Machine Adjustment, Machine Failure, and Inventory Shortage) were responsible for the vast majority of lost time.</li>
+                                <li>The CO-600 product was identified as the single largest source of downtime.</li>
+                                <li>Downtime was not random, but clustered around peak production hours.</li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h4 class="font-semibold text-red-400 text-lg mb-2">Operator Performance:</h4>
+                            <ul class="list-disc list-inside text-gray-300 space-y-2">
+                                <li>Analysis separated downtime into "Operator Error" and "Systemic Issues" to provide a fair assessment of performance.</li>
+                                <li>Identified targeted training needs for specific tasks (e.g., Charlie with machine adjustments, Mac with batch changes).</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="relative" data-aos="fade-up" data-aos-delay="600">
+                    <div class="absolute -left-11 top-1.5 w-5 h-5 bg-primary rounded-full border-4 border-secondary"></div>
+                    <h3 class="text-xl font-bold text-neutral">Strategic Recommendations</h3>
+                    <ul class="list-disc list-inside text-gray-300 space-y-2">
+                        <li>Launch a preventative maintenance review, focusing on the equipment used for the CO-600 line.</li>
+                        <li>Investigate the supply chain to address the root cause of inventory shortages.</li>
+                        <li>Implement targeted operator training to address specific, predictable issues.</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact" class="py-20 md:py-32 text-center" data-aos="fade-up">
+            <h2 class="text-3xl md:text-4xl font-bold text-neutral mb-4">Get In <span class="text-primary">Touch</span></h2>
+            <p class="text-lg text-gray-400 mb-8">Whether you have a question or just want to say hi, I’ll try my best to get back to you!</p>
+            <div class="flex justify-center space-x-6">
+                <a href="https://linkedin.com/in/michaelcampbell215" target="_blank" class="text-gray-400 hover:text-primary transition duration-300 interactive-element">
+                    <i class="fab fa-linkedin fa-3x"></i>
+                </a>
+                <a href="https://github.com/michaelcampbell215" target="_blank" class="text-gray-400 hover:text-primary transition duration-300 interactive-element">
+                    <i class="fab fa-github fa-3x"></i>
+                </a>
+                <a href="mailto:mcam215@gmail.com" class="text-gray-400 hover:text-primary transition duration-300 interactive-element">
+                    <i class="fas fa-envelope fa-3x"></i>
+                </a>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="text-gray-400 py-8 mt-16">
+        <div class="container mx-auto px-6 text-center">
+            <p>&copy; 2025 Michael Campbell. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        // Mobile menu toggle
+        const mobileMenuButton = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+        mobileMenuButton.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // Initialize AOS
+        AOS.init({
+            duration: 800,
+            once: true,
+        });
+    </script>
+</body>
+</html>
+
