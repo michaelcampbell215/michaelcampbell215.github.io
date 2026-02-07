@@ -1,450 +1,1010 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en" class="scroll-smooth">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Michael Campbell - Data Analyst Portfolio</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
     <!-- Font Awesome for icons -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+      integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
     <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    fontFamily: {
-                        sans: ['Inter', 'sans-serif'],
-                    },
-                    colors: {
-                        'primary': '#38BDF8', // A bright sky blue/teal
-                        'secondary': '#1F2937', // A dark slate gray
-                        'accent': '#ceffff', // A very light cyan
-                        'neutral': '#F9FAFB', // A very light gray for text
-                        'base': '#0F1C2E', // A very dark gray for background
-                    }
-                }
-            }
-        }
+      tailwind.config = {
+        theme: {
+          extend: {
+            fontFamily: {
+              sans: ["Inter", "sans-serif"],
+            },
+            colors: {
+              primary: "#38BDF8", // A bright sky blue/teal
+              secondary: "#1F2937", // A dark slate gray
+              accent: "#ceffff", // A very light cyan
+              neutral: "#F9FAFB", // A very light gray for text
+              base: "#0F1C2E", // A very dark gray for background
+            },
+          },
+        },
+      };
     </script>
     <style>
-        
-        body {
-            background-color: #0F1C2E;
-        }
-        .skill-card,
-        .mini-project-card {
-            transition: all 0.3s ease;
-            border: 1px solid #1F2937;
-        }
-        .skill-card:hover,
-        .project-card:hover,
-        .interactive-element:hover {
-            transform: scale(1.05);
-            border-color: #38BDF8;
-            box-shadow: 0 0 25px rgba(56, 189, 248, 0.3);
-        }
-        .mini-project-card:hover {
-            border-color: #38BDF8;
-            background-color: #1a2c42;          
-        }
+      body {
+        background-color: #0f1c2e;
+      }
+      .skill-card,
+      .mini-project-card {
+        transition: all 0.3s ease;
+        border: 1px solid #1f2937;
+      }
+      .skill-card:hover,
+      .project-card:hover,
+      .interactive-element:hover {
+        transform: scale(1.05);
+        border-color: #38bdf8;
+        box-shadow: 0 0 25px rgba(56, 189, 248, 0.3);
+      }
+      .mini-project-card:hover {
+        border-color: #38bdf8;
+        background-color: #1a2c42;
+      }
     </style>
-</head>
-<body class="bg-base text-neutral font-sans antialiased">
-
+  </head>
+  <body class="bg-base text-neutral font-sans antialiased">
     <!-- Header & Navigation -->
-    <header class="bg-secondary/80 backdrop-blur-md sticky top-0 z-50 shadow-lg">
-        <nav class="container mx-auto px-6 py-4 flex justify-between items-center">
-            <a href="#home" class="text-2xl font-bold text-primary">Michael Campbell</a>
-            <div class="hidden md:flex space-x-8 items-center">
-                <a href="#about" class="text-neutral hover:text-primary transition duration-300 ">About</a>
-                <a href="#skills" class="text-neutral hover:text-primary transition duration-300 ">Skills</a>
-                <a href="#experience" class="text-neutral hover:text-primary transition duration-300 ">Experience</a>
-                <a href="#projects" class="text-neutral hover:text-primary transition duration-300 ">Projects</a>
-                <a href="#contact" class="text-neutral hover:text-primary transition duration-300 ">Contact</a>
-            </div>
-             <button id="mobile-menu-button" class="md:hidden text-neutral focus:outline-none px-4 py-2 rounded-lg bg-gradient-to-r from-secondary/50 to-secondary backdrop-blur-sm border border-secondary/30 hover:border-primary/30 transition duration-300">
-                <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path></svg>
-            </button>
-        </nav>
-        <!-- Mobile Menu -->
-        <div id="mobile-menu" class="hidden md:hidden px-6 pb-4 space-y-3">
-            <a href="#about" class="block py-2 px-4 text-neutral hover:text-primary transition duration-300 bg-gradient-to-r from-secondary/50 to-secondary rounded-lg backdrop-blur-sm border border-secondary/30 hover:border-primary/30 interactive-element">About</a>
-            <a href="#skills" class="block py-2 px-4 text-neutral hover:text-primary transition duration-300 bg-gradient-to-r from-secondary/50 to-secondary rounded-lg backdrop-blur-sm border border-secondary/30 hover:border-primary/30 interactive-element">Skills</a>
-            <a href="#experience" class="block py-2 px-4 text-neutral hover:text-primary transition duration-300 bg-gradient-to-r from-secondary/50 to-secondary rounded-lg backdrop-blur-sm border border-secondary/30 hover:border-primary/30 interactive-element">Experience</a>
-            <a href="#projects" class="block py-2 px-4 text-neutral hover:text-primary transition duration-300 bg-gradient-to-r from-secondary/50 to-secondary rounded-lg backdrop-blur-sm border border-secondary/30 hover:border-primary/30 interactive-element">Projects</a>
-            <a href="#contact" class="block py-2 px-4 text-neutral hover:text-primary transition duration-300 bg-gradient-to-r from-secondary/50 to-secondary rounded-lg backdrop-blur-sm border border-secondary/30 hover:border-primary/30 interactive-element">Contact</a>
+    <header
+      class="bg-secondary/80 backdrop-blur-md sticky top-0 z-50 shadow-lg"
+    >
+      <nav
+        class="container mx-auto px-6 py-4 flex justify-between items-center"
+      >
+        <a href="#home" class="text-2xl font-bold text-primary"
+          >Michael Campbell</a
+        >
+        <div class="hidden md:flex space-x-8 items-center">
+          <a
+            href="#about"
+            class="text-neutral hover:text-primary transition duration-300"
+            >About</a
+          >
+          <a
+            href="#skills"
+            class="text-neutral hover:text-primary transition duration-300"
+            >Skills</a
+          >
+          <a
+            href="#experience"
+            class="text-neutral hover:text-primary transition duration-300"
+            >Experience</a
+          >
+          <a
+            href="#projects"
+            class="text-neutral hover:text-primary transition duration-300"
+            >Projects</a
+          >
+          <a
+            href="#contact"
+            class="text-neutral hover:text-primary transition duration-300"
+            >Contact</a
+          >
         </div>
+        <button
+          id="mobile-menu-button"
+          class="md:hidden text-neutral focus:outline-none px-4 py-2 rounded-lg bg-gradient-to-r from-secondary/50 to-secondary backdrop-blur-sm border border-secondary/30 hover:border-primary/30 transition duration-300"
+        >
+          <svg
+            class="w-7 h-7"
+            fill="none"
+            stroke="currentColor"
+            viewBox="0 0 24 24"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M4 6h16M4 12h16m-7 6h7"
+            ></path>
+          </svg>
+        </button>
+      </nav>
+      <!-- Mobile Menu -->
+      <div id="mobile-menu" class="hidden md:hidden px-6 pb-4 space-y-3">
+        <a
+          href="#about"
+          class="block py-2 px-4 text-neutral hover:text-primary transition duration-300 bg-gradient-to-r from-secondary/50 to-secondary rounded-lg backdrop-blur-sm border border-secondary/30 hover:border-primary/30 interactive-element"
+          >About</a
+        >
+        <a
+          href="#skills"
+          class="block py-2 px-4 text-neutral hover:text-primary transition duration-300 bg-gradient-to-r from-secondary/50 to-secondary rounded-lg backdrop-blur-sm border border-secondary/30 hover:border-primary/30 interactive-element"
+          >Skills</a
+        >
+        <a
+          href="#experience"
+          class="block py-2 px-4 text-neutral hover:text-primary transition duration-300 bg-gradient-to-r from-secondary/50 to-secondary rounded-lg backdrop-blur-sm border border-secondary/30 hover:border-primary/30 interactive-element"
+          >Experience</a
+        >
+        <a
+          href="#projects"
+          class="block py-2 px-4 text-neutral hover:text-primary transition duration-300 bg-gradient-to-r from-secondary/50 to-secondary rounded-lg backdrop-blur-sm border border-secondary/30 hover:border-primary/30 interactive-element"
+          >Projects</a
+        >
+        <a
+          href="#contact"
+          class="block py-2 px-4 text-neutral hover:text-primary transition duration-300 bg-gradient-to-r from-secondary/50 to-secondary rounded-lg backdrop-blur-sm border border-secondary/30 hover:border-primary/30 interactive-element"
+          >Contact</a
+        >
+      </div>
     </header>
 
     <main class="container mx-auto px-6">
+      <!-- About Me Section -->
+      <section id="about" class="py-20 md:py-32" data-aos="fade-up">
+        <div class="grid md:grid-cols-5 gap-18 items-center">
+          <div class="md:col-span-2" data-aos="fade-right" data-aos-delay="200">
+            <img
+              src="images\headshot2.png"
+              alt="A professional headshot of Michael Campbell"
+              class="rounded-3xl w-3/4 h-auto object-cover shadow-2xl border-4 border-secondary"
+            />
+          </div>
+          <div class="md:col-span-3" data-aos="fade-left" data-aos-delay="400">
+            <h2 class="text-3xl md:text-4xl font-bold text-primary mb-6">
+              About Me
+            </h2>
+            <h1 class="text-2xl md:text-3xl font-bold mb-2">
+              Operations Data Analyst
+            </h1>
+            <p class="text-gray-300 text-base md:text-lg leading-relaxed mb-4">
+              I help logistics, supply chain, and operations teams identify
+              inefficiencies that create cost, risk, or downtime using SQL,
+              Python, and Tableau.
+            </p>
 
+            <p class="text-gray-300 text-base md:text-lg leading-relaxed mb-4">
+              With 10+ years of experience in high-volume environments—from the
+              tarmac at American Airlines to inventory logistics at Sonder—I
+              understand that operational data isn't just numbers; it represents
+              real-world assets, schedules, and costs.
+            </p>
 
-        <!-- About Me Section -->
-        <section id="about" class="py-20 md:py-32" data-aos="fade-up">
-            <div class="grid md:grid-cols-5 gap-18 items-center">
-                <div class="md:col-span-2" data-aos="fade-right" data-aos-delay="200">
-                    <img src="images\headshot2.png" alt="A professional headshot of Michael Campbell" class="rounded-3xl w-3/4 h-auto object-cover shadow-2xl border-4 border-secondary">
-                </div>
-                <div class="md:col-span-3" data-aos="fade-left" data-aos-delay="400">
-                    <h2 class="text-3xl md:text-4xl font-bold text-primary mb-6">About Me </h2>
-                        <h1 class="text-2xl md:text-3xl font-bold  mb-2">Operations & Revenue Analytics Analyst</h1>
-                        <p class="text-gray-300 text-base md:text-lg leading-relaxed mb-4">I help operations, finance, and revenue teams identify cost leaks, pricing gaps, and process bottlenecks using SQL, Python, and Tableau.</p>
-                        
-                        <p class="text-gray-300 text-base md:text-lg leading-relaxed mb-4">With 10+ years across airline operations, hospitality, and SaaS, I’ve worked inside high-pressure environments where small inefficiencies create outsized financial and operational risk.</p>
-                        
-                        <p class="text-gray-300 text-base md:text-lg leading-relaxed mb-4">My background includes time-critical airline operations, revenue integrity and inventory forecasting in hospitality, and analytics projects spanning supply chain optimization, sales performance, pricing, and customer retention.</p>
+            <p class="text-gray-300 text-base md:text-lg leading-relaxed mb-4">
+              My background is built on operational discipline. I spent a decade
+              managing time-critical ground operations where a 5-minute delay
+              could cost thousands of dollars. Today, I combine that field
+              experience with advanced data engineering skills to build
+              automated reporting pipelines that replace manual guesswork with
+              clear, actionable intelligence.
+            </p>
 
-<p class="text-gray-300 text-base md:text-lg leading-relaxed mb-4">Today, I build analytics that turn complex operational data into clear, actionable signals teams can use to reduce risk and improve performance.</p>
-                  
-                </div>
+            <h3 class="text-xl font-bold text-neutral mb-2">What I Do:</h3>
+            <ul
+              class="text-gray-300 text-base md:text-lg leading-relaxed mb-4 space-y-2"
+            >
+              <li>
+                <strong>Data Engineering:</strong> Ingesting and cleaning
+                massive datasets (15M+ rows) to create reliable sources of
+                truth.
+              </li>
+              <li>
+                <strong>Supply Chain Analytics:</strong> Tracking vendor
+                performance, freight costs, and inventory levels to reduce
+                waste.
+              </li>
+              <li>
+                <strong>Process Automation:</strong> Turning manual spreadsheet
+                workflows into automated SQL/Python scripts.
+              </li>
+            </ul>
+
+            <p class="text-gray-300 text-base md:text-lg leading-relaxed mb-4">
+              I am currently based in Houston, TX and looking for a mid-level
+              analyst role where I can help an operations team work smarter, not
+              harder.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Skills Section -->
+      <section id="skills" class="py-20 md:py-32" data-aos="fade-up">
+        <h2
+          class="text-3xl md:text-4xl font-bold text-center text-primary mb-16"
+        >
+          Skills Section
+        </h2>
+
+        <div class="max-w-6xl mx-auto">
+          <!-- Programming & Data Analysis -->
+          <div>
+            <h3 class="text-2xl font-bold text-neutral mb-8 text-center">
+              Programming & Data Analysis
+            </h3>
+            <div
+              class="grid grid-cols-3 sm:grid-cols-3 md:grid-cols-3 lg:grid-cols-3 gap-8"
+            >
+              <div
+                class="skill-card bg-secondary p-6 rounded-lg flex flex-col items-center justify-center"
+                data-aos="fade-up"
+                data-aos-delay="100"
+              >
+                <i class="fab fa-python fa-3x text-primary mb-4"></i>
+                <h3 class="text-lg font-semibold">Python</h3>
+              </div>
+              <div
+                class="skill-card bg-secondary p-6 rounded-lg flex flex-col items-center justify-center"
+                data-aos="fade-up"
+                data-aos-delay="200"
+              >
+                <i class="fas fa-database fa-3x text-primary mb-4"></i>
+                <h3 class="text-lg font-semibold">SQL</h3>
+              </div>
+              <div
+                class="skill-card bg-secondary p-6 rounded-lg flex flex-col items-center justify-center"
+                data-aos="fade-up"
+                data-aos-delay="300"
+              >
+                <i class="fas fa-brain fa-3x text-primary mb-4"></i>
+                <h3 class="text-lg font-semibold">Machine Learning</h3>
+              </div>
             </div>
-        </section>
+          </div>
 
-        <!-- Skills Section -->
-        <section id="skills" class="py-20 md:py-32" data-aos="fade-up">
-            <h2 class="text-3xl md:text-4xl font-bold text-center text-primary mb-16">Skills Section</h2>
-
-            <div class="max-w-6xl mx-auto">
-                <!-- Programming & Data Analysis -->
-                <div>
-                    <h3 class="text-2xl font-bold text-neutral mb-8 text-center">Programming & Data Analysis</h3>
-                    <div class="grid grid-cols-3 sm:grid-cols-3 md:grid-cols-3 lg:grid-cols-3 gap-8">
-                        <div class="skill-card bg-secondary p-6 rounded-lg flex flex-col items-center justify-center" data-aos="fade-up" data-aos-delay="100">
-                            <i class="fab fa-python fa-3x text-primary mb-4"></i>
-                            <h3 class="text-lg font-semibold">Python</h3>
-                        </div>
-                        <div class="skill-card bg-secondary p-6 rounded-lg flex flex-col items-center justify-center" data-aos="fade-up" data-aos-delay="200">
-                            <i class="fas fa-database fa-3x text-primary mb-4"></i>
-                            <h3 class="text-lg font-semibold">SQL</h3>
-                        </div>
-                        <div class="skill-card bg-secondary p-6 rounded-lg flex flex-col items-center justify-center" data-aos="fade-up" data-aos-delay="300">
-                            <i class="fas fa-brain fa-3x text-primary mb-4"></i>
-                            <h3 class="text-lg font-semibold">Machine Learning</h3>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Data Visualization -->
-                <div class="mt-16">
-                    <h3 class="text-2xl font-bold text-neutral mb-8 text-center">Data Visualization</h3>
-                    <div class="grid grid-cols-3 sm:grid-cols-3 md:grid-cols-3 lg:grid-cols-3 gap-8">
-                        <div class="skill-card bg-secondary p-6 rounded-lg flex flex-col items-center justify-center" data-aos="fade-up" data-aos-delay="400">
-                            <img src="images/skills_icons/tableau.png" alt="Tableau icon" class="w-13 h-14 object-contain mx-auto mb-4">
-                            <h3 class="text-lg font-semibold">Tableau</h3>
-                        </div>
-                        <div class="skill-card bg-secondary p-6 rounded-lg flex flex-col items-center justify-center" data-aos="fade-up" data-aos-delay="500">
-                            <img src="images/skills_icons/powebi.png" alt="Power BI icon" class="w-12 h-12 object-contain mx-auto mb-4">
-                            <h3 class="text-lg font-semibold">Power BI</h3>
-                        </div>
-                        <div class="skill-card bg-secondary p-6 rounded-lg flex flex-col items-center justify-center" data-aos="fade-up" data-aos-delay="600">
-                            <i class="fas fa-file-excel fa-3x text-primary mb-4"></i>
-                            <h3 class="text-lg font-semibold">Excel</h3>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Collaboration & Project Management -->
-                <div class="mt-16">
-                    <h3 class="text-2xl font-bold text-neutral mb-8 text-center">Collaboration & Project Management</h3>
-                    <div class="grid grid-cols-3 sm:grid-cols-3 md:grid-cols-3 lg:grid-cols-3 gap-8">
-                        <div class="skill-card bg-secondary p-6 rounded-lg flex flex-col items-center justify-center" data-aos="fade-up" data-aos-delay="700">
-                            <i class="fab fa-slack fa-3x text-primary mb-4"></i>
-                            <h3 class="text-lg font-semibold">Slack</h3>
-                        </div>
-                        <div class="skill-card bg-secondary p-6 rounded-lg flex flex-col items-center justify-center" data-aos="fade-up" data-aos-delay="800">
-                            <img src="images/skills_icons/asana.png" alt="Asana icon" class="w-12 h-12 object-contain mx-auto mb-4">
-                            <h3 class="text-lg font-semibold">Asana</h3>
-                        </div>
-                        <div class="skill-card bg-secondary p-6 rounded-lg flex flex-col items-center justify-center" data-aos="fade-up" data-aos-delay="900">
-                            <i class="fab fa-jira fa-3x text-primary mb-4"></i>
-                            <h3 class="text-lg font-semibold">Jira</h3>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Operations & Logistics -->
-                <div class="mt-16">
-                    <h3 class="text-2xl font-bold text-neutral mb-8 text-center">Operations & Logistics</h3>
-                    <div class="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-8">
-                        <div class="skill-card bg-secondary p-6 rounded-lg flex flex-col items-center justify-center" data-aos="fade-up" data-aos-delay="100">
-                            <i class="fas fa-cogs fa-3x text-primary mb-4"></i>
-                            <h3 class="text-lg font-semibold text-center">Supply Chain Optimization</h3>
-                        </div>
-                        <div class="skill-card bg-secondary p-6 rounded-lg flex flex-col items-center justify-center" data-aos="fade-up" data-aos-delay="200">
-                            <i class="fas fa-chart-line fa-3x text-primary mb-4"></i>
-                            <h3 class="text-lg font-semibold text-center">Inventory Forecasting</h3>
-                        </div>
-                        <div class="skill-card bg-secondary p-6 rounded-lg flex flex-col items-center justify-center" data-aos="fade-up" data-aos-delay="300">
-                            <i class="fas fa-search fa-3x text-primary mb-4"></i>
-                            <h3 class="text-lg font-semibold text-center">Root Cause Analysis</h3>
-                        </div>
-                        <div class="skill-card bg-secondary p-6 rounded-lg flex flex-col items-center justify-center" data-aos="fade-up" data-aos-delay="400">
-                            <i class="fas fa-shield-alt fa-3x text-primary mb-4"></i>
-                            <h3 class="text-lg font-semibold text-center">Crisis Management</h3>
-                        </div>
-                        <div class="skill-card bg-secondary p-6 rounded-lg flex flex-col items-center justify-center" data-aos="fade-up" data-aos-delay="500">
-                            <i class="fab fa-salesforce fa-3x text-primary mb-4"></i>
-                            <h3 class="text-lg font-semibold text-center">Salesforce & SAP (Familiar)</h3>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Business & Revenue -->
-                <div class="mt-16">
-                    <h3 class="text-2xl font-bold text-neutral mb-8 text-center">Business & Revenue</h3>
-                    <div class="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-8">
-                        <div class="skill-card bg-secondary p-6 rounded-lg flex flex-col items-center justify-center" data-aos="fade-up" data-aos-delay="100">
-                            <i class="fas fa-dollar-sign fa-3x text-primary mb-4"></i>
-                            <h3 class="text-lg font-semibold text-center">Revenue Operations (RevOps)</h3>
-                        </div>
-                        <div class="skill-card bg-secondary p-6 rounded-lg flex flex-col items-center justify-center" data-aos="fade-up" data-aos-delay="200">
-                            <i class="fas fa-balance-scale fa-3x text-primary mb-4"></i>
-                            <h3 class="text-lg font-semibold text-center">Financial Reconciliation</h3>
-                        </div>
-                        <div class="skill-card bg-secondary p-6 rounded-lg flex flex-col items-center justify-center" data-aos="fade-up" data-aos-delay="300">
-                            <i class="fas fa-user-slash fa-3x text-primary mb-4"></i>
-                            <h3 class="text-lg font-semibold text-center">Churn Prediction</h3>
-                        </div>
-                        <div class="skill-card bg-secondary p-6 rounded-lg flex flex-col items-center justify-center" data-aos="fade-up" data-aos-delay="400">
-                            <i class="fas fa-project-diagram fa-3x text-primary mb-4"></i>
-                            <h3 class="text-lg font-semibold text-center">Variance Analysis</h3>
-                        </div>
-                        <div class="skill-card bg-secondary p-6 rounded-lg flex flex-col items-center justify-center" data-aos="fade-up" data-aos-delay="500">
-                            <i class="fas fa-gavel fa-3x text-primary mb-4"></i>
-                            <h3 class="text-lg font-semibold text-center">Regulatory Compliance</h3>
-                        </div>
-                    </div>
-                </div>
+          <!-- Data Visualization -->
+          <div class="mt-16">
+            <h3 class="text-2xl font-bold text-neutral mb-8 text-center">
+              Data Visualization
+            </h3>
+            <div
+              class="grid grid-cols-3 sm:grid-cols-3 md:grid-cols-3 lg:grid-cols-3 gap-8"
+            >
+              <div
+                class="skill-card bg-secondary p-6 rounded-lg flex flex-col items-center justify-center"
+                data-aos="fade-up"
+                data-aos-delay="400"
+              >
+                <img
+                  src="images/skills_icons/tableau.png"
+                  alt="Tableau icon"
+                  class="w-13 h-14 object-contain mx-auto mb-4"
+                />
+                <h3 class="text-lg font-semibold">Tableau</h3>
+              </div>
+              <div
+                class="skill-card bg-secondary p-6 rounded-lg flex flex-col items-center justify-center"
+                data-aos="fade-up"
+                data-aos-delay="500"
+              >
+                <img
+                  src="images/skills_icons/powebi.png"
+                  alt="Power BI icon"
+                  class="w-12 h-12 object-contain mx-auto mb-4"
+                />
+                <h3 class="text-lg font-semibold">Power BI</h3>
+              </div>
+              <div
+                class="skill-card bg-secondary p-6 rounded-lg flex flex-col items-center justify-center"
+                data-aos="fade-up"
+                data-aos-delay="600"
+              >
+                <i class="fas fa-file-excel fa-3x text-primary mb-4"></i>
+                <h3 class="text-lg font-semibold">Excel</h3>
+              </div>
             </div>
-        </section>
+          </div>
 
-        <!-- Work Experience Section -->
-        <section id="experience" class="py-20 md:py-32" data-aos="fade-up">
-            <h2 class="text-3xl md:text-4xl font-bold text-center text-primary mb-8">Work Experience</h2>
-            <div class="text-center mb-16 flex justify-center gap-4">
-                <a href="assets\MICHAEL CAMPBELL Operations & Revenue Analytics Analyst 122825.pdf" target="_blank" class="bg-primary text-white px-6 py-3 rounded-md text-lg font-semibold hover:bg-sky-600 transition duration-300 inline-block interactive-element">
-                    <i class="fas fa-download mr-2"></i>Download Resume
-                </a>
+          <!-- Collaboration & Project Management -->
+          <div class="mt-16">
+            <h3 class="text-2xl font-bold text-neutral mb-8 text-center">
+              Collaboration & Project Management
+            </h3>
+            <div
+              class="grid grid-cols-3 sm:grid-cols-3 md:grid-cols-3 lg:grid-cols-3 gap-8"
+            >
+              <div
+                class="skill-card bg-secondary p-6 rounded-lg flex flex-col items-center justify-center"
+                data-aos="fade-up"
+                data-aos-delay="700"
+              >
+                <i class="fab fa-slack fa-3x text-primary mb-4"></i>
+                <h3 class="text-lg font-semibold">Slack</h3>
+              </div>
+              <div
+                class="skill-card bg-secondary p-6 rounded-lg flex flex-col items-center justify-center"
+                data-aos="fade-up"
+                data-aos-delay="800"
+              >
+                <img
+                  src="images/skills_icons/asana.png"
+                  alt="Asana icon"
+                  class="w-12 h-12 object-contain mx-auto mb-4"
+                />
+                <h3 class="text-lg font-semibold">Asana</h3>
+              </div>
+              <div
+                class="skill-card bg-secondary p-6 rounded-lg flex flex-col items-center justify-center"
+                data-aos="fade-up"
+                data-aos-delay="900"
+              >
+                <i class="fab fa-jira fa-3x text-primary mb-4"></i>
+                <h3 class="text-lg font-semibold">Jira</h3>
+              </div>
             </div>
-            <div class="max-w-3xl mx-auto">
-                <div class="relative border-l-2 border-secondary pl-10">
-                    <!-- Timeline Item 1 -->
-                    <div class="mb-12 relative" data-aos="fade-up" data-aos-delay="200">
-                        <div class="absolute -left-11 top-1.5 w-5 h-5 bg-primary rounded-full border-4 border-secondary"></div>
-                        <h3 class="text-xl font-bold text-neutral">Head of Operations & Analytics</h3>
-                        <p class="text-primary font-semibold mb-1">Marquez MMA — Philadelphia, PA</p>
-                        <p class="text-gray-400 text-sm mb-4">Aug 2014 – Present</p>
-                        <ul class="list-disc list-outside text-gray-300 space-y-2 pl-5">
-                            <li data-aos="fade-up" data-aos-delay="300"><b>Revenue Operations:</b> Built a centralized reporting system by integrating SQL databases with Google Sheets, automating daily dashboards for MRR (Monthly Recurring Revenue) and Churn Rate.</li>
-                            <li data-aos="fade-up" data-aos-delay="400"><b>Strategic Optimization:</b> Analyzed historical class attendance data to restructure the weekly schedule, resulting in a 20% increase in class fill rates.</li>
-                            <li data-aos="fade-up" data-aos-delay="500"><b>Dashboards:</b> Developed operational dashboards to support capacity planning, revenue forecasting, and performance monitoring.</li>
-                            <li data-aos="fade-up" data-aos-delay="600"><b>Data Governance:</b> Established data hygiene standards and reporting processes to ensure accuracy and consistency in operational and financial reporting.</li>
-                            <li data-aos="fade-up" data-aos-delay="700"><b>Leadership Partnership:</b> Partnered directly with leadership to translate performance trends into operational and pricing decisions.</li>
-                        </ul>
-                    </div>
-                    <!-- Timeline Item 2 -->
-                    <div class="mb-12 relative" data-aos="fade-up" data-aos-delay="700">
-                        <div class="absolute -left-11 top-1.5 w-5 h-5 bg-primary rounded-full border-4 border-secondary"></div>
-                        <h3 class="text-xl font-bold text-neutral">Operations Analyst (Overnight, Data & Logistics)</h3>
-                        <p class="text-primary font-semibold mb-1">Sonder Inc. — Philadelphia, PA</p>
-                        <p class="text-gray-400 text-sm mb-4">Dec 2021 – Dec 2023</p>
+          </div>
 
-                        <ul class="list-disc list-outside text-gray-300 space-y-2 pl-5">
-                            <li data-aos="fade-up" data-aos-delay="800"><b>Real-Time Operations:</b> Monitored real-time operations across eight properties, using SQL and Salesforce to track unit availability, housekeeping status, and operational readiness.</li>
-                            <li data-aos="fade-up" data-aos-delay="900"><b>Inventory Analysis:</b> Analyzed inventory consumption rates for high-turnover amenities to forecast restocking needs and prevent supply shortages across the regional market.</li>
-                            <li data-aos="fade-up" data-aos-delay="1000"><b>Operational Insights:</b> Supported operational decision-making by identifying trends in unit downtime, maintenance backlog, and service disruptions.</li>
-                            <li data-aos="fade-up" data-aos-delay="1100"><b>Project Leadership:</b> Served as overnight project lead, coordinating maintenance and logistics workstreams via Asana and Slack to return units to revenue-generating status more quickly.</li>
-                            <li data-aos="fade-up" data-aos-delay="1200"><b>Data Integrity:</b> Maintained operational data integrity across systems to support accurate reporting and handoff to daytime teams.</li>
-                        </ul>
-                    </div>    
-                    <!-- Timeline Item 3 -->
-                    <div class="mb-12 relative" data-aos="fade-up" data-aos-delay="1200">
-                        <div class="absolute -left-11 top-1.5 w-5 h-5 bg-primary rounded-full border-4 border-secondary"></div>
-                        <h3 class="text-xl font-bold text-neutral">Night Auditor & Financial Analyst</h3>
-                        <p class="text-primary font-semibold mb-1">Cambria Hotel — Philadelphia, PA</p>
-                        <p class="text-gray-400 text-sm mb-4">Jan 2018 – Sep 2021</p>
-                        <ul class="list-disc list-outside text-gray-300 space-y-2 pl-5">
-                            <li data-aos="fade-up" data-aos-delay="1300"><b>Automation & Reporting:</b> Built automated reconciliation workflows using Excel Power Query to transform raw Property Management System (PMS) transaction logs into standardized daily financial reports.</li>
-                            <li data-aos="fade-up" data-aos-delay="1400"><b>Transaction Auditing:</b> Audited nightly revenue transactions across multiple cost centers to identify discrepancies and ensure accurate ledger posting.</li>
-                            <li data-aos="fade-up" data-aos-delay="1500"><b>Quality Control:</b> Served as the final quality control checkpoint for operational and financial data prior to daily system close.</li>
-                            <li data-aos="fade-up" data-aos-delay="1600"><b>Process Improvement:</b> Identified recurring data entry issues and implemented process standardization to reduce reporting errors and improve financial accuracy.</li>
-                            <li data-aos="fade-up" data-aos-delay="1700"><b>Management Support:</b> Supported management with timely, reliable revenue reporting to inform operational and pricing decisions.</li>
-                        </ul>
-                    </div>    
-                     <!-- Timeline Item 4 -->
-                    <div class="relative" data-aos="fade-up" data-aos-delay="1500">
-                        <div class="absolute -left-11 top-1.5 w-5 h-5 bg-primary rounded-full border-4 border-secondary"></div>
-                        <h3 class="text-xl font-bold text-neutral">Operations Team Lead</h3>
-                        <p class="text-primary font-semibold mb-1">American Airlines — Philadelphia, PA</p>
-                         <p class="text-gray-400 text-sm mb-4">Jun 2008 – Sep 2018</p>
-                        <ul class="list-disc list-outside text-gray-300 space-y-2 pl-5">
-                            <li data-aos="fade-up" data-aos-delay="1600"><b>Staffing & Forecasting:</b> Supported time-critical ground operations by forecasting staffing needs and reallocating resources to protect on-time departure performance.</li>
-                            <li data-aos="fade-up" data-aos-delay="1700"><b>Operational Analysis:</b> Analyzed flight schedules, connection windows, and turnaround constraints to identify at-risk departures and mitigate operational delays.</li>
-                            <li data-aos="fade-up" data-aos-delay="1800"><b>Departure Execution:</b> Led operational execution for departure processes including baggage transfers, aircraft servicing, and de-icing under tight time and cost constraints.</li>
-                            <li data-aos="fade-up" data-aos-delay="1900"><b>Investigative Operations:</b> Conducted investigative analysis to locate missing passengers and baggage by cross-referencing flight, gate, and connection data.</li>
-                            <li data-aos="fade-up" data-aos-delay="2000"><b>Cross-Functional Collaboration:</b> Collaborated with cross-functional teams to resolve operational bottlenecks and maintain service reliability.</li>
-                        </ul>  
-                    </div>    
-                </div>
+          <!-- Operations & Logistics -->
+          <div class="mt-16">
+            <h3 class="text-2xl font-bold text-neutral mb-8 text-center">
+              Operations & Logistics
+            </h3>
+            <div
+              class="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-8"
+            >
+              <div
+                class="skill-card bg-secondary p-6 rounded-lg flex flex-col items-center justify-center"
+                data-aos="fade-up"
+                data-aos-delay="100"
+              >
+                <i class="fas fa-cogs fa-3x text-primary mb-4"></i>
+                <h3 class="text-lg font-semibold text-center">
+                  Supply Chain Optimization
+                </h3>
+              </div>
+              <div
+                class="skill-card bg-secondary p-6 rounded-lg flex flex-col items-center justify-center"
+                data-aos="fade-up"
+                data-aos-delay="200"
+              >
+                <i class="fas fa-chart-line fa-3x text-primary mb-4"></i>
+                <h3 class="text-lg font-semibold text-center">
+                  Inventory Forecasting
+                </h3>
+              </div>
+              <div
+                class="skill-card bg-secondary p-6 rounded-lg flex flex-col items-center justify-center"
+                data-aos="fade-up"
+                data-aos-delay="300"
+              >
+                <i class="fas fa-search fa-3x text-primary mb-4"></i>
+                <h3 class="text-lg font-semibold text-center">
+                  Root Cause Analysis
+                </h3>
+              </div>
+              <div
+                class="skill-card bg-secondary p-6 rounded-lg flex flex-col items-center justify-center"
+                data-aos="fade-up"
+                data-aos-delay="400"
+              >
+                <i class="fas fa-shield-alt fa-3x text-primary mb-4"></i>
+                <h3 class="text-lg font-semibold text-center">
+                  Crisis Management
+                </h3>
+              </div>
+              <div
+                class="skill-card bg-secondary p-6 rounded-lg flex flex-col items-center justify-center"
+                data-aos="fade-up"
+                data-aos-delay="500"
+              >
+                <i class="fab fa-salesforce fa-3x text-primary mb-4"></i>
+                <h3 class="text-lg font-semibold text-center">
+                  Salesforce & SAP (Familiar)
+                </h3>
+              </div>
             </div>
-        </section>
+          </div>
 
-        <!-- Education Section -->
-        <section id="education" class="py-20 md:py-32" data-aos="fade-up">
-            <h2 class="text-3xl md:text-4xl font-bold text-center text-primary mb-16">Education & Certifications</h2>
-            <div class="max-w-3xl mx-auto">
-                <div class="relative border-l-2 border-secondary pl-10">
-                    <!-- Education Item 1 -->
-                    <div class="mb-12 relative" data-aos="fade-up" data-aos-delay="200">
-                        <div class="absolute -left-11 top-1.5 w-5 h-5 bg-primary rounded-full border-4 border-secondary"></div>
-                        <h3 class="text-xl font-bold text-neutral">B.S., Business Administration</h3>
-                        <p class="text-primary font-semibold mb-1">Cheyney University</p>
-                        <p class="text-gray-400 text-sm mb-4">2009</p>
-                    </div>
-                    <!-- Education Item 2 -->
-                    <div class="mb-12 relative" data-aos="fade-up" data-aos-delay="400">
-                        <div class="absolute -left-11 top-1.5 w-5 h-5 bg-primary rounded-full border-4 border-secondary"></div>
-                        <h3 class="text-xl font-bold text-neutral">Google Data Analytics Specialization</h3>
-                        <p class="text-primary font-semibold mb-1">Coursera</p>
-                        <p class="text-gray-400 text-sm mb-4">2023</p>
-                    </div>
-                    <!-- Education Item 3 -->
-                    <div class="relative" data-aos="fade-up" data-aos-delay="600">
-                        <div class="absolute -left-11 top-1.5 w-5 h-5 bg-primary rounded-full border-4 border-secondary"></div>
-                        <h3 class="text-xl font-bold text-neutral">Business Intelligence Analyst Track</h3>
-                        <p class="text-primary font-semibold mb-1">Maven Analytics</p>
-                        <p class="text-gray-400 text-sm mb-4">2023</p>
-                        <div class="grid grid-cols-3 gap-4 mt-8">
-                            <img src="images/maven_badges/5beb5891-9a96-4090-aaaa-8a54325bb692.png" alt="Maven Badge" class="w-24 h-24">
-                            <img src="images/maven_badges/6568eb1d-0d66-48c1-a121-861642e76ddd.png" alt="Maven Badge" class="w-24 h-24">
-                            <img src="images/maven_badges/7ac6c6f9-43c3-4227-ac85-b166ab804d41.png" alt="Maven Badge" class="w-24 h-24">
-                            <img src="images/maven_badges/8dfa0816-902b-43fb-a2d0-8480982e3d0f.png" alt="Maven Badge" class="w-24 h-24">
-                            <img src="images/maven_badges/ba94862b-8be3-4e72-8d77-ea27877cf1f4.png" alt="Maven Badge" class="w-24 h-24">
-                            <img src="images/maven_badges/e8ca0729-0a2a-44c7-b4f8-ccd30c3ad3a8.png" alt="Maven Badge" class="w-24 h-24">
-                            <img src="images/maven_badges/f651bef5-b75c-4e35-b6c1-93f83f50e3af.png" alt="Maven Badge" class="w-24 h-24">
-                        </div>
-                    </div>
-                </div>
+          <!-- Business & Operations -->
+          <div class="mt-16">
+            <h3 class="text-2xl font-bold text-neutral mb-8 text-center">
+              Business & Operations
+            </h3>
+            <div
+              class="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-8"
+            >
+              <div
+                class="skill-card bg-secondary p-6 rounded-lg flex flex-col items-center justify-center"
+                data-aos="fade-up"
+                data-aos-delay="100"
+              >
+                <i class="fas fa-dollar-sign fa-3x text-primary mb-4"></i>
+                <h3 class="text-lg font-semibold text-center">
+                  Operational Data Engineering
+                </h3>
+              </div>
+              <div
+                class="skill-card bg-secondary p-6 rounded-lg flex flex-col items-center justify-center"
+                data-aos="fade-up"
+                data-aos-delay="200"
+              >
+                <i class="fas fa-balance-scale fa-3x text-primary mb-4"></i>
+                <h3 class="text-lg font-semibold text-center">
+                  Financial Reconciliation
+                </h3>
+              </div>
+              <div
+                class="skill-card bg-secondary p-6 rounded-lg flex flex-col items-center justify-center"
+                data-aos="fade-up"
+                data-aos-delay="300"
+              >
+                <i class="fas fa-user-slash fa-3x text-primary mb-4"></i>
+                <h3 class="text-lg font-semibold text-center">
+                  Churn Prediction
+                </h3>
+              </div>
+              <div
+                class="skill-card bg-secondary p-6 rounded-lg flex flex-col items-center justify-center"
+                data-aos="fade-up"
+                data-aos-delay="400"
+              >
+                <i class="fas fa-project-diagram fa-3x text-primary mb-4"></i>
+                <h3 class="text-lg font-semibold text-center">
+                  Variance Analysis
+                </h3>
+              </div>
+              <div
+                class="skill-card bg-secondary p-6 rounded-lg flex flex-col items-center justify-center"
+                data-aos="fade-up"
+                data-aos-delay="500"
+              >
+                <i class="fas fa-gavel fa-3x text-primary mb-4"></i>
+                <h3 class="text-lg font-semibold text-center">
+                  Regulatory Compliance
+                </h3>
+              </div>
             </div>
-        </section>
+          </div>
+        </div>
+      </section>
 
-        <!-- Projects Section -->
-        <section id="projects" class="py-20 md:py-32" data-aos="fade-up">
-            <div class="text-center">
-                <h2 class="text-3xl md:text-4xl font-bold text-primary mb-8">Featured Projects</h2>
-                <a href="all_projects.html" class="inline-block mb-16 text-neutral hover:text-sky-400 font-semibold transition duration-300 ">
-                    View All Projects <span class="ml-1">→</span>
-                </a>
+      <!-- Work Experience Section -->
+      <section id="experience" class="py-20 md:py-32" data-aos="fade-up">
+        <h2
+          class="text-3xl md:text-4xl font-bold text-center text-primary mb-8"
+        >
+          Work Experience
+        </h2>
+        <div class="text-center mb-16 flex justify-center gap-4">
+          <a
+            href="assets/MICHAEL CAMPBELL Operations Analyst.pdf"
+            target="_blank"
+            class="bg-primary text-white px-6 py-3 rounded-md text-lg font-semibold hover:bg-sky-600 transition duration-300 inline-block interactive-element"
+          >
+            <i class="fas fa-download mr-2"></i>Download Resume
+          </a>
+        </div>
+        <div class="max-w-3xl mx-auto">
+          <div class="relative border-l-2 border-secondary pl-10">
+            <!-- Timeline Item 1 -->
+            <div class="mb-12 relative" data-aos="fade-up" data-aos-delay="200">
+              <div
+                class="absolute -left-11 top-1.5 w-5 h-5 bg-primary rounded-full border-4 border-secondary"
+              ></div>
+              <h3 class="text-xl font-bold text-neutral">
+                Operations & Analytics Lead
+              </h3>
+              <p class="text-primary font-semibold mb-1">
+                Marquez MMA — Philadelphia, PA
+              </p>
+              <p class="text-gray-400 text-sm mb-4">Aug 2014 – Present</p>
+              <ul class="list-disc list-outside text-gray-300 space-y-2 pl-5">
+                <li data-aos="fade-up" data-aos-delay="300">
+                  Designed and maintained SQL-backed reporting pipelines to
+                  track Key Performance Indicators (KPIs) including Monthly
+                  Recurring Revenue (MRR) and capacity utilization.
+                </li>
+                <li data-aos="fade-up" data-aos-delay="400">
+                  Conducted historical attendance analysis using Excel to
+                  optimize scheduling, resulting in a 20% increase in class fill
+                  rates.
+                </li>
+                <li data-aos="fade-up" data-aos-delay="500">
+                  Built interactive dashboards to visualize capacity trends,
+                  enabling the leadership team to make data-driven pricing and
+                  forecasting decisions.
+                </li>
+              </ul>
             </div>
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+            <!-- Timeline Item 2 -->
+            <div class="mb-12 relative" data-aos="fade-up" data-aos-delay="700">
+              <div
+                class="absolute -left-11 top-1.5 w-5 h-5 bg-primary rounded-full border-4 border-secondary"
+              ></div>
+              <h3 class="text-xl font-bold text-neutral">
+                Operations Analyst (Data & Logistics)
+              </h3>
+              <p class="text-primary font-semibold mb-1">
+                Sonder Inc. — Philadelphia, PA
+              </p>
+              <p class="text-gray-400 text-sm mb-4">Dec 2021 – Dec 2023</p>
 
-                <!-- Project Card 1 -->
-                <div class="project-card bg-secondary/80 backdrop-blur-sm rounded-lg shadow-lg overflow-hidden flex flex-col interactive-element" data-aos="fade-up" data-aos-delay="200">
-                    <img src="images/project_images/supplychaindashboard.png" alt="Screenshot of Supply Chain Dashboard" class="w-full h-48 object-cover">
-                    <div class="p-6 flex flex-col flex-grow">
-                        <p class="text-sm text-gray-500 mb-1">Jun 2025 – Jul 2025</p>
-                        <h3 class="font-bold text-xl text-neutral mb-2">Global Supply Chain Performance & Cost Optimization</h3>
-                        <ul class="text-gray-400 mb-4 list-disc list-inside flex-grow">
-                            <p>Built an interactive logistics dashboard in Tableau that identified two product groups responsible for 99% of costs. Performed data cleaning and metric engineering (e.g., Delivery Lead Time) in Python to power the analysis.</p>
-                        </ul>
-                        <div class="flex flex-wrap gap-2 mb-4">
-                            <span class="bg-base text-primary text-xs font-semibold px-2.5 py-0.5 rounded-full">Tableau</span>
-                            <span class="bg-base text-primary text-xs font-semibold px-2.5 py-0.5 rounded-full">Python</span>
-                            <span class="bg-base text-primary text-sm font-semibold px-2.5 py-0.5 rounded-full">Logistics</span>
-                            <span class="bg-base text-primary text-sm font-semibold px-2.5 py-0.5 rounded-full">E-commerce</span>
-                            <span class="bg-base text-primary text-sm font-semibold px-2.5 py-0.5 rounded-full">Retail</span>
-                            <span class="bg-base text-primary text-sm font-semibold px-2.5 py-0.5 rounded-full">Manufacturing</span>
-                        </div>
-                        <a href="supply-chain-project.html" class="font-semibold text-primary hover:underline mt-auto">View Project &rarr;</a>
-                    </div>
-                </div>
-                <!-- Project Card 2 -->
-                <div class="project-card bg-secondary/80 backdrop-blur-sm rounded-lg shadow-lg overflow-hidden flex flex-col interactive-element" data-aos="fade-up" data-aos-delay="400">
-                    <img src="images/project_images/7_Recommendations-for-Retention.png" alt="Screenshot of Bank Customer Churn Analysis" class="w-full h-48 object-cover">
-                    <div class="p-6 flex flex-col flex-grow">
-                        <p class="text-sm text-gray-500 mb-1">Apr 2025 – May 2025</p>
-                        <h3 class="font-bold text-xl text-neutral mb-2">Bank Customer Churn Analysis</h3>
-                        <ul class="text-gray-400 mb-4 list-disc list-inside flex-grow">
-                            <p>Achieved 74% recall in predicting customer churn by engineering a machine learning pipeline in Python. A tuned Gradient Boosting model revealed geographic drivers, directly informing a new, targeted retention strategy.</p>
-                        </ul>
-                         <div class="flex flex-wrap gap-2 mb-4">
-                            <span class="bg-base text-primary text-xs font-semibold px-2.5 py-0.5 rounded-full">Python</span>
-                            <span class="bg-base text-primary text-xs font-semibold px-2.5 py-0.5 rounded-full">Machine Learning</span>
-                            <span class="bg-base text-primary text-xs font-semibold px-2.5 py-0.5 rounded-full">Scikit-learng</span>
-                            <span class="bg-base text-primary text-xs font-semibold px-2.5 py-0.5 rounded-full">Matplotlib</span>
-                            <span class="bg-base text-primary text-xs font-semibold px-2.5 py-0.5 rounded-full">Seaborn</span>
-                            <span class="bg-base text-primary text-xs font-semibold px-2.5 py-0.5 rounded-full">Pandas</span>  
-                            <span class="bg-base text-primary text-sm font-semibold px-2.5 py-0.5 rounded-full">Banking</span>
-                            <span class="bg-base text-primary text-sm font-semibold px-2.5 py-0.5 rounded-full">Finance</span>
-                            <span class="bg-base text-primary text-sm font-semibold px-2.5 py-0.5 rounded-full">FinTech</span> 
-                            <span class="bg-base text-primary text-sm font-semibold px-2.5 py-0.5 rounded-full">SaaS</span>                            
-                        </div>
-                        <a href="Bank-Customer-Churn-Analysis.html" class="font-semibold text-primary hover:underline mt-auto">View Project &rarr;</a>
-                    </div>
-                </div>
-                <!-- Project Card 3 -->
-                <div class="project-card bg-secondary/80 backdrop-blur-sm rounded-lg shadow-lg overflow-hidden flex flex-col interactive-element" data-aos="fade-up" data-aos-delay="600">
-                    <img src="images/project_images/crmdashboard.png" alt="Screenshot of CRM Dashboard" class="w-full h-48 object-cover">
-                    <div class="p-6 flex flex-col flex-grow">
-                        <p class="text-sm text-gray-500 mb-1">Mar 2025 – Apr 2025</p>
-                        <h3 class="font-bold text-xl text-neutral mb-2">CRM Dashboard: Sales Performance Analysis</h3>
-                        <ul class="text-gray-400 mb-4 list-disc list-inside flex-grow">
-                            <p>Revealed a critical 49% post-engagement drop-off by developing an interactive Tableau dashboard to analyze the sales funnel. Insights were used to benchmark teams and propose targeted optimization strategies.</p>
-                        </ul>
-                         <div class="flex flex-wrap gap-2 mb-4">
-                            <span class="bg-base text-primary text-xs font-semibold px-2.5 py-0.5 rounded-full">Tableau</span>
-                            <span class="bg-base text-primary text-sm font-semibold px-2.5 py-0.5 rounded-full">Technology</span>
-                            <span class="bg-base text-primary text-xs font-semibold px-2.5 py-0.5 rounded-full">B2B Sales</span>
-                        </div>
-                        <a href="crm-dashboard.html" class="font-semibold text-primary hover:underline mt-auto">View Project &rarr;</a>
-                    </div>
-                </div>
-                 <!-- Project Card 4 -->
-                <div class="project-card bg-secondary/80 backdrop-blur-sm rounded-lg shadow-lg overflow-hidden flex flex-col interactive-element" data-aos="fade-up" data-aos-delay="800">
-                    <img src="images/project_images/passengersatisfactiondashboard.png" alt="Screenshot of Passenger Satisfaction Analysis" class="w-full h-48 object-cover">
-                    <div class="p-6 flex flex-col flex-grow">
-                        <p class="text-sm text-gray-500 mb-1">Feb 2025</p>
-                        <h3 class="font-bold text-xl text-neutral mb-2">Passenger Satisfaction Analysis</h3>
-                        <ul class="text-gray-400 mb-4 list-disc list-inside flex-grow">
-                            <p>Directed a Power BI dashboard project that translated airline satisfaction survey data into actionable insights. Passenger segmentation and trend analysis identified top pain points, enabling data-driven prioritization of service enhancements.</p>
-                        </ul>
-                         <div class="flex flex-wrap gap-2 mb-4">
-                            <span class="bg-base text-primary text-xs font-semibold px-2.5 py-0.5 rounded-full">Power BI</span>
-                            <span class="bg-base text-primary text-xs font-semibold px-2.5 py-0.5 rounded-full">DAX</span>
-                            <span class="bg-base text-primary text-xs font-semibold px-2.5 py-0.5 rounded-full">Hospitality</span>   
-                            <span class="bg-base text-primary text-xs font-semibold px-2.5 py-0.5 rounded-full">Customer Service</span>                
-                            <span class="bg-base text-primary text-xs font-semibold px-2.5 py-0.5 rounded-full">Travel & Tourism</span>
-                        </div>
-                        <a href="passenger-satisfaction.html" class="font-semibold text-primary hover:underline mt-auto">View Project &rarr;</a>
-                    </div>
-                </div>
-
+              <ul class="list-disc list-outside text-gray-300 space-y-2 pl-5">
+                <li data-aos="fade-up" data-aos-delay="800">
+                  Monitored real-time operations across 8 properties, using SQL
+                  and Salesforce to track unit availability, housekeeping
+                  status, and operational readiness.
+                </li>
+                <li data-aos="fade-up" data-aos-delay="900">
+                  Analyzed inventory consumption and unit downtime trends to
+                  forecast restocking needs and reduce service disruptions.
+                </li>
+                <li data-aos="fade-up" data-aos-delay="1000">
+                  Identified maintenance and logistics bottlenecks impacting
+                  unit availability and revenue.
+                </li>
+                <li data-aos="fade-up" data-aos-delay="1100">
+                  Coordinated overnight maintenance and logistics workstreams
+                  via Asana to return units to revenue-generating status.
+                </li>
+              </ul>
             </div>
-        </section>
+            <!-- Timeline Item 3 -->
+            <div
+              class="mb-12 relative"
+              data-aos="fade-up"
+              data-aos-delay="1200"
+            >
+              <div
+                class="absolute -left-11 top-1.5 w-5 h-5 bg-primary rounded-full border-4 border-secondary"
+              ></div>
+              <h3 class="text-xl font-bold text-neutral">
+                Night Auditor & Financial Analyst
+              </h3>
+              <p class="text-primary font-semibold mb-1">
+                Cambria Hotel — Philadelphia, PA
+              </p>
+              <p class="text-gray-400 text-sm mb-4">Jan 2018 – Sep 2021</p>
+              <ul class="list-disc list-outside text-gray-300 space-y-2 pl-5">
+                <li data-aos="fade-up" data-aos-delay="1300">
+                  Built automated Excel Power Query reconciliations transforming
+                  raw PMS transaction logs into standardized daily financial
+                  reports.
+                </li>
+                <li data-aos="fade-up" data-aos-delay="1400">
+                  Audited nightly revenue transactions across multiple cost
+                  centers to ensure accurate ledger posting and integrity.
+                </li>
+                <li data-aos="fade-up" data-aos-delay="1500">
+                  Identified recurring data entry issues and implemented process
+                  standardization to reduce reporting errors.
+                </li>
+              </ul>
+            </div>
+            <!-- Timeline Item 4 -->
+            <div class="relative" data-aos="fade-up" data-aos-delay="1500">
+              <div
+                class="absolute -left-11 top-1.5 w-5 h-5 bg-primary rounded-full border-4 border-secondary"
+              ></div>
+              <h3 class="text-xl font-bold text-neutral">
+                Operations Team Lead
+              </h3>
+              <p class="text-primary font-semibold mb-1">
+                American Airlines — Philadelphia, PA
+              </p>
+              <p class="text-gray-400 text-sm mb-4">Jun 2008 – Sep 2018</p>
+              <ul class="list-disc list-outside text-gray-300 space-y-2 pl-5">
+                <li data-aos="fade-up" data-aos-delay="1600">
+                  Forecasted staffing and resource needs to support
+                  time-critical ground operations and protect on-time
+                  departures.
+                </li>
+                <li data-aos="fade-up" data-aos-delay="1700">
+                  Identified at-risk flights by analyzing schedules, connection
+                  windows, and turnaround constraints using internal tracking
+                  tools to mitigate operational delays.
+                </li>
+                <li data-aos="fade-up" data-aos-delay="1800">
+                  Led real-time operational execution and issue resolution under
+                  tight time and cost constraints.
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
 
-        <!-- Other Projects Section -->
-        <section id="other-projects" class="py-20 md:py-32" data-aos="fade-up">
-            <h2 class="text-3xl md:text-4xl font-bold text-center text-neutral mb-16">Other Noteworthy <span class="text-primary">Projects</span></h2>
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                <div class="mini-project-card bg-secondary p-6 rounded-lg" data-aos="fade-up" data-aos-delay="200">
-                    <h3 class="font-bold text-xl text-neutral mb-2">HR Survey Analysis</h3>
-                    <p class="text-gray-400 mb-4">An Excel based analysis of employee survey data to identify key drivers of satisfaction and guide HR strategy.</p>
-                    <a href="hr-survey-analysis.html" class="font-semibold text-primary hover:underline">View Project &rarr;</a>
-                </div>
-                <div class="mini-project-card bg-secondary p-6 rounded-lg" data-aos="fade-up" data-aos-delay="400">
-                    <h3 class="font-bold text-xl text-neutral mb-2">Restaurant Order Analysis</h3>
-                    <p class="text-gray-400 mb-4">A deep-dive SQL analysis that transforms raw sales data into a strategic roadmap for menu engineering, marketing, and profitability.</p>
-                    <a href="restaurant_sql_analysis.html" class="font-semibold text-primary hover:underline">View Project &rarr;</a>
-                </div>
-                <div class="mini-project-card bg-secondary p-6 rounded-lg" data-aos="fade-up" data-aos-delay="600">
-                    <h3 class="font-bold text-xl text-neutral mb-2">Manufacturing Line Productivity Analysis</h3>
-                    <p class="text-gray-400 mb-4">An analysis of manufacturing line data to identify bottlenecks and improve productivity.</p>
-                    <a href="manufacturing-line-productivity-analysis.html" class="font-semibold text-primary hover:underline">View Project &rarr;</a>
-                </div>
-        <!--
+      <!-- Education Section -->
+      <section id="education" class="py-20 md:py-32" data-aos="fade-up">
+        <h2
+          class="text-3xl md:text-4xl font-bold text-center text-primary mb-16"
+        >
+          Education & Certifications
+        </h2>
+        <div class="max-w-3xl mx-auto">
+          <div class="relative border-l-2 border-secondary pl-10">
+            <!-- Education Item 1 -->
+            <div class="mb-12 relative" data-aos="fade-up" data-aos-delay="200">
+              <div
+                class="absolute -left-11 top-1.5 w-5 h-5 bg-primary rounded-full border-4 border-secondary"
+              ></div>
+              <h3 class="text-xl font-bold text-neutral">
+                B.S., Business Administration
+              </h3>
+              <p class="text-primary font-semibold mb-1">Cheyney University</p>
+              <p class="text-gray-400 text-sm mb-4">2009</p>
+            </div>
+            <!-- Education Item 2 -->
+            <div class="mb-12 relative" data-aos="fade-up" data-aos-delay="400">
+              <div
+                class="absolute -left-11 top-1.5 w-5 h-5 bg-primary rounded-full border-4 border-secondary"
+              ></div>
+              <h3 class="text-xl font-bold text-neutral">
+                Google Data Analytics Specialization
+              </h3>
+              <p class="text-primary font-semibold mb-1">Coursera</p>
+              <p class="text-gray-400 text-sm mb-4">2023</p>
+            </div>
+            <!-- Education Item 3 -->
+            <div class="relative" data-aos="fade-up" data-aos-delay="600">
+              <div
+                class="absolute -left-11 top-1.5 w-5 h-5 bg-primary rounded-full border-4 border-secondary"
+              ></div>
+              <h3 class="text-xl font-bold text-neutral">
+                Business Intelligence Analyst Track
+              </h3>
+              <p class="text-primary font-semibold mb-1">Maven Analytics</p>
+              <p class="text-gray-400 text-sm mb-4">2023</p>
+              <div class="grid grid-cols-3 gap-4 mt-8">
+                <img
+                  src="images/maven_badges/5beb5891-9a96-4090-aaaa-8a54325bb692.png"
+                  alt="Maven Badge"
+                  class="w-24 h-24"
+                />
+                <img
+                  src="images/maven_badges/6568eb1d-0d66-48c1-a121-861642e76ddd.png"
+                  alt="Maven Badge"
+                  class="w-24 h-24"
+                />
+                <img
+                  src="images/maven_badges/7ac6c6f9-43c3-4227-ac85-b166ab804d41.png"
+                  alt="Maven Badge"
+                  class="w-24 h-24"
+                />
+                <img
+                  src="images/maven_badges/8dfa0816-902b-43fb-a2d0-8480982e3d0f.png"
+                  alt="Maven Badge"
+                  class="w-24 h-24"
+                />
+                <img
+                  src="images/maven_badges/ba94862b-8be3-4e72-8d77-ea27877cf1f4.png"
+                  alt="Maven Badge"
+                  class="w-24 h-24"
+                />
+                <img
+                  src="images/maven_badges/e8ca0729-0a2a-44c7-b4f8-ccd30c3ad3a8.png"
+                  alt="Maven Badge"
+                  class="w-24 h-24"
+                />
+                <img
+                  src="images/maven_badges/f651bef5-b75c-4e35-b6c1-93f83f50e3af.png"
+                  alt="Maven Badge"
+                  class="w-24 h-24"
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Projects Section -->
+      <section id="projects" class="py-20 md:py-32" data-aos="fade-up">
+        <div class="text-center">
+          <h2 class="text-3xl md:text-4xl font-bold text-primary mb-8">
+            Featured Projects
+          </h2>
+          <a
+            href="all_projects.html"
+            class="inline-block mb-16 text-neutral hover:text-sky-400 font-semibold transition duration-300"
+          >
+            View All Projects <span class="ml-1">→</span>
+          </a>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+          <!-- Project Card 1 -->
+          <div
+            class="project-card bg-secondary/80 backdrop-blur-sm rounded-lg shadow-lg overflow-hidden flex flex-col interactive-element"
+            data-aos="fade-up"
+            data-aos-delay="200"
+          >
+            <img
+              src="images/project_images/supplychaindashboard.png"
+              alt="Screenshot of Supply Chain Dashboard"
+              class="w-full h-48 object-cover"
+            />
+            <div class="p-6 flex flex-col flex-grow">
+              <p class="text-sm text-gray-500 mb-1">Jun 2025 – Jul 2025</p>
+              <h3 class="font-bold text-xl text-neutral mb-2">
+                Global Supply Chain Performance & Cost Optimization
+              </h3>
+              <ul class="text-gray-400 mb-4 list-disc list-inside flex-grow">
+                <p>
+                  Built an interactive logistics dashboard in Tableau that
+                  identified two product groups responsible for 99% of costs.
+                  Performed data cleaning and metric engineering (e.g., Delivery
+                  Lead Time) in Python to power the analysis.
+                </p>
+              </ul>
+              <div class="flex flex-wrap gap-2 mb-4">
+                <span
+                  class="bg-base text-primary text-xs font-semibold px-2.5 py-0.5 rounded-full"
+                  >Tableau</span
+                >
+                <span
+                  class="bg-base text-primary text-xs font-semibold px-2.5 py-0.5 rounded-full"
+                  >Python</span
+                >
+                <span
+                  class="bg-base text-primary text-sm font-semibold px-2.5 py-0.5 rounded-full"
+                  >Logistics</span
+                >
+                <span
+                  class="bg-base text-primary text-sm font-semibold px-2.5 py-0.5 rounded-full"
+                  >E-commerce</span
+                >
+                <span
+                  class="bg-base text-primary text-sm font-semibold px-2.5 py-0.5 rounded-full"
+                  >Retail</span
+                >
+                <span
+                  class="bg-base text-primary text-sm font-semibold px-2.5 py-0.5 rounded-full"
+                  >Manufacturing</span
+                >
+              </div>
+              <a
+                href="supply-chain-project.html"
+                class="font-semibold text-primary hover:underline mt-auto"
+                >View Project &rarr;</a
+              >
+            </div>
+          </div>
+          <!-- Project Card 2 -->
+          <div
+            class="project-card bg-secondary/80 backdrop-blur-sm rounded-lg shadow-lg overflow-hidden flex flex-col interactive-element"
+            data-aos="fade-up"
+            data-aos-delay="400"
+          >
+            <img
+              src="images/project_images/7_Recommendations-for-Retention.png"
+              alt="Screenshot of Bank Customer Churn Analysis"
+              class="w-full h-48 object-cover"
+            />
+            <div class="p-6 flex flex-col flex-grow">
+              <p class="text-sm text-gray-500 mb-1">Apr 2025 – May 2025</p>
+              <h3 class="font-bold text-xl text-neutral mb-2">
+                Bank Customer Churn Analysis
+              </h3>
+              <ul class="text-gray-400 mb-4 list-disc list-inside flex-grow">
+                <p>
+                  Achieved 74% recall in predicting customer churn by
+                  engineering a machine learning pipeline in Python. A tuned
+                  Gradient Boosting model revealed geographic drivers, directly
+                  informing a new, targeted retention strategy.
+                </p>
+              </ul>
+              <div class="flex flex-wrap gap-2 mb-4">
+                <span
+                  class="bg-base text-primary text-xs font-semibold px-2.5 py-0.5 rounded-full"
+                  >Python</span
+                >
+                <span
+                  class="bg-base text-primary text-xs font-semibold px-2.5 py-0.5 rounded-full"
+                  >Machine Learning</span
+                >
+                <span
+                  class="bg-base text-primary text-xs font-semibold px-2.5 py-0.5 rounded-full"
+                  >Scikit-learng</span
+                >
+                <span
+                  class="bg-base text-primary text-xs font-semibold px-2.5 py-0.5 rounded-full"
+                  >Matplotlib</span
+                >
+                <span
+                  class="bg-base text-primary text-xs font-semibold px-2.5 py-0.5 rounded-full"
+                  >Seaborn</span
+                >
+                <span
+                  class="bg-base text-primary text-xs font-semibold px-2.5 py-0.5 rounded-full"
+                  >Pandas</span
+                >
+                <span
+                  class="bg-base text-primary text-sm font-semibold px-2.5 py-0.5 rounded-full"
+                  >Banking</span
+                >
+                <span
+                  class="bg-base text-primary text-sm font-semibold px-2.5 py-0.5 rounded-full"
+                  >Finance</span
+                >
+                <span
+                  class="bg-base text-primary text-sm font-semibold px-2.5 py-0.5 rounded-full"
+                  >FinTech</span
+                >
+                <span
+                  class="bg-base text-primary text-sm font-semibold px-2.5 py-0.5 rounded-full"
+                  >SaaS</span
+                >
+              </div>
+              <a
+                href="Bank-Customer-Churn-Analysis.html"
+                class="font-semibold text-primary hover:underline mt-auto"
+                >View Project &rarr;</a
+              >
+            </div>
+          </div>
+          <!-- Project Card 3 -->
+          <div
+            class="project-card bg-secondary/80 backdrop-blur-sm rounded-lg shadow-lg overflow-hidden flex flex-col interactive-element"
+            data-aos="fade-up"
+            data-aos-delay="600"
+          >
+            <img
+              src="images/project_images/crmdashboard.png"
+              alt="Screenshot of CRM Dashboard"
+              class="w-full h-48 object-cover"
+            />
+            <div class="p-6 flex flex-col flex-grow">
+              <p class="text-sm text-gray-500 mb-1">Mar 2025 – Apr 2025</p>
+              <h3 class="font-bold text-xl text-neutral mb-2">
+                CRM Dashboard: Sales Performance Analysis
+              </h3>
+              <ul class="text-gray-400 mb-4 list-disc list-inside flex-grow">
+                <p>
+                  Revealed a critical 49% post-engagement drop-off by developing
+                  an interactive Tableau dashboard to analyze the sales funnel.
+                  Insights were used to benchmark teams and propose targeted
+                  optimization strategies.
+                </p>
+              </ul>
+              <div class="flex flex-wrap gap-2 mb-4">
+                <span
+                  class="bg-base text-primary text-xs font-semibold px-2.5 py-0.5 rounded-full"
+                  >Tableau</span
+                >
+                <span
+                  class="bg-base text-primary text-sm font-semibold px-2.5 py-0.5 rounded-full"
+                  >Technology</span
+                >
+                <span
+                  class="bg-base text-primary text-xs font-semibold px-2.5 py-0.5 rounded-full"
+                  >B2B Sales</span
+                >
+              </div>
+              <a
+                href="crm-dashboard.html"
+                class="font-semibold text-primary hover:underline mt-auto"
+                >View Project &rarr;</a
+              >
+            </div>
+          </div>
+          <!-- Project Card 4 -->
+          <div
+            class="project-card bg-secondary/80 backdrop-blur-sm rounded-lg shadow-lg overflow-hidden flex flex-col interactive-element"
+            data-aos="fade-up"
+            data-aos-delay="800"
+          >
+            <img
+              src="images/project_images/passengersatisfactiondashboard.png"
+              alt="Screenshot of Passenger Satisfaction Analysis"
+              class="w-full h-48 object-cover"
+            />
+            <div class="p-6 flex flex-col flex-grow">
+              <p class="text-sm text-gray-500 mb-1">Feb 2025</p>
+              <h3 class="font-bold text-xl text-neutral mb-2">
+                Passenger Satisfaction Analysis
+              </h3>
+              <ul class="text-gray-400 mb-4 list-disc list-inside flex-grow">
+                <p>
+                  Directed a Power BI dashboard project that translated airline
+                  satisfaction survey data into actionable insights. Passenger
+                  segmentation and trend analysis identified top pain points,
+                  enabling data-driven prioritization of service enhancements.
+                </p>
+              </ul>
+              <div class="flex flex-wrap gap-2 mb-4">
+                <span
+                  class="bg-base text-primary text-xs font-semibold px-2.5 py-0.5 rounded-full"
+                  >Power BI</span
+                >
+                <span
+                  class="bg-base text-primary text-xs font-semibold px-2.5 py-0.5 rounded-full"
+                  >DAX</span
+                >
+                <span
+                  class="bg-base text-primary text-xs font-semibold px-2.5 py-0.5 rounded-full"
+                  >Hospitality</span
+                >
+                <span
+                  class="bg-base text-primary text-xs font-semibold px-2.5 py-0.5 rounded-full"
+                  >Customer Service</span
+                >
+                <span
+                  class="bg-base text-primary text-xs font-semibold px-2.5 py-0.5 rounded-full"
+                  >Travel & Tourism</span
+                >
+              </div>
+              <a
+                href="passenger-satisfaction.html"
+                class="font-semibold text-primary hover:underline mt-auto"
+                >View Project &rarr;</a
+              >
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Other Projects Section -->
+      <section id="other-projects" class="py-20 md:py-32" data-aos="fade-up">
+        <h2
+          class="text-3xl md:text-4xl font-bold text-center text-neutral mb-16"
+        >
+          Other Noteworthy <span class="text-primary">Projects</span>
+        </h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div
+            class="mini-project-card bg-secondary p-6 rounded-lg"
+            data-aos="fade-up"
+            data-aos-delay="200"
+          >
+            <h3 class="font-bold text-xl text-neutral mb-2">
+              HR Survey Analysis
+            </h3>
+            <p class="text-gray-400 mb-4">
+              An Excel based analysis of employee survey data to identify key
+              drivers of satisfaction and guide HR strategy.
+            </p>
+            <a
+              href="hr-survey-analysis.html"
+              class="font-semibold text-primary hover:underline"
+              >View Project &rarr;</a
+            >
+          </div>
+          <div
+            class="mini-project-card bg-secondary p-6 rounded-lg"
+            data-aos="fade-up"
+            data-aos-delay="400"
+          >
+            <h3 class="font-bold text-xl text-neutral mb-2">
+              Restaurant Order Analysis
+            </h3>
+            <p class="text-gray-400 mb-4">
+              A deep-dive SQL analysis that transforms raw sales data into a
+              strategic roadmap for menu engineering, marketing, and
+              profitability.
+            </p>
+            <a
+              href="restaurant_sql_analysis.html"
+              class="font-semibold text-primary hover:underline"
+              >View Project &rarr;</a
+            >
+          </div>
+          <div
+            class="mini-project-card bg-secondary p-6 rounded-lg"
+            data-aos="fade-up"
+            data-aos-delay="600"
+          >
+            <h3 class="font-bold text-xl text-neutral mb-2">
+              Manufacturing Line Productivity Analysis
+            </h3>
+            <p class="text-gray-400 mb-4">
+              An analysis of manufacturing line data to identify bottlenecks and
+              improve productivity.
+            </p>
+            <a
+              href="manufacturing-line-productivity-analysis.html"
+              class="font-semibold text-primary hover:underline"
+              >View Project &rarr;</a
+            >
+          </div>
+          <!--
                 <div class="mini-project-card bg-secondary p-6 rounded-lg" data-aos="fade-up" data-aos-delay="400">
                     <h3 class="font-bold text-xl text-neutral mb-2">SQL Database for a Library</h3>
                     <p class="text-gray-400 mb-4">Designed and implemented a relational database schema for a library management system.</p>
@@ -455,51 +1015,68 @@
                     <p class="text-gray-400 mb-4">A statistical analysis to determine the winner of a website landing page A/B test.</p>
                     <a href="https://github.com/michaelcampbell215" target="_blank" class="font-semibold text-primary hover:underline">View on GitHub &rarr;</a>
                 </div>
-        -->
-            </div>
-        </section>
-        
+        --></div>
+      </section>
 
-        <!-- Contact Section -->
-        <section id="contact" class="py-20 md:py-32 text-center" data-aos="fade-up">
-            <h2 class="text-3xl md:text-4xl font-bold text-neutral mb-4">Get In <span class="text-primary">Touch</span></h2>
-            <p class="text-lg text-gray-400 mb-8">Whether you have a question or just want to say hi, I’ll try my best to get back to you!</p>
-            <div class="flex justify-center space-x-6">
-                <a href="https://linkedin.com/in/michaelcampbell215" target="_blank" class="text-gray-400 hover:text-primary transition duration-300 interactive-element">
-                    <i class="fab fa-linkedin fa-3x"></i>
-                </a>
-                <a href="https://github.com/michaelcampbell215" target="_blank" class="text-gray-400 hover:text-primary transition duration-300 interactive-element">
-                    <i class="fab fa-github fa-3x"></i>
-                </a>
-                <a href="mailto:mcam215@gmail.com" class="text-gray-400 hover:text-primary transition duration-300 interactive-element">
-                    <i class="fas fa-envelope fa-3x"></i>
-                </a>
-            </div>
-        </section>
-
+      <!-- Contact Section -->
+      <section
+        id="contact"
+        class="py-20 md:py-32 text-center"
+        data-aos="fade-up"
+      >
+        <h2 class="text-3xl md:text-4xl font-bold text-neutral mb-4">
+          Get In <span class="text-primary">Touch</span>
+        </h2>
+        <p class="text-lg text-gray-400 mb-8">
+          Whether you have a question or just want to say hi, I’ll try my best
+          to get back to you!
+        </p>
+        <div class="flex justify-center space-x-6">
+          <a
+            href="https://linkedin.com/in/michaelcampbell215"
+            target="_blank"
+            class="text-gray-400 hover:text-primary transition duration-300 interactive-element"
+          >
+            <i class="fab fa-linkedin fa-3x"></i>
+          </a>
+          <a
+            href="https://github.com/michaelcampbell215"
+            target="_blank"
+            class="text-gray-400 hover:text-primary transition duration-300 interactive-element"
+          >
+            <i class="fab fa-github fa-3x"></i>
+          </a>
+          <a
+            href="mailto:mcam215@gmail.com"
+            class="text-gray-400 hover:text-primary transition duration-300 interactive-element"
+          >
+            <i class="fas fa-envelope fa-3x"></i>
+          </a>
+        </div>
+      </section>
     </main>
 
     <!-- Footer -->
     <footer class="text-gray-400 py-8 mt-16">
-        <div class="container mx-auto px-6 text-center">
-            <p>&copy; 2025 Michael Campbell. All Rights Reserved.</p>
-        </div>
+      <div class="container mx-auto px-6 text-center">
+        <p>&copy; 2025 Michael Campbell. All Rights Reserved.</p>
+      </div>
     </footer>
 
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script>
-        // Mobile menu toggle
-        const mobileMenuButton = document.getElementById('mobile-menu-button');
-        const mobileMenu = document.getElementById('mobile-menu');
-        mobileMenuButton.addEventListener('click', () => {
-            mobileMenu.classList.toggle('hidden');
-        });
+      // Mobile menu toggle
+      const mobileMenuButton = document.getElementById("mobile-menu-button");
+      const mobileMenu = document.getElementById("mobile-menu");
+      mobileMenuButton.addEventListener("click", () => {
+        mobileMenu.classList.toggle("hidden");
+      });
 
-        // Initialize AOS
-        AOS.init({
-            duration: 800,
-            once: true,
-        });
+      // Initialize AOS
+      AOS.init({
+        duration: 800,
+        once: true,
+      });
     </script>
-</body>
+  </body>
 </html>
