@@ -1,0 +1,421 @@
+<!doctype html>
+<html lang="en" class="scroll-smooth">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Manufacturing Line Productivity Analysis | Michael Campbell</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+    />
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            fontFamily: {
+              sans: ["Inter", "sans-serif"],
+              mono: ["JetBrains Mono", "monospace"],
+            },
+            colors: {
+              slate: {
+                800: "#1e293b",
+                900: "#0f172a",
+              },
+              logistics: {
+                green: "#065F46",
+                orange: "#EA580C",
+                slate: "#334155",
+              },
+            },
+          },
+        },
+      };
+    </script>
+    <style>
+      body {
+        background-color: #0f172a;
+      }
+      .card-gradient {
+        background: linear-gradient(
+          135deg,
+          rgba(30, 41, 59, 0.7) 0%,
+          rgba(15, 23, 42, 0.8) 100%
+        );
+      }
+    </style>
+  </head>
+  <body class="bg-slate-900 text-slate-200 font-sans antialiased">
+    <!-- Navigation -->
+    <nav
+      class="sticky top-0 z-50 bg-slate-900/80 backdrop-blur-md border-b border-slate-800"
+    >
+      <div
+        class="container mx-auto px-6 py-4 flex justify-between items-center"
+      >
+        <div class="flex items-center space-x-2">
+          <a
+            href="index.html"
+            class="text-xl font-bold tracking-tighter uppercase transition-opacity hover:opacity-80"
+          >
+            MICHAEL <span class="text-logistics-orange">CAMPBELL</span>
+          </a>
+        </div>
+        <div class="hidden md:flex space-x-8 text-sm font-medium items-center">
+          <a href="index.html" class="hover:text-logistics-orange transition"
+            >Home</a
+          >
+          <a
+            href="all_projects.html"
+            class="hover:text-logistics-orange transition"
+            >Gallery</a
+          >
+          <a href="#dashboard" class="hover:text-logistics-orange transition"
+            >Dashboard</a
+          >
+          <a href="#discoveries" class="hover:text-logistics-orange transition"
+            >Discoveries</a
+          >
+          <a
+            href="#contact"
+            class="px-4 py-2 bg-logistics-green hover:bg-emerald-700 text-white rounded transition"
+            >Contact</a
+          >
+        </div>
+      </div>
+    </nav>
+
+    <main class="pt-24">
+      <!-- Project Hero -->
+      <section class="py-20 border-b border-slate-800 relative overflow-hidden">
+        <div class="container mx-auto px-6">
+          <div class="max-w-4xl">
+            <div
+              class="inline-block px-3 py-1 bg-logistics-orange/10 border border-logistics-orange/20 text-logistics-orange rounded-full text-xs font-bold uppercase tracking-widest mb-6"
+            >
+              Case Study: Manufacturing Excellence
+            </div>
+            <h1 class="text-4xl md:text-6xl font-bold mb-6 leading-tight">
+              Manufacturing Line
+              <span class="text-logistics-orange">Productivity</span>
+            </h1>
+            <p class="text-xl text-slate-300 leading-relaxed mb-8">
+              An Excel-based root cause analysis to identify drivers of
+              production downtime and optimize bottling line efficiency using
+              Power Query and Pareto analysis.
+            </p>
+
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
+              <div class="border-l-2 border-slate-800 pl-4">
+                <div
+                  class="text-xs uppercase tracking-widest text-slate-500 mb-1"
+                >
+                  Tools
+                </div>
+                <div class="font-bold text-slate-300">Excel & Power Query</div>
+              </div>
+              <div class="border-l-2 border-slate-800 pl-4">
+                <div
+                  class="text-xs uppercase tracking-widest text-slate-500 mb-1"
+                >
+                  Impact
+                </div>
+                <div class="font-bold text-slate-300">
+                  Targeted Downtime Reduction
+                </div>
+              </div>
+              <div class="border-l-2 border-slate-800 pl-4">
+                <div
+                  class="text-xs uppercase tracking-widest text-slate-500 mb-1"
+                >
+                  Focus
+                </div>
+                <div class="font-bold text-slate-300">
+                  Operations Management
+                </div>
+              </div>
+              <div class="border-l-2 border-slate-800 pl-4">
+                <div
+                  class="text-xs uppercase tracking-widest text-slate-500 mb-1"
+                >
+                  Dataset
+                </div>
+                <span class="font-bold text-slate-300 italic"
+                  >Beverage Bottling Line</span
+                >
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Dashboard Section -->
+      <section id="dashboard" class="py-24 bg-slate-900/50">
+        <div class="container mx-auto px-6 text-center">
+          <h2 class="text-3xl font-bold mb-12">
+            Interactive
+            <span class="text-logistics-orange">Excel Dashboard</span>
+          </h2>
+          <div
+            class="card-gradient p-2 rounded-2xl border border-slate-800 overflow-hidden shadow-2xl"
+          >
+            <iframe
+              src="https://1drv.ms/x/c/8513fca8776bf8ff/IQRhRLvDsMjGT7rxot3wKRslAfgDdu3AakwudErYXIhGjtA"
+              width="100%"
+              height="800"
+              frameborder="0"
+              scrolling="no"
+              class="rounded-xl"
+            ></iframe>
+          </div>
+          <div class="mt-8">
+            <a
+              href="https://github.com/michaelcampbell215/manufacturing-line-productivity-analysis.git"
+              target="_blank"
+              class="inline-flex items-center px-6 py-3 bg-slate-800 hover:bg-slate-700 text-white font-bold rounded-lg transition border border-slate-700"
+            >
+              <i class="fab fa-github mr-2"></i> View Project Documenation
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <!-- Process & Insights -->
+      <section class="py-24">
+        <div class="container mx-auto px-6">
+          <div class="grid lg:grid-cols-2 gap-16">
+            <div>
+              <h2 class="text-3xl font-bold mb-8">
+                The
+                <span class="text-logistics-orange">Analytical</span> Process
+              </h2>
+              <div class="space-y-12">
+                <div class="relative pl-12">
+                  <div
+                    class="absolute left-0 top-0 w-8 h-8 bg-logistics-orange/20 rounded-full flex items-center justify-center border border-logistics-orange/40 text-logistics-orange font-bold text-sm"
+                  >
+                    1
+                  </div>
+                  <h3 class="text-xl font-bold mb-3">
+                    ETL & Data Transformation
+                  </h3>
+                  <p class="text-slate-400 mb-4">
+                    Leveraged Power Query to merge disparate data sources into a
+                    unified fact table.
+                  </p>
+                  <ul class="text-sm text-slate-500 space-y-2">
+                    <li class="flex items-start">
+                      <i
+                        class="fas fa-check text-logistics-green mr-2 mt-1"
+                      ></i>
+                      Unpivoted 12 columns of downtime factors into a "tall"
+                      schema
+                    </li>
+                    <li class="flex items-start">
+                      <i
+                        class="fas fa-check text-logistics-green mr-2 mt-1"
+                      ></i>
+                      Cleaned production records for consistency across shifts
+                    </li>
+                    <li class="flex items-start">
+                      <i
+                        class="fas fa-check text-logistics-green mr-2 mt-1"
+                      ></i>
+                      Calculated efficiency metrics considering overnight
+                      overlaps
+                    </li>
+                  </ul>
+                </div>
+
+                <div class="relative pl-12">
+                  <div
+                    class="absolute left-0 top-0 w-8 h-8 bg-logistics-orange/20 rounded-full flex items-center justify-center border border-logistics-orange/40 text-logistics-orange font-bold text-sm"
+                  >
+                    2
+                  </div>
+                  <h3 class="text-xl font-bold mb-3">Down-Time Segmentation</h3>
+                  <p class="text-slate-400 mb-4">
+                    Partitioned downtime into "Operator-Controllable" and
+                    "Systemic" categories to ensure fair performance assessment.
+                  </p>
+                  <div class="grid grid-cols-2 gap-4">
+                    <div
+                      class="bg-slate-900 p-4 rounded-xl border border-slate-800"
+                    >
+                      <div class="text-logistics-orange font-bold mb-1">
+                        Operator Errors
+                      </div>
+                      <div class="text-xs text-slate-500">
+                        Training Opportunities
+                      </div>
+                    </div>
+                    <div
+                      class="bg-slate-900 p-4 rounded-xl border border-slate-800"
+                    >
+                      <div class="text-logistics-orange font-bold mb-1">
+                        Systemic Issues
+                      </div>
+                      <div class="text-xs text-slate-500">
+                        Maintenance & Supply Chain
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="relative pl-12">
+                  <div
+                    class="absolute left-0 top-0 w-8 h-8 bg-logistics-orange/20 rounded-full flex items-center justify-center border border-logistics-orange/40 text-logistics-orange font-bold text-sm"
+                  >
+                    3
+                  </div>
+                  <h3 class="text-xl font-bold mb-3">
+                    Root Cause Identification
+                  </h3>
+                  <p class="text-slate-400">
+                    Deployed Pareto analysis to isolate the "Vital Few"
+                    factors—specifically machine failure and inventory
+                    shortages—that drove 80% of lost time.
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <div
+              id="discoveries"
+              class="bg-slate-900 p-10 rounded-2xl border border-slate-800"
+            >
+              <h2 class="text-3xl font-bold mb-8">
+                Key <span class="text-logistics-orange">Discoveries</span>
+              </h2>
+              <div class="space-y-6">
+                <div class="flex items-start">
+                  <div
+                    class="w-1.5 h-1.5 bg-logistics-orange rounded-full mt-2.5 mr-4 flex-shrink-0"
+                  ></div>
+                  <div>
+                    <h4 class="font-bold text-lg mb-1">Downtime Drivers</h4>
+                    <p class="text-slate-400">
+                      Identified that <strong>Machine Adjustments</strong> and
+                      <strong>Inventory Shortages</strong> were the primary
+                      bottlenecks, not operator speed.
+                    </p>
+                  </div>
+                </div>
+                <div class="flex items-start">
+                  <div
+                    class="w-1.5 h-1.5 bg-logistics-orange rounded-full mt-2.5 mr-4 flex-shrink-0"
+                  ></div>
+                  <div>
+                    <h4 class="font-bold text-lg mb-1">Productivity Levers</h4>
+                    <p class="text-slate-400">
+                      The <strong>CO-600 product line</strong> demonstrated the
+                      highest variance in downtime, suggesting equipment issues
+                      specific to that format.
+                    </p>
+                  </div>
+                </div>
+                <div class="flex items-start">
+                  <div
+                    class="w-1.5 h-1.5 bg-logistics-orange rounded-full mt-2.5 mr-4 flex-shrink-0"
+                  ></div>
+                  <div>
+                    <h4 class="font-bold text-lg mb-1">Temporal Patterns</h4>
+                    <p class="text-slate-400">
+                      Lost time was not stochastic but clustered around peak
+                      production hours, indicating a need for shift-overlap
+                      maintenance windows.
+                    </p>
+                  </div>
+                </div>
+
+                <div class="mt-12 pt-8 border-t border-slate-800">
+                  <h4
+                    class="text-sm font-bold uppercase tracking-widest text-slate-500 mb-4"
+                  >
+                    Strategic Recommendation
+                  </h4>
+                  <p class="text-slate-300 italic">
+                    "Shift from reactive machine fixing to a preventative
+                    maintenance schedule prioritized for the CO-600 line
+                    equipment and high-incidence adjustment phases."
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Visualization Gallery -->
+      <section class="py-24 border-t border-slate-800">
+        <div class="container mx-auto px-6">
+          <h2 class="text-3xl font-bold mb-12 text-center italic">
+            Supporting <span class="text-logistics-orange">Visuals</span>
+          </h2>
+          <div class="grid md:grid-cols-2 gap-8">
+            <div
+              class="group overflow-hidden rounded-xl border border-slate-800"
+            >
+              <img
+                src="../images/project_images/ma1.png"
+                alt="Pareto Downtime Analysis"
+                class="w-full h-auto grayscale group-hover:grayscale-0 transition duration-500"
+              />
+            </div>
+            <div
+              class="group overflow-hidden rounded-xl border border-slate-800"
+            >
+              <img
+                src="../images/project_images/ma2.png"
+                alt="Downtime by Hour"
+                class="w-full h-auto grayscale group-hover:grayscale-0 transition duration-500"
+              />
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Contact CTA -->
+      <section
+        id="contact"
+        class="py-24 bg-slate-900 border-t border-slate-800"
+      >
+        <div class="container mx-auto px-6 text-center max-w-2xl">
+          <h2 class="text-3xl font-bold mb-6 italic">
+            Questions on this
+            <span class="text-logistics-orange">Analysis?</span>
+          </h2>
+          <div class="flex justify-center gap-6">
+            <a
+              href="mailto:mcam215@gmail.com"
+              class="text-slate-400 hover:text-logistics-orange transition text-2xl"
+              ><i class="fas fa-envelope"></i
+            ></a>
+            <a
+              href="https://linkedin.com/in/michaelcampbellanalyst"
+              class="text-slate-400 hover:text-logistics-orange transition text-2xl"
+              ><i class="fab fa-linkedin"></i
+            ></a>
+            <a
+              href="https://github.com/michaelcampbell215"
+              class="text-slate-400 hover:text-logistics-orange transition text-2xl"
+              ><i class="fab fa-github"></i
+            ></a>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer
+      class="py-12 border-t border-slate-800 text-center text-slate-600 text-sm"
+    >
+      <p>&copy; 2026 Michael Campbell. Optimized for Impact.</p>
+    </footer>
+  </body>
+</html>

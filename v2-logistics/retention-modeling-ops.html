@@ -1,0 +1,492 @@
+<!doctype html>
+<html lang="en" class="scroll-smooth">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Bank Customer Churn | Michael Campbell Analytics</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+    />
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            fontFamily: {
+              sans: ["Inter", "sans-serif"],
+              mono: ["JetBrains Mono", "monospace"],
+            },
+            colors: {
+              logistics: {
+                green: "#065F46",
+                orange: "#EA580C",
+                slate: "#334155",
+              },
+            },
+          },
+        },
+      };
+    </script>
+    <style>
+      body {
+        background-color: #0f172a;
+      }
+      .card-gradient {
+        background: linear-gradient(
+          135deg,
+          rgba(30, 41, 59, 0.7) 0%,
+          rgba(15, 23, 42, 0.9) 100%
+        );
+      }
+      .metric-card {
+        border-left: 4px solid #ea580c;
+      }
+    </style>
+  </head>
+  <body class="text-slate-200 font-sans antialiased">
+    <!-- Navigation -->
+    <nav
+      class="sticky top-0 z-50 bg-slate-900/80 backdrop-blur-md border-b border-slate-800"
+    >
+      <div
+        class="container mx-auto px-6 py-4 flex justify-between items-center"
+      >
+        <div class="flex items-center space-x-2">
+          <a
+            href="index.html"
+            class="text-xl font-bold tracking-tighter uppercase transition-opacity hover:opacity-80"
+          >
+            MICHAEL <span class="text-logistics-orange">CAMPBELL</span>
+          </a>
+        </div>
+        <div class="hidden md:flex space-x-8 text-sm font-medium items-center">
+          <a href="index.html" class="hover:text-logistics-orange transition"
+            >Home</a
+          >
+          <a
+            href="all_projects.html"
+            class="hover:text-logistics-orange transition"
+            >Gallery</a
+          >
+          <a href="#gallery" class="hover:text-logistics-orange transition"
+            >Visuals</a
+          >
+          <a
+            href="#documentation"
+            class="hover:text-logistics-orange transition"
+            >Documentation</a
+          >
+          <a
+            href="#contact"
+            class="px-4 py-2 bg-logistics-green hover:bg-emerald-700 text-white rounded transition"
+            >Contact</a
+          >
+        </div>
+      </div>
+    </nav>
+
+    <main>
+      <!-- Hero -->
+      <section class="py-20 border-b border-slate-800 bg-slate-900/50">
+        <div class="container mx-auto px-6">
+          <div class="max-w-4xl">
+            <div
+              class="inline-block px-3 py-1 bg-emerald-500/10 border border-emerald-500/20 text-emerald-400 rounded-full text-xs font-bold uppercase tracking-widest mb-6"
+              style="
+                color: #10b981;
+                border-color: rgba(16, 185, 129, 0.2);
+                background-color: rgba(16, 185, 129, 0.1);
+              "
+            >
+              Finance ➔ Predictive Modeling
+            </div>
+            <h1 class="text-4xl md:text-6xl font-bold mb-6 leading-tight">
+              Customer
+              <span class="text-logistics-orange">Churn</span> Prediction
+            </h1>
+            <p class="text-xl text-slate-400 leading-relaxed font-mono">
+              > Engineering a machine learning pipeline to mitigate revenue loss
+              through proactive retention strategy.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Key Metrics -->
+      <section class="py-12 border-b border-slate-800">
+        <div class="container mx-auto px-6">
+          <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
+            <div
+              class="p-6 bg-slate-900 rounded-2xl border border-slate-800 metric-card"
+            >
+              <p
+                class="text-slate-500 text-xs font-bold uppercase tracking-widest mb-1"
+              >
+                Target Recall
+              </p>
+              <h3 class="text-2xl font-bold">74%</h3>
+              <p class="text-slate-400 text-xs mt-2">Churn Detection Rate</p>
+            </div>
+            <div
+              class="p-6 bg-slate-900 rounded-2xl border border-slate-800 metric-card"
+            >
+              <p
+                class="text-slate-500 text-xs font-bold uppercase tracking-widest mb-1"
+              >
+                Baseline Churn
+              </p>
+              <h3 class="text-2xl font-bold text-red-400">20%</h3>
+              <p class="text-slate-400 text-xs mt-2">Historical Revenue Leak</p>
+            </div>
+            <div
+              class="p-6 bg-slate-900 rounded-2xl border border-slate-800 metric-card"
+              style="border-left-color: #065f46"
+            >
+              <p
+                class="text-slate-500 text-xs font-bold uppercase tracking-widest mb-1"
+              >
+                Model Champion
+              </p>
+              <h3 class="text-2xl font-bold">Gradient Boost</h3>
+              <p class="text-slate-400 text-xs mt-2">Optimized with SMOTE</p>
+            </div>
+            <div
+              class="p-6 bg-slate-900 rounded-2xl border border-slate-800 metric-card"
+              style="border-left-color: #065f46"
+            >
+              <p
+                class="text-slate-500 text-xs font-bold uppercase tracking-widest mb-1"
+              >
+                Key Driver
+              </p>
+              <h3 class="text-2xl font-bold">Age & Depth</h3>
+              <p class="text-slate-400 text-xs mt-2">Primary Churn Signals</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Visualization Gallery -->
+      <section id="gallery" class="py-24 bg-slate-900/30">
+        <div class="container mx-auto px-6">
+          <h2 class="text-3xl font-bold mb-12 flex items-center">
+            <i class="fas fa-microscope text-logistics-orange mr-4"></i>
+            Analysis Visuals
+          </h2>
+          <div class="grid md:grid-cols-2 gap-8">
+            <div
+              class="group relative rounded-3xl overflow-hidden border border-slate-800 bg-slate-900"
+            >
+              <img
+                src="../images/project_images/feature_importance_chart.png"
+                alt="Feature Importance"
+                class="w-full opacity-80 group-hover:opacity-100 transition duration-500"
+              />
+              <div
+                class="p-6 bg-slate-900/80 backdrop-blur-sm border-t border-slate-800"
+              >
+                <p
+                  class="text-xs font-bold text-logistics-orange uppercase tracking-widest mb-2"
+                >
+                  Technique: Feature Selection
+                </p>
+                <h4 class="text-lg font-bold text-white">
+                  Top Predictive Drivers
+                </h4>
+                <p class="text-sm text-slate-400 mt-2 italic">
+                  Age and number of products emerged as the strongest signals
+                  for model convergence.
+                </p>
+              </div>
+            </div>
+            <div
+              class="group relative rounded-3xl overflow-hidden border border-slate-800 bg-slate-900"
+            >
+              <img
+                src="../images/project_images/corr_heatmap.png"
+                alt="Correlation Heatmap"
+                class="w-full opacity-80 group-hover:opacity-100 transition duration-500"
+              />
+              <div
+                class="p-6 bg-slate-900/80 backdrop-blur-sm border-t border-slate-800"
+              >
+                <p
+                  class="text-xs font-bold text-logistics-orange uppercase tracking-widest mb-2"
+                >
+                  Technique: EDA
+                </p>
+                <h4 class="text-lg font-bold text-white">
+                  Multivariable Correlation
+                </h4>
+                <p class="text-sm text-slate-400 mt-2 italic">
+                  Heatmap identified redundant features and validated
+                  hypothesize interaction terms.
+                </p>
+              </div>
+            </div>
+            <div
+              class="group relative rounded-3xl overflow-hidden border border-slate-800 bg-slate-900"
+            >
+              <img
+                src="../images/project_images/churn.png"
+                alt="Churn by Geography"
+                class="w-full opacity-80 group-hover:opacity-100 transition duration-500"
+              />
+              <div
+                class="p-6 bg-slate-900/80 backdrop-blur-sm border-t border-slate-800"
+              >
+                <p
+                  class="text-xs font-bold text-logistics-orange uppercase tracking-widest mb-2"
+                >
+                  Technique: Spatial Analysis
+                </p>
+                <h4 class="text-lg font-bold text-white">Geographic Leakage</h4>
+                <p class="text-sm text-slate-400 mt-2 italic">
+                  German customers exhibited a unique churn profile tied
+                  specifically to account balance.
+                </p>
+              </div>
+            </div>
+            <div
+              class="group relative rounded-3xl overflow-hidden border border-slate-800 bg-slate-900"
+            >
+              <img
+                src="../images/project_images/PRC_baseline_model.png"
+                alt="PRC Curve"
+                class="w-full opacity-80 group-hover:opacity-100 transition duration-500"
+              />
+              <div
+                class="p-6 bg-slate-900/80 backdrop-blur-sm border-t border-slate-800"
+              >
+                <p
+                  class="text-xs font-bold text-logistics-orange uppercase tracking-widest mb-2"
+                >
+                  Technique: Performance Tuning
+                </p>
+                <h4 class="text-lg font-bold text-white">
+                  Precision-Recall Curve
+                </h4>
+                <p class="text-sm text-slate-400 mt-2 italic">
+                  Decision threshold tuned specifically to 0.45 to maximize
+                  recall for high-risk accounts.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Documentation Section -->
+      <section id="documentation" class="py-24 border-t border-slate-800">
+        <div class="container mx-auto px-6">
+          <div class="grid lg:grid-cols-3 gap-12">
+            <!-- Main Content -->
+            <div class="lg:col-span-2 space-y-12">
+              <div>
+                <h3 class="text-2xl font-bold mb-6 text-logistics-orange">
+                  The Analytical Workflow
+                </h3>
+                <div class="space-y-8">
+                  <div class="flex">
+                    <div class="mr-6 flex flex-col items-center">
+                      <div
+                        class="w-10 h-10 rounded-full bg-slate-800 border border-slate-700 flex items-center justify-center font-bold text-logistics-orange"
+                      >
+                        01
+                      </div>
+                      <div class="w-px h-full bg-slate-800 mt-2"></div>
+                    </div>
+                    <div>
+                      <h4 class="text-xl font-bold mb-2">
+                        Data Preparation & Cleaning
+                      </h4>
+                      <p class="text-slate-400 leading-relaxed">
+                        Handled extreme class imbalance using SMOTE. Engineered
+                        interaction features like `BalanceSalaryRatio` and
+                        `Germany_X_Balance` to capture subtle risk profiles
+                        missed by baseline models.
+                      </p>
+                    </div>
+                  </div>
+                  <div class="flex">
+                    <div class="mr-6 flex flex-col items-center">
+                      <div
+                        class="w-10 h-10 rounded-full bg-slate-800 border border-slate-700 flex items-center justify-center font-bold text-logistics-orange"
+                      >
+                        02
+                      </div>
+                      <div class="w-px h-full bg-slate-800 mt-2"></div>
+                    </div>
+                    <div>
+                      <h4 class="text-xl font-bold mb-2">
+                        Hyperparameter Optimization
+                      </h4>
+                      <p class="text-slate-400 leading-relaxed">
+                        Utilized `GridSearchCV` and `RandomizedSearchCV` to
+                        optimize the Gradient Boosting champion. Balanced
+                        complexity vs accuracy to avoid overfitting to the
+                        training set.
+                      </p>
+                    </div>
+                  </div>
+                  <div class="flex">
+                    <div class="mr-6 flex flex-col items-center">
+                      <div
+                        class="w-10 h-10 rounded-full bg-slate-800 border border-slate-700 flex items-center justify-center font-bold text-logistics-orange"
+                      >
+                        03
+                      </div>
+                    </div>
+                    <div>
+                      <h4 class="text-xl font-bold mb-2">
+                        Strategic Threshold Tuning
+                      </h4>
+                      <p class="text-slate-400 leading-relaxed">
+                        Calibrated the model to a 0.45 threshold. This maximized
+                        churner identification (74% Recall) while maintaining a
+                        precision actionable for business retention
+                        interventions.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Impact Cards -->
+              <div class="grid md:grid-cols-2 gap-6">
+                <div
+                  class="p-8 bg-slate-900 rounded-3xl border border-slate-800"
+                >
+                  <i
+                    class="fas fa-lightbulb text-logistics-orange text-2xl mb-4"
+                  ></i>
+                  <h4 class="text-xl font-bold mb-4 text-white">
+                    Strategic Roadmap
+                  </h4>
+                  <ul class="text-sm text-slate-400 space-y-3">
+                    <li>
+                      • Offer pre-approved credit cards to low-product accounts
+                      to deepen integration.
+                    </li>
+                    <li>
+                      • Trigger automated "Activity Nudges" for members flagging
+                      as inactive.
+                    </li>
+                  </ul>
+                </div>
+                <div
+                  class="p-8 bg-slate-900 rounded-3xl border border-slate-800"
+                >
+                  <i class="fas fa-flag text-logistics-green text-2xl mb-4"></i>
+                  <h4 class="text-xl font-bold mb-4 text-white">
+                    Geographic Focus
+                  </h4>
+                  <ul class="text-sm text-slate-400 space-y-3">
+                    <li>
+                      • Specialized German retention desk focused on
+                      high-balance deposit rate matching.
+                    </li>
+                    <li>
+                      • Targeted financial advice campaigns for aged customer
+                      segments.
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+
+            <!-- Sidebar -->
+            <div class="space-y-8">
+              <div class="p-8 bg-slate-900 rounded-3xl border border-slate-800">
+                <h4
+                  class="text-sm font-bold uppercase tracking-widest text-slate-500 mb-6"
+                >
+                  Technical Stack
+                </h4>
+                <div class="flex flex-wrap gap-2">
+                  <span
+                    class="px-3 py-1 bg-slate-800 rounded-md text-sm border border-slate-700/50"
+                    >Python (Pandas)</span
+                  >
+                  <span
+                    class="px-3 py-1 bg-slate-800 rounded-md text-sm border border-slate-700/50"
+                    >Scikit-Learn</span
+                  >
+                  <span
+                    class="px-3 py-1 bg-slate-800 rounded-md text-sm border border-slate-700/50"
+                    >Gradient Boosting</span
+                  >
+                  <span
+                    class="px-3 py-1 bg-slate-800 rounded-md text-sm border border-slate-700/50"
+                    >Random Forest</span
+                  >
+                </div>
+              </div>
+
+              <div
+                class="p-8 bg-logistics-orange/5 rounded-3xl border border-logistics-orange/20"
+              >
+                <h4
+                  class="text-sm font-bold uppercase tracking-widest text-logistics-orange mb-4"
+                >
+                  Analyst Summary
+                </h4>
+                <p class="text-sm text-slate-400 leading-relaxed">
+                  "Predictive churn modeling isn't just about accuracy; it's
+                  about identifying the levers that can actually be pulled. By
+                  isolating inaction and product depth, we provide the bank with
+                  a direct operational script."
+                </p>
+                <a
+                  href="https://github.com/michaelcampbell215/Bank-Churn-Predictive-Analysis"
+                  target="_blank"
+                  class="mt-6 inline-flex items-center text-sm font-bold text-logistics-orange hover:gap-2 transition-all"
+                >
+                  Github Repository <i class="fas fa-arrow-right ml-2"></i>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Contact CTA -->
+      <section id="contact" class="py-24 border-t border-slate-800">
+        <div class="container mx-auto px-6 text-center max-w-2xl">
+          <h2 class="text-4xl font-bold mb-6 italic">
+            Predicting <span class="text-logistics-orange">Volatility?</span>
+          </h2>
+          <p class="text-slate-400 mb-10 text-lg">
+            Let's discuss how machine learning can harden your revenue stability
+            and operational foresight.
+          </p>
+          <div class="flex flex-col sm:flex-row justify-center gap-4">
+            <a
+              href="mailto:mcam215@gmail.com"
+              class="px-8 py-4 bg-white text-slate-900 font-bold rounded-lg hover:bg-slate-200 transition"
+              >Email Michael</a
+            >
+            <a
+              href="https://linkedin.com/in/michaelcampbellanalyst"
+              class="px-8 py-4 border border-slate-700 font-bold rounded-lg hover:border-slate-500 transition"
+              >LinkedIn</a
+            >
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer
+      class="py-12 border-t border-slate-800 text-center text-slate-600 text-sm"
+    >
+      <p>&copy; 2026 Michael Campbell. Engineered for Precision.</p>
+    </footer>
+  </body>
+</html>

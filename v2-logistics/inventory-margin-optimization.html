@@ -1,0 +1,491 @@
+<!doctype html>
+<html lang="en" class="scroll-smooth">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Restaurant Order Analysis | Michael Campbell Analytics</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+    />
+    <!-- Prism.js for code highlighting -->
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism-tomorrow.min.css"
+      rel="stylesheet"
+    />
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            fontFamily: {
+              sans: ["Inter", "sans-serif"],
+              mono: ["JetBrains Mono", "monospace"],
+            },
+            colors: {
+              logistics: {
+                green: "#065F46",
+                orange: "#EA580C",
+                slate: "#334155",
+              },
+            },
+          },
+        },
+      };
+    </script>
+    <style>
+      body {
+        background-color: #0f172a;
+      }
+      .card-gradient {
+        background: linear-gradient(
+          135deg,
+          rgba(30, 41, 59, 0.7) 0%,
+          rgba(15, 23, 42, 0.9) 100%
+        );
+      }
+      .metric-card {
+        border-left: 4px solid #ea580c;
+      }
+      pre[class*="language-"] {
+        background: #1e293b !important;
+        margin: 0 !important;
+        border-radius: 0 0 1rem 1rem !important;
+      }
+    </style>
+  </head>
+  <body class="text-slate-200 font-sans antialiased">
+    <!-- Navigation -->
+    <nav
+      class="sticky top-0 z-50 bg-slate-900/80 backdrop-blur-md border-b border-slate-800"
+    >
+      <div
+        class="container mx-auto px-6 py-4 flex justify-between items-center"
+      >
+        <div class="flex items-center space-x-2">
+          <a
+            href="index.html"
+            class="text-xl font-bold tracking-tighter uppercase transition-opacity hover:opacity-80"
+          >
+            MICHAEL <span class="text-logistics-orange">CAMPBELL</span>
+          </a>
+        </div>
+        <div class="hidden md:flex space-x-8 text-sm font-medium items-center">
+          <a href="index.html" class="hover:text-logistics-orange transition"
+            >Home</a
+          >
+          <a
+            href="all_projects.html"
+            class="hover:text-logistics-orange transition"
+            >Gallery</a
+          >
+          <a href="#sql-showcase" class="hover:text-logistics-orange transition"
+            >Showcase</a
+          >
+          <a
+            href="#documentation"
+            class="hover:text-logistics-orange transition"
+            >Documentation</a
+          >
+          <a
+            href="#contact"
+            class="px-4 py-2 bg-logistics-green hover:bg-emerald-700 text-white rounded transition"
+            >Contact</a
+          >
+        </div>
+      </div>
+    </nav>
+
+    <main>
+      <!-- Hero -->
+      <section class="py-20 border-b border-slate-800 bg-slate-900/50">
+        <div class="container mx-auto px-6">
+          <div class="max-w-4xl">
+            <div
+              class="inline-block px-3 py-1 bg-emerald-500/10 border border-emerald-500/20 text-emerald-400 rounded-full text-xs font-bold uppercase tracking-widest mb-6"
+              style="
+                color: #4ade80;
+                border-color: rgba(74, 222, 128, 0.2);
+                background-color: rgba(74, 222, 128, 0.1);
+              "
+            >
+              Food & Beverage ➔ SQL Analytics
+            </div>
+            <h1 class="text-4xl md:text-6xl font-bold mb-6 leading-tight">
+              Restaurant
+              <span class="text-logistics-orange">Order</span> Analysis
+            </h1>
+            <p class="text-xl text-slate-400 leading-relaxed font-mono">
+              > Engineering SQL queries to bridge the gap between menu
+              complexity and operational profitability.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Key Insights Overview -->
+      <section class="py-12 border-b border-slate-800">
+        <div class="container mx-auto px-6">
+          <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
+            <div
+              class="p-6 bg-slate-900 rounded-2xl border border-slate-800 metric-card"
+            >
+              <p
+                class="text-slate-500 text-xs font-bold uppercase tracking-widest mb-1"
+              >
+                Top Revenue
+              </p>
+              <h3 class="text-2xl font-bold">Italian</h3>
+              <p class="text-slate-400 text-xs mt-2">Cuisine Performance</p>
+            </div>
+            <div
+              class="p-6 bg-slate-900 rounded-2xl border border-slate-800 metric-card"
+            >
+              <p
+                class="text-slate-500 text-xs font-bold uppercase tracking-widest mb-1"
+              >
+                Peak Volume
+              </p>
+              <h3 class="text-2xl font-bold">Lunch</h3>
+              <p class="text-slate-400 text-xs mt-2">Mon/Fri/Sun Demand</p>
+            </div>
+            <div
+              class="p-6 bg-slate-900 rounded-2xl border border-slate-800 metric-card"
+              style="border-left-color: #065f46"
+            >
+              <p
+                class="text-slate-500 text-xs font-bold uppercase tracking-widest mb-1"
+              >
+                Star Item
+              </p>
+              <h3 class="text-2xl font-bold italic">Korean Beef Bowl</h3>
+              <p class="text-slate-400 text-xs mt-2">High Profit / High Vol</p>
+            </div>
+            <div
+              class="p-6 bg-slate-900 rounded-2xl border border-slate-800 metric-card"
+              style="border-left-color: #065f46"
+            >
+              <p
+                class="text-slate-500 text-xs font-bold uppercase tracking-widest mb-1"
+              >
+                Fusion Factor
+              </p>
+              <h3 class="text-2xl font-bold">49% Drop-off</h3>
+              <p class="text-slate-400 text-xs mt-2">Conversion Opportunity</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- SQL Showcase -->
+      <section id="sql-showcase" class="py-24 bg-slate-900/30">
+        <div class="container mx-auto px-6">
+          <h2 class="text-3xl font-bold mb-12 flex items-center">
+            <i class="fas fa-database text-logistics-orange mr-4"></i> Query
+            Showcase
+          </h2>
+
+          <div class="space-y-12">
+            <!-- Query 1 -->
+            <div
+              class="rounded-3xl border border-slate-800 overflow-hidden bg-slate-900 shadow-2xl"
+            >
+              <div class="p-6 bg-slate-800/50 border-b border-slate-700">
+                <h4 class="text-lg font-bold text-white">
+                  01. Temporal Traffic Analysis
+                </h4>
+                <p class="text-sm text-slate-400 mt-2">
+                  Identifying the bottleneck hours using cron-style SQL
+                  ordering.
+                </p>
+              </div>
+              <div class="p-8">
+                <pre class="language-sql"><code>SELECT 
+    DAYNAME(order_date) AS day_of_week, 
+    HOUR(order_time) AS hour_of_day, 
+    COUNT(DISTINCT order_id) AS number_of_orders 
+FROM fact_orders 
+GROUP BY 
+    DAYOFWEEK(order_date), day_of_week, hour_of_day 
+ORDER BY 
+    DAYOFWEEK(order_date), number_of_orders DESC;</code></pre>
+                <div
+                  class="mt-6 p-4 bg-logistics-orange/5 border-l-2 border-logistics-orange rounded-r-lg"
+                >
+                  <p class="text-sm text-slate-300">
+                    <strong>Result:</strong> Lunch hours on Mon/Fri/Sun are
+                    critical peaks. Recommended staffing increase specifically
+                    for these windows to maintain service SLAs.
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <!-- Query 2 -->
+            <div
+              class="rounded-3xl border border-slate-800 overflow-hidden bg-slate-900 shadow-2xl"
+            >
+              <div class="p-6 bg-slate-800/50 border-b border-slate-700">
+                <h4 class="text-lg font-bold text-white">
+                  02. Strategic Menu Matrix (CTE + NTILE)
+                </h4>
+                <p class="text-sm text-slate-400 mt-2">
+                  Classification of menu items into 'Stars', 'Puzzle',
+                  'Workhorse', and 'Dud'.
+                </p>
+              </div>
+              <div class="p-8">
+                <pre class="language-sql"><code>WITH total_order_revenue AS (
+    SELECT 
+        m.item_name, 
+        COUNT(o.order_id) AS total_orders, 
+        SUM(m.price) AS total_revenue 
+    FROM dim_menu_items m 
+    INNER JOIN fact_orders o ON m.menu_item_id = o.item_id 
+    GROUP BY m.item_name
+), 
+ItemRanks AS (
+    SELECT 
+        item_name, total_orders, total_revenue, 
+        NTILE(2) OVER (ORDER BY total_orders DESC) AS order_ntile, 
+        NTILE(2) OVER (ORDER BY total_revenue DESC) AS revenue_ntile 
+    FROM total_order_revenue
+) 
+SELECT 
+    item_name, total_orders, total_revenue, 
+    CASE 
+        WHEN order_ntile = 1 AND revenue_ntile = 1 THEN 'Star'
+        WHEN order_ntile = 1 AND revenue_ntile = 2 THEN 'Workhorse'
+        WHEN order_ntile = 2 AND revenue_ntile = 1 THEN 'Puzzle'
+        WHEN order_ntile = 2 AND revenue_ntile = 2 THEN 'Dud' 
+    END AS item_category 
+FROM ItemRanks;</code></pre>
+                <div
+                  class="mt-6 p-4 bg-logistics-orange/5 border-l-2 border-logistics-orange rounded-r-lg"
+                >
+                  <p class="text-sm text-slate-300">
+                    <strong>Result:</strong> Isolated 'Stars' vs 'Duds'.
+                    Revealed that the Hamburger (Volume Leader) isn't the
+                    primary Revenue Driver, prompting a re-valuation of bundling
+                    strategies.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Project Narrative -->
+      <section id="documentation" class="py-24 border-t border-slate-800">
+        <div class="container mx-auto px-6">
+          <div class="grid lg:grid-cols-3 gap-12">
+            <div class="lg:col-span-2 space-y-12">
+              <div>
+                <h3 class="text-2xl font-bold mb-6 text-logistics-orange">
+                  Building the Data Pipeline
+                </h3>
+                <div class="space-y-8">
+                  <div class="flex">
+                    <div class="mr-6 flex flex-col items-center">
+                      <div
+                        class="w-10 h-10 rounded-full bg-slate-800 border border-slate-700 flex items-center justify-center font-bold text-logistics-orange"
+                      >
+                        01
+                      </div>
+                      <div class="w-px h-full bg-slate-800 mt-2"></div>
+                    </div>
+                    <div>
+                      <h4 class="text-xl font-bold mb-2">Schema Foundation</h4>
+                      <p class="text-slate-400 leading-relaxed">
+                        Constructed a robust dimensional model (Star Schema).
+                        Joined operational fact tables with menu dimension items
+                        to create a reliable playground for complex analytical
+                        queries.
+                      </p>
+                    </div>
+                  </div>
+                  <div class="flex">
+                    <div class="mr-6 flex flex-col items-center">
+                      <div
+                        class="w-10 h-10 rounded-full bg-slate-800 border border-slate-700 flex items-center justify-center font-bold text-logistics-orange"
+                      >
+                        02
+                      </div>
+                      <div class="w-px h-full bg-slate-800 mt-2"></div>
+                    </div>
+                    <div>
+                      <h4 class="text-xl font-bold mb-2">
+                        Basket Analysis (Self-Joins)
+                      </h4>
+                      <p class="text-slate-400 leading-relaxed">
+                        Executed self-joins on the `fact_orders` table to
+                        uncover cross-cuisine purchasing behavior. Found that
+                        customers frequently pair American staples with Asian
+                        sides.
+                      </p>
+                    </div>
+                  </div>
+                  <div class="flex">
+                    <div class="mr-6 flex flex-col items-center">
+                      <div
+                        class="w-10 h-10 rounded-full bg-slate-800 border border-slate-700 flex items-center justify-center font-bold text-logistics-orange"
+                      >
+                        03
+                      </div>
+                    </div>
+                    <div>
+                      <h4 class="text-xl font-bold mb-2">Operational Logic</h4>
+                      <p class="text-slate-400 leading-relaxed">
+                        Engineered CASE expressions to drive automated
+                        categorization. This removed manual guesswork for the
+                        management team, providing a live "Menu Dashboard" via
+                        SQL views.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Recommendation Cards -->
+              <div class="grid md:grid-cols-2 gap-6">
+                <div
+                  class="p-8 bg-slate-900 rounded-3xl border border-slate-800"
+                >
+                  <i
+                    class="fas fa-lightbulb text-logistics-orange text-2xl mb-4"
+                  ></i>
+                  <h4 class="text-xl font-bold mb-4 text-white">
+                    Strategic Roadmap
+                  </h4>
+                  <ul class="text-sm text-slate-400 space-y-3">
+                    <li>
+                      • Promote the Italian category as the primary revenue
+                      "Puzzle" segment.
+                    </li>
+                    <li>
+                      • Launch "Fusion Combos" based on identified basket
+                      pairing trends.
+                    </li>
+                  </ul>
+                </div>
+                <div
+                  class="p-8 bg-slate-900 rounded-3xl border border-slate-800"
+                >
+                  <i
+                    class="fas fa-chart-line text-logistics-green text-2xl mb-4"
+                  ></i>
+                  <h4 class="text-xl font-bold mb-4 text-white">
+                    Revenue Gains
+                  </h4>
+                  <ul class="text-sm text-slate-400 space-y-3">
+                    <li>
+                      • Focus on "Star" items (Korean Beef Bowl) to maximize
+                      high-margin sales.
+                    </li>
+                    <li>
+                      • Staffing optimization for peak lunchtime windows (Mon,
+                      Fri, Sun).
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+
+            <!-- Sidebar -->
+            <div class="space-y-8">
+              <div class="p-8 bg-slate-900 rounded-3xl border border-slate-800">
+                <h4
+                  class="text-sm font-bold uppercase tracking-widest text-slate-500 mb-6"
+                >
+                  Technical Toolkit
+                </h4>
+                <div class="flex flex-wrap gap-2">
+                  <span
+                    class="px-3 py-1 bg-slate-800 rounded-md text-sm border border-slate-700/50"
+                    >MySQL Workbench</span
+                  >
+                  <span
+                    class="px-3 py-1 bg-slate-800 rounded-md text-sm border border-slate-700/50"
+                    >Window Functions</span
+                  >
+                  <span
+                    class="px-3 py-1 bg-slate-800 rounded-md text-sm border border-slate-700/50"
+                    >Common Table Expressions</span
+                  >
+                  <span
+                    class="px-3 py-1 bg-slate-800 rounded-md text-sm border border-slate-700/50"
+                    >Dimensional Modeling</span
+                  >
+                </div>
+              </div>
+
+              <div
+                class="p-8 bg-logistics-orange/5 rounded-3xl border border-logistics-orange/20"
+              >
+                <h4
+                  class="text-sm font-bold uppercase tracking-widest text-logistics-orange mb-4"
+                >
+                  Analyst Insight
+                </h4>
+                <p class="text-sm text-slate-400 leading-relaxed">
+                  "Data revealed that customers are more adventurous than the
+                  menu suggests. Pairing patterns prove that 'Fusion' isn't just
+                  a trend—it's how the customer base actually eats."
+                </p>
+                <a
+                  href="https://github.com/michaelcampbell215/Restaurant-Analysis.git"
+                  target="_blank"
+                  class="mt-6 inline-flex items-center text-sm font-bold text-logistics-orange hover:gap-2 transition-all"
+                >
+                  Github Repository <i class="fas fa-arrow-right ml-2"></i>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Contact CTA -->
+      <section id="contact" class="py-24 border-t border-slate-800">
+        <div class="container mx-auto px-6 text-center max-w-2xl">
+          <h2 class="text-4xl font-bold mb-6 italic">
+            Need SQL <span class="text-logistics-orange">Clarity?</span>
+          </h2>
+          <p class="text-slate-400 mb-10 text-lg">
+            Let's discuss how customized database queries can reveal the hidden
+            levers in your operations.
+          </p>
+          <div class="flex flex-col sm:flex-row justify-center gap-4">
+            <a
+              href="mailto:mcam215@gmail.com"
+              class="px-8 py-4 bg-white text-slate-900 font-bold rounded-lg hover:bg-slate-200 transition"
+              >Email Michael</a
+            >
+            <a
+              href="https://linkedin.com/in/michaelcampbellanalyst"
+              class="px-8 py-4 border border-slate-700 font-bold rounded-lg hover:border-slate-500 transition"
+              >LinkedIn</a
+            >
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer
+      class="py-12 border-t border-slate-800 text-center text-slate-600 text-sm"
+    >
+      <p>&copy; 2026 Michael Campbell. Optimized for Impact.</p>
+    </footer>
+
+    <!-- Prism.js -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-sql.min.js"></script>
+  </body>
+</html>

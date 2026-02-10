@@ -1,0 +1,462 @@
+<!doctype html>
+<html lang="en" class="scroll-smooth">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>HR Survey Analysis | Michael Campbell Analytics</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+    />
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            fontFamily: {
+              sans: ["Inter", "sans-serif"],
+              mono: ["JetBrains Mono", "monospace"],
+            },
+            colors: {
+              logistics: {
+                green: "#065F46",
+                orange: "#EA580C",
+                slate: "#334155",
+              },
+            },
+          },
+        },
+      };
+    </script>
+    <style>
+      body {
+        background-color: #0f172a;
+      }
+      .card-gradient {
+        background: linear-gradient(
+          135deg,
+          rgba(30, 41, 59, 0.7) 0%,
+          rgba(15, 23, 42, 0.9) 100%
+        );
+      }
+      .metric-card {
+        border-left: 4px solid #ea580c;
+      }
+    </style>
+  </head>
+  <body class="text-slate-200 font-sans antialiased">
+    <!-- Navigation -->
+    <nav
+      class="sticky top-0 z-50 bg-slate-900/80 backdrop-blur-md border-b border-slate-800"
+    >
+      <div
+        class="container mx-auto px-6 py-4 flex justify-between items-center"
+      >
+        <div class="flex items-center space-x-2">
+          <a
+            href="index.html"
+            class="text-xl font-bold tracking-tighter uppercase transition-opacity hover:opacity-80"
+          >
+            MICHAEL <span class="text-logistics-orange">CAMPBELL</span>
+          </a>
+        </div>
+        <div class="hidden md:flex space-x-8 text-sm font-medium items-center">
+          <a href="index.html" class="hover:text-logistics-orange transition"
+            >Home</a
+          >
+          <a
+            href="all_projects.html"
+            class="hover:text-logistics-orange transition"
+            >Gallery</a
+          >
+          <a
+            href="#live-dashboard"
+            class="hover:text-logistics-orange transition"
+            >Dashboard</a
+          >
+          <a
+            href="#documentation"
+            class="hover:text-logistics-orange transition"
+            >Documentation</a
+          >
+          <a
+            href="#contact"
+            class="px-4 py-2 bg-logistics-green hover:bg-emerald-700 text-white rounded transition"
+            >Contact</a
+          >
+        </div>
+      </div>
+    </nav>
+
+    <main>
+      <!-- Hero -->
+      <section class="py-20 border-b border-slate-800 bg-slate-900/50">
+        <div class="container mx-auto px-6">
+          <div class="max-w-4xl">
+            <div
+              class="inline-block px-3 py-1 bg-purple-500/10 border border-purple-500/20 text-purple-400 rounded-full text-xs font-bold uppercase tracking-widest mb-6"
+            >
+              Human Resources ➔ People Analytics
+            </div>
+            <h1 class="text-4xl md:text-6xl font-bold mb-6 leading-tight">
+              HR <span class="text-logistics-orange">Survey</span> Analysis
+            </h1>
+            <p class="text-xl text-slate-400 leading-relaxed font-mono">
+              > Utilizing Power Query to clean and categorize workforce
+              sentiment data for strategic HR decision-making.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Key Insights Overview -->
+      <section class="py-12 border-b border-slate-800">
+        <div class="container mx-auto px-6">
+          <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
+            <div
+              class="p-6 bg-slate-900 rounded-2xl border border-slate-800 metric-card"
+            >
+              <p
+                class="text-slate-500 text-xs font-bold uppercase tracking-widest mb-1"
+              >
+                Expectations
+              </p>
+              <h3 class="text-2xl font-bold italic">High Clarity</h3>
+              <p class="text-slate-400 text-xs mt-2">Core Job Alignment</p>
+            </div>
+            <div
+              class="p-6 bg-slate-900 rounded-2xl border border-slate-800 metric-card"
+            >
+              <p
+                class="text-slate-500 text-xs font-bold uppercase tracking-widest mb-1"
+              >
+                Supervisor
+              </p>
+              <h3 class="text-2xl font-bold">Strong Support</h3>
+              <p class="text-slate-400 text-xs mt-2">Key Retention Driver</p>
+            </div>
+            <div
+              class="p-6 bg-slate-900 rounded-2xl border border-slate-800 metric-card"
+              style="border-left-color: #065f46"
+            >
+              <p
+                class="text-slate-500 text-xs font-bold uppercase tracking-widest mb-1"
+              >
+                Risk Factor
+              </p>
+              <h3 class="text-2xl font-bold text-red-400">Low Appreciation</h3>
+              <p class="text-slate-400 text-xs mt-2">Primary Sentiment Gap</p>
+            </div>
+            <div
+              class="p-6 bg-slate-900 rounded-2xl border border-slate-800 metric-card"
+              style="border-left-color: #065f46"
+            >
+              <p
+                class="text-slate-500 text-xs font-bold uppercase tracking-widest mb-1"
+              >
+                Culture
+              </p>
+              <h3 class="text-2xl font-bold">Connection Need</h3>
+              <p class="text-slate-400 text-xs mt-2">Team-Building Priority</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Dashboard Section -->
+      <section id="live-dashboard" class="py-24 bg-slate-900/30">
+        <div class="container mx-auto px-6">
+          <h2 class="text-3xl font-bold mb-12 flex items-center">
+            <i class="fas fa-file-excel text-logistics-orange mr-4"></i>
+            Interactive Dashboard
+          </h2>
+          <div
+            class="rounded-3xl border border-slate-800 overflow-hidden bg-slate-900 shadow-2xl"
+          >
+            <div
+              class="p-4 bg-slate-800/50 border-b border-slate-700 flex justify-between items-center"
+            >
+              <span class="text-xs font-mono text-slate-400"
+                >MODEL_ID: HR_EXCEL_24</span
+              >
+              <div class="flex space-x-2">
+                <div class="w-3 h-3 rounded-full bg-red-500/20"></div>
+                <div class="w-3 h-3 rounded-full bg-amber-500/20"></div>
+                <div class="w-3 h-3 rounded-full bg-emerald-500/20"></div>
+              </div>
+            </div>
+            <iframe
+              src="https://onedrive.live.com/view.aspx?resid=8513FCA8776BF8FF%21112095&authkey=!ABn5rjqwv77cJYY"
+              width="100%"
+              height="800"
+              frameborder="0"
+              scrolling="no"
+              class="w-full"
+            >
+            </iframe>
+          </div>
+        </div>
+      </section>
+
+      <!-- Project Narrative -->
+      <section id="documentation" class="py-24 border-t border-slate-800">
+        <div class="container mx-auto px-6">
+          <div class="grid lg:grid-cols-3 gap-12">
+            <!-- Documentation -->
+            <div class="lg:col-span-2 space-y-12">
+              <div>
+                <h3 class="text-2xl font-bold mb-6 text-logistics-orange">
+                  Data Engineering & Analysis
+                </h3>
+                <div class="space-y-8">
+                  <div class="flex">
+                    <div class="mr-6 flex flex-col items-center">
+                      <div
+                        class="w-10 h-10 rounded-full bg-slate-800 border border-slate-700 flex items-center justify-center font-bold text-logistics-orange"
+                      >
+                        01
+                      </div>
+                      <div class="w-px h-full bg-slate-800 mt-2"></div>
+                    </div>
+                    <div>
+                      <h4 class="text-xl font-bold mb-2">
+                        Power Query Normalization
+                      </h4>
+                      <p class="text-slate-400 leading-relaxed">
+                        Extracted raw survey responses from the Seattle
+                        Department of Public Health. Utilized Power Query to
+                        handle nulls, trailing spaces, and inconsistent survey
+                        categories, creating a clean dataset for comparative
+                        analysis.
+                      </p>
+                    </div>
+                  </div>
+                  <div class="flex">
+                    <div class="mr-6 flex flex-col items-center">
+                      <div
+                        class="w-10 h-10 rounded-full bg-slate-800 border border-slate-700 flex items-center justify-center font-bold text-logistics-orange"
+                      >
+                        02
+                      </div>
+                      <div class="w-px h-full bg-slate-800 mt-2"></div>
+                    </div>
+                    <div>
+                      <h4 class="text-xl font-bold mb-2">
+                        Likert Scale Distribution Analysis
+                      </h4>
+                      <p class="text-slate-400 leading-relaxed">
+                        Designed 100% stacked bar charts in Excel to visualize
+                        the distribution of "Strongly Agree" to "Strongly
+                        Disagree" across 12+ survey parameters. This immediately
+                        surfaced the "Appreciation Gap."
+                      </p>
+                    </div>
+                  </div>
+                  <div class="flex">
+                    <div class="mr-6 flex flex-col items-center">
+                      <div
+                        class="w-10 h-10 rounded-full bg-slate-800 border border-slate-700 flex items-center justify-center font-bold text-logistics-orange"
+                      >
+                        03
+                      </div>
+                    </div>
+                    <div>
+                      <h4 class="text-xl font-bold mb-2">Sentiment Drivers</h4>
+                      <p class="text-slate-400 leading-relaxed">
+                        Cross-referenced job clarity scores with support scores.
+                        The data proved that while operational clarity is high,
+                        the emotional connection to coworkers is a significant
+                        risk for long-term retention.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Recommendation Cards -->
+              <div class="grid md:grid-cols-2 gap-6">
+                <div
+                  class="p-8 bg-slate-900 rounded-3xl border border-slate-800"
+                >
+                  <i
+                    class="fas fa-hand-holding-heart text-logistics-orange text-2xl mb-4"
+                  ></i>
+                  <h4 class="text-xl font-bold mb-4 text-white">
+                    Retention Strategy
+                  </h4>
+                  <ul class="text-sm text-slate-400 space-y-3">
+                    <li>
+                      • Deploy formal employee recognition programs to bridge
+                      the appreciation gap.
+                    </li>
+                    <li>
+                      • Launch structured team-building initiatives targeted at
+                      peer-to-peer connection.
+                    </li>
+                  </ul>
+                </div>
+                <div
+                  class="p-8 bg-slate-900 rounded-3xl border border-slate-800"
+                >
+                  <i class="fas fa-sync text-logistics-green text-2xl mb-4"></i>
+                  <h4 class="text-xl font-bold mb-4 text-white">
+                    Operational Loop
+                  </h4>
+                  <ul class="text-sm text-slate-400 space-y-3">
+                    <li>
+                      • Implement pulse-check surveys to track sentiment
+                      recovery in real-time.
+                    </li>
+                    <li>
+                      • Refine onboarding processes to maintain high job-clarity
+                      scores.
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+
+            <!-- Sidebar -->
+            <div class="space-y-8">
+              <div class="p-8 bg-slate-900 rounded-3xl border border-slate-800">
+                <h4
+                  class="text-sm font-bold uppercase tracking-widest text-slate-500 mb-6"
+                >
+                  Technical Toolkit
+                </h4>
+                <div class="flex flex-wrap gap-2">
+                  <span
+                    class="px-3 py-1 bg-slate-800 rounded-md text-sm border border-slate-700/50"
+                    >Microsoft Excel</span
+                  >
+                  <span
+                    class="px-3 py-1 bg-slate-800 rounded-md text-sm border border-slate-700/50"
+                    >Power Query ETL</span
+                  >
+                  <span
+                    class="px-3 py-1 bg-slate-800 rounded-md text-sm border border-slate-700/50"
+                    >Data Visualization</span
+                  >
+                  <span
+                    class="px-3 py-1 bg-slate-800 rounded-md text-sm border border-slate-700/50"
+                    >People Analytics</span
+                  >
+                </div>
+              </div>
+
+              <div
+                class="p-8 bg-logistics-orange/5 rounded-3xl border border-logistics-orange/20"
+              >
+                <h4
+                  class="text-sm font-bold uppercase tracking-widest text-logistics-orange mb-4"
+                >
+                  Impact Summary
+                </h4>
+                <p class="text-sm text-slate-400 leading-relaxed">
+                  "By moving beyond raw numbers and analyzing the distribution
+                  of sentiment, we identified specific social friction points
+                  that standard aggregate metrics often hide."
+                </p>
+                <a
+                  href="https://github.com/michaelcampbell215/hr-survey-analysis-repo"
+                  target="_blank"
+                  class="mt-6 inline-flex items-center text-sm font-bold text-logistics-orange hover:gap-2 transition-all"
+                >
+                  Github Repository <i class="fas fa-arrow-right ml-2"></i>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Visual Evidence -->
+      <section class="py-24 bg-slate-900">
+        <div class="container mx-auto px-6">
+          <h3 class="text-2xl font-bold mb-12">Visual Evidence</h3>
+          <div class="grid md:grid-cols-2 gap-8">
+            <div
+              class="group relative rounded-2xl overflow-hidden border border-slate-800"
+            >
+              <img
+                src="../images/project_images/HR1.png"
+                alt="Satisfaction Chart"
+                class="w-full h-80 object-cover opacity-80 group-hover:opacity-100 transition duration-500"
+              />
+              <div
+                class="absolute bottom-0 left-0 right-0 p-6 bg-gradient-to-t from-slate-900 to-transparent"
+              >
+                <p
+                  class="text-xs font-bold text-logistics-orange uppercase tracking-widest"
+                >
+                  Sentiment Distribution
+                </p>
+                <p class="text-sm text-white font-medium">
+                  100% Stacked Chart Analysis
+                </p>
+              </div>
+            </div>
+            <div
+              class="group relative rounded-2xl overflow-hidden border border-slate-800"
+            >
+              <img
+                src="../images/project_images/HR2.png"
+                alt="Response Distribution"
+                class="w-full h-80 object-cover opacity-80 group-hover:opacity-100 transition duration-500"
+              />
+              <div
+                class="absolute bottom-0 left-0 right-0 p-6 bg-gradient-to-t from-slate-900 to-transparent"
+              >
+                <p
+                  class="text-xs font-bold text-logistics-orange uppercase tracking-widest"
+                >
+                  Response Trends
+                </p>
+                <p class="text-sm text-white font-medium">
+                  Employee Feedback Mapping
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Contact CTA -->
+      <section id="contact" class="py-24 border-t border-slate-800">
+        <div class="container mx-auto px-6 text-center max-w-2xl">
+          <h2 class="text-4xl font-bold mb-6 italic">
+            Optimize your <span class="text-logistics-orange">Workforce?</span>
+          </h2>
+          <p class="text-slate-400 mb-10 text-lg">
+            Let's discuss how data-driven people analytics can strengthen your
+            operational culture.
+          </p>
+          <div class="flex flex-col sm:flex-row justify-center gap-4">
+            <a
+              href="mailto:mcam215@gmail.com"
+              class="px-8 py-4 bg-white text-slate-900 font-bold rounded-lg hover:bg-slate-200 transition"
+              >Email Michael</a
+            >
+            <a
+              href="https://linkedin.com/in/michaelcampbellanalyst"
+              class="px-8 py-4 border border-slate-700 font-bold rounded-lg hover:border-slate-500 transition"
+              >LinkedIn</a
+            >
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer
+      class="py-12 border-t border-slate-800 text-center text-slate-600 text-sm"
+    >
+      <p>&copy; 2026 Michael Campbell. Optimized for Impact.</p>
+    </footer>
+  </body>
+</html>

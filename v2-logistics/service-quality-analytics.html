@@ -1,0 +1,466 @@
+<!doctype html>
+<html lang="en" class="scroll-smooth">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Passenger Satisfaction | Michael Campbell Analytics</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+    />
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            fontFamily: {
+              sans: ["Inter", "sans-serif"],
+              mono: ["JetBrains Mono", "monospace"],
+            },
+            colors: {
+              logistics: {
+                green: "#065F46",
+                orange: "#EA580C",
+                slate: "#334155",
+              },
+            },
+          },
+        },
+      };
+    </script>
+    <style>
+      body {
+        background-color: #0f172a;
+      }
+      .card-gradient {
+        background: linear-gradient(
+          135deg,
+          rgba(30, 41, 59, 0.7) 0%,
+          rgba(15, 23, 42, 0.9) 100%
+        );
+      }
+      .metric-card {
+        border-left: 4px solid #ea580c;
+      }
+    </style>
+  </head>
+  <body class="text-slate-200 font-sans antialiased">
+    <!-- Navigation -->
+    <nav
+      class="sticky top-0 z-50 bg-slate-900/80 backdrop-blur-md border-b border-slate-800"
+    >
+      <div
+        class="container mx-auto px-6 py-4 flex justify-between items-center"
+      >
+        <div class="flex items-center space-x-2">
+          <a
+            href="index.html"
+            class="text-xl font-bold tracking-tighter uppercase transition-opacity hover:opacity-80"
+          >
+            MICHAEL <span class="text-logistics-orange">CAMPBELL</span>
+          </a>
+        </div>
+        <div class="hidden md:flex space-x-8 text-sm font-medium items-center">
+          <a href="index.html" class="hover:text-logistics-orange transition"
+            >Home</a
+          >
+          <a
+            href="all_projects.html"
+            class="hover:text-logistics-orange transition"
+            >Gallery</a
+          >
+          <a href="#dashboard" class="hover:text-logistics-orange transition"
+            >Dashboard</a
+          >
+          <a
+            href="#documentation"
+            class="hover:text-logistics-orange transition"
+            >Documentation</a
+          >
+          <a
+            href="#contact"
+            class="px-4 py-2 bg-logistics-green hover:bg-emerald-700 text-white rounded transition"
+            >Contact</a
+          >
+        </div>
+      </div>
+    </nav>
+
+    <main>
+      <!-- Hero -->
+      <section class="py-20 border-b border-slate-800 bg-slate-900/50">
+        <div class="container mx-auto px-6">
+          <div class="max-w-4xl">
+            <div
+              class="inline-block px-3 py-1 bg-sky-500/10 border border-sky-500/20 text-sky-400 rounded-full text-xs font-bold uppercase tracking-widest mb-6"
+            >
+              Travel & Tourism ➔ Customer Experience
+            </div>
+            <h1 class="text-4xl md:text-6xl font-bold mb-6 leading-tight">
+              Passenger
+              <span class="text-logistics-orange">Satisfaction</span> Analysis
+            </h1>
+            <p class="text-xl text-slate-400 leading-relaxed font-mono">
+              > Translating airline survey data into actionable service
+              enhancements through Power BI segmentation.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Key Metrics -->
+      <section class="py-12 border-b border-slate-800">
+        <div class="container mx-auto px-6">
+          <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
+            <div
+              class="p-6 bg-slate-900 rounded-2xl border border-slate-800 metric-card"
+            >
+              <p
+                class="text-slate-500 text-xs font-bold uppercase tracking-widest mb-1"
+              >
+                Business Travel
+              </p>
+              <h3 class="text-2xl font-bold">70%</h3>
+              <p class="text-slate-400 text-xs mt-2">Volume Share</p>
+            </div>
+            <div
+              class="p-6 bg-slate-900 rounded-2xl border border-slate-800 metric-card"
+            >
+              <p
+                class="text-slate-500 text-xs font-bold uppercase tracking-widest mb-1"
+              >
+                Dissatisfaction
+              </p>
+              <h3 class="text-2xl font-bold text-red-400">70%</h3>
+              <p class="text-slate-400 text-xs mt-2">First-time Flyers</p>
+            </div>
+            <div
+              class="p-6 bg-slate-900 rounded-2xl border border-slate-800 metric-card"
+              style="border-left-color: #065f46"
+            >
+              <p
+                class="text-slate-500 text-xs font-bold uppercase tracking-widest mb-1"
+              >
+                Top Driver
+              </p>
+              <h3 class="text-2xl font-bold">In-Flight</h3>
+              <p class="text-slate-400 text-xs mt-2">Service & Comfort</p>
+            </div>
+            <div
+              class="p-6 bg-slate-900 rounded-2xl border border-slate-800 metric-card"
+              style="border-left-color: #065f46"
+            >
+              <p
+                class="text-slate-500 text-xs font-bold uppercase tracking-widest mb-1"
+              >
+                Recall Focus
+              </p>
+              <h3 class="text-2xl font-bold">Wi-Fi</h3>
+              <p class="text-slate-400 text-xs mt-2">Primary Pain Point</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Dashboard Section -->
+      <section id="dashboard" class="py-24 bg-slate-900/30">
+        <div class="container mx-auto px-6">
+          <h2 class="text-3xl font-bold mb-12 flex items-center">
+            <i class="fas fa-chart-pie text-logistics-orange mr-4"></i>
+            Interactive Intelligence
+          </h2>
+          <div
+            class="rounded-3xl border border-slate-800 overflow-hidden bg-slate-900 shadow-2xl"
+          >
+            <div
+              class="p-4 bg-slate-800/50 border-b border-slate-700 flex justify-between items-center"
+            >
+              <span class="text-xs font-mono text-slate-400"
+                >REPORT_VERSION: 2.0_POWER_BI</span
+              >
+              <div class="flex space-x-2">
+                <div class="w-3 h-3 rounded-full bg-red-500/20"></div>
+                <div class="w-3 h-3 rounded-full bg-amber-500/20"></div>
+                <div class="w-3 h-3 rounded-full bg-emerald-500/20"></div>
+              </div>
+            </div>
+            <iframe
+              src="https://app.powerbi.com/view?r=eyJrIjoiMjQ0YTFjMDQtNjQxOC00YWJiLThlYzMtMTQwMzk1NTZjYjNiIiwidCI6ImRmODY3OWNkLWE4MGUtNDVkOC05OWFjLWM4M2VkN2ZmOTVhMCJ9"
+              width="100%"
+              height="800"
+              frameborder="0"
+              allowfullscreen
+              class="w-full"
+            >
+            </iframe>
+          </div>
+        </div>
+      </section>
+
+      <!-- Documentation Panels -->
+      <section id="documentation" class="py-24 border-t border-slate-800">
+        <div class="container mx-auto px-6">
+          <div class="grid lg:grid-cols-3 gap-12">
+            <!-- Process -->
+            <div class="lg:col-span-2 space-y-12">
+              <div>
+                <h3 class="text-2xl font-bold mb-6 text-logistics-orange">
+                  The Analytical Process
+                </h3>
+                <div class="space-y-8">
+                  <div class="flex">
+                    <div class="mr-6 flex flex-col items-center">
+                      <div
+                        class="w-10 h-10 rounded-full bg-slate-800 border border-slate-700 flex items-center justify-center font-bold text-logistics-orange"
+                      >
+                        01
+                      </div>
+                      <div class="w-px h-full bg-slate-800 mt-2"></div>
+                    </div>
+                    <div>
+                      <h4 class="text-xl font-bold mb-2">
+                        Power Query Transformation
+                      </h4>
+                      <p class="text-slate-400 leading-relaxed">
+                        Redesigned raw survey data into a usable star schema.
+                        Normalized Likert scale responses and handled null
+                        values in baggage and flight delay columns to ensure
+                        statistical integrity.
+                      </p>
+                    </div>
+                  </div>
+                  <div class="flex">
+                    <div class="mr-6 flex flex-col items-center">
+                      <div
+                        class="w-10 h-10 rounded-full bg-slate-800 border border-slate-700 flex items-center justify-center font-bold text-logistics-orange"
+                      >
+                        02
+                      </div>
+                      <div class="w-px h-full bg-slate-800 mt-2"></div>
+                    </div>
+                    <div>
+                      <h4 class="text-xl font-bold mb-2">
+                        Comparative Segmentation
+                      </h4>
+                      <p class="text-slate-400 leading-relaxed">
+                        Executed a deep dive into traveler demographics.
+                        Isolated Business class vs. Personal Eco passengers to
+                        understand how price sensitivity affects perceived
+                        service quality.
+                      </p>
+                    </div>
+                  </div>
+                  <div class="flex">
+                    <div class="mr-6 flex flex-col items-center">
+                      <div
+                        class="w-10 h-10 rounded-full bg-slate-800 border border-slate-700 flex items-center justify-center font-bold text-logistics-orange"
+                      >
+                        03
+                      </div>
+                    </div>
+                    <div>
+                      <h4 class="text-xl font-bold mb-2">
+                        Root Cause Identification
+                      </h4>
+                      <p class="text-slate-400 leading-relaxed">
+                        Utilized correlation analysis to identify that "Ease of
+                        Online Booking" and "In-flight Wi-Fi" were the primary
+                        drivers of negative sentiment, despite high comfort
+                        scores.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Recommendation Cards -->
+              <div class="grid md:grid-cols-2 gap-6">
+                <div
+                  class="p-8 bg-slate-900 rounded-3xl border border-slate-800"
+                >
+                  <i
+                    class="fas fa-lightbulb text-logistics-orange text-2xl mb-4"
+                  ></i>
+                  <h4 class="text-xl font-bold mb-4 text-white">
+                    Service Strategy
+                  </h4>
+                  <ul class="text-sm text-slate-400 space-y-3">
+                    <li>
+                      • Implement tiered Wi-Fi pricing to improve bandwidth for
+                      business users.
+                    </li>
+                    <li>
+                      • Targeted onboarding emails for first-time travelers to
+                      reduce 70% dissatisfaction.
+                    </li>
+                  </ul>
+                </div>
+                <div
+                  class="p-8 bg-slate-900 rounded-3xl border border-slate-800"
+                >
+                  <i
+                    class="fas fa-tools text-logistics-green text-2xl mb-4"
+                  ></i>
+                  <h4 class="text-xl font-bold mb-4 text-white">
+                    Digital Optimization
+                  </h4>
+                  <ul class="text-sm text-slate-400 space-y-3">
+                    <li>
+                      • Redesign online booking UX to reduce friction points
+                      found in survey data.
+                    </li>
+                    <li>
+                      • Deploy real-time airport navigation features in the
+                      mobile app.
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+
+            <!-- Sidebar -->
+            <div class="space-y-8">
+              <div class="p-8 bg-slate-900 rounded-3xl border border-slate-800">
+                <h4
+                  class="text-sm font-bold uppercase tracking-widest text-slate-500 mb-6"
+                >
+                  Technical Toolkit
+                </h4>
+                <div class="flex flex-wrap gap-2">
+                  <span
+                    class="px-3 py-1 bg-slate-800 rounded-md text-sm border border-slate-700/50"
+                    >Power BI Desktop</span
+                  >
+                  <span
+                    class="px-3 py-1 bg-slate-800 rounded-md text-sm border border-slate-700/50"
+                    >DAX Calculations</span
+                  >
+                  <span
+                    class="px-3 py-1 bg-slate-800 rounded-md text-sm border border-slate-700/50"
+                    >Power Query ETL</span
+                  >
+                  <span
+                    class="px-3 py-1 bg-slate-800 rounded-md text-sm border border-slate-700/50"
+                    >Data Segmentation</span
+                  >
+                </div>
+              </div>
+
+              <div
+                class="p-8 bg-logistics-orange/5 rounded-3xl border border-logistics-orange/20"
+              >
+                <h4
+                  class="text-sm font-bold uppercase tracking-widest text-logistics-orange mb-4"
+                >
+                  Impact Summary
+                </h4>
+                <p class="text-sm text-slate-400 leading-relaxed">
+                  Translated survey sentiments into a prioritized technical
+                  roadmap. Identified that Wi-Fi reliability remains the #1
+                  bottleneck for the airline's most valuable customer segment
+                  (Business Travelers).
+                </p>
+                <a
+                  href="https://github.com/michaelcampbell215/passenger-satisfaction-repo"
+                  target="_blank"
+                  class="mt-6 inline-flex items-center text-sm font-bold text-logistics-orange hover:gap-2 transition-all"
+                >
+                  Github Repository <i class="fas fa-arrow-right ml-2"></i>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Gallery -->
+      <section class="py-24 bg-slate-900">
+        <div class="container mx-auto px-6">
+          <h3 class="text-2xl font-bold mb-12">Visual Evidence</h3>
+          <div class="grid md:grid-cols-2 gap-8">
+            <div
+              class="group relative rounded-2xl overflow-hidden border border-slate-800"
+            >
+              <img
+                src="../images/project_images/ps1.png"
+                alt="Demographics Chart"
+                class="w-full opacity-80 group-hover:opacity-100 transition duration-500"
+              />
+              <div
+                class="absolute bottom-0 left-0 right-0 p-6 bg-gradient-to-t from-slate-900 to-transparent"
+              >
+                <p
+                  class="text-xs font-bold text-logistics-orange uppercase tracking-widest"
+                >
+                  Demographics
+                </p>
+                <p class="text-sm text-white font-medium">
+                  Satisfaction by Passenger Profile
+                </p>
+              </div>
+            </div>
+            <div
+              class="group relative rounded-2xl overflow-hidden border border-slate-800"
+            >
+              <img
+                src="../images/project_images/ps2.png"
+                alt="Likert Analysis"
+                class="w-full opacity-80 group-hover:opacity-100 transition duration-500"
+              />
+              <div
+                class="absolute bottom-0 left-0 right-0 p-6 bg-gradient-to-t from-slate-900 to-transparent"
+              >
+                <p
+                  class="text-xs font-bold text-logistics-orange uppercase tracking-widest"
+                >
+                  Sentiment Analysis
+                </p>
+                <p class="text-sm text-white font-medium">
+                  Likert Scale Service Distribution
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Contact CTA -->
+      <section id="contact" class="py-24 border-t border-slate-800">
+        <div class="container mx-auto px-6 text-center max-w-2xl">
+          <h2 class="text-4xl font-bold mb-6 italic">
+            Questions on the
+            <span class="text-logistics-orange">Analysis?</span>
+          </h2>
+          <p class="text-slate-400 mb-10 text-lg">
+            Let's discuss how data-driven customer insights can stabilize
+            operational performance.
+          </p>
+          <div class="flex flex-col sm:flex-row justify-center gap-4">
+            <a
+              href="mailto:mcam215@gmail.com"
+              class="px-8 py-4 bg-white text-slate-900 font-bold rounded-lg hover:bg-slate-200 transition"
+              >Email Michael</a
+            >
+            <a
+              href="https://linkedin.com/in/michaelcampbellanalyst"
+              class="px-8 py-4 border border-slate-700 font-bold rounded-lg hover:border-slate-500 transition"
+              >LinkedIn</a
+            >
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer
+      class="py-12 border-t border-slate-800 text-center text-slate-600 text-sm"
+    >
+      <p>&copy; 2026 Michael Campbell. Optimized for Impact.</p>
+    </footer>
+  </body>
+</html>
