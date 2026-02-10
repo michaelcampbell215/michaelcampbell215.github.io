@@ -2,7 +2,7 @@
 
 **Bridging the gap between Tarmac and Tableau.**
 
-[View My Portfolio](https://mcam215.github.io/v2-logistics/) | [LinkedIn](https://www.linkedin.com/in/michaelcampbell215/) | [Email](mailto:mcam215@gmail.com)
+[View Portfolio](https://michaelcampbell215.github.io) | [LinkedIn](https://www.linkedin.com/in/michaelcampbell215/) | [Email](mailto:mcam215@gmail.com)
 
 ---
 
