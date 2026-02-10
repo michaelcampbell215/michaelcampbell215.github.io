@@ -1,24 +1,10 @@
-$projects = @(
-    "retention-modeling-ops",
-    "logistics-cost-optimization",
-    "service-quality-analytics",
-    "revenue-pipeline-control",
-    "workforce-capacity-planning",
-    "production-throughput-model",
-    "inventory-margin-optimization"
-)
-
-$rootPath = "c:\Users\Mike\Documents\Python Scripts\github pages\mcam215.github.io"
-
-foreach ($proj in $projects) {
-    $fullPath = Join-Path $rootPath $proj
-    Write-Host "Deploying: $proj"
-    Set-Location $fullPath
-    git add .
-    git commit -m "Standardize documentation for v2-logistics"
-    git push
-    Write-Host "--------------------------------"
-}
+# Deploy Main Portfolio Repo
+Write-Host "Deploying Main Portfolio Repo" -ForegroundColor Cyan
+Set-Location $rootPath
+git add .
+git commit -m "Portfolio Update"
+git push
+Write-Host "Deployment Complete" -ForegroundColor Green
 
 # Deploy Main Repo
 Write-Host "Deploying Main Portfolio Repo"
