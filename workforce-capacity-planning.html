@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>CRM Dashboard | Michael Campbell Analytics</title>
+    <title>HR Survey Analysis | Michael Campbell Analytics</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -75,7 +75,9 @@
             class="hover:text-logistics-orange transition"
             >Gallery</a
           >
-          <a href="#dashboard" class="hover:text-logistics-orange transition"
+          <a
+            href="#live-dashboard"
+            class="hover:text-logistics-orange transition"
             >Dashboard</a
           >
           <a
@@ -98,27 +100,22 @@
         <div class="container mx-auto px-6">
           <div class="max-w-4xl">
             <div
-              class="inline-block px-3 py-1 bg-sky-500/10 border border-sky-500/20 text-sky-400 rounded-full text-xs font-bold uppercase tracking-widest mb-6"
-              style="
-                color: #38bdf8;
-                border-color: rgba(56, 189, 248, 0.2);
-                background-color: rgba(56, 189, 248, 0.1);
-              "
+              class="inline-block px-3 py-1 bg-purple-500/10 border border-purple-500/20 text-purple-400 rounded-full text-xs font-bold uppercase tracking-widest mb-6"
             >
-              Sales ➔ Tableau Intelligence
+              Human Resources ➔ People Analytics
             </div>
             <h1 class="text-4xl md:text-6xl font-bold mb-6 leading-tight">
-              CRM <span class="text-logistics-orange">Dashboard</span> Analysis
+              HR <span class="text-logistics-orange">Survey</span> Analysis
             </h1>
             <p class="text-xl text-slate-400 leading-relaxed font-mono">
-              > Engineering a high-fidelity pipeline monitor to optimize
-              conversion cycles and agent performance.
+              > Utilizing Power Query to clean and categorize workforce
+              sentiment data for strategic HR decision-making.
             </p>
           </div>
         </div>
       </section>
 
-      <!-- Key Metrics -->
+      <!-- Key Insights Overview -->
       <section class="py-12 border-b border-slate-800">
         <div class="container mx-auto px-6">
           <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
@@ -128,10 +125,10 @@
               <p
                 class="text-slate-500 text-xs font-bold uppercase tracking-widest mb-1"
               >
-                Peak Revenue
+                Expectations
               </p>
-              <h3 class="text-2xl font-bold">$3.09M</h3>
-              <p class="text-slate-400 text-xs mt-2">Q2 Generation</p>
+              <h3 class="text-2xl font-bold italic">High Clarity</h3>
+              <p class="text-slate-400 text-xs mt-2">Core Job Alignment</p>
             </div>
             <div
               class="p-6 bg-slate-900 rounded-2xl border border-slate-800 metric-card"
@@ -139,22 +136,10 @@
               <p
                 class="text-slate-500 text-xs font-bold uppercase tracking-widest mb-1"
               >
-                Cycle Time
+                Supervisor
               </p>
-              <h3 class="text-2xl font-bold">48 Days</h3>
-              <p class="text-slate-400 text-xs mt-2">Avg Deal Duration</p>
-            </div>
-            <div
-              class="p-6 bg-slate-900 rounded-2xl border border-slate-800 metric-card"
-              style="border-left-color: #065f46"
-            >
-              <p
-                class="text-slate-500 text-xs font-bold uppercase tracking-widest mb-1"
-              >
-                Win Rate
-              </p>
-              <h3 class="text-2xl font-bold">51%</h3>
-              <p class="text-slate-400 text-xs mt-2">Closing Effectiveness</p>
+              <h3 class="text-2xl font-bold">Strong Support</h3>
+              <p class="text-slate-400 text-xs mt-2">Key Retention Driver</p>
             </div>
             <div
               class="p-6 bg-slate-900 rounded-2xl border border-slate-800 metric-card"
@@ -163,22 +148,32 @@
               <p
                 class="text-slate-500 text-xs font-bold uppercase tracking-widest mb-1"
               >
-                Star Asset
+                Risk Factor
               </p>
-              <h3 class="text-2xl font-bold">GTX Pro</h3>
-              <p class="text-slate-400 text-xs mt-2">
-                Category Performance Leader
+              <h3 class="text-2xl font-bold text-red-400">Low Appreciation</h3>
+              <p class="text-slate-400 text-xs mt-2">Primary Sentiment Gap</p>
+            </div>
+            <div
+              class="p-6 bg-slate-900 rounded-2xl border border-slate-800 metric-card"
+              style="border-left-color: #065f46"
+            >
+              <p
+                class="text-slate-500 text-xs font-bold uppercase tracking-widest mb-1"
+              >
+                Culture
               </p>
+              <h3 class="text-2xl font-bold">Connection Need</h3>
+              <p class="text-slate-400 text-xs mt-2">Team-Building Priority</p>
             </div>
           </div>
         </div>
       </section>
 
-      <!-- Live Dashboard Section -->
-      <section id="dashboard" class="py-24 bg-slate-900/30">
+      <!-- Dashboard Section -->
+      <section id="live-dashboard" class="py-24 bg-slate-900/30">
         <div class="container mx-auto px-6">
           <h2 class="text-3xl font-bold mb-12 flex items-center">
-            <i class="fas fa-chart-pie text-logistics-orange mr-4"></i>
+            <i class="fas fa-file-excel text-logistics-orange mr-4"></i>
             Interactive Dashboard
           </h2>
           <div
@@ -188,7 +183,7 @@
               class="p-4 bg-slate-800/50 border-b border-slate-700 flex justify-between items-center"
             >
               <span class="text-xs font-mono text-slate-400"
-                >TABLEAU_SERVER_ID: CRM_SALES_PRO</span
+                >MODEL_ID: HR_EXCEL_24</span
               >
               <div class="flex space-x-2">
                 <div class="w-3 h-3 rounded-full bg-red-500/20"></div>
@@ -197,11 +192,11 @@
               </div>
             </div>
             <iframe
-              src="https://public.tableau.com/views/crmdashboard2/PipelineOverview?:showVizHome=no&:embed=true"
+              src="https://onedrive.live.com/view.aspx?resid=8513FCA8776BF8FF%21112095&authkey=!ABn5rjqwv77cJYY"
               width="100%"
               height="800"
               frameborder="0"
-              allowfullscreen
+              scrolling="no"
               class="w-full"
             >
             </iframe>
@@ -217,7 +212,7 @@
             <div class="lg:col-span-2 space-y-12">
               <div>
                 <h3 class="text-2xl font-bold mb-6 text-logistics-orange">
-                  Building Operational Clarity
+                  Data Engineering & Analysis
                 </h3>
                 <div class="space-y-8">
                   <div class="flex">
@@ -231,13 +226,14 @@
                     </div>
                     <div>
                       <h4 class="text-xl font-bold mb-2">
-                        Funnel Bottleneck Analysis
+                        Power Query Normalization
                       </h4>
                       <p class="text-slate-400 leading-relaxed">
-                        Visualized the transition from prospecting to engaging.
-                        Identified a significant drop-off (49%) in the late
-                        funnel, pinpointing the exact phase where sales force
-                        training should be prioritized.
+                        Extracted raw survey responses from the Seattle
+                        Department of Public Health. Utilized Power Query to
+                        handle nulls, trailing spaces, and inconsistent survey
+                        categories, creating a clean dataset for comparative
+                        analysis.
                       </p>
                     </div>
                   </div>
@@ -251,12 +247,14 @@
                       <div class="w-px h-full bg-slate-800 mt-2"></div>
                     </div>
                     <div>
-                      <h4 class="text-xl font-bold mb-2">Agent Benchmarking</h4>
+                      <h4 class="text-xl font-bold mb-2">
+                        Likert Scale Distribution Analysis
+                      </h4>
                       <p class="text-slate-400 leading-relaxed">
-                        Engineered dynamic agent/region filters to isolate top
-                        performer Darcel Schlecht, who outperformed the company
-                        baseline by 60%. Used these insights to define the
-                        "Ideal Closing Script."
+                        Designed 100% stacked bar charts in Excel to visualize
+                        the distribution of "Strongly Agree" to "Strongly
+                        Disagree" across 12+ survey parameters. This immediately
+                        surfaced the "Appreciation Gap."
                       </p>
                     </div>
                   </div>
@@ -269,58 +267,55 @@
                       </div>
                     </div>
                     <div>
-                      <h4 class="text-xl font-bold mb-2">
-                        Pricing Elasticity Tracking
-                      </h4>
+                      <h4 class="text-xl font-bold mb-2">Sentiment Drivers</h4>
                       <p class="text-slate-400 leading-relaxed">
-                        Developed calculated fields to compare actual close
-                        prices against targets. Revealed value positioning gaps
-                        in product lines that were frequently discounted in Q4.
+                        Cross-referenced job clarity scores with support scores.
+                        The data proved that while operational clarity is high,
+                        the emotional connection to coworkers is a significant
+                        risk for long-term retention.
                       </p>
                     </div>
                   </div>
                 </div>
               </div>
 
-              <!-- Impact Cards -->
+              <!-- Recommendation Cards -->
               <div class="grid md:grid-cols-2 gap-6">
                 <div
                   class="p-8 bg-slate-900 rounded-3xl border border-slate-800"
                 >
                   <i
-                    class="fas fa-bullseye text-logistics-orange text-2xl mb-4"
+                    class="fas fa-hand-holding-heart text-logistics-orange text-2xl mb-4"
                   ></i>
                   <h4 class="text-xl font-bold mb-4 text-white">
-                    Sales Optimization
+                    Retention Strategy
                   </h4>
                   <ul class="text-sm text-slate-400 space-y-3">
                     <li>
-                      • Replicate high-performer behaviors across laggard
-                      regions.
+                      • Deploy formal employee recognition programs to bridge
+                      the appreciation gap.
                     </li>
                     <li>
-                      • Investigate Q4 discount triggers to protect quarterly
-                      margins.
+                      • Launch structured team-building initiatives targeted at
+                      peer-to-peer connection.
                     </li>
                   </ul>
                 </div>
                 <div
                   class="p-8 bg-slate-900 rounded-3xl border border-slate-800"
                 >
-                  <i
-                    class="fas fa-boxes text-logistics-green text-2xl mb-4"
-                  ></i>
+                  <i class="fas fa-sync text-logistics-green text-2xl mb-4"></i>
                   <h4 class="text-xl font-bold mb-4 text-white">
-                    Product Strategy
+                    Operational Loop
                   </h4>
                   <ul class="text-sm text-slate-400 space-y-3">
                     <li>
-                      • Focus inventory on GTX Pro line due to superior price
-                      integrity.
+                      • Implement pulse-check surveys to track sentiment
+                      recovery in real-time.
                     </li>
                     <li>
-                      • Re-evaluate "MG Special" positioning in underperforming
-                      sectors.
+                      • Refine onboarding processes to maintain high job-clarity
+                      scores.
                     </li>
                   </ul>
                 </div>
@@ -338,19 +333,19 @@
                 <div class="flex flex-wrap gap-2">
                   <span
                     class="px-3 py-1 bg-slate-800 rounded-md text-sm border border-slate-700/50"
-                    >Tableau Public</span
+                    >Microsoft Excel</span
                   >
                   <span
                     class="px-3 py-1 bg-slate-800 rounded-md text-sm border border-slate-700/50"
-                    >SQL (Salesforce)</span
+                    >Power Query ETL</span
                   >
                   <span
                     class="px-3 py-1 bg-slate-800 rounded-md text-sm border border-slate-700/50"
-                    >Data Storytelling</span
+                    >Data Visualization</span
                   >
                   <span
                     class="px-3 py-1 bg-slate-800 rounded-md text-sm border border-slate-700/50"
-                    >Calculated Fields</span
+                    >People Analytics</span
                   >
                 </div>
               </div>
@@ -364,12 +359,12 @@
                   Impact Summary
                 </h4>
                 <p class="text-sm text-slate-400 leading-relaxed">
-                  "By visualizing the pipeline as a live flow rather than a
-                  static snapshot, we transformed CRM reporting from a
-                  post-mortem tool into a forward-looking operational radar."
+                  "By moving beyond raw numbers and analyzing the distribution
+                  of sentiment, we identified specific social friction points
+                  that standard aggregate metrics often hide."
                 </p>
                 <a
-                  href="https://github.com/michaelcampbell215/crm-dashboard-repo"
+                  href="https://github.com/michaelcampbell215/hr-survey-analysis-repo"
                   target="_blank"
                   class="mt-6 inline-flex items-center text-sm font-bold text-logistics-orange hover:gap-2 transition-all"
                 >
@@ -381,7 +376,7 @@
         </div>
       </section>
 
-      <!-- Visualization Evidence -->
+      <!-- Visual Evidence -->
       <section class="py-24 bg-slate-900">
         <div class="container mx-auto px-6">
           <h3 class="text-2xl font-bold mb-12">Visual Evidence</h3>
@@ -390,8 +385,8 @@
               class="group relative rounded-2xl overflow-hidden border border-slate-800"
             >
               <img
-                src="../images/project_images/crm (1).png"
-                alt="Sales Funnel"
+                src="images/project_images/HR1.png"
+                alt="Satisfaction Chart"
                 class="w-full h-80 object-cover opacity-80 group-hover:opacity-100 transition duration-500"
               />
               <div
@@ -400,10 +395,10 @@
                 <p
                   class="text-xs font-bold text-logistics-orange uppercase tracking-widest"
                 >
-                  Funnel Analysis
+                  Sentiment Distribution
                 </p>
                 <p class="text-sm text-white font-medium">
-                  Prospecting to Won Conversion Flow
+                  100% Stacked Chart Analysis
                 </p>
               </div>
             </div>
@@ -411,8 +406,8 @@
               class="group relative rounded-2xl overflow-hidden border border-slate-800"
             >
               <img
-                src="../images/project_images/crm (2).png"
-                alt="Team Leaderboard"
+                src="images/project_images/HR2.png"
+                alt="Response Distribution"
                 class="w-full h-80 object-cover opacity-80 group-hover:opacity-100 transition duration-500"
               />
               <div
@@ -421,10 +416,10 @@
                 <p
                   class="text-xs font-bold text-logistics-orange uppercase tracking-widest"
                 >
-                  Performance Benchmarking
+                  Response Trends
                 </p>
                 <p class="text-sm text-white font-medium">
-                  Regional & Individual Sales Rankings
+                  Employee Feedback Mapping
                 </p>
               </div>
             </div>
@@ -436,12 +431,11 @@
       <section id="contact" class="py-24 border-t border-slate-800">
         <div class="container mx-auto px-6 text-center max-w-2xl">
           <h2 class="text-4xl font-bold mb-6 italic">
-            Optimize your
-            <span class="text-logistics-orange">Performance?</span>
+            Optimize your <span class="text-logistics-orange">Workforce?</span>
           </h2>
           <p class="text-slate-400 mb-10 text-lg">
-            Let's discuss how customized CRM visualization can reveal the hidden
-            drivers in your sales cycle.
+            Let's discuss how data-driven people analytics can strengthen your
+            operational culture.
           </p>
           <div class="flex flex-col sm:flex-row justify-center gap-4">
             <a

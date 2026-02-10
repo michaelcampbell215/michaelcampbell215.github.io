@@ -1,46 +1,82 @@
-# Data Analyst Portfolio
+# Michael Campbell | Operations & Logistics Analyst
 
-This repository hosts the source code for my personal data analyst portfolio website. The portfolio showcases a collection of my data analysis projects, demonstrating my skills in data visualization, data cleaning, and predictive modeling.
+**Bridging the gap between Tarmac and Tableau.**
 
-You can view the live portfolio at [https://michaelcampbell215.github.io](https://michaelcampbell215.github.io).
+[View My Portfolio](https://mcam215.github.io/v2-logistics/) | [LinkedIn](https://www.linkedin.com/in/michaelcampbell215/) | [Email](mailto:mcam215@gmail.com)
+
+---
 
 ## About Me
 
-I am an Operations Data Analyst with 10+ years of experience in high-volume environments—from airline ground operations to inventory logistics. I help logistics, supply chain, and operations teams identify inefficiencies that create cost, risk, or downtime using SQL, Python, and Tableau. I combine my field experience with advanced data engineering skills to build automated reporting pipelines that replace manual guesswork with clear, actionable intelligence. Based in Houston, TX, I am focused on helping operations teams work smarter, not harder.
+**Operations-First Analytics**
 
-## Skills
+Most analysts start with a spreadsheet. I started on the **tarmac**.
 
-- Python
-- SQL
-- Machine Learning
-- Tableau
-- Power BI
-- Excel
-- Slack
-- Asana
-- Jira
+I am an Operations Data Analyst with **10+ years of experience** in high-volume environments—from airline ground operations at **American Airlines** to inventory logistics at **Sonder**. I help logistics, supply chain, and operations teams identify inefficiencies that create cost, risk, or downtime using **SQL**, **Python**, and **Tableau**.
 
-## Projects
+My background is built on operational discipline. I spent a decade managing time-critical ground operations where a 5-minute delay could cost thousands of dollars. Today, I combine that field experience with advanced data engineering skills to build automated reporting pipelines that replace manual guesswork with clear, actionable intelligence.
 
-Here are some of the projects featured in my portfolio:
+---
 
-- **Global Supply Chain Performance & Cost Optimization:** Built an interactive logistics dashboard in Tableau that identified two product groups responsible for 99% of costs. Performed data cleaning and metric engineering (e.g., Delivery Lead Time) in Python to power the analysis.
-  - **Technologies:** Tableau, Python
-- **Bank Customer Churn Analysis:** Engineered a machine learning pipeline in Python to predict customer churn, achieving a 74% recall rate. A tuned Gradient Boosting model revealed geographic drivers, directly informing a new, targeted retention strategy.
-  - **Technologies:** Python, Scikit-learn, Machine Learning
-- **CRM Dashboard: Sales Performance Analysis:** Revealed a critical 49% post-engagement drop-off by developing an interactive Tableau dashboard to analyze the sales funnel. Insights were used to benchmark teams and propose targeted optimization strategies.
-  - **Technologies:** Tableau, Salesforce
-- **Passenger Satisfaction Analysis:** Directed a Power BI dashboard project that translated airline satisfaction survey data into actionable insights. Passenger segmentation and trend analysis identified top pain points, enabling data-driven prioritization of service enhancements.
-  - **Technologies:** Power BI, Power Query, DAX
-- **Restaurant Order Analysis:** An exploratory data analysis of menu items and customer orders to identify sales trends and top-performing products, such as the most and least popular items.
-  - **Technologies:** SQL
+## Technical Skills
 
-## Tech Stack
+| Domain                 | Skills                                                                      |
+| :--------------------- | :-------------------------------------------------------------------------- |
+| **Data Engineering**   | Python, SQL (PostgreSQL/MySQL), Automation Scripts                          |
+| **Supply Chain Intel** | Inventory Forecasting, Variance Analysis, Root Cause Analysis, KPI Tracking |
+| **Visualization**      | Tableau (Advanced), Power BI, Excel Power Query                             |
+| **Enterprise Ops**     | Salesforce & SAP, Asana & Jira, Crisis Management                           |
 
-- **HTML**
-- **Tailwind CSS**
+---
+
+## Featured Projects
+
+### [Global Supply Chain Performance](https://mcam215.github.io/v2-logistics/supply-chain-project.html)
+
+Interactive Tableau dashboard identifying cost drivers for 99% of logistics spend. Integrated Python for lead-time analysis.
+
+- **Technologies:** Tableau, Python, SQL
+
+### [Manufacturing Line Productivity](https://mcam215.github.io/v2-logistics/manufacturing-line-productivity.html)
+
+Pareto analysis of bottling line downtime. Utilized Power Query for ETL and isolated root causes for inventory shortages.
+
+- **Technologies:** Excel, Power Query, Root Cause Analysis
+
+### [Customer Churn Prediction](https://mcam215.github.io/v2-logistics/bank-customer-churn-analysis.html)
+
+Predictive modeling using Python. Identified geographic drivers and achieved 74% recall for high-risk accounts.
+
+- **Technologies:** Python, Scikit-Learn, Machine Learning
+
+### [Sales CRM Dashboard](https://mcam215.github.io/v2-logistics/crm-dashboard.html)
+
+Sales funnel visualization in Tableau. Identified a 49% post-engagement drop-off to optimize lead conversion.
+
+- **Technologies:** Tableau, Salesforce, SQL
+
+### [Passenger Satisfaction Analysis](https://mcam215.github.io/v2-logistics/passenger-satisfaction.html)
+
+Power BI dashboard translating airline survey data into actionable insights focused on service enhancement and segmentation.
+
+- **Technologies:** Power BI, DAX
+
+### [Restaurant Order Analysis](https://mcam215.github.io/v2-logistics/restaurant_sql_analysis.html)
+
+Exploratory SQL analysis of sales trends and menu performance to identify top-performing products.
+
+- **Technologies:** SQL, Database Analysis
+
+### [HR Survey Analysis](https://mcam215.github.io/v2-logistics/hr-survey-analysis.html)
+
+Excel-based deep dive into employee satisfaction drivers using Power Query for ETL and trend analysis.
+
+- **Technologies:** Excel, Power Query
+
+---
 
 ## Contact
 
-- **LinkedIn:** [https://www.linkedin.com/in/michaelcampbell215](https://www.linkedin.com/in/michaelcampbell215/)
-- **Email:** mcam215@gmail.com
+- **Portfolio:** [mcam215.github.io/v2-logistics](https://mcam215.github.io/v2-logistics/)
+- **LinkedIn:** [linkedin.com/in/michaelcampbell215](https://www.linkedin.com/in/michaelcampbell215/)
+- **Email:** [mcam215@gmail.com](mailto:mcam215@gmail.com)

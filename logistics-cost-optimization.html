@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Manufacturing Line Productivity Analysis | Michael Campbell</title>
+    <title>Global Supply Chain Performance | Michael Campbell</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -49,6 +49,9 @@
           rgba(15, 23, 42, 0.8) 100%
         );
       }
+      .scroll-indicator {
+        writing-mode: vertical-rl;
+      }
     </style>
   </head>
   <body class="bg-slate-900 text-slate-200 font-sans antialiased">
@@ -79,8 +82,8 @@
           <a href="#dashboard" class="hover:text-logistics-orange transition"
             >Dashboard</a
           >
-          <a href="#discoveries" class="hover:text-logistics-orange transition"
-            >Discoveries</a
+          <a href="#insights" class="hover:text-logistics-orange transition"
+            >Insights</a
           >
           <a
             href="#contact"
@@ -99,16 +102,16 @@
             <div
               class="inline-block px-3 py-1 bg-logistics-orange/10 border border-logistics-orange/20 text-logistics-orange rounded-full text-xs font-bold uppercase tracking-widest mb-6"
             >
-              Case Study: Manufacturing Excellence
+              Case Study: Cost Optimization
             </div>
             <h1 class="text-4xl md:text-6xl font-bold mb-6 leading-tight">
-              Manufacturing Line
-              <span class="text-logistics-orange">Productivity</span>
+              Global Supply Chain
+              <span class="text-logistics-orange">Performance</span>
             </h1>
             <p class="text-xl text-slate-300 leading-relaxed mb-8">
-              An Excel-based root cause analysis to identify drivers of
-              production downtime and optimize bottling line efficiency using
-              Power Query and Pareto analysis.
+              An interactive dashboard to monitor global logistics, identify
+              underperforming shipments, and support cost negotiations using
+              Tableau, Python, and SQL.
             </p>
 
             <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
@@ -118,7 +121,11 @@
                 >
                   Tools
                 </div>
-                <div class="font-bold text-slate-300">Excel & Power Query</div>
+                <div class="font-bold flex flex-wrap gap-1">
+                  <span class="text-slate-300">Tableau,</span>
+                  <span class="text-slate-300">Python,</span>
+                  <span class="text-slate-300">SQL</span>
+                </div>
               </div>
               <div class="border-l-2 border-slate-800 pl-4">
                 <div
@@ -127,7 +134,7 @@
                   Impact
                 </div>
                 <div class="font-bold text-slate-300">
-                  Targeted Downtime Reduction
+                  88.5% OTD Rate Identified
                 </div>
               </div>
               <div class="border-l-2 border-slate-800 pl-4">
@@ -136,9 +143,7 @@
                 >
                   Focus
                 </div>
-                <div class="font-bold text-slate-300">
-                  Operations Management
-                </div>
+                <div class="font-bold text-slate-300">Cost & Logistics</div>
               </div>
               <div class="border-l-2 border-slate-800 pl-4">
                 <div
@@ -146,8 +151,11 @@
                 >
                   Dataset
                 </div>
-                <span class="font-bold text-slate-300 italic"
-                  >Beverage Bottling Line</span
+                <a
+                  href="https://www.kaggle.com/datasets/apoorvwatsky/supply-chain-shipment-pricing-data"
+                  target="_blank"
+                  class="font-bold text-logistics-orange hover:underline"
+                  >SCMS History</a
                 >
               </div>
             </div>
@@ -159,28 +167,26 @@
       <section id="dashboard" class="py-24 bg-slate-900/50">
         <div class="container mx-auto px-6 text-center">
           <h2 class="text-3xl font-bold mb-12">
-            Interactive
-            <span class="text-logistics-orange">Excel Dashboard</span>
+            Performance <span class="text-logistics-orange">Dashboard</span>
           </h2>
           <div
             class="card-gradient p-2 rounded-2xl border border-slate-800 overflow-hidden shadow-2xl"
           >
             <iframe
-              src="https://1drv.ms/x/c/8513fca8776bf8ff/IQRhRLvDsMjGT7rxot3wKRslAfgDdu3AakwudErYXIhGjtA"
-              width="100%"
-              height="800"
+              src="https://public.tableau.com/views/supplychain_17339884476900/GLOBALDELIVERYPERFORMANCEOVERVIEW?:showVizHome=no&:embed=true"
+              class="w-full aspect-video rounded-xl border border-slate-700"
               frameborder="0"
-              scrolling="no"
-              class="rounded-xl"
-            ></iframe>
+              allowfullscreen
+            >
+            </iframe>
           </div>
           <div class="mt-8">
             <a
-              href="https://github.com/michaelcampbell215/manufacturing-line-productivity-analysis.git"
+              href="https://github.com/michaelcampbell215/Supply-Chain-Performance-Project"
               target="_blank"
               class="inline-flex items-center px-6 py-3 bg-slate-800 hover:bg-slate-700 text-white font-bold rounded-lg transition border border-slate-700"
             >
-              <i class="fab fa-github mr-2"></i> View Project Documenation
+              <i class="fab fa-github mr-2"></i> View Project Code
             </a>
           </div>
         </div>
@@ -203,32 +209,30 @@
                     1
                   </div>
                   <h3 class="text-xl font-bold mb-3">
-                    ETL & Data Transformation
+                    Data Engineering (Python)
                   </h3>
                   <p class="text-slate-400 mb-4">
-                    Leveraged Power Query to merge disparate data sources into a
-                    unified fact table.
+                    Performed extensive wrangling with Pandas to handle missing
+                    capture dates and non-numeric costs.
                   </p>
                   <ul class="text-sm text-slate-500 space-y-2">
                     <li class="flex items-start">
                       <i
                         class="fas fa-check text-logistics-green mr-2 mt-1"
                       ></i>
-                      Unpivoted 12 columns of downtime factors into a "tall"
-                      schema
+                      Feature Engineerd: Delivery Lead Time & On-Time Flags
                     </li>
                     <li class="flex items-start">
                       <i
                         class="fas fa-check text-logistics-green mr-2 mt-1"
                       ></i>
-                      Cleaned production records for consistency across shifts
+                      Standardized Weight & Freight Cost conversion
                     </li>
                     <li class="flex items-start">
                       <i
                         class="fas fa-check text-logistics-green mr-2 mt-1"
                       ></i>
-                      Calculated efficiency metrics considering overnight
-                      overlaps
+                      Imputed NULLs for Line Item Insurance and Shipment Modes
                     </li>
                   </ul>
                 </div>
@@ -239,30 +243,30 @@
                   >
                     2
                   </div>
-                  <h3 class="text-xl font-bold mb-3">Down-Time Segmentation</h3>
+                  <h3 class="text-xl font-bold mb-3">KPI Development</h3>
                   <p class="text-slate-400 mb-4">
-                    Partitioned downtime into "Operator-Controllable" and
-                    "Systemic" categories to ensure fair performance assessment.
+                    Identified core metrics critical to logistics spend and
+                    operational reliability.
                   </p>
                   <div class="grid grid-cols-2 gap-4">
                     <div
                       class="bg-slate-900 p-4 rounded-xl border border-slate-800"
                     >
                       <div class="text-logistics-orange font-bold mb-1">
-                        Operator Errors
+                        OTD Rate
                       </div>
                       <div class="text-xs text-slate-500">
-                        Training Opportunities
+                        By Country & Vendor
                       </div>
                     </div>
                     <div
                       class="bg-slate-900 p-4 rounded-xl border border-slate-800"
                     >
                       <div class="text-logistics-orange font-bold mb-1">
-                        Systemic Issues
+                        Freight %
                       </div>
                       <div class="text-xs text-slate-500">
-                        Maintenance & Supply Chain
+                        Of Line Item Value
                       </div>
                     </div>
                   </div>
@@ -275,23 +279,22 @@
                     3
                   </div>
                   <h3 class="text-xl font-bold mb-3">
-                    Root Cause Identification
+                    Interactive Visualization
                   </h3>
                   <p class="text-slate-400">
-                    Deployed Pareto analysis to isolate the "Vital Few"
-                    factors—specifically machine failure and inventory
-                    shortages—that drove 80% of lost time.
+                    Deployed Tableau dashboards with dynamic filters to allow
+                    ad-hoc exploration by country, mode, and product group.
                   </p>
                 </div>
               </div>
             </div>
 
             <div
-              id="discoveries"
+              id="insights"
               class="bg-slate-900 p-10 rounded-2xl border border-slate-800"
             >
               <h2 class="text-3xl font-bold mb-8">
-                Key <span class="text-logistics-orange">Discoveries</span>
+                Key <span class="text-logistics-orange">Insights</span>
               </h2>
               <div class="space-y-6">
                 <div class="flex items-start">
@@ -299,11 +302,11 @@
                     class="w-1.5 h-1.5 bg-logistics-orange rounded-full mt-2.5 mr-4 flex-shrink-0"
                   ></div>
                   <div>
-                    <h4 class="font-bold text-lg mb-1">Downtime Drivers</h4>
+                    <h4 class="font-bold text-lg mb-1">Cost Concentration</h4>
                     <p class="text-slate-400">
-                      Identified that <strong>Machine Adjustments</strong> and
-                      <strong>Inventory Shortages</strong> were the primary
-                      bottlenecks, not operator speed.
+                      ARV and HRDT groups account for
+                      <strong>99% of total logistics spend</strong> ($1.46B+),
+                      identifying the primary levers for cost reduction.
                     </p>
                   </div>
                 </div>
@@ -312,11 +315,11 @@
                     class="w-1.5 h-1.5 bg-logistics-orange rounded-full mt-2.5 mr-4 flex-shrink-0"
                   ></div>
                   <div>
-                    <h4 class="font-bold text-lg mb-1">Productivity Levers</h4>
+                    <h4 class="font-bold text-lg mb-1">Mode Reliability</h4>
                     <p class="text-slate-400">
-                      The <strong>CO-600 product line</strong> demonstrated the
-                      highest variance in downtime, suggesting equipment issues
-                      specific to that format.
+                      Ocean shipments (84% OTD) and standard Air (88% OTD)
+                      contribute most to delays compared to 100% OTD for Air
+                      Charter.
                     </p>
                   </div>
                 </div>
@@ -325,11 +328,10 @@
                     class="w-1.5 h-1.5 bg-logistics-orange rounded-full mt-2.5 mr-4 flex-shrink-0"
                   ></div>
                   <div>
-                    <h4 class="font-bold text-lg mb-1">Temporal Patterns</h4>
+                    <h4 class="font-bold text-lg mb-1">Lead Time Variance</h4>
                     <p class="text-slate-400">
-                      Lost time was not stochastic but clustered around peak
-                      production hours, indicating a need for shift-overlap
-                      maintenance windows.
+                      Average lead times varied from 88 days (Air) to 144 days
+                      (Ocean), critical for inventory replenishment planning.
                     </p>
                   </div>
                 </div>
@@ -341,9 +343,9 @@
                     Strategic Recommendation
                   </h4>
                   <p class="text-slate-300 italic">
-                    "Shift from reactive machine fixing to a preventative
-                    maintenance schedule prioritized for the CO-600 line
-                    equipment and high-incidence adjustment phases."
+                    "Shift logistics focus from global sweeping changes to
+                    targeted negotiations for Air and Ocean freight on
+                    high-volume ARV routes to capture immediate cost savings."
                   </p>
                 </div>
               </div>
@@ -358,13 +360,13 @@
           <h2 class="text-3xl font-bold mb-12 text-center italic">
             Supporting <span class="text-logistics-orange">Visuals</span>
           </h2>
-          <div class="grid md:grid-cols-2 gap-8">
+          <div class="grid md:grid-cols-3 gap-8">
             <div
               class="group overflow-hidden rounded-xl border border-slate-800"
             >
               <img
-                src="../images/project_images/ma1.png"
-                alt="Pareto Downtime Analysis"
+                src="images/project_images/sc1 (1).png"
+                alt="Dashboard View 1"
                 class="w-full h-auto grayscale group-hover:grayscale-0 transition duration-500"
               />
             </div>
@@ -372,8 +374,17 @@
               class="group overflow-hidden rounded-xl border border-slate-800"
             >
               <img
-                src="../images/project_images/ma2.png"
-                alt="Downtime by Hour"
+                src="images/project_images/sc1 (2).png"
+                alt="Finding Chart"
+                class="w-full h-auto grayscale group-hover:grayscale-0 transition duration-500"
+              />
+            </div>
+            <div
+              class="group overflow-hidden rounded-xl border border-slate-800"
+            >
+              <img
+                src="images/project_images/sc1 (3).png"
+                alt="Dashboard View 2"
                 class="w-full h-auto grayscale group-hover:grayscale-0 transition duration-500"
               />
             </div>
