@@ -1,11 +1,11 @@
 $repoMap = @{
-    "retention-modeling-ops"        = "https://github.com/michaelcampbell215/bank-churn-predictive-repo.git"
-    "logistics-cost-optimization"   = "https://github.com/michaelcampbell215/supply-chain-performance-repo.git"
-    "service-quality-analytics"     = "https://github.com/michaelcampbell215/passenger-satisfaction-repo.git"
-    "revenue-pipeline-control"      = "https://github.com/michaelcampbell215/crm-dashboard-repo.git"
-    "workforce-capacity-planning"   = "https://github.com/michaelcampbell215/hr-survey-analysis-repo.git"
-    "production-throughput-model"   = "https://github.com/michaelcampbell215/manufacturing-line-productivity-analysis.git"
-    "inventory-margin-optimization" = "https://github.com/michaelcampbell215/Restaurant-Analysis.git"
+    "retention-modeling-ops"        = "https://github.com/michaelcampbell215/retention-modeling-ops.git"
+    "logistics-cost-optimization"   = "https://github.com/michaelcampbell215/logistics-cost-optimization.git"
+    "service-quality-analytics"     = "https://github.com/michaelcampbell215/service-quality-analytics.git"
+    "revenue-pipeline-control"      = "https://github.com/michaelcampbell215/revenue-pipeline-control.git"
+    "workforce-capacity-planning"   = "https://github.com/michaelcampbell215/workforce-capacity-planning.git"
+    "production-throughput-model"   = "https://github.com/michaelcampbell215/production-throughput-model.git"
+    "inventory-margin-optimization" = "https://github.com/michaelcampbell215/inventory-margin-optimization.git"
 }
 
 $rootPath = Get-Location
