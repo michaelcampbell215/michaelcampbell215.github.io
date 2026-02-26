@@ -1,3 +1,17 @@
-# Ignore images folder
-images/
+# Ignore specific images
 images/1760478155917.jpg
+images/headshot.png
+images/headshot.png.png
+
+# Ignore sub-project folders that have their own repos
+bank-churn-predictive-repo/
+churn-analysis-repo/
+healthcare-data-engineering/
+inventory-margin-optimization/
+logistics-cost-optimization/
+production-throughput-model/
+retention-modeling-ops/
+revenue-pipeline-control/
+service-quality-analytics/
+supply-chain-command-center/
+workforce-capacity-planning/
