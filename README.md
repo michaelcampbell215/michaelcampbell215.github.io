@@ -31,6 +31,12 @@ My background is built on operational discipline. I spent a decade managing time
 
 ## Featured Projects
 
+### [Healthcare Data Engineering](https://michaelcampbell215.github.io/healthcare-data-engineering.html)
+
+End-to-end ELT pipeline processing 2M+ hospital records. Built with Python and dbt to structure data for predictive readmission modeling.
+
+- **Technologies:** Python, dbt, SQL, PostgreSQL
+
 ### [Logistics Cost Optimization](https://michaelcampbell215.github.io/logistics-cost-optimization.html)
 
 Interactive Tableau dashboard identifying cost drivers for 99% of logistics spend. Integrated Python for lead-time analysis.
@@ -60,6 +66,12 @@ Sales funnel visualization in Tableau. Identified a 49% post-engagement drop-off
 Power BI dashboard translating airline survey data into actionable insights focused on service enhancement and segmentation.
 
 - **Technologies:** Power BI, DAX
+
+### [Supply Chain Command Center](https://michaelcampbell215.github.io/supply-chain-command-center.html)
+
+Real-time Power BI dashboard for global inventory visibility. Consolidated data from 3 ERPs to track a $50M logistics network.
+
+- **Technologies:** Power BI, SQL, DAX, Data Modeling
 
 ### [Inventory & Margin Optimization](https://michaelcampbell215.github.io/inventory-margin-optimization.html)
 
