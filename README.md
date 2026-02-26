@@ -35,7 +35,7 @@ My background is built on operational discipline. I spent a decade managing time
 
 End-to-end ELT pipeline processing 2M+ hospital records. Built with Python and dbt to structure data for predictive readmission modeling.
 
-- **Technologies:** Python, dbt, SQL, PostgreSQL
+- **Technologies:**  SQL, MySQL
 
 ### [Logistics Cost Optimization](https://michaelcampbell215.github.io/logistics-cost-optimization.html)
 
@@ -71,7 +71,7 @@ Power BI dashboard translating airline survey data into actionable insights focu
 
 Real-time Power BI dashboard for global inventory visibility. Consolidated data from 3 ERPs to track a $50M logistics network.
 
-- **Technologies:** Power BI, SQL, DAX, Data Modeling
+- **Technologies:** Power Tableau, SQL, Data Modeling
 
 ### [Inventory & Margin Optimization](https://michaelcampbell215.github.io/inventory-margin-optimization.html)
 
