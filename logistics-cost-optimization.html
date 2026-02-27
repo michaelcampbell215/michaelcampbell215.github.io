@@ -192,162 +192,199 @@
         </div>
       </section>
 
-      <!-- Process & Insights -->
-      <section class="py-24">
+      <!-- Documentation Panels -->
+      <section id="documentation" class="py-24 border-t border-slate-800">
         <div class="container mx-auto px-6">
-          <div class="grid lg:grid-cols-2 gap-16">
-            <div>
-              <h2 class="text-3xl font-bold mb-8">
-                The
-                <span class="text-logistics-orange">Analytical</span> Process
-              </h2>
-              <div class="space-y-12">
-                <div class="relative pl-12">
-                  <div
-                    class="absolute left-0 top-0 w-8 h-8 bg-logistics-orange/20 rounded-full flex items-center justify-center border border-logistics-orange/40 text-logistics-orange font-bold text-sm"
-                  >
-                    1
-                  </div>
-                  <h3 class="text-xl font-bold mb-3">
-                    Data Engineering (Python)
-                  </h3>
-                  <p class="text-slate-400 mb-4">
-                    Performed extensive wrangling with Pandas to handle missing
-                    capture dates and non-numeric costs.
-                  </p>
-                  <ul class="text-sm text-slate-500 space-y-2">
-                    <li class="flex items-start">
-                      <i
-                        class="fas fa-check text-logistics-green mr-2 mt-1"
-                      ></i>
-                      Feature Engineerd: Delivery Lead Time & On-Time Flags
-                    </li>
-                    <li class="flex items-start">
-                      <i
-                        class="fas fa-check text-logistics-green mr-2 mt-1"
-                      ></i>
-                      Standardized Weight & Freight Cost conversion
-                    </li>
-                    <li class="flex items-start">
-                      <i
-                        class="fas fa-check text-logistics-green mr-2 mt-1"
-                      ></i>
-                      Imputed NULLs for Line Item Insurance and Shipment Modes
-                    </li>
-                  </ul>
-                </div>
-
-                <div class="relative pl-12">
-                  <div
-                    class="absolute left-0 top-0 w-8 h-8 bg-logistics-orange/20 rounded-full flex items-center justify-center border border-logistics-orange/40 text-logistics-orange font-bold text-sm"
-                  >
-                    2
-                  </div>
-                  <h3 class="text-xl font-bold mb-3">KPI Development</h3>
-                  <p class="text-slate-400 mb-4">
-                    Identified core metrics critical to logistics spend and
-                    operational reliability.
-                  </p>
-                  <div class="grid grid-cols-2 gap-4">
-                    <div
-                      class="bg-slate-900 p-4 rounded-xl border border-slate-800"
-                    >
-                      <div class="text-logistics-orange font-bold mb-1">
-                        OTD Rate
+          <div class="grid lg:grid-cols-3 gap-12">
+            <!-- Main Content -->
+            <div class="lg:col-span-2 space-y-12">
+              <div>
+                <h3 class="text-2xl font-bold mb-6 text-logistics-orange">
+                  The Analytical Process
+                </h3>
+                <div class="space-y-8">
+                  <div class="flex">
+                    <div class="mr-6 flex flex-col items-center">
+                      <div
+                        class="w-10 h-10 rounded-full bg-slate-800 border border-slate-700 flex items-center justify-center font-bold text-logistics-orange"
+                      >
+                        01
                       </div>
-                      <div class="text-xs text-slate-500">
-                        By Country & Vendor
-                      </div>
+                      <div class="w-px h-full bg-slate-800 mt-2"></div>
                     </div>
-                    <div
-                      class="bg-slate-900 p-4 rounded-xl border border-slate-800"
-                    >
-                      <div class="text-logistics-orange font-bold mb-1">
-                        Freight %
-                      </div>
-                      <div class="text-xs text-slate-500">
-                        Of Line Item Value
-                      </div>
+                    <div>
+                      <h4 class="text-xl font-bold mb-2">
+                        Data Engineering (Python)
+                      </h4>
+                      <p class="text-slate-400 leading-relaxed mb-4">
+                        Performed extensive wrangling with Pandas to handle
+                        missing capture dates and non-numeric costs.
+                      </p>
+                      <ul class="text-sm text-slate-500 space-y-2 block">
+                        <li class="flex items-start">
+                          <i
+                            class="fas fa-check text-logistics-green mr-2 mt-1"
+                          ></i>
+                          Feature Engineerd: Delivery Lead Time & On-Time Flags
+                        </li>
+                        <li class="flex items-start">
+                          <i
+                            class="fas fa-check text-logistics-green mr-2 mt-1"
+                          ></i>
+                          Standardized Weight & Freight Cost conversion
+                        </li>
+                        <li class="flex items-start">
+                          <i
+                            class="fas fa-check text-logistics-green mr-2 mt-1"
+                          ></i>
+                          Imputed NULLs for Line Item Insurance and Shipment
+                          Modes
+                        </li>
+                      </ul>
                     </div>
                   </div>
-                </div>
-
-                <div class="relative pl-12">
-                  <div
-                    class="absolute left-0 top-0 w-8 h-8 bg-logistics-orange/20 rounded-full flex items-center justify-center border border-logistics-orange/40 text-logistics-orange font-bold text-sm"
-                  >
-                    3
+                  <div class="flex">
+                    <div class="mr-6 flex flex-col items-center">
+                      <div
+                        class="w-10 h-10 rounded-full bg-slate-800 border border-slate-700 flex items-center justify-center font-bold text-logistics-orange"
+                      >
+                        02
+                      </div>
+                      <div class="w-px h-full bg-slate-800 mt-2"></div>
+                    </div>
+                    <div>
+                      <h4 class="text-xl font-bold mb-2">KPI Development</h4>
+                      <p class="text-slate-400 leading-relaxed mb-4">
+                        Identified core metrics critical to logistics spend and
+                        operational reliability.
+                      </p>
+                      <div class="grid grid-cols-2 gap-4">
+                        <div
+                          class="bg-slate-900 p-4 rounded-xl border border-slate-800"
+                        >
+                          <div class="text-logistics-orange font-bold mb-1">
+                            OTD Rate
+                          </div>
+                          <div class="text-xs text-slate-500">
+                            By Country & Vendor
+                          </div>
+                        </div>
+                        <div
+                          class="bg-slate-900 p-4 rounded-xl border border-slate-800"
+                        >
+                          <div class="text-logistics-orange font-bold mb-1">
+                            Freight %
+                          </div>
+                          <div class="text-xs text-slate-500">
+                            Of Line Item Value
+                          </div>
+                        </div>
+                      </div>
+                    </div>
                   </div>
-                  <h3 class="text-xl font-bold mb-3">
-                    Interactive Visualization
-                  </h3>
-                  <p class="text-slate-400">
-                    Deployed Tableau dashboards with dynamic filters to allow
-                    ad-hoc exploration by country, mode, and product group.
+                  <div class="flex">
+                    <div class="mr-6 flex flex-col items-center">
+                      <div
+                        class="w-10 h-10 rounded-full bg-slate-800 border border-slate-700 flex items-center justify-center font-bold text-logistics-orange"
+                      >
+                        03
+                      </div>
+                    </div>
+                    <div>
+                      <h4 class="text-xl font-bold mb-2">
+                        Interactive Visualization
+                      </h4>
+                      <p class="text-slate-400 leading-relaxed">
+                        Deployed Tableau dashboards with dynamic filters to
+                        allow ad-hoc exploration by country, mode, and product
+                        group.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Recommendation Cards -->
+              <div class="grid md:grid-cols-2 gap-6">
+                <div
+                  class="p-8 bg-slate-900 rounded-3xl border border-slate-800"
+                >
+                  <i
+                    class="fas fa-cubes text-logistics-orange text-2xl mb-4"
+                  ></i>
+                  <h4 class="text-xl font-bold mb-4 text-white">
+                    Cost Concentration
+                  </h4>
+                  <p class="text-sm text-slate-400">
+                    ARV and HRDT groups account for
+                    <strong>99% of total logistics spend</strong> ($1.46B+),
+                    identifying the primary levers for cost reduction.
+                  </p>
+                </div>
+                <div
+                  class="p-8 bg-slate-900 rounded-3xl border border-slate-800"
+                >
+                  <i class="fas fa-ship text-logistics-green text-2xl mb-4"></i>
+                  <h4 class="text-xl font-bold mb-4 text-white">
+                    Mode Reliability
+                  </h4>
+                  <p class="text-sm text-slate-400">
+                    Ocean shipments (84% OTD) and standard Air (88% OTD)
+                    contribute most to delays compared to 100% OTD for Air
+                    Charter. Average lead times varied from 88 to 144 days.
                   </p>
                 </div>
               </div>
             </div>
 
-            <div
-              id="insights"
-              class="bg-slate-900 p-10 rounded-2xl border border-slate-800"
-            >
-              <h2 class="text-3xl font-bold mb-8">
-                Key <span class="text-logistics-orange">Insights</span>
-              </h2>
-              <div class="space-y-6">
-                <div class="flex items-start">
-                  <div
-                    class="w-1.5 h-1.5 bg-logistics-orange rounded-full mt-2.5 mr-4 flex-shrink-0"
-                  ></div>
-                  <div>
-                    <h4 class="font-bold text-lg mb-1">Cost Concentration</h4>
-                    <p class="text-slate-400">
-                      ARV and HRDT groups account for
-                      <strong>99% of total logistics spend</strong> ($1.46B+),
-                      identifying the primary levers for cost reduction.
-                    </p>
-                  </div>
-                </div>
-                <div class="flex items-start">
-                  <div
-                    class="w-1.5 h-1.5 bg-logistics-orange rounded-full mt-2.5 mr-4 flex-shrink-0"
-                  ></div>
-                  <div>
-                    <h4 class="font-bold text-lg mb-1">Mode Reliability</h4>
-                    <p class="text-slate-400">
-                      Ocean shipments (84% OTD) and standard Air (88% OTD)
-                      contribute most to delays compared to 100% OTD for Air
-                      Charter.
-                    </p>
-                  </div>
-                </div>
-                <div class="flex items-start">
-                  <div
-                    class="w-1.5 h-1.5 bg-logistics-orange rounded-full mt-2.5 mr-4 flex-shrink-0"
-                  ></div>
-                  <div>
-                    <h4 class="font-bold text-lg mb-1">Lead Time Variance</h4>
-                    <p class="text-slate-400">
-                      Average lead times varied from 88 days (Air) to 144 days
-                      (Ocean), critical for inventory replenishment planning.
-                    </p>
-                  </div>
-                </div>
-
-                <div class="mt-12 pt-8 border-t border-slate-800">
-                  <h4
-                    class="text-sm font-bold uppercase tracking-widest text-slate-500 mb-4"
+            <!-- Sidebar -->
+            <div class="space-y-8">
+              <div class="p-8 bg-slate-900 rounded-3xl border border-slate-800">
+                <h4
+                  class="text-sm font-bold uppercase tracking-widest text-slate-500 mb-6"
+                >
+                  Technical Toolkit
+                </h4>
+                <div class="flex flex-wrap gap-2">
+                  <span
+                    class="px-3 py-1 bg-slate-800 rounded-md text-sm border border-slate-700/50"
+                    >Python (Pandas)</span
                   >
-                    Strategic Recommendation
-                  </h4>
-                  <p class="text-slate-300 italic">
-                    "Shift logistics focus from global sweeping changes to
-                    targeted negotiations for Air and Ocean freight on
-                    high-volume ARV routes to capture immediate cost savings."
-                  </p>
+                  <span
+                    class="px-3 py-1 bg-slate-800 rounded-md text-sm border border-slate-700/50"
+                    >Tableau Desktop</span
+                  >
+                  <span
+                    class="px-3 py-1 bg-slate-800 rounded-md text-sm border border-slate-700/50"
+                    >Data Wrangling</span
+                  >
+                  <span
+                    class="px-3 py-1 bg-slate-800 rounded-md text-sm border border-slate-700/50"
+                    >Spend Analytics</span
+                  >
                 </div>
+              </div>
+
+              <div
+                class="p-8 bg-logistics-orange/5 rounded-3xl border border-logistics-orange/20"
+              >
+                <h4
+                  class="text-sm font-bold uppercase tracking-widest text-logistics-orange mb-4"
+                >
+                  Strategic Recommendation
+                </h4>
+                <p class="text-sm text-slate-400 leading-relaxed italic">
+                  "Shift logistics focus from global sweeping changes to
+                  targeted negotiations for Air and Ocean freight on high-volume
+                  ARV routes to capture immediate cost savings."
+                </p>
+                <a
+                  href="https://github.com/michaelcampbell215/logistics-cost-optimization"
+                  target="_blank"
+                  class="mt-6 inline-flex items-center text-sm font-bold text-logistics-orange hover:gap-2 transition-all"
+                >
+                  Github Repository <i class="fas fa-arrow-right ml-2"></i>
+                </a>
               </div>
             </div>
           </div>
@@ -392,7 +429,7 @@
         </div>
       </section>
 
-            <!-- Contact CTA -->
+      <!-- Contact CTA -->
       <section
         id="contact"
         class="py-24 bg-slate-900 border-t border-slate-800"

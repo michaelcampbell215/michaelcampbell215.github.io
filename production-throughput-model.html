@@ -186,166 +186,206 @@
         </div>
       </section>
 
-      <!-- Process & Insights -->
-      <section class="py-24">
+      <!-- Documentation Panels -->
+      <section id="documentation" class="py-24 border-t border-slate-800">
         <div class="container mx-auto px-6">
-          <div class="grid lg:grid-cols-2 gap-16">
-            <div>
-              <h2 class="text-3xl font-bold mb-8">
-                The
-                <span class="text-logistics-orange">Analytical</span> Process
-              </h2>
-              <div class="space-y-12">
-                <div class="relative pl-12">
-                  <div
-                    class="absolute left-0 top-0 w-8 h-8 bg-logistics-orange/20 rounded-full flex items-center justify-center border border-logistics-orange/40 text-logistics-orange font-bold text-sm"
-                  >
-                    1
-                  </div>
-                  <h3 class="text-xl font-bold mb-3">
-                    ETL & Data Transformation
-                  </h3>
-                  <p class="text-slate-400 mb-4">
-                    Leveraged Power Query to merge disparate data sources into a
-                    unified fact table.
-                  </p>
-                  <ul class="text-sm text-slate-500 space-y-2">
-                    <li class="flex items-start">
-                      <i
-                        class="fas fa-check text-logistics-green mr-2 mt-1"
-                      ></i>
-                      Unpivoted 12 columns of downtime factors into a "tall"
-                      schema
-                    </li>
-                    <li class="flex items-start">
-                      <i
-                        class="fas fa-check text-logistics-green mr-2 mt-1"
-                      ></i>
-                      Cleaned production records for consistency across shifts
-                    </li>
-                    <li class="flex items-start">
-                      <i
-                        class="fas fa-check text-logistics-green mr-2 mt-1"
-                      ></i>
-                      Calculated efficiency metrics considering overnight
-                      overlaps
-                    </li>
-                  </ul>
-                </div>
-
-                <div class="relative pl-12">
-                  <div
-                    class="absolute left-0 top-0 w-8 h-8 bg-logistics-orange/20 rounded-full flex items-center justify-center border border-logistics-orange/40 text-logistics-orange font-bold text-sm"
-                  >
-                    2
-                  </div>
-                  <h3 class="text-xl font-bold mb-3">Down-Time Segmentation</h3>
-                  <p class="text-slate-400 mb-4">
-                    Partitioned downtime into "Operator-Controllable" and
-                    "Systemic" categories to ensure fair performance assessment.
-                  </p>
-                  <div class="grid grid-cols-2 gap-4">
-                    <div
-                      class="bg-slate-900 p-4 rounded-xl border border-slate-800"
-                    >
-                      <div class="text-logistics-orange font-bold mb-1">
-                        Operator Errors
+          <div class="grid lg:grid-cols-3 gap-12">
+            <!-- Main Content -->
+            <div class="lg:col-span-2 space-y-12">
+              <div>
+                <h3 class="text-2xl font-bold mb-6 text-logistics-orange">
+                  The Analytical Process
+                </h3>
+                <div class="space-y-8">
+                  <div class="flex">
+                    <div class="mr-6 flex flex-col items-center">
+                      <div
+                        class="w-10 h-10 rounded-full bg-slate-800 border border-slate-700 flex items-center justify-center font-bold text-logistics-orange"
+                      >
+                        01
                       </div>
-                      <div class="text-xs text-slate-500">
-                        Training Opportunities
-                      </div>
+                      <div class="w-px h-full bg-slate-800 mt-2"></div>
                     </div>
-                    <div
-                      class="bg-slate-900 p-4 rounded-xl border border-slate-800"
-                    >
-                      <div class="text-logistics-orange font-bold mb-1">
-                        Systemic Issues
-                      </div>
-                      <div class="text-xs text-slate-500">
-                        Maintenance & Supply Chain
-                      </div>
+                    <div>
+                      <h4 class="text-xl font-bold mb-2">
+                        ETL & Data Transformation
+                      </h4>
+                      <p class="text-slate-400 leading-relaxed mb-4">
+                        Leveraged Power Query to merge disparate data sources
+                        into a unified fact table.
+                      </p>
+                      <ul class="text-sm text-slate-500 space-y-2 block">
+                        <li class="flex items-start">
+                          <i
+                            class="fas fa-check text-logistics-green mr-2 mt-1"
+                          ></i>
+                          Unpivoted 12 columns of downtime factors into a "tall"
+                          schema
+                        </li>
+                        <li class="flex items-start">
+                          <i
+                            class="fas fa-check text-logistics-green mr-2 mt-1"
+                          ></i>
+                          Cleaned production records for consistency across
+                          shifts
+                        </li>
+                        <li class="flex items-start">
+                          <i
+                            class="fas fa-check text-logistics-green mr-2 mt-1"
+                          ></i>
+                          Calculated efficiency metrics considering overnight
+                          overlaps
+                        </li>
+                      </ul>
                     </div>
                   </div>
-                </div>
-
-                <div class="relative pl-12">
-                  <div
-                    class="absolute left-0 top-0 w-8 h-8 bg-logistics-orange/20 rounded-full flex items-center justify-center border border-logistics-orange/40 text-logistics-orange font-bold text-sm"
-                  >
-                    3
+                  <div class="flex">
+                    <div class="mr-6 flex flex-col items-center">
+                      <div
+                        class="w-10 h-10 rounded-full bg-slate-800 border border-slate-700 flex items-center justify-center font-bold text-logistics-orange"
+                      >
+                        02
+                      </div>
+                      <div class="w-px h-full bg-slate-800 mt-2"></div>
+                    </div>
+                    <div>
+                      <h4 class="text-xl font-bold mb-2">
+                        Down-Time Segmentation
+                      </h4>
+                      <p class="text-slate-400 leading-relaxed mb-4">
+                        Partitioned downtime into "Operator-Controllable" and
+                        "Systemic" categories to ensure fair performance
+                        assessment.
+                      </p>
+                      <div class="grid grid-cols-2 gap-4">
+                        <div
+                          class="bg-slate-900 p-4 rounded-xl border border-slate-800"
+                        >
+                          <div class="text-logistics-orange font-bold mb-1">
+                            Operator Errors
+                          </div>
+                          <div class="text-xs text-slate-500">
+                            Training Opportunities
+                          </div>
+                        </div>
+                        <div
+                          class="bg-slate-900 p-4 rounded-xl border border-slate-800"
+                        >
+                          <div class="text-logistics-orange font-bold mb-1">
+                            Systemic Issues
+                          </div>
+                          <div class="text-xs text-slate-500">
+                            Maintenance & Supply Chain
+                          </div>
+                        </div>
+                      </div>
+                    </div>
                   </div>
-                  <h3 class="text-xl font-bold mb-3">
-                    Root Cause Identification
-                  </h3>
-                  <p class="text-slate-400">
-                    Deployed Pareto analysis to isolate the "Vital Few"
-                    factors—specifically machine failure and inventory
-                    shortages—that drove 80% of lost time.
+                  <div class="flex">
+                    <div class="mr-6 flex flex-col items-center">
+                      <div
+                        class="w-10 h-10 rounded-full bg-slate-800 border border-slate-700 flex items-center justify-center font-bold text-logistics-orange"
+                      >
+                        03
+                      </div>
+                    </div>
+                    <div>
+                      <h4 class="text-xl font-bold mb-2">
+                        Root Cause Identification
+                      </h4>
+                      <p class="text-slate-400 leading-relaxed">
+                        Deployed Pareto analysis to isolate the "Vital Few"
+                        factors—specifically machine failure and inventory
+                        shortages—that drove 80% of lost time.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Recommendation Cards -->
+              <div class="grid md:grid-cols-2 gap-6">
+                <div
+                  class="p-8 bg-slate-900 rounded-3xl border border-slate-800"
+                >
+                  <i
+                    class="fas fa-tools text-logistics-orange text-2xl mb-4"
+                  ></i>
+                  <h4 class="text-xl font-bold mb-4 text-white">
+                    Downtime Drivers
+                  </h4>
+                  <p class="text-sm text-slate-400">
+                    Identified that <strong>Machine Adjustments</strong> and
+                    <strong>Inventory Shortages</strong> were the primary
+                    bottlenecks, not operator speed.
+                  </p>
+                </div>
+                <div
+                  class="p-8 bg-slate-900 rounded-3xl border border-slate-800"
+                >
+                  <i
+                    class="fas fa-chart-line text-logistics-green text-2xl mb-4"
+                  ></i>
+                  <h4 class="text-xl font-bold mb-4 text-white">
+                    Productivity Levers
+                  </h4>
+                  <p class="text-sm text-slate-400">
+                    The <strong>CO-600 product line</strong> demonstrated the
+                    highest variance in downtime, suggesting equipment issues
+                    specific to that format.
                   </p>
                 </div>
               </div>
             </div>
 
-            <div
-              id="discoveries"
-              class="bg-slate-900 p-10 rounded-2xl border border-slate-800"
-            >
-              <h2 class="text-3xl font-bold mb-8">
-                Key <span class="text-logistics-orange">Discoveries</span>
-              </h2>
-              <div class="space-y-6">
-                <div class="flex items-start">
-                  <div
-                    class="w-1.5 h-1.5 bg-logistics-orange rounded-full mt-2.5 mr-4 flex-shrink-0"
-                  ></div>
-                  <div>
-                    <h4 class="font-bold text-lg mb-1">Downtime Drivers</h4>
-                    <p class="text-slate-400">
-                      Identified that <strong>Machine Adjustments</strong> and
-                      <strong>Inventory Shortages</strong> were the primary
-                      bottlenecks, not operator speed.
-                    </p>
-                  </div>
-                </div>
-                <div class="flex items-start">
-                  <div
-                    class="w-1.5 h-1.5 bg-logistics-orange rounded-full mt-2.5 mr-4 flex-shrink-0"
-                  ></div>
-                  <div>
-                    <h4 class="font-bold text-lg mb-1">Productivity Levers</h4>
-                    <p class="text-slate-400">
-                      The <strong>CO-600 product line</strong> demonstrated the
-                      highest variance in downtime, suggesting equipment issues
-                      specific to that format.
-                    </p>
-                  </div>
-                </div>
-                <div class="flex items-start">
-                  <div
-                    class="w-1.5 h-1.5 bg-logistics-orange rounded-full mt-2.5 mr-4 flex-shrink-0"
-                  ></div>
-                  <div>
-                    <h4 class="font-bold text-lg mb-1">Temporal Patterns</h4>
-                    <p class="text-slate-400">
-                      Lost time was not stochastic but clustered around peak
-                      production hours, indicating a need for shift-overlap
-                      maintenance windows.
-                    </p>
-                  </div>
-                </div>
-
-                <div class="mt-12 pt-8 border-t border-slate-800">
-                  <h4
-                    class="text-sm font-bold uppercase tracking-widest text-slate-500 mb-4"
+            <!-- Sidebar -->
+            <div class="space-y-8">
+              <div class="p-8 bg-slate-900 rounded-3xl border border-slate-800">
+                <h4
+                  class="text-sm font-bold uppercase tracking-widest text-slate-500 mb-6"
+                >
+                  Technical Toolkit
+                </h4>
+                <div class="flex flex-wrap gap-2">
+                  <span
+                    class="px-3 py-1 bg-slate-800 rounded-md text-sm border border-slate-700/50"
+                    >Microsoft Excel</span
                   >
-                    Strategic Recommendation
-                  </h4>
-                  <p class="text-slate-300 italic">
-                    "Shift from reactive machine fixing to a preventative
-                    maintenance schedule prioritized for the CO-600 line
-                    equipment and high-incidence adjustment phases."
-                  </p>
+                  <span
+                    class="px-3 py-1 bg-slate-800 rounded-md text-sm border border-slate-700/50"
+                    >Power Query ETL</span
+                  >
+                  <span
+                    class="px-3 py-1 bg-slate-800 rounded-md text-sm border border-slate-700/50"
+                    >Data Visualization</span
+                  >
+                  <span
+                    class="px-3 py-1 bg-slate-800 rounded-md text-sm border border-slate-700/50"
+                    >Industrial Analytics</span
+                  >
                 </div>
+              </div>
+
+              <div
+                class="p-8 bg-logistics-orange/5 rounded-3xl border border-logistics-orange/20"
+              >
+                <h4
+                  class="text-sm font-bold uppercase tracking-widest text-logistics-orange mb-4"
+                >
+                  Strategic Recommendation
+                </h4>
+                <p class="text-sm text-slate-400 leading-relaxed italic">
+                  "Shift from reactive machine fixing to a preventative
+                  maintenance schedule prioritized for the CO-600 line equipment
+                  and high-incidence adjustment phases."
+                </p>
+                <a
+                  href="https://github.com/michaelcampbell215/production-throughput-model"
+                  target="_blank"
+                  class="mt-6 inline-flex items-center text-sm font-bold text-logistics-orange hover:gap-2 transition-all"
+                >
+                  Github Repository <i class="fas fa-arrow-right ml-2"></i>
+                </a>
               </div>
             </div>
           </div>
@@ -381,7 +421,7 @@
         </div>
       </section>
 
-            <!-- Contact CTA -->
+      <!-- Contact CTA -->
       <section
         id="contact"
         class="py-24 bg-slate-900 border-t border-slate-800"

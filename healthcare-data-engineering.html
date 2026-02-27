@@ -15,6 +15,11 @@
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
     />
+    <!-- Prism.js for code highlighting -->
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism-tomorrow.min.css"
+      rel="stylesheet"
+    />
     <script>
       tailwind.config = {
         theme: {
@@ -47,6 +52,11 @@
       }
       .metric-card {
         border-left: 4px solid #ea580c;
+      }
+      pre[class*="language-"] {
+        background: #1e293b !important;
+        margin: 0 !important;
+        border-radius: 0 0 1rem 1rem !important;
       }
     </style>
   </head>
@@ -169,6 +179,118 @@
               </p>
               <h3 class="text-2xl font-bold">Sub-second</h3>
               <p class="text-slate-400 text-xs mt-2">Query Times Executed</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- SQL Showcase -->
+      <section id="sql-showcase" class="py-24 bg-slate-900/30">
+        <div class="container mx-auto px-6">
+          <h2 class="text-3xl font-bold mb-12 flex items-center">
+            <i class="fas fa-database text-logistics-orange mr-4"></i>
+            Engineering Code Samples
+          </h2>
+
+          <div class="space-y-12">
+            <!-- Snippet 1 -->
+            <div
+              class="rounded-3xl border border-slate-800 overflow-hidden bg-slate-900 shadow-2xl"
+            >
+              <div class="p-6 bg-slate-800/50 border-b border-slate-700">
+                <h4 class="text-lg font-bold text-white">
+                  01. Architecture Formulation (Star Schema)
+                </h4>
+                <p class="text-sm text-slate-400 mt-2">
+                  Establishing a 15M+ row Fact Table optimized with foreign keys
+                  linked to strictly defined dimensions.
+                </p>
+              </div>
+              <div class="p-8">
+                <pre
+                  class="language-sql"
+                ><code>-- =========================================================================
+-- Create Destination Table (Fact Table)
+-- =========================================================================
+DROP TABLE IF EXISTS general_payments;
+CREATE TABLE general_payments (
+    payment_id BIGINT AUTO_INCREMENT PRIMARY KEY,
+    record_id VARCHAR(50),
+    payment_date DATE,
+    amount_usd DECIMAL(15, 2),
+    number_of_payments INT,
+    
+    -- Foreign Keys to Dimensions
+    payment_nature VARCHAR(200),
+    recipient_type VARCHAR(50),
+    recipient_specialty VARCHAR(500), 
+    payer_name VARCHAR(150),
+    
+    etl_created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    UNIQUE INDEX idx_record_id (record_id)
+);</code></pre>
+                <div
+                  class="mt-6 p-4 bg-logistics-orange/5 border-l-2 border-logistics-orange rounded-r-lg"
+                >
+                  <p class="text-sm text-slate-300">
+                    <strong>Result:</strong> Created an optimized central fact
+                    table, ensuring that the heavy 15 million rows are kept lean
+                    by offloading strings to dimension tables.
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <!-- Snippet 2 -->
+            <div
+              class="rounded-3xl border border-slate-800 overflow-hidden bg-slate-900 shadow-2xl"
+            >
+              <div class="p-6 bg-slate-800/50 border-b border-slate-700">
+                <h4 class="text-lg font-bold text-white">
+                  02. ETL Pipeline (Stored Procedure)
+                </h4>
+                <p class="text-sm text-slate-400 mt-2">
+                  Leveraging <code>INSERT IGNORE</code> batched stored
+                  procedures to cleanly populate dimensions and handle missing
+                  foreign keys automatically.
+                </p>
+              </div>
+              <div class="p-8">
+                <pre class="language-sql"><code>-- Date Dimension
+SELECT 'Populating DimDate...' AS Status;
+INSERT IGNORE INTO dim_date (date_key, full_date, year, month_name, day_of_week, is_weekend)
+SELECT 
+    CAST(DATE_FORMAT(date_val, '%Y%m%d') AS UNSIGNED),
+    date_val,
+    YEAR(date_val),
+    MONTHNAME(date_val),
+    DAYNAME(date_val),
+    CASE WHEN DAYOFWEEK(date_val) IN (1, 7) THEN 1 ELSE 0 END
+...
+
+-- Recipient Dimension
+SELECT 'Populating DimRecipient...' AS Status;
+INSERT IGNORE INTO dim_recipient (
+    recipient_id, recipient_name, recipient_type, specialty, city, state, zip, lat, lng
+)
+SELECT 
+    COALESCE(NULLIF(recipient_profile_id, ''), teaching_hospital_ccn),
+    MAX(CASE 
+        WHEN recipient_type LIKE '%Hospital%' THEN teaching_hospital_name 
+        ...
+FROM general_payments g
+LEFT JOIN ref_zip_city z ON LEFT(g.recipient_zip, 5) = z.zip_code
+GROUP BY COALESCE(NULLIF(recipient_profile_id, ''), teaching_hospital_ccn);</code></pre>
+                <div
+                  class="mt-6 p-4 bg-logistics-orange/5 border-l-2 border-logistics-orange rounded-r-lg"
+                >
+                  <p class="text-sm text-slate-300">
+                    <strong>Result:</strong> Successfully processed messy data
+                    fields and missing geography data iteratively by performing
+                    dimensional build-outs during pipeline execution.
+                  </p>
+                </div>
+              </div>
             </div>
           </div>
         </div>
@@ -298,74 +420,6 @@
               </div>
             </div>
 
-              <!-- Code Snippets -->
-              <div class="mt-16">
-                <h3 class="text-2xl font-bold mb-6 text-logistics-orange">
-                  Engineering Code Samples
-                </h3>
-                
-                <div class="mb-8">
-                  <h4 class="text-lg font-bold text-white mb-3">1. Architecture Formulation (Star Schema)</h4>
-                  <p class="text-slate-400 text-sm mb-4">Establishing a 15M+ row Fact Table optimized with foreign keys linked to strictly defined dimensions.</p>
-                  <div class="bg-slate-900 rounded-xl border border-slate-800 p-4 overflow-x-auto">
-<pre><code class="text-sm text-slate-300 font-mono">-- =========================================================================
--- Create Destination Table (Fact Table)
--- =========================================================================
-DROP TABLE IF EXISTS general_payments;
-CREATE TABLE general_payments (
-    payment_id BIGINT AUTO_INCREMENT PRIMARY KEY,
-    record_id VARCHAR(50),
-    payment_date DATE,
-    amount_usd DECIMAL(15, 2),
-    number_of_payments INT,
-    
-    -- Foreign Keys to Dimensions
-    payment_nature VARCHAR(200),
-    recipient_type VARCHAR(50),
-    recipient_specialty VARCHAR(500), 
-    payer_name VARCHAR(150),
-    
-    etl_created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
-    UNIQUE INDEX idx_record_id (record_id)
-);</code></pre>
-                  </div>
-                </div>
-
-                <div>
-                  <h4 class="text-lg font-bold text-white mb-3">2. ETL Pipeline (Stored Procedure)</h4>
-                  <p class="text-slate-400 text-sm mb-4">Leveraging `INSERT IGNORE` batched stored procedures to cleanly populate dimensions and handle missing foreign keys automatically.</p>
-                  <div class="bg-slate-900 rounded-xl border border-slate-800 p-4 overflow-x-auto">
-<pre><code class="text-sm text-slate-300 font-mono">-- Date Dimension
-SELECT 'Populating DimDate...' AS Status;
-INSERT IGNORE INTO dim_date (date_key, full_date, year, month_name, day_of_week, is_weekend)
-SELECT 
-    CAST(DATE_FORMAT(date_val, '%Y%m%d') AS UNSIGNED),
-    date_val,
-    YEAR(date_val),
-    MONTHNAME(date_val),
-    DAYNAME(date_val),
-    CASE WHEN DAYOFWEEK(date_val) IN (1, 7) THEN 1 ELSE 0 END
-...
-
--- Recipient Dimension
-SELECT 'Populating DimRecipient...' AS Status;
-INSERT IGNORE INTO dim_recipient (
-    recipient_id, recipient_name, recipient_type, specialty, city, state, zip, lat, lng
-)
-SELECT 
-    COALESCE(NULLIF(recipient_profile_id, ''), teaching_hospital_ccn),
-    MAX(CASE 
-        WHEN recipient_type LIKE '%Hospital%' THEN teaching_hospital_name 
-        ...
-FROM general_payments g
-LEFT JOIN ref_zip_city z ON LEFT(g.recipient_zip, 5) = z.zip_code
-GROUP BY COALESCE(NULLIF(recipient_profile_id, ''), teaching_hospital_ccn);</code></pre>
-                  </div>
-                </div>
-              </div>
-
-            </div>
-
             <!-- Sidebar -->
             <div class="space-y-8">
               <div class="p-8 bg-slate-900 rounded-3xl border border-slate-800">
@@ -416,6 +470,39 @@ GROUP BY COALESCE(NULLIF(recipient_profile_id, ''), teaching_hospital_ccn);</cod
                   View Source Repository
                   <i class="fab fa-github ml-2"></i>
                 </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Visual Evidence -->
+      <section class="py-24 bg-slate-900 border-t border-slate-800">
+        <div class="container mx-auto px-6">
+          <h3 class="text-2xl font-bold mb-12 flex items-center">
+            <i class="fas fa-project-diagram text-logistics-orange mr-4"></i>
+            Visual Evidence
+          </h3>
+          <div class="grid md:grid-cols-1 gap-8 max-w-4xl mx-auto">
+            <div
+              class="group relative rounded-2xl overflow-hidden border border-slate-800 bg-slate-800/50"
+            >
+              <img
+                src="healthcare-data-engineering/EER_DIAGRAM.png"
+                alt="Entity Relationship Diagram"
+                class="w-full object-contain opacity-90 group-hover:opacity-100 transition duration-500"
+              />
+              <div
+                class="absolute bottom-0 left-0 right-0 p-6 bg-gradient-to-t from-slate-900 via-slate-900/80 to-transparent"
+              >
+                <p
+                  class="text-xs font-bold text-logistics-orange uppercase tracking-widest"
+                >
+                  Dimensional Modeling
+                </p>
+                <p class="text-sm text-white font-medium mt-1">
+                  Optimized Star Schema Design Architecture
+                </p>
               </div>
             </div>
           </div>
@@ -485,5 +572,9 @@ GROUP BY COALESCE(NULLIF(recipient_profile_id, ''), teaching_hospital_ccn);</cod
     >
       <p>&copy; 2026 Michael Campbell. Optimized for Impact.</p>
     </footer>
+
+    <!-- Prism.js -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-sql.min.js"></script>
   </body>
 </html>
