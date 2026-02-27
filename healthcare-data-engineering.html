@@ -298,6 +298,74 @@
               </div>
             </div>
 
+              <!-- Code Snippets -->
+              <div class="mt-16">
+                <h3 class="text-2xl font-bold mb-6 text-logistics-orange">
+                  Engineering Code Samples
+                </h3>
+                
+                <div class="mb-8">
+                  <h4 class="text-lg font-bold text-white mb-3">1. Architecture Formulation (Star Schema)</h4>
+                  <p class="text-slate-400 text-sm mb-4">Establishing a 15M+ row Fact Table optimized with foreign keys linked to strictly defined dimensions.</p>
+                  <div class="bg-slate-900 rounded-xl border border-slate-800 p-4 overflow-x-auto">
+<pre><code class="text-sm text-slate-300 font-mono">-- =========================================================================
+-- Create Destination Table (Fact Table)
+-- =========================================================================
+DROP TABLE IF EXISTS general_payments;
+CREATE TABLE general_payments (
+    payment_id BIGINT AUTO_INCREMENT PRIMARY KEY,
+    record_id VARCHAR(50),
+    payment_date DATE,
+    amount_usd DECIMAL(15, 2),
+    number_of_payments INT,
+    
+    -- Foreign Keys to Dimensions
+    payment_nature VARCHAR(200),
+    recipient_type VARCHAR(50),
+    recipient_specialty VARCHAR(500), 
+    payer_name VARCHAR(150),
+    
+    etl_created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    UNIQUE INDEX idx_record_id (record_id)
+);</code></pre>
+                  </div>
+                </div>
+
+                <div>
+                  <h4 class="text-lg font-bold text-white mb-3">2. ETL Pipeline (Stored Procedure)</h4>
+                  <p class="text-slate-400 text-sm mb-4">Leveraging `INSERT IGNORE` batched stored procedures to cleanly populate dimensions and handle missing foreign keys automatically.</p>
+                  <div class="bg-slate-900 rounded-xl border border-slate-800 p-4 overflow-x-auto">
+<pre><code class="text-sm text-slate-300 font-mono">-- Date Dimension
+SELECT 'Populating DimDate...' AS Status;
+INSERT IGNORE INTO dim_date (date_key, full_date, year, month_name, day_of_week, is_weekend)
+SELECT 
+    CAST(DATE_FORMAT(date_val, '%Y%m%d') AS UNSIGNED),
+    date_val,
+    YEAR(date_val),
+    MONTHNAME(date_val),
+    DAYNAME(date_val),
+    CASE WHEN DAYOFWEEK(date_val) IN (1, 7) THEN 1 ELSE 0 END
+...
+
+-- Recipient Dimension
+SELECT 'Populating DimRecipient...' AS Status;
+INSERT IGNORE INTO dim_recipient (
+    recipient_id, recipient_name, recipient_type, specialty, city, state, zip, lat, lng
+)
+SELECT 
+    COALESCE(NULLIF(recipient_profile_id, ''), teaching_hospital_ccn),
+    MAX(CASE 
+        WHEN recipient_type LIKE '%Hospital%' THEN teaching_hospital_name 
+        ...
+FROM general_payments g
+LEFT JOIN ref_zip_city z ON LEFT(g.recipient_zip, 5) = z.zip_code
+GROUP BY COALESCE(NULLIF(recipient_profile_id, ''), teaching_hospital_ccn);</code></pre>
+                  </div>
+                </div>
+              </div>
+
+            </div>
+
             <!-- Sidebar -->
             <div class="space-y-8">
               <div class="p-8 bg-slate-900 rounded-3xl border border-slate-800">
