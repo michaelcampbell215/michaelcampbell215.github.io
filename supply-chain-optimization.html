@@ -1,0 +1,640 @@
+<!doctype html>
+<html lang="en" class="scroll-smooth">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>
+      Supply Chain Optimization & Market Penetration | Michael Campbell
+      Analytics
+    </title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+    />
+    <!-- Prism.js for code highlighting -->
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism-tomorrow.min.css"
+      rel="stylesheet"
+    />
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            fontFamily: {
+              sans: ["Inter", "sans-serif"],
+              mono: ["JetBrains Mono", "monospace"],
+            },
+            colors: {
+              logistics: {
+                green: "#065F46",
+                orange: "#EA580C",
+                slate: "#334155",
+              },
+            },
+          },
+        },
+      };
+    </script>
+    <style>
+      body {
+        background-color: #0f172a;
+      }
+      .card-gradient {
+        background: linear-gradient(
+          135deg,
+          rgba(30, 41, 59, 0.7) 0%,
+          rgba(15, 23, 42, 0.9) 100%
+        );
+      }
+      .metric-card {
+        border-left: 4px solid #ea580c;
+      }
+      pre[class*="language-"] {
+        background: #1e293b !important;
+        margin: 0 !important;
+        border-radius: 0 0 1rem 1rem !important;
+      }
+    </style>
+  </head>
+  <body class="text-slate-200 font-sans antialiased">
+    <!-- Navigation -->
+    <nav
+      class="sticky top-0 z-50 bg-slate-900/80 backdrop-blur-md border-b border-slate-800"
+    >
+      <div
+        class="container mx-auto px-6 py-4 flex justify-between items-center"
+      >
+        <div class="flex items-center space-x-2">
+          <a
+            href="index.html"
+            class="text-xl font-bold tracking-tighter uppercase transition-opacity hover:opacity-80"
+          >
+            MICHAEL <span class="text-logistics-orange">CAMPBELL</span>
+          </a>
+        </div>
+        <div class="hidden md:flex space-x-8 text-sm font-medium items-center">
+          <a href="index.html" class="hover:text-logistics-orange transition"
+            >Home</a
+          >
+          <a
+            href="all_projects.html"
+            class="hover:text-logistics-orange transition"
+            >Gallery</a
+          >
+          <a href="#dashboard" class="hover:text-logistics-orange transition"
+            >Dashboard</a
+          >
+          <a
+            href="#documentation"
+            class="hover:text-logistics-orange transition"
+            >Documentation</a
+          >
+          <a
+            href="#contact"
+            class="px-4 py-2 bg-logistics-green hover:bg-emerald-700 text-white rounded transition"
+            >Contact</a
+          >
+        </div>
+      </div>
+    </nav>
+
+    <main>
+      <!-- Hero -->
+      <section class="py-20 border-b border-slate-800 bg-slate-900/50">
+        <div class="container mx-auto px-6">
+          <div class="max-w-4xl">
+            <div
+              class="inline-block px-3 py-1 bg-logistics-orange/10 border border-logistics-orange/20 text-logistics-orange rounded-full text-xs font-bold uppercase tracking-widest mb-6"
+            >
+              Commercial Analytics Suite
+            </div>
+            <h1 class="text-4xl md:text-6xl font-bold mb-6 leading-tight">
+              Supply Chain Optimization &
+              <span class="text-logistics-orange">Market Penetration</span>
+            </h1>
+            <p class="text-xl text-slate-400 leading-relaxed font-mono">
+              > Translating 15.4 million operational data points into clear
+              narratives. Uncovered $11.7M in supply chain risk and localized
+              spending strategy, powered by a custom Star Schema architecture.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Key Metrics -->
+      <section class="py-12 border-b border-slate-800">
+        <div class="container mx-auto px-6">
+          <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
+            <div
+              class="p-6 bg-slate-900 rounded-2xl border border-slate-800 metric-card"
+            >
+              <p
+                class="text-slate-500 text-xs font-bold uppercase tracking-widest mb-1"
+              >
+                Compliance Hit
+              </p>
+              <h3 class="text-2xl font-bold">$11.7M</h3>
+              <p class="text-slate-400 text-xs mt-2">
+                Unallocated Fees Flagged
+              </p>
+            </div>
+            <div
+              class="p-6 bg-slate-900 rounded-2xl border border-slate-800 metric-card"
+            >
+              <p
+                class="text-slate-500 text-xs font-bold uppercase tracking-widest mb-1"
+              >
+                Scale Processed
+              </p>
+              <h3 class="text-2xl font-bold">15M+</h3>
+              <p class="text-slate-400 text-xs mt-2">Data Points Engineered</p>
+            </div>
+            <div
+              class="p-6 bg-slate-900 rounded-2xl border border-slate-800 metric-card"
+              style="border-left-color: #065f46"
+            >
+              <p
+                class="text-slate-500 text-xs font-bold uppercase tracking-widest mb-1"
+              >
+                Hidden Insights
+              </p>
+              <h3 class="text-2xl font-bold">18%</h3>
+              <p class="text-slate-400 text-xs mt-2">
+                Inventory Volume Recovered
+              </p>
+            </div>
+            <div
+              class="p-6 bg-slate-900 rounded-2xl border border-slate-800 metric-card"
+              style="border-left-color: #6366f1"
+            >
+              <p
+                class="text-slate-500 text-xs font-bold uppercase tracking-widest mb-1"
+              >
+                Performance
+              </p>
+              <h3 class="text-2xl font-bold">Sub-second</h3>
+              <p class="text-slate-400 text-xs mt-2">OLAP Query Execution</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Dashboard Section -->
+      <section id="dashboard" class="py-24 bg-slate-900/50">
+        <div class="container mx-auto px-6 text-center">
+          <h2 class="text-3xl font-bold mb-12 flex items-center justify-center">
+            <i class="fas fa-chart-pie text-logistics-orange mr-4"></i>
+            Operational
+            <span class="text-logistics-orange ml-2"
+              >Intelligence Dashboard</span
+            >
+          </h2>
+          <div
+            class="card-gradient p-2 rounded-2xl border border-slate-800 overflow-hidden shadow-2xl"
+          >
+            <iframe
+              src="https://public.tableau.com/views/SupplyChainCommandCenter/LogisticsDashboard?:showVizHome=no&:embed=true"
+              class="w-full aspect-video rounded-xl border border-slate-700"
+              frameborder="0"
+              allowfullscreen
+            >
+            </iframe>
+          </div>
+          <p class="text-slate-400 mt-6 max-w-2xl mx-auto text-sm">
+            The front-end user interface designed for operations leaders to
+            visualize geographic logistics hubs and track volume concentration
+            instantly.
+          </p>
+        </div>
+      </section>
+
+      <!-- Project Narrative -->
+      <section id="documentation" class="py-24 border-t border-slate-800">
+        <div class="container mx-auto px-6">
+          <div class="grid lg:grid-cols-3 gap-12">
+            <!-- Documentation -->
+            <div class="lg:col-span-2 space-y-12">
+              <!-- Business Impact (The "What") -->
+              <div>
+                <h3 class="text-2xl font-bold mb-6 text-logistics-orange">
+                  Business Impact & Strategic Insights
+                </h3>
+                <div class="space-y-8">
+                  <div class="flex">
+                    <div class="mr-6 flex flex-col items-center">
+                      <div
+                        class="w-10 h-10 rounded-full bg-slate-800 border border-slate-700 flex items-center justify-center font-bold text-logistics-orange"
+                      >
+                        01
+                      </div>
+                      <div class="w-px h-full bg-slate-800 mt-2"></div>
+                    </div>
+                    <div>
+                      <h4 class="text-xl font-bold mb-2">
+                        Logistics Hub Optimization
+                      </h4>
+                      <p class="text-slate-400 leading-relaxed">
+                        Geographic mapping of physical unit routing revealed
+                        that
+                        <strong
+                          >San Diego drives significantly higher surgical device
+                          throughput than Los Angeles</strong
+                        >, defying traditional population-based assumptions.
+                        This insight permitted the restructuring of West Coast
+                        Forward Stocking Locations to minimize true "last mile"
+                        transit times.
+                      </p>
+                    </div>
+                  </div>
+                  <div class="flex">
+                    <div class="mr-6 flex flex-col items-center">
+                      <div
+                        class="w-10 h-10 rounded-full bg-slate-800 border border-slate-700 flex items-center justify-center font-bold text-logistics-orange"
+                      >
+                        02
+                      </div>
+                      <div class="w-px h-full bg-slate-800 mt-2"></div>
+                    </div>
+                    <div>
+                      <h4 class="text-xl font-bold mb-2">
+                        Sales Cyclicality & The Whale Curve
+                      </h4>
+                      <p class="text-slate-400 leading-relaxed">
+                        Constructed Lorenz curves distinguishing a "hockey
+                        stick" culture of massive end-of-quarter volume pushes
+                        followed by drop-offs. The concentration index showed
+                        that over
+                        <strong
+                          >80% of revenue heavily relies on just the TOP 2%
+                          active accounts</strong
+                        >, triggering an overhaul in target incentive
+                        structuring.
+                      </p>
+                    </div>
+                  </div>
+                  <div class="flex">
+                    <div class="mr-6 flex flex-col items-center">
+                      <div
+                        class="w-10 h-10 rounded-full bg-slate-800 border border-slate-700 flex items-center justify-center font-bold text-logistics-orange"
+                      >
+                        03
+                      </div>
+                    </div>
+                    <div>
+                      <h4 class="text-xl font-bold mb-2">
+                        Compliance Exposure Tracking
+                      </h4>
+                      <p class="text-slate-400 leading-relaxed">
+                        Applying Z-Score thresholds in the raw SQL allowed us to
+                        mathematically isolate anomalous discretionary spending
+                        safely. This triggered a major audit of $11.7M in
+                        Unallocated consulting fees grouped alongside an
+                        unexpected $170M+ anomaly event.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Data Engineering (The "How") -->
+              <div class="pt-8 border-t border-slate-800">
+                <h3 class="text-2xl font-bold mb-6 text-logistics-orange">
+                  Data Architecture (The "How")
+                </h3>
+                <div class="space-y-8">
+                  <div class="flex">
+                    <div class="mr-6 flex flex-col items-center">
+                      <div
+                        class="w-10 h-10 rounded-full bg-slate-800 border border-slate-700 flex items-center justify-center font-bold text-slate-500"
+                      >
+                        <i class="fas fa-sitemap"></i>
+                      </div>
+                      <div class="w-px h-full bg-slate-800 mt-2"></div>
+                    </div>
+                    <div>
+                      <h4 class="text-xl font-bold mb-2">
+                        Overcoming the Data Quality Bottleneck
+                      </h4>
+                      <p class="text-slate-400 leading-relaxed">
+                        The raw compliance dataset of 15 million rows was
+                        unsuited for operational reporting. By engineering an
+                        overarching <strong>Star Schema</strong> with a central
+                        fact table and five dimension tables, query performance
+                        for large executive dashboards shifted from minutes to
+                        sub-seconds.
+                      </p>
+                    </div>
+                  </div>
+                  <div class="flex">
+                    <div class="mr-6 flex flex-col items-center">
+                      <div
+                        class="w-10 h-10 rounded-full bg-slate-800 border border-slate-700 flex items-center justify-center font-bold text-slate-500"
+                      >
+                        <i class="fas fa-search-plus"></i>
+                      </div>
+                      <div class="w-px h-full bg-slate-800 mt-2"></div>
+                    </div>
+                    <div>
+                      <h4 class="text-xl font-bold mb-2">
+                        The "Hidden Inventory" Discovery
+                      </h4>
+                      <p class="text-slate-400 leading-relaxed">
+                        Data buried in secondary columns mapped up to 5 distinct
+                        products into single rows. Leveraging a
+                        <strong>UNION ALL SQL unpivoting algorithm</strong>
+                        extracted "hidden" inventory volumes that expanded the
+                        dataset—revealing legacy supply chain models had been
+                        artificially lowering physical product capacity
+                        requirements.
+                      </p>
+                    </div>
+                  </div>
+                  <div class="flex">
+                    <div class="mr-6 flex flex-col items-center">
+                      <div
+                        class="w-10 h-10 rounded-full bg-slate-800 border border-slate-700 flex items-center justify-center font-bold text-slate-500"
+                      >
+                        <i class="fas fa-map-marked-alt"></i>
+                      </div>
+                    </div>
+                    <div>
+                      <h4 class="text-xl font-bold mb-2">
+                        Spatial Backend Dominance
+                      </h4>
+                      <p class="text-slate-400 leading-relaxed">
+                        Implemented MySQL's <code>ST_Distance_Sphere</code> to
+                        natively measure distances from mapped coordinates to
+                        national logistics hubs. Re-routing this math from the
+                        front-end BI layer to deeply optimized Backend
+                        procedures provided stable execution scales.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Sidebar -->
+            <div class="space-y-8">
+              <div class="p-8 bg-slate-900 rounded-3xl border border-slate-800">
+                <h4
+                  class="text-sm font-bold uppercase tracking-widest text-slate-500 mb-6"
+                >
+                  Technical Toolkit
+                </h4>
+                <div class="flex flex-wrap gap-2">
+                  <span
+                    class="px-3 py-1 bg-slate-800 rounded-md text-sm border border-slate-700/50"
+                    >MySQL 8.0</span
+                  >
+                  <span
+                    class="px-3 py-1 bg-slate-800 rounded-md text-sm border border-slate-700/50"
+                    >Tableau</span
+                  >
+                  <span
+                    class="px-3 py-1 bg-slate-800 rounded-md text-sm border border-slate-700/50"
+                    >Stored Procedures</span
+                  >
+                  <span
+                    class="px-3 py-1 bg-slate-800 rounded-md text-sm border border-slate-700/50"
+                    >Geospatial Computing</span
+                  >
+                  <span
+                    class="px-3 py-1 bg-slate-800 rounded-md text-sm border border-slate-700/50"
+                    >Demand Forecasting</span
+                  >
+                  <span
+                    class="px-3 py-1 bg-slate-800 rounded-md text-sm border border-slate-700/50"
+                    >ETL Batch Processing</span
+                  >
+                </div>
+              </div>
+
+              <div
+                class="p-8 bg-logistics-orange/5 rounded-3xl border border-logistics-orange/20"
+              >
+                <h4
+                  class="text-sm font-bold uppercase tracking-widest text-logistics-orange mb-4"
+                >
+                  Project Summary
+                </h4>
+                <p class="text-sm text-slate-400 leading-relaxed">
+                  "By translating complex database matrices into interactive
+                  Tableaus, we aligned the C-Suite on hidden operational
+                  vulnerabilities. Building the back-end engine was the only way
+                  to generate the front-end strategic value."
+                </p>
+                <div class="mt-6 flex flex-col gap-3">
+                  <a
+                    href="https://github.com/michaelcampbell215/supply-chain-command-center"
+                    target="_blank"
+                    class="text-gray-400 hover:text-white transition-colors block text-sm group"
+                  >
+                    <i
+                      class="fab fa-github mr-2 group-hover:text-logistics-orange"
+                    ></i>
+                    View Dashboard Source
+                  </a>
+                  <a
+                    href="https://github.com/michaelcampbell215/healthcare-data-engineering"
+                    target="_blank"
+                    class="text-gray-400 hover:text-white transition-colors block text-sm group"
+                  >
+                    <i
+                      class="fab fa-github mr-2 group-hover:text-logistics-orange"
+                    ></i>
+                    View SQL Pipeline Source
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- SQL Showcase & Architecture Visual -->
+      <section
+        id="sql-showcase"
+        class="py-24 bg-slate-900/30 border-t border-slate-800"
+      >
+        <div class="container mx-auto px-6">
+          <h2 class="text-3xl font-bold mb-12 flex items-center justify-center">
+            <i class="fas fa-server text-logistics-orange mr-4"></i>
+            Backend
+            <span class="text-logistics-orange ml-2">Architecture Engine</span>
+          </h2>
+
+          <div class="grid lg:grid-cols-2 gap-12 place-items-start">
+            <!-- Architecture visual -->
+            <div class="w-full">
+              <div
+                class="group relative rounded-2xl overflow-hidden border border-slate-800 bg-slate-800/50 w-full mb-8 shadow-2xl"
+              >
+                <img
+                  src="images\project_images\EER_DIAGRAM.png"
+                  alt="Entity Relationship Diagram"
+                  class="w-full h-auto grayscale group-hover:grayscale-0 transition duration-500"
+                />
+                <div
+                  class="absolute bottom-0 left-0 right-0 p-6 bg-gradient-to-t from-slate-900 via-slate-900/80 to-transparent"
+                >
+                  <p
+                    class="text-xs font-bold text-logistics-orange uppercase tracking-widest"
+                  >
+                    Dimensional Modeling
+                  </p>
+                  <p class="text-sm text-white font-medium mt-1">
+                    Optimized Star Schema Design Architecture
+                  </p>
+                </div>
+              </div>
+              <div
+                class="p-8 bg-slate-900 rounded-3xl border border-slate-800 shadow-2xl"
+              >
+                <h4 class="text-xl font-bold mb-4 text-white">
+                  <i class="fas fa-database text-logistics-orange mr-2"></i>
+                  Performance Benchmarks
+                </h4>
+                <ul class="text-sm text-slate-400 space-y-3">
+                  <li>
+                    • Reduced load times from minutes to &lt; 1 sec by shifting
+                    aggregation logic to the server.
+                  </li>
+                  <li>
+                    • Batch processed updates using cursor-based pagination to
+                    prevent transaction log overrides.
+                  </li>
+                </ul>
+              </div>
+            </div>
+
+            <!-- SQL snippet -->
+            <div class="space-y-8 w-full">
+              <div
+                class="rounded-3xl border border-slate-800 overflow-hidden bg-slate-900 shadow-2xl w-full"
+              >
+                <div
+                  class="p-6 bg-slate-800/50 border-b border-slate-700 w-full mt-0"
+                >
+                  <h4 class="text-lg font-bold text-white">
+                    01. Architecture Formulation (Star Schema)
+                  </h4>
+                  <p class="text-sm text-slate-400 mt-2">
+                    Establishing a 15M+ row Fact Table optimized with foreign
+                    keys linked to strictly defined dimensions.
+                  </p>
+                </div>
+                <div class="p-6">
+                  <pre
+                    class="language-sql text-sm"
+                  ><code>-- =========================================================
+-- Create Destination Table (Fact Table)
+-- =========================================================
+DROP TABLE IF EXISTS general_payments;
+CREATE TABLE general_payments (
+    payment_id BIGINT AUTO_INCREMENT PRIMARY KEY,
+    record_id VARCHAR(50),
+    payment_date DATE,
+    amount_usd DECIMAL(15, 2),
+    number_of_payments INT,
+    
+    -- Foreign Keys to Dimensions
+    payment_nature VARCHAR(150),
+    recipient_type VARCHAR(50),
+    recipient_specialty VARCHAR(300), 
+    payer_name VARCHAR(150),
+    
+    etl_created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    UNIQUE INDEX idx_record_id (record_id)
+);</code></pre>
+                </div>
+              </div>
+
+              <div
+                class="rounded-3xl border border-slate-800 overflow-hidden bg-slate-900 shadow-2xl w-full"
+              >
+                <div
+                  class="p-6 bg-slate-800/50 border-b border-slate-700 w-full mt-0"
+                >
+                  <h4 class="text-lg font-bold text-white">
+                    02. ETL Pipeline (Stored Procedure)
+                  </h4>
+                  <p class="text-sm text-slate-400 mt-2">
+                    Leveraging batched <code>INSERT IGNORE</code> procedures to
+                    populate dimensions and handle complex geo-joins.
+                  </p>
+                </div>
+                <div class="p-6">
+                  <pre
+                    class="language-sql text-sm"
+                  ><code>-- Recipient Dimension Generation
+SELECT 'Populating DimRecipient...' AS Status;
+INSERT IGNORE INTO dim_recipient (
+    recipient_id, recipient_name, specialty, city, state, zip, lat, lng
+)
+SELECT 
+    COALESCE(NULLIF(recipient_profile_id, ''), hospital_ccn),
+    MAX(CASE 
+        WHEN recipient_type LIKE '%Hospital%' THEN hospital_name 
+        ELSE CONCAT(first_name, ' ', last_name) END),
+        ...
+FROM general_payments g
+-- Hot-patching clean Lat/Lng data via zip crosswalk
+LEFT JOIN ref_zip_city z ON LEFT(g.recipient_zip, 5) = z.zip_code
+GROUP BY COALESCE(NULLIF(recipient_profile_id, ''), hospital_ccn);</code></pre>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Contact CTA -->
+      <section
+        id="contact"
+        class="py-24 bg-slate-900 border-t border-slate-800"
+      >
+        <div class="container mx-auto px-6 text-center max-w-2xl">
+          <h2 class="text-3xl font-bold mb-6 italic">
+            Questions on this
+            <span class="text-logistics-orange">Implementation?</span>
+          </h2>
+          <div class="flex justify-center gap-6">
+            <a
+              href="mailto:mcam215@gmail.com"
+              class="text-slate-400 hover:text-logistics-orange transition text-2xl"
+              ><i class="fas fa-envelope"></i
+            ></a>
+            <a
+              href="https://www.linkedin.com/in/michaelcampbell215"
+              class="text-slate-400 hover:text-logistics-orange transition text-2xl"
+              ><i class="fab fa-linkedin"></i
+            ></a>
+            <a
+              href="https://github.com/michaelcampbell215"
+              class="text-slate-400 hover:text-logistics-orange transition text-2xl"
+              ><i class="fab fa-github"></i
+            ></a>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer
+      class="py-12 border-t border-slate-800 text-center text-slate-600 text-sm"
+    >
+      <p>&copy; 2026 Michael Campbell. Optimized for Impact.</p>
+    </footer>
+
+    <!-- Prism.js -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-sql.min.js"></script>
+  </body>
+</html>
