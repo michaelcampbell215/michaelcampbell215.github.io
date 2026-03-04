@@ -31,11 +31,11 @@ My background is built on operational discipline. I spent a decade managing time
 
 ## Featured Projects
 
-### [Healthcare Data Engineering](https://michaelcampbell215.github.io/healthcare-data-engineering.html)
+### [Supply Chain Optimization & Market Penetration](https://michaelcampbell215.github.io/supply-chain-optimization.html)
 
-End-to-end ELT pipeline processing 2M+ hospital records. Built with Python and dbt to structure data for predictive readmission modeling.
+Translating 15.4 million operational data points into clear narratives. Uncovered $11.7M in supply chain risk and localized spending strategy, powered by a custom Star Schema architecture.
 
-- **Technologies:**  SQL, MySQL
+- **Technologies:** SQL, MySQL, Tableau
 
 ### [Logistics Cost Optimization](https://michaelcampbell215.github.io/logistics-cost-optimization.html)
 
@@ -49,7 +49,7 @@ Pareto analysis of bottling line downtime. Utilized Power Query for ETL and isol
 
 - **Technologies:** Excel, Power Query, Root Cause Analysis
 
-### [Retention Modeling & Operations](https://michaelcampbell215.github.io/retention-modeling-ops.html)
+### [Retention Modeling Ops](https://michaelcampbell215.github.io/retention-modeling-ops.html)
 
 Predictive modeling using Python. Identified geographic drivers and achieved 74% recall for high-risk accounts.
 
@@ -67,13 +67,7 @@ Power BI dashboard translating airline survey data into actionable insights focu
 
 - **Technologies:** Power BI, DAX
 
-### [Supply Chain Command Center](https://michaelcampbell215.github.io/supply-chain-command-center.html)
-
-Real-time Power BI dashboard for global inventory visibility. Consolidated data from 3 ERPs to track a $50M logistics network.
-
-- **Technologies:** Power Tableau, SQL, Data Modeling
-
-### [Inventory & Margin Optimization](https://michaelcampbell215.github.io/inventory-margin-optimization.html)
+### [Inventory Margin Optimization](https://michaelcampbell215.github.io/inventory-margin-optimization.html)
 
 Exploratory SQL analysis of sales trends and menu performance to identify top-performing products.
 
