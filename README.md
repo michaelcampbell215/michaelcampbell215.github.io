@@ -31,7 +31,7 @@ My background is built on operational discipline. I spent a decade managing time
 
 ## Featured Projects
 
-### [Supply Chain Optimization & Market Penetration](https://michaelcampbell215.github.io/supply-chain-optimization.html)
+### [Enterprise Supply Chain Optimization & Spend Analytics](https://michaelcampbell215.github.io/supply-chain-optimization.html)
 
 Translating 15.4 million operational data points into clear narratives. Uncovered $11.7M in supply chain risk and localized spending strategy, powered by a custom Star Schema architecture.
 
@@ -43,41 +43,17 @@ Interactive Tableau dashboard identifying cost drivers for 99% of logistics spen
 
 - **Technologies:** Tableau, Python, SQL
 
-### [Production Throughput Model](https://michaelcampbell215.github.io/production-throughput-model.html)
+### [Production Throughput Model & Root Cause Analysis](https://michaelcampbell215.github.io/production-throughput-model.html)
 
 Pareto analysis of bottling line downtime. Utilized Power Query for ETL and isolated root causes for inventory shortages.
 
 - **Technologies:** Excel, Power Query, Root Cause Analysis
-
-### [Retention Modeling Ops](https://michaelcampbell215.github.io/retention-modeling-ops.html)
-
-Predictive modeling using Python. Identified geographic drivers and achieved 74% recall for high-risk accounts.
-
-- **Technologies:** Python, Scikit-Learn, Machine Learning
-
-### [Revenue Pipeline Control](https://michaelcampbell215.github.io/revenue-pipeline-control.html)
-
-Sales funnel visualization in Tableau. Identified a 49% post-engagement drop-off to optimize lead conversion.
-
-- **Technologies:** Tableau, Salesforce, SQL
-
-### [Service Quality Analytics](https://michaelcampbell215.github.io/service-quality-analytics.html)
-
-Power BI dashboard translating airline survey data into actionable insights focused on service enhancement and segmentation.
-
-- **Technologies:** Power BI, DAX
 
 ### [Inventory Margin Optimization](https://michaelcampbell215.github.io/inventory-margin-optimization.html)
 
 Exploratory SQL analysis of sales trends and menu performance to identify top-performing products.
 
 - **Technologies:** SQL, Database Analysis
-
-### [Workforce Capacity Planning](https://michaelcampbell215.github.io/workforce-capacity-planning.html)
-
-Excel-based deep dive into employee satisfaction drivers using Power Query for ETL and trend analysis.
-
-- **Technologies:** Excel, Power Query
 
 ---
 
