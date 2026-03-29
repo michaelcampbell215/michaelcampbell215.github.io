@@ -43,6 +43,13 @@ Interactive Tableau dashboard identifying cost drivers for 99% of logistics spen
 
 - **Technologies:** Tableau, Python, SQL
 
+### [Inventory Capital Optimizer](https://michaelcampbell215.github.io/inventory-capital-optimizer.html)
+
+ML-driven (XGBoost/LightGBM) demand forecasting and prescriptive liquidation engine. Protected $2.44B in revenue leakage while releasing $10.43M in trapped capital through intelligent, volatility-weighted safety stock buffering.
+
+- **Technologies:** Python, Machine Learning, Supply Chain Optimization
+
+
 ### [Production Throughput Model & Root Cause Analysis](https://michaelcampbell215.github.io/production-throughput-model.html)
 
 Pareto analysis of bottling line downtime. Utilized Power Query for ETL and isolated root causes for inventory shortages.
