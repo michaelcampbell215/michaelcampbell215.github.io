@@ -1,12 +1,8 @@
-# Ignore specific images
-images/1760478155917.jpg
-images/headshot.png
-images/headshot.png.png
-assets/Profile.pdf
-# Ignore sub-project folders that have their own repos
+# Sub-repositories
 bank-churn-predictive-repo/
 churn-analysis-repo/
 healthcare-data-engineering/
+Inventory-Capital-Optimizer/
 inventory-margin-optimization/
 logistics-cost-optimization/
 production-throughput-model/
@@ -15,3 +11,17 @@ revenue-pipeline-control/
 service-quality-analytics/
 supply-chain-command-center/
 workforce-capacity-planning/
+
+# Python artifacts
+__pycache__/
+*.py[cod]
+*$py.class
+venv/
+.env
+
+# Data
+data/raw/*.db
+data/processed/
+
+# OS
+.DS_Store
