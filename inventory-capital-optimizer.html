@@ -120,7 +120,9 @@
               <span class="text-logistics-orange">Optimizer</span>
             </h1>
             <p class="text-xl text-slate-400 leading-relaxed font-mono">
-              > Protected $2.44B in revenue from stockout risks and released $10.43M in trapped capital by replacing static Min/Max reorder rules with a dynamic, ML-driven optimization engine.
+              > Protected $2.44B in revenue from stockout risks and released
+              $10.43M in trapped capital by replacing static Min/Max reorder
+              rules with a dynamic, ML-driven optimization engine.
             </p>
           </div>
         </div>
@@ -150,7 +152,9 @@
                 Trapped Capital Released
               </p>
               <h3 class="text-2xl font-bold">$10.43M</h3>
-              <p class="text-slate-400 text-xs mt-2">from Intelligent Buffering</p>
+              <p class="text-slate-400 text-xs mt-2">
+                from Intelligent Buffering
+              </p>
             </div>
             <div
               class="p-6 bg-slate-900 rounded-2xl border border-slate-800 metric-card"
@@ -162,7 +166,9 @@
                 Core Algorithm
               </p>
               <h3 class="text-2xl font-bold italic">XGBoost / LightGBM</h3>
-              <p class="text-slate-400 text-xs mt-2">14,000+ SKU-level Models</p>
+              <p class="text-slate-400 text-xs mt-2">
+                14,000+ SKU-level Models
+              </p>
             </div>
             <div
               class="p-6 bg-slate-900 rounded-2xl border border-slate-800 metric-card"
@@ -174,7 +180,9 @@
                 Actionable Metric
               </p>
               <h3 class="text-2xl font-bold">SPEC Scorer</h3>
-              <p class="text-slate-400 text-xs mt-2">Financial Cost > Stats Error</p>
+              <p class="text-slate-400 text-xs mt-2">
+                Financial Cost > Stats Error
+              </p>
             </div>
           </div>
         </div>
@@ -197,15 +205,6 @@
             >
             </iframe>
           </div>
-          <div class="mt-8">
-            <a
-              href="https://github.com/michaelcampbell215/michaelcampbell215.github.io/tree/main/Inventory-Capital-Optimizer"
-              target="_blank"
-              class="inline-flex items-center px-6 py-3 bg-slate-800 hover:bg-slate-700 text-white font-bold rounded-lg transition border border-slate-700"
-            >
-              <i class="fab fa-github mr-2"></i> View Project Code
-            </a>
-          </div>
         </div>
       </section>
 
@@ -217,22 +216,40 @@
               Custom <span class="text-logistics-orange">Scoring Logic</span>
             </h2>
             <p class="text-slate-400 mb-12 text-center leading-relaxed">
-              Standard metrics like RMSE are symmetric and fail to account for the asymmetric costs of inventory management. 
-              Our <strong>SPEC (Stock-keeping-oriented Prediction Error Costs)</strong> scorer penalizes stockouts more heavily 
-               than overstocks to prioritize revenue protection.
+              Standard metrics like RMSE are symmetric and fail to account for
+              the asymmetric costs of inventory management. Our
+              <strong
+                >SPEC (Stock-keeping-oriented Prediction Error Costs)</strong
+              >
+              scorer penalizes stockouts more heavily than overstocks to
+              prioritize revenue protection.
             </p>
-            
-            <div class="rounded-2xl border border-slate-800 overflow-hidden shadow-2xl bg-slate-950">
-              <div class="flex items-center justify-between px-6 py-3 bg-slate-900 border-b border-slate-800">
+
+            <div
+              class="rounded-2xl border border-slate-800 overflow-hidden shadow-2xl bg-slate-950"
+            >
+              <div
+                class="flex items-center justify-between px-6 py-3 bg-slate-900 border-b border-slate-800"
+              >
                 <div class="flex space-x-1.5">
-                  <div class="w-3 h-3 rounded-full bg-red-500/20 border border-red-500/40"></div>
-                  <div class="w-3 h-3 rounded-full bg-yellow-500/20 border border-yellow-500/40"></div>
-                  <div class="w-3 h-3 rounded-full bg-green-500/20 border border-green-500/40"></div>
+                  <div
+                    class="w-3 h-3 rounded-full bg-red-500/20 border border-red-500/40"
+                  ></div>
+                  <div
+                    class="w-3 h-3 rounded-full bg-yellow-500/20 border border-yellow-500/40"
+                  ></div>
+                  <div
+                    class="w-3 h-3 rounded-full bg-green-500/20 border border-green-500/40"
+                  ></div>
                 </div>
-                <span class="text-xs font-mono text-slate-500">pipeline.py</span>
+                <span class="text-xs font-mono text-slate-500"
+                  >pipeline.py</span
+                >
                 <i class="fab fa-python text-sky-400"></i>
               </div>
-              <pre class="line-numbers"><code class="language-python"># Custom Metric: SPEC (Stock-keeping-oriented Prediction Error Costs)
+              <pre
+                class="line-numbers"
+              ><code class="language-python"># Custom Metric: SPEC (Stock-keeping-oriented Prediction Error Costs)
 def calculate_spec_grouped(y_true, y_pred, product_ids):
     """
     Calculates cumulative cost of errors per SKU to prevent cross-product pollution.
@@ -289,9 +306,16 @@ print(f"SPEC Optimizer Score: {spec_score:.4f}")</code></pre>
                       <div class="w-px h-full bg-slate-800 mt-2"></div>
                     </div>
                     <div>
-                      <h4 class="text-xl font-bold mb-2">Quantifying Volatility & Categorization</h4>
+                      <h4 class="text-xl font-bold mb-2">
+                        Quantifying Volatility & Categorization
+                      </h4>
                       <p class="text-slate-400 leading-relaxed">
-                        Identified the "Vital Few" using Pareto ABC Classification (Top 20% Revenue = Class A) to mathematically enforce tiered service levels. Quantified baseline volatility using Category-specific RMSE and identified the "Capital Gap" between current stock and model-predicted needs.
+                        Identified the "Vital Few" using Pareto ABC
+                        Classification (Top 20% Revenue = Class A) to
+                        mathematically enforce tiered service levels. Quantified
+                        baseline volatility using Category-specific RMSE and
+                        identified the "Capital Gap" between current stock and
+                        model-predicted needs.
                       </p>
                     </div>
                   </div>
@@ -309,7 +333,12 @@ print(f"SPEC Optimizer Score: {spec_score:.4f}")</code></pre>
                         Pivoting from Stats to Dollars (SPEC Scorer)
                       </h4>
                       <p class="text-slate-400 leading-relaxed">
-                        Initially evaluated using symmetric RMSE. However, an overstock of $5 shouldn't be treated equally to a stockout of $500. We developed a custom SPEC (Stock-keeping-oriented Prediction Error Costs) Scorer, penalizing stockouts at 0.75 and overstocks at 0.25 to actively prioritize high-margin revenue protection.
+                        Initially evaluated using symmetric RMSE. However, an
+                        overstock of $5 shouldn't be treated equally to a
+                        stockout of $500. We developed a custom SPEC
+                        (Stock-keeping-oriented Prediction Error Costs) Scorer,
+                        penalizing stockouts at 0.75 and overstocks at 0.25 to
+                        actively prioritize high-margin revenue protection.
                       </p>
                     </div>
                   </div>
@@ -322,9 +351,16 @@ print(f"SPEC Optimizer Score: {spec_score:.4f}")</code></pre>
                       </div>
                     </div>
                     <div>
-                      <h4 class="text-xl font-bold mb-2">Data Architecture Migration</h4>
+                      <h4 class="text-xl font-bold mb-2">
+                        Data Architecture Migration
+                      </h4>
                       <p class="text-slate-400 leading-relaxed">
-                        Migrated from a flat-file structure to a Star Schema with Fact (`inventory_fact`) and Dimension (`product_dim`, `store_dim`) tables to prevent Aggregated Measure Inflation. This ensured data integrity and allowed for sub-second performance in Tableau for "What-If" parameter tuning.
+                        Migrated from a flat-file structure to a Star Schema
+                        with Fact (`inventory_fact`) and Dimension
+                        (`product_dim`, `store_dim`) tables to prevent
+                        Aggregated Measure Inflation. This ensured data
+                        integrity and allowed for sub-second performance in
+                        Tableau for "What-If" parameter tuning.
                       </p>
                     </div>
                   </div>
@@ -344,10 +380,12 @@ print(f"SPEC Optimizer Score: {spec_score:.4f}")</code></pre>
                   </h4>
                   <ul class="text-sm text-slate-400 space-y-3">
                     <li>
-                      • Deploy the "Restock Radar" thresholds for all Class A items to maintain a 99% service level mandate.
+                      • Deploy the "Restock Radar" thresholds for all Class A
+                      items to maintain a 99% service level mandate.
                     </li>
                     <li>
-                      • Use the Price Index tool to trigger smart liquidations specifically when we are priced higher than competitors.
+                      • Use the Price Index tool to trigger smart liquidations
+                      specifically when we are priced higher than competitors.
                     </li>
                   </ul>
                 </div>
@@ -362,10 +400,14 @@ print(f"SPEC Optimizer Score: {spec_score:.4f}")</code></pre>
                   </h4>
                   <ul class="text-sm text-slate-400 space-y-3">
                     <li>
-                      • Dynamically link safety stock buffers to lead-time constraints to expose exactly how much capital is tied up locally.
+                      • Dynamically link safety stock buffers to lead-time
+                      constraints to expose exactly how much capital is tied up
+                      locally.
                     </li>
                     <li>
-                      • Use Lead Time Sensitivity model to negotiate faster delivery with vendors (e.g. Furniture/Electronics) to free up trapped capital.
+                      • Use Lead Time Sensitivity model to negotiate faster
+                      delivery with vendors (e.g. Furniture/Electronics) to free
+                      up trapped capital.
                     </li>
                   </ul>
                 </div>
@@ -409,10 +451,13 @@ print(f"SPEC Optimizer Score: {spec_score:.4f}")</code></pre>
                   Analyst Insight
                 </h4>
                 <p class="text-sm text-slate-400 leading-relaxed mb-4">
-                  "The symmetry trap is real. Evaluating business models with metrics like RMSE treats an expensive stockout equally to a minor overstock. Pivoting to dollar-weighting directly changed the strategy and protected core revenue."
+                  "The symmetry trap is real. Evaluating business models with
+                  metrics like RMSE treats an expensive stockout equally to a
+                  minor overstock. Pivoting to dollar-weighting directly changed
+                  the strategy and protected core revenue."
                 </p>
                 <a
-                  href="https://github.com/michaelcampbell215/michaelcampbell215.github.io/tree/main/Inventory-Capital-Optimizer"
+                  href="https://github.com/michaelcampbell215/Inventory-Capital-Optimizer"
                   target="_blank"
                   class="text-gray-400 hover:text-white transition-colors"
                 >
