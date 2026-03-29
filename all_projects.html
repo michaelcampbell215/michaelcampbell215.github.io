@@ -4,6 +4,10 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Project Gallery | Michael Campbell</title>
+    <meta
+      name="description"
+      content="Explore the portfolio of Michael Campbell, featuring logistics and supply chain analytics projects focused on operational efficiency and data-driven decision making."
+    />
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -131,12 +135,6 @@
         </button>
         <button
           class="filter-btn px-6 py-2 rounded-full text-sm font-bold uppercase tracking-widest"
-          data-filter="Logistics"
-        >
-          Logistics
-        </button>
-        <button
-          class="filter-btn px-6 py-2 rounded-full text-sm font-bold uppercase tracking-widest"
           data-filter="Python"
         >
           Python
@@ -159,193 +157,523 @@
         >
           Excel
         </button>
+        <button
+          class="filter-btn px-6 py-2 rounded-full text-sm font-bold uppercase tracking-widest"
+          data-filter="Power BI"
+        >
+          Power BI
+        </button>
       </div>
 
-      <!-- Projects Grid -->
-      <div class="grid grid-cols-1 md:grid-cols-2 gap-8" id="projects-grid">
-        <!-- Supply Chain Optimization (Consolidated CMS) -->
-        <div
-          class="project-card rounded-3xl overflow-hidden flex flex-col h-full"
-          data-aos="fade-up"
-          data-category="Tableau,SQL"
-        >
-          <img
-            src="images/project_images/sccc.png"
-            alt="Supply Chain Optimization"
-            class="w-full h-48 object-cover opacity-80"
-          />
-          <div class="p-8 flex flex-col flex-grow">
-            <div class="flex justify-between items-center mb-4">
-              <span
-                class="text-xs font-bold text-logistics-orange uppercase tracking-widest"
-                >Commercial Analytics Suite</span
-              >
-              <div class="flex gap-2 text-slate-500">
-                <i class="fas fa-table"></i>
-                <i class="fas fa-database"></i>
-              </div>
-            </div>
-            <h3 class="text-2xl font-bold mb-4">
-              Enterprise Supply Chain Optimization & Spend Analytics
-            </h3>
-            <p class="text-slate-400 mb-6 flex-grow leading-relaxed">
-              Translating 15.4 million operational data points into clear
-              narratives. Uncovered $11.7M in supply chain risk and localized
-              spending strategy, powered by a custom Star Schema architecture.
-            </p>
-            <div class="flex flex-wrap gap-2 mb-6">
-              <span
-                class="px-2 py-1 bg-slate-800 text-slate-400 text-[10px] font-bold rounded uppercase"
-                >Warehouse</span
-              >
-              <span
-                class="px-2 py-1 bg-slate-800 text-slate-400 text-[10px] font-bold rounded uppercase"
-                >ETL</span
-              >
-              <span
-                class="px-2 py-1 bg-slate-800 text-slate-400 text-[10px] font-bold rounded uppercase"
-                >Visualization</span
-              >
-            </div>
-            <a
-              href="supply-chain-optimization.html"
-              class="inline-flex items-center font-bold text-logistics-orange hover:gap-2 transition-all"
-            >
-              Deep Dive <i class="fas fa-arrow-right ml-2 text-sm"></i>
-            </a>
-          </div>
+      <!-- Section 1: Operations & Logistics -->
+      <section id="ops-logistics-section" class="mb-24" data-aos="fade-up">
+        <div class="flex items-center gap-4 mb-12">
+          <div class="h-px bg-slate-800 flex-grow"></div>
+          <h2
+            class="text-sm md:text-base font-bold uppercase tracking-[0.4em] text-logistics-orange whitespace-nowrap bg-slate-900/50 px-6 py-2 rounded-full border border-slate-800/50 shadow-lg backdrop-blur-sm"
+          >
+            Operations, Logistics & Supply Chain
+          </h2>
+          <div class="h-px bg-slate-800 flex-grow"></div>
         </div>
-        <!-- Supply Chain Project -->
         <div
-          class="project-card rounded-3xl overflow-hidden flex flex-col h-full"
-          data-aos="fade-up"
-          data-category="Logistics,Python,SQL,Tableau"
+          id="ops-grid"
+          class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
         >
-          <img
-            src="images/project_images/supplychaindashboard.png"
-            alt="Supply Chain"
-            class="w-full h-48 object-cover opacity-80"
-          />
-          <div class="p-8 flex flex-col flex-grow">
-            <div class="flex justify-between items-center mb-4">
-              <span
-                class="text-xs font-bold text-logistics-orange uppercase tracking-widest"
-                >Supply Chain</span
-              >
-              <div class="flex gap-2 text-slate-500">
-                <i class="fab fa-python"></i>
-                <i class="fas fa-table"></i>
+          <!-- Enterprise Supply Chain Optimization -->
+          <div
+            class="project-card rounded-3xl overflow-hidden flex flex-col h-full"
+            data-tech="SQL, Tableau"
+          >
+            <div class="h-48 overflow-hidden bg-slate-800">
+              <img
+                src="images/project_images/sccc.png"
+                alt="Supply Chain Optimization"
+                class="w-full h-full object-cover opacity-90 hover:scale-110 transition-transform duration-500"
+              />
+            </div>
+            <div class="p-6 flex flex-col flex-grow">
+              <div class="flex justify-between items-center mb-4">
+                <span
+                  class="text-[10px] font-bold text-logistics-orange uppercase tracking-[0.2em]"
+                  >Supply Chain</span
+                >
+                <div class="flex gap-2 text-slate-500">
+                  <i class="fas fa-database text-xs" title="SQL"></i>
+                  <i class="fas fa-chart-pie text-xs" title="Tableau"></i>
+                </div>
               </div>
-            </div>
-            <h3 class="text-2xl font-bold mb-4">Logistics Cost Optimization</h3>
-            <p class="text-slate-400 mb-6 flex-grow leading-relaxed">
-              Interactive Tableau dashboard identifying cost drivers for 99% of
-              logistics spend. Integrated Python for lead-time analysis.
-            </p>
-            <div class="flex flex-wrap gap-2 mb-6">
-              <span
-                class="px-2 py-1 bg-slate-800 text-slate-400 text-[10px] font-bold rounded uppercase"
-                >Wrangling</span
+              <h3 class="text-xl font-bold mb-3 leading-tight text-white">
+                Enterprise Supply Chain & Spend Analytics
+              </h3>
+              <p class="text-slate-400 text-sm mb-6 flex-grow leading-relaxed">
+                Star Schema architecture translating 15.4M data points into
+                narratives. Uncovered $11.7M in supply chain risk.
+              </p>
+              <div class="flex flex-wrap gap-2 mb-6">
+                <span
+                  class="px-2 py-1 bg-slate-800/50 text-slate-500 text-[9px] font-bold rounded uppercase border border-slate-700"
+                  >SQL</span
+                >
+                <span
+                  class="px-2 py-1 bg-slate-800/50 text-slate-500 text-[9px] font-bold rounded uppercase border border-slate-700"
+                  >Tableau</span
+                >
+                <span
+                  class="px-2 py-1 bg-slate-800/50 text-slate-500 text-[9px] font-bold rounded uppercase border border-slate-700"
+                  >ETL</span
+                >
+              </div>
+              <a
+                href="supply-chain-optimization.html"
+                class="inline-flex items-center text-sm font-bold text-logistics-orange group border-t border-slate-800 pt-4 mt-auto"
               >
-              <span
-                class="px-2 py-1 bg-slate-800 text-slate-400 text-[10px] font-bold rounded uppercase"
-                >Optimization</span
-              >
+                VIEW CASE STUDY
+                <i
+                  class="fas fa-chevron-right ml-2 text-[10px] group-hover:translate-x-1 transition-transform"
+                ></i>
+              </a>
             </div>
-            <a
-              href="logistics-cost-optimization.html"
-              class="inline-flex items-center font-bold text-logistics-orange hover:gap-2 transition-all"
-            >
-              Deep Dive <i class="fas fa-arrow-right ml-2 text-sm"></i>
-            </a>
           </div>
-        </div>
 
-        <!-- Manufacturing Project -->
-        <div
-          class="project-card rounded-3xl overflow-hidden flex flex-col h-full"
-          data-aos="fade-up"
-          data-aos-delay="100"
-          data-category="Logistics,Excel"
-        >
-          <img
-            src="images/project_images/ma3.png"
-            alt="Manufacturing"
-            class="w-full h-48 object-cover opacity-80"
-          />
-          <div class="p-8 flex flex-col flex-grow">
-            <div class="flex justify-between items-center mb-4">
-              <span
-                class="text-xs font-bold text-sky-500 uppercase tracking-widest"
-                >Manufacturing</span
-              >
-              <div class="flex gap-2 text-slate-500">
-                <i class="fas fa-file-excel"></i>
+          <!-- Logistics Cost Optimization -->
+          <div
+            class="project-card rounded-3xl overflow-hidden flex flex-col h-full"
+            data-tech="Python, SQL, Tableau"
+          >
+            <div class="h-48 overflow-hidden bg-slate-800">
+              <img
+                src="images/project_images/supplychaindashboard.png"
+                alt="Logistics Cost Optimization"
+                class="w-full h-full object-cover opacity-90 hover:scale-110 transition-transform duration-500"
+              />
+            </div>
+            <div class="p-6 flex flex-col flex-grow">
+              <div class="flex justify-between items-center mb-4">
+                <span
+                  class="text-[10px] font-bold text-emerald-400 uppercase tracking-[0.2em]"
+                  >Logistics</span
+                >
+                <div class="flex gap-2 text-slate-500">
+                  <i class="fab fa-python text-xs" title="Python"></i>
+                  <i class="fas fa-database text-xs" title="SQL"></i>
+                </div>
               </div>
-            </div>
-            <h3 class="text-2xl font-bold mb-4">
-              Production Throughput Model & Root Cause Analysis
-            </h3>
-            <p class="text-slate-400 mb-6 flex-grow leading-relaxed">
-              Pareto analysis of bottling line downtime. Utilized Power Query
-              for ETL and isolated root causes for inventory shortages.
-            </p>
-            <div class="flex flex-wrap gap-2 mb-6">
-              <span
-                class="px-2 py-1 bg-slate-800 text-slate-400 text-[10px] font-bold rounded uppercase"
-                >Root Cause</span
+              <h3 class="text-xl font-bold mb-3 leading-tight text-white">
+                Logistics Cost Optimization
+              </h3>
+              <p class="text-slate-400 text-sm mb-6 flex-grow leading-relaxed">
+                Interactive intelligence identifying drivers for 99% of
+                logistics spend. Integrated Python for lead-time analysis.
+              </p>
+              <div class="flex flex-wrap gap-2 mb-6">
+                <span
+                  class="px-2 py-1 bg-slate-800/50 text-slate-500 text-[9px] font-bold rounded uppercase border border-slate-700"
+                  >Python</span
+                >
+                <span
+                  class="px-2 py-1 bg-slate-800/50 text-slate-500 text-[9px] font-bold rounded uppercase border border-slate-700"
+                  >SQL</span
+                >
+                <span
+                  class="px-2 py-1 bg-slate-800/50 text-slate-500 text-[9px] font-bold rounded uppercase border border-slate-700"
+                  >Tableau</span
+                >
+              </div>
+              <a
+                href="logistics-cost-optimization.html"
+                class="inline-flex items-center text-sm font-bold text-logistics-orange group border-t border-slate-800 pt-4 mt-auto"
               >
-              <span
-                class="px-2 py-1 bg-slate-800 text-slate-400 text-[10px] font-bold rounded uppercase"
-                >Power Query</span
-              >
+                VIEW CASE STUDY
+                <i
+                  class="fas fa-chevron-right ml-2 text-[10px] group-hover:translate-x-1 transition-transform"
+                ></i>
+              </a>
             </div>
-            <a
-              href="production-throughput-model.html"
-              class="inline-flex items-center font-bold text-logistics-orange hover:gap-2 transition-all"
-            >
-              Deep Dive <i class="fas fa-arrow-right ml-2 text-sm"></i>
-            </a>
           </div>
-        </div>
 
-        <!-- Restaurant Order Analysis -->
-        <div
-          class="project-card rounded-3xl overflow-hidden flex flex-col h-full"
-          data-aos="fade-up"
-          data-category="SQL"
-        >
-          <img
-            src="images/project_images/sql_placeholder.png"
-            alt="Restaurant Analysis"
-            class="w-full h-48 object-cover opacity-80"
-          />
-          <div class="p-8 flex flex-col flex-grow">
-            <div class="flex justify-between items-center mb-4">
-              <span
-                class="text-xs font-bold text-emerald-400 uppercase tracking-widest"
-                >Food & Beverage</span
-              >
-              <div class="flex gap-2 text-slate-500">
-                <i class="fas fa-database"></i>
-              </div>
+          <!-- Inventory Capital Optimizer -->
+          <div
+            class="project-card rounded-3xl overflow-hidden flex flex-col h-full"
+            data-tech="Python, Tableau"
+          >
+            <div class="h-48 overflow-hidden bg-slate-800">
+              <img
+                src="images/project_images/inventory_capital_optimizer.png"
+                alt="Inventory Capital Optimizer"
+                class="w-full h-full object-cover opacity-90 hover:scale-110 transition-transform duration-500"
+              />
             </div>
-            <h3 class="text-2xl font-bold mb-4">
-              Inventory Margin Optimization
-            </h3>
-            <p class="text-slate-400 mb-6 flex-grow leading-relaxed">
-              Exploratory SQL analysis of sales trends and menu performance to
-              identify top-performing products.
-            </p>
-            <a
-              href="inventory-margin-optimization.html"
-              class="inline-flex items-center font-bold text-logistics-orange hover:gap-2 transition-all"
-            >
-              Deep Dive <i class="fas fa-arrow-right ml-2 text-sm"></i>
-            </a>
+            <div class="p-6 flex flex-col flex-grow">
+              <div class="flex justify-between items-center mb-4">
+                <span
+                  class="text-[10px] font-bold text-sky-400 uppercase tracking-[0.2em]"
+                  >Inventory</span
+                >
+                <div class="flex gap-2 text-slate-500">
+                  <i class="fab fa-python text-xs" title="Python"></i>
+                  <i class="fas fa-chart-line text-xs" title="Tableau"></i>
+                </div>
+              </div>
+              <h3 class="text-xl font-bold mb-3 leading-tight text-white">
+                Inventory Capital Optimizer
+              </h3>
+              <p class="text-slate-400 text-sm mb-6 flex-grow leading-relaxed">
+                ML-driven demand forecasting protecting $2.44B in revenue
+                leakage while releasing $10.43M in trapped capital.
+              </p>
+              <div class="flex flex-wrap gap-2 mb-6">
+                <span
+                  class="px-2 py-1 bg-slate-800/50 text-slate-500 text-[9px] font-bold rounded uppercase border border-slate-700"
+                  >Python</span
+                >
+                <span
+                  class="px-2 py-1 bg-slate-800/50 text-slate-500 text-[9px] font-bold rounded uppercase border border-slate-700"
+                  >Tableau</span
+                >
+                <span
+                  class="px-2 py-1 bg-slate-800/50 text-slate-500 text-[9px] font-bold rounded uppercase border border-slate-700"
+                  >XGBoost</span
+                >
+              </div>
+              <a
+                href="inventory-capital-optimizer.html"
+                class="inline-flex items-center text-sm font-bold text-logistics-orange group border-t border-slate-800 pt-4 mt-auto"
+              >
+                VIEW CASE STUDY
+                <i
+                  class="fas fa-chevron-right ml-2 text-[10px] group-hover:translate-x-1 transition-transform"
+                ></i>
+              </a>
+            </div>
+          </div>
+
+          <!-- Inventory Margin Optimization -->
+          <div
+            class="project-card rounded-3xl overflow-hidden flex flex-col h-full"
+            data-tech="SQL"
+          >
+            <div class="h-48 overflow-hidden bg-slate-800">
+              <img
+                src="images/project_images/sql_placeholder.png"
+                alt="Inventory Margin Optimization"
+                class="w-full h-full object-cover opacity-90 hover:scale-110 transition-transform duration-500"
+              />
+            </div>
+            <div class="p-6 flex flex-col flex-grow">
+              <div class="flex justify-between items-center mb-4">
+                <span
+                  class="text-[10px] font-bold text-purple-400 uppercase tracking-[0.2em]"
+                  >Inventory</span
+                >
+                <div class="flex gap-2 text-slate-500">
+                  <i class="fas fa-database text-xs" title="SQL"></i>
+                </div>
+              </div>
+              <h3 class="text-xl font-bold mb-3 leading-tight text-white">
+                Inventory Margin Optimization
+              </h3>
+              <p class="text-slate-400 text-sm mb-6 flex-grow leading-relaxed">
+                Strategic GMROI matrix analysis using advanced SQL to categorize
+                menu efficiency and eliminate throughput bottlenecks.
+              </p>
+              <div class="flex flex-wrap gap-2 mb-6">
+                <span
+                  class="px-2 py-1 bg-slate-800/50 text-slate-500 text-[9px] font-bold rounded uppercase border border-slate-700"
+                  >SQL</span
+                >
+                <span
+                  class="px-2 py-1 bg-slate-800/50 text-slate-500 text-[9px] font-bold rounded uppercase border border-slate-700"
+                  >Analytics</span
+                >
+              </div>
+              <a
+                href="inventory-margin-optimization.html"
+                class="inline-flex items-center text-sm font-bold text-logistics-orange group border-t border-slate-800 pt-4 mt-auto"
+              >
+                VIEW CASE STUDY
+                <i
+                  class="fas fa-chevron-right ml-2 text-[10px] group-hover:translate-x-1 transition-transform"
+                ></i>
+              </a>
+            </div>
+          </div>
+
+          <!-- Production Throughput Model -->
+          <div
+            class="project-card rounded-3xl overflow-hidden flex flex-col h-full"
+            data-tech="Excel"
+          >
+            <div class="h-48 overflow-hidden bg-slate-800">
+              <img
+                src="images/project_images/ma3.png"
+                alt="Production Throughput Model"
+                class="w-full h-full object-cover opacity-90 hover:scale-110 transition-transform duration-500"
+              />
+            </div>
+            <div class="p-6 flex flex-col flex-grow">
+              <div class="flex justify-between items-center mb-4">
+                <span
+                  class="text-[10px] font-bold text-blue-400 uppercase tracking-[0.2em]"
+                  >Manufacturing</span
+                >
+                <div class="flex gap-2 text-slate-500">
+                  <i class="fas fa-file-excel text-xs" title="Excel"></i>
+                </div>
+              </div>
+              <h3 class="text-xl font-bold mb-3 leading-tight text-white">
+                Production Throughput Model
+              </h3>
+              <p class="text-slate-400 text-sm mb-6 flex-grow leading-relaxed">
+                Pareto analysis of bottling line downtime. Utilized Power Query
+                for ETL and isolated root causes for shortages.
+              </p>
+              <div class="flex flex-wrap gap-2 mb-6">
+                <span
+                  class="px-2 py-1 bg-slate-800/50 text-slate-500 text-[9px] font-bold rounded uppercase border border-slate-700"
+                  >Excel</span
+                >
+                <span
+                  class="px-2 py-1 bg-slate-800/50 text-slate-500 text-[9px] font-bold rounded uppercase border border-slate-700"
+                  >Power Query</span
+                >
+              </div>
+              <a
+                href="production-throughput-model.html"
+                class="inline-flex items-center text-sm font-bold text-logistics-orange group border-t border-slate-800 pt-4 mt-auto"
+              >
+                VIEW CASE STUDY
+                <i
+                  class="fas fa-chevron-right ml-2 text-[10px] group-hover:translate-x-1 transition-transform"
+                ></i>
+              </a>
+            </div>
           </div>
         </div>
-      </div>
+      </section>
+
+      <!-- Section 2: Technical Systems & Performance Analytics -->
+      <section id="other-projects-section" data-aos="fade-up" class="mb-24">
+        <div class="flex items-center gap-4 mb-12">
+          <div class="h-px bg-slate-800 flex-grow"></div>
+          <h2
+            class="text-sm md:text-base font-bold uppercase tracking-[0.4em] text-logistics-orange whitespace-nowrap bg-slate-900/50 px-6 py-2 rounded-full border border-slate-800/50 shadow-lg backdrop-blur-sm"
+          >
+            Systems, Performance & Special Projects
+          </h2>
+          <div class="h-px bg-slate-800 flex-grow"></div>
+        </div>
+        <div
+          id="other-grid"
+          class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
+        >
+          <!-- Revenue Pipeline Control -->
+          <div
+            class="project-card rounded-3xl overflow-hidden flex flex-col h-full"
+            data-tech="Tableau"
+          >
+            <div class="h-48 overflow-hidden bg-slate-800">
+              <img
+                src="images/project_images/crmdashboard.png"
+                alt="Revenue Pipeline Control"
+                class="w-full h-full object-cover opacity-90 hover:scale-110 transition-transform duration-500"
+              />
+            </div>
+            <div class="p-6 flex flex-col flex-grow">
+              <div class="flex justify-between items-center mb-4">
+                <span
+                  class="text-[10px] font-bold text-yellow-500 uppercase tracking-[0.2em]"
+                  >Revenue</span
+                >
+                <div class="flex gap-2 text-slate-500">
+                  <i class="fas fa-chart-line text-xs" title="Tableau"></i>
+                </div>
+              </div>
+              <h3 class="text-xl font-bold mb-3 leading-tight text-white">
+                Revenue Pipeline Control
+              </h3>
+              <p class="text-slate-400 text-sm mb-6 flex-grow leading-relaxed">
+                Engineering high-fidelity monitors to optimize conversion cycles
+                and agent performance. Visual CRM intelligence.
+              </p>
+              <div class="flex flex-wrap gap-2 mb-6">
+                <span
+                  class="px-2 py-1 bg-slate-800/50 text-slate-500 text-[9px] font-bold rounded uppercase border border-slate-700"
+                  >Tableau</span
+                >
+                <span
+                  class="px-2 py-1 bg-slate-800/50 text-slate-500 text-[9px] font-bold rounded uppercase border border-slate-700"
+                  >CRM</span
+                >
+              </div>
+              <a
+                href="revenue-pipeline-control.html"
+                class="inline-flex items-center text-sm font-bold text-logistics-orange group border-t border-slate-800 pt-4 mt-auto"
+              >
+                VIEW CASE STUDY
+                <i
+                  class="fas fa-chevron-right ml-2 text-[10px] group-hover:translate-x-1 transition-transform"
+                ></i>
+              </a>
+            </div>
+          </div>
+
+          <!-- Service Quality Analytics -->
+          <div
+            class="project-card rounded-3xl overflow-hidden flex flex-col h-full"
+            data-tech="Power BI"
+          >
+            <div class="h-48 overflow-hidden bg-slate-800">
+              <img
+                src="images/project_images/passengersatisfactiondashboard.png"
+                alt="Service Quality Analytics"
+                class="w-full h-full object-cover opacity-90 hover:scale-110 transition-transform duration-500"
+              />
+            </div>
+            <div class="p-6 flex flex-col flex-grow">
+              <div class="flex justify-between items-center mb-4">
+                <span
+                  class="text-[10px] font-bold text-indigo-400 uppercase tracking-[0.2em]"
+                  >Aviation Ops</span
+                >
+                <div class="flex gap-2 text-slate-500">
+                  <i class="fas fa-chart-bar text-xs" title="Power BI"></i>
+                </div>
+              </div>
+              <h3 class="text-xl font-bold mb-3 leading-tight text-white">
+                Service Quality Analytics
+              </h3>
+              <p class="text-slate-400 text-sm mb-6 flex-grow leading-relaxed">
+                Translating airline survey data into actionable service
+                enhancements through Power BI segmentation and sentiment
+                analysis.
+              </p>
+              <div class="flex flex-wrap gap-2 mb-6">
+                <span
+                  class="px-2 py-1 bg-slate-800/50 text-slate-500 text-[9px] font-bold rounded uppercase border border-slate-700"
+                  >Power BI</span
+                >
+                <span
+                  class="px-2 py-1 bg-slate-800/50 text-slate-500 text-[9px] font-bold rounded uppercase border border-slate-700"
+                  >DAX</span
+                >
+              </div>
+              <a
+                href="service-quality-analytics.html"
+                class="inline-flex items-center text-sm font-bold text-logistics-orange group border-t border-slate-800 pt-4 mt-auto"
+              >
+                VIEW CASE STUDY
+                <i
+                  class="fas fa-chevron-right ml-2 text-[10px] group-hover:translate-x-1 transition-transform"
+                ></i>
+              </a>
+            </div>
+          </div>
+
+          <!-- Retention Modeling & Operations -->
+          <div
+            class="project-card rounded-3xl overflow-hidden flex flex-col h-full"
+            data-tech="Python"
+          >
+            <div class="h-48 overflow-hidden bg-slate-800">
+              <img
+                src="images/project_images/7_Recommendations-for-Retention.png"
+                alt="Retention Modeling & Ops"
+                class="w-full h-full object-cover opacity-90 hover:scale-110 transition-transform duration-500"
+              />
+            </div>
+            <div class="p-6 flex flex-col flex-grow">
+              <div class="flex justify-between items-center mb-4">
+                <span
+                  class="text-[10px] font-bold text-red-400 uppercase tracking-[0.2em]"
+                  >Retention</span
+                >
+                <div class="flex gap-2 text-slate-500">
+                  <i class="fab fa-python text-xs" title="Python"></i>
+                </div>
+              </div>
+              <h3 class="text-xl font-bold mb-3 leading-tight text-white">
+                Retention Modeling & Ops
+              </h3>
+              <p class="text-slate-400 text-sm mb-6 flex-grow leading-relaxed">
+                ML pipeline developed to mitigate revenue loss through proactive
+                retention strategies and churn prediction.
+              </p>
+              <div class="flex flex-wrap gap-2 mb-6">
+                <span
+                  class="px-2 py-1 bg-slate-800/50 text-slate-500 text-[9px] font-bold rounded uppercase border border-slate-700"
+                  >Python</span
+                >
+                <span
+                  class="px-2 py-1 bg-slate-800/50 text-slate-500 text-[9px] font-bold rounded uppercase border border-slate-700"
+                  >Scikit-Learn</span
+                >
+              </div>
+              <a
+                href="retention-modeling-ops.html"
+                class="inline-flex items-center text-sm font-bold text-logistics-orange group border-t border-slate-800 pt-4 mt-auto"
+              >
+                VIEW CASE STUDY
+                <i
+                  class="fas fa-chevron-right ml-2 text-[10px] group-hover:translate-x-1 transition-transform"
+                ></i>
+              </a>
+            </div>
+          </div>
+
+          <!-- Workforce Capacity Planning -->
+          <div
+            class="project-card rounded-3xl overflow-hidden flex flex-col h-full"
+            data-tech="Excel"
+          >
+            <div class="h-48 overflow-hidden bg-slate-800">
+              <img
+                src="images/project_images/HR2.png"
+                alt="Workforce Capacity Planning"
+                class="w-full h-full object-cover opacity-90 hover:scale-110 transition-transform duration-500"
+              />
+            </div>
+            <div class="p-6 flex flex-col flex-grow">
+              <div class="flex justify-between items-center mb-4">
+                <span
+                  class="text-[10px] font-bold text-orange-400 uppercase tracking-[0.2em]"
+                  >Workforce</span
+                >
+                <div class="flex gap-2 text-slate-500">
+                  <i class="fas fa-users text-xs" title="Workforce"></i>
+                  <i class="fas fa-file-excel text-xs" title="Excel"></i>
+                </div>
+              </div>
+              <h3 class="text-xl font-bold mb-3 leading-tight text-white">
+                Workforce Capacity Planning
+              </h3>
+              <p class="text-slate-400 text-sm mb-6 flex-grow leading-relaxed">
+                Cleaning and categorizing workforce sentiment data for strategic
+                HR decision-making using Power Query.
+              </p>
+              <div class="flex flex-wrap gap-2 mb-6">
+                <span
+                  class="px-2 py-1 bg-slate-800/50 text-slate-500 text-[9px] font-bold rounded uppercase border border-slate-700"
+                  >Excel</span
+                >
+                <span
+                  class="px-2 py-1 bg-slate-800/50 text-slate-500 text-[9px] font-bold rounded uppercase border border-slate-700"
+                  >Power Query</span
+                >
+              </div>
+              <a
+                href="workforce-capacity-planning.html"
+                class="inline-flex items-center text-sm font-bold text-logistics-orange group border-t border-slate-800 pt-4 mt-auto"
+              >
+                VIEW CASE STUDY
+                <i
+                  class="fas fa-chevron-right ml-2 text-[10px] group-hover:translate-x-1 transition-transform"
+                ></i>
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
     </main>
 
     <!-- Footer -->
@@ -363,7 +691,7 @@
 
       document.addEventListener("DOMContentLoaded", () => {
         const filterBtns = document.querySelectorAll(".filter-btn");
-        const projectCards = document.querySelectorAll(".project-card");
+        const sections = document.querySelectorAll("section");
 
         filterBtns.forEach((btn) => {
           btn.addEventListener("click", () => {
@@ -372,13 +700,32 @@
 
             const filter = btn.dataset.filter.toLowerCase();
 
-            projectCards.forEach((card) => {
-              const categories = (card.dataset.category || "").toLowerCase();
+            // First pass: Hide/Show cards and check section visibility
+            sections.forEach((section) => {
+              const gridCards = section.querySelectorAll(".project-card");
+              let sectionHasVisibleCard = false;
 
-              if (filter === "all" || categories.includes(filter)) {
-                card.style.display = "flex";
+              gridCards.forEach((card) => {
+                const techList = (card.dataset.tech || "")
+                  .toLowerCase()
+                  .split(",")
+                  .map((t) => t.trim());
+
+                const isMatch = filter === "all" || techList.includes(filter);
+
+                if (isMatch) {
+                  card.style.display = "flex";
+                  sectionHasVisibleCard = true;
+                } else {
+                  card.style.display = "none";
+                }
+              });
+
+              // Show/Hide the entire section (header + grid)
+              if (sectionHasVisibleCard) {
+                section.style.display = "block";
               } else {
-                card.style.display = "none";
+                section.style.display = "none";
               }
             });
 
