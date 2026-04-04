@@ -12,6 +12,8 @@ service-quality-analytics/
 supply-chain-command-center/
 workforce-capacity-planning/
 Hub-Operations-Integrity/
+global-health-supply-chain/
+healthcare-payments-compliance/
 
 # Python artifacts
 __pycache__/
