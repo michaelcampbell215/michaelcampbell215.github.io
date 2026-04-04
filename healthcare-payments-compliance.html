@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>
-      Enterprise Supply Chain Optimization & Spend Analytics | Michael Campbell
+      Healthcare Payments Compliance & Spend Analytics | Michael Campbell
     </title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -112,16 +112,17 @@
             <div
               class="inline-block px-3 py-1 bg-logistics-orange/10 border border-logistics-orange/20 text-logistics-orange rounded-full text-xs font-bold uppercase tracking-widest mb-6"
             >
-              Commercial Analytics Suite
+              Healthcare Data Engineering
             </div>
             <h1 class="text-4xl md:text-6xl font-bold mb-6 leading-tight">
-              Enterprise Supply Chain Optimization &<br />
+              Healthcare Payments Compliance &<br />
               <span class="text-logistics-orange">Spend Analytics</span>
             </h1>
             <p class="text-xl text-slate-400 leading-relaxed font-mono">
-              > Translating 15.4 million operational data points into clear
-              narratives. Uncovered $11.7M in supply chain risk and localized
-              spending strategy, powered by a custom Star Schema architecture.
+              > Production-grade Star Schema data warehouse built on 15.4M
+              records of 2024 CMS Open Payments federal healthcare data.
+              Flagged $11.7M in provider payment compliance exposure and a
+              $170M+ anomaly event. Currently migrating to BigQuery on GCP.
             </p>
           </div>
         </div>
@@ -137,11 +138,11 @@
               <p
                 class="text-slate-500 text-xs font-bold uppercase tracking-widest mb-1"
               >
-                Compliance Hit
+                Compliance Exposure
               </p>
               <h3 class="text-2xl font-bold">$11.7M</h3>
               <p class="text-slate-400 text-xs mt-2">
-                Unallocated Fees Flagged
+                Provider Payment Risk Flagged
               </p>
             </div>
             <div
@@ -207,9 +208,11 @@
             </iframe>
           </div>
           <p class="text-slate-400 mt-6 max-w-2xl mx-auto text-sm">
-            The front-end user interface designed for operations leaders to
-            visualize geographic logistics hubs and track volume concentration
-            instantly.
+            The front-end analytics layer built on 2024 CMS Open Payments
+            federal healthcare data — designed for compliance officers and
+            operations leaders to monitor provider payment patterns, geographic
+            distribution, and anomalous spend concentration across the
+            US healthcare provider network.
           </p>
         </div>
       </section>
@@ -237,18 +240,18 @@
                     </div>
                     <div>
                       <h4 class="text-xl font-bold mb-2">
-                        Logistics Hub Optimization
+                        Geographic Provider Payment Analysis
                       </h4>
                       <p class="text-slate-400 leading-relaxed">
-                        Geographic mapping of physical unit routing revealed
-                        that
-                        <strong
-                          >San Diego drives significantly higher surgical device
-                          throughput than Los Angeles</strong
-                        >, defying traditional population-based assumptions.
-                        This insight permitted the restructuring of West Coast
-                        Forward Stocking Locations to minimize true "last mile"
-                        transit times.
+                        Geospatial mapping of CMS payment flows revealed that
+                        <strong>San Diego drives significantly higher surgical
+                        device payment throughput than Los Angeles</strong>,
+                        defying population-based assumptions. This finding
+                        informs Forward Stocking Location strategy for medical
+                        device distributors serving West Coast provider networks
+                        — and demonstrates how geographic payment analysis
+                        can surface distribution inefficiencies invisible in
+                        aggregate reporting.
                       </p>
                     </div>
                   </div>
@@ -263,18 +266,18 @@
                     </div>
                     <div>
                       <h4 class="text-xl font-bold mb-2">
-                        Sales Cyclicality & The Whale Curve
+                        Payment Concentration & The Whale Curve
                       </h4>
                       <p class="text-slate-400 leading-relaxed">
-                        Constructed Lorenz curves distinguishing a "hockey
-                        stick" culture of massive end-of-quarter volume pushes
-                        followed by drop-offs. The concentration index showed
-                        that over
-                        <strong
-                          >80% of revenue heavily relies on just the TOP 2%
-                          active accounts</strong
-                        >, triggering an overhaul in target incentive
-                        structuring.
+                        Lorenz curve analysis of CMS payment data revealed that
+                        over
+                        <strong>80% of total payment volume flows to just the
+                        TOP 2% of active provider accounts</strong>
+                        — a concentration pattern with direct implications for
+                        pharmaceutical manufacturer contracting and payor
+                        network strategy. This level of dependency transforms
+                        routine provider attrition into a major financial and
+                        compliance event.
                       </p>
                     </div>
                   </div>
@@ -291,11 +294,13 @@
                         Compliance Exposure Tracking
                       </h4>
                       <p class="text-slate-400 leading-relaxed">
-                        Applying Z-Score thresholds in the raw SQL allowed us to
-                        mathematically isolate anomalous discretionary spending
-                        safely. This triggered a major audit of $11.7M in
-                        Unallocated consulting fees grouped alongside an
-                        unexpected $170M+ anomaly event.
+                        Z-Score thresholds hardcoded directly into SQL
+                        automatically isolated anomalous provider payment
+                        patterns in the CMS dataset — flagging $11.7M in
+                        payments with no associated product code and surfacing
+                        an unexpected $170M+ anomaly event. This methodology
+                        is directly applicable to healthcare fraud detection,
+                        payor audit workflows, and CMS compliance monitoring.
                       </p>
                     </div>
                   </div>
@@ -322,15 +327,19 @@
                         Overcoming the Data Quality Bottleneck
                       </h4>
                       <p class="text-slate-400 leading-relaxed">
-                        The raw compliance dataset of 15 million rows was
-                        unsuited for operational reporting. By engineering an
-                        overarching <strong>Star Schema</strong> with a central
-                        fact table and five dimension tables, query performance
-                        for large executive dashboards shifted from minutes to
-                        sub-seconds. We managed the pipeline builds in an
-                        <strong>Agile/Scrum</strong> environment using
-                        <strong>Jira</strong> to track rapid development
-                        sprints.
+                        The 2024 CMS Open Payments dataset — 15.4M records of
+                        federal healthcare payment transactions — was completely
+                        unsuited for executive reporting in raw form. By
+                        engineering a <strong>Star Schema</strong> with a
+                        central fact table and five dimension tables
+                        (Physicians, Geography, Products, Entities, Time),
+                        query performance shifted from minutes to sub-seconds.
+                        A <strong>100% checksum audit</strong> validated that
+                        Source SUM(Amount) matched Warehouse SUM(Amount)
+                        exactly — ensuring zero financial data loss during
+                        ingestion. Currently migrating to
+                        <strong>BigQuery on GCP</strong> for cloud-native
+                        scalability.
                       </p>
                     </div>
                   </div>
@@ -417,8 +426,16 @@
                     >ETL Batch Processing</span
                   >
                   <span
+                    class="px-3 py-1 bg-slate-800 rounded-md text-sm border border-slate-700/50"
+                    >CMS Open Payments</span
+                  >
+                  <span
+                    class="px-3 py-1 bg-slate-800 rounded-md text-sm border border-slate-700/50"
+                    >Healthcare Compliance</span
+                  >
+                  <span
                     class="px-3 py-1 bg-logistics-orange/20 text-logistics-orange font-bold rounded-md text-sm border border-logistics-orange/50"
-                    >Agile / Jira Sprints</span
+                    >BigQuery Migration (In Progress)</span
                   >
                 </div>
               </div>
@@ -432,10 +449,12 @@
                   Project Summary
                 </h4>
                 <p class="text-sm text-slate-400 leading-relaxed">
-                  "By translating complex database matrices into interactive
-                  Tableaus, we aligned the C-Suite on hidden operational
-                  vulnerabilities. Building the back-end engine was the only way
-                  to generate the front-end strategic value."
+                  "By engineering a production-grade data warehouse on federal
+                  CMS healthcare data, we transformed 15.4M raw payment records
+                  into a compliance intelligence platform. The back-end Star
+                  Schema was the only path to sub-second executive reporting
+                  at this scale — and to surfacing $11.7M in risk that was
+                  invisible before."
                 </p>
                 <div class="mt-6 flex flex-col gap-3">
                   <a
@@ -458,6 +477,16 @@
                     ></i>
                     View SQL Pipeline Source
                   </a>
+                  <a
+                    href="https://github.com/michaelcampbell215/healthcare-data-engineering/blob/main/TECHNICAL.md"
+                    target="_blank"
+                    class="text-gray-400 hover:text-white transition-colors block text-sm group"
+                  >
+                    <i
+                      class="fas fa-file-code mr-2 group-hover:text-logistics-orange"
+                    ></i>
+                    Deep-Dive: Engineering Case Study
+                  </a>
                 </div>
               </div>
             </div>
@@ -473,8 +502,8 @@
         <div class="container mx-auto px-6">
           <h2 class="text-3xl font-bold mb-12 flex items-center justify-center">
             <i class="fas fa-server text-logistics-orange mr-4"></i>
-            Backend
-            <span class="text-logistics-orange ml-2">Architecture Engine</span>
+            Healthcare Data
+            <span class="text-logistics-orange ml-2">Engineering Architecture</span>
           </h2>
 
           <div class="grid lg:grid-cols-2 gap-12 place-items-start">

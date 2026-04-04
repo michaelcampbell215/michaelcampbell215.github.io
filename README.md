@@ -1,6 +1,6 @@
-# Michael Campbell | Operations & Logistics Analyst
+# Michael Campbell | Data Analyst & Analytics Engineer
 
-**Bridging the gap between Tarmac and Tableau.**
+**Healthcare Analytics. Supply Chain Intelligence. Built on Data Engineering.**
 
 [View Portfolio](https://michaelcampbell215.github.io) | [LinkedIn](https://www.linkedin.com/in/michaelcampbell215/) | [Email](mailto:mcam215@gmail.com)
 
@@ -8,59 +8,71 @@
 
 ## About Me
 
-**Operations-First Analytics**
+I build the data layer that turns operational complexity into decisions people can act on.
 
-Most analysts start with a spreadsheet. I started on the **tarmac**.
+My work spans two domains that rarely travel together: **healthcare data engineering** and **supply chain analytics**. I've processed 15.4M records of federal CMS Open Payments healthcare data through production-grade ETL pipelines, analyzed global health commodity supply chains tracking \$1.46B in ARV and HIV diagnostic shipments, and built ML-driven inventory models that identified $10.43M in trapped capital.
 
-I am an Operations Data Analyst with **10+ years of experience** in high-volume environments—from airline ground operations at **American Airlines** to inventory logistics at **Sonder**. I help logistics, supply chain, and operations teams identify inefficiencies that create cost, risk, or downtime using **SQL**, **Python**, and **Tableau**.
-
-My background is built on operational discipline. I spent a decade managing time-critical ground operations where a 5-minute delay could cost thousands of dollars. Today, I combine that field experience with advanced data engineering skills to build automated reporting pipelines that replace manual guesswork with clear, actionable intelligence.
+With 10+ years of operational experience across American Airlines, Sonder, and Marquez MMA, I understand what the data means on the ground — not just on the dashboard.
 
 ---
 
 ## Technical Skills
 
-| Domain                 | Skills                                                                      |
-| :--------------------- | :-------------------------------------------------------------------------- |
-| **Data Engineering**   | Python, SQL (PostgreSQL/MySQL), Automation Scripts                          |
-| **Supply Chain Intel** | Inventory Forecasting, Variance Analysis, Root Cause Analysis, KPI Tracking |
-| **Visualization**      | Tableau (Advanced), Power BI, Excel Power Query                             |
-| **Enterprise Ops**     | Salesforce & SAP, Asana & Jira, Crisis Management                           |
+| Domain                      | Skills                                                                                     |
+| :-------------------------- | :----------------------------------------------------------------------------------------- |
+| **Cloud & Data Stack**      | BigQuery (GCP), dbt, Snowflake, PostgreSQL, MySQL, Git, Apache Airflow, Docker             |
+| **Analytics & SQL**         | Advanced SQL (CTEs, Window Functions, Joins), Python (Pandas, SQLAlchemy), Jupyter         |
+| **BI & Visualization**      | Tableau, Power BI, Excel Power Query — dashboards, KPI frameworks, self-service analytics  |
+| **Machine Learning**        | XGBoost, LightGBM, Gradient Boosting, Forecasting (Prophet), Churn Modeling               |
+| **AI Workflow Tools**       | ChatGPT, Claude, GitHub Copilot, Gemini, NotebookLM, Ollama                               |
+| **Regulated Environments**  | FAA Compliance, Financial PII, KYC Verification, Medical Records, CMS Open Payments       |
 
 ---
 
 ## Featured Projects
 
-### [Enterprise Supply Chain Optimization & Spend Analytics](https://michaelcampbell215.github.io/supply-chain-optimization.html)
+### [Healthcare Payments Compliance & Spend Analytics](https://michaelcampbell215.github.io/supply-chain-optimization.html)
+*CMS Open Payments 2024 | Star Schema | MySQL | Tableau*
 
-Translating 15.4 million operational data points into clear narratives. Uncovered $11.7M in supply chain risk and localized spending strategy, powered by a custom Star Schema architecture.
+Production-grade Star Schema data warehouse built on 15.4M records of 2024 CMS Open Payments federal healthcare data. Flagged \$11.7M in provider payment compliance exposure and a $170M+ anomaly event through Z-Score statistical analysis in SQL.
 
-- **Technologies:** SQL, MySQL, Tableau
+- **Stack:** MySQL 8.0, Tableau, Stored Procedures, Geospatial Computing, ETL
 
-### [Logistics Cost Optimization](https://michaelcampbell215.github.io/logistics-cost-optimization.html)
+---
 
-Interactive Tableau dashboard identifying cost drivers for 99% of logistics spend. Integrated Python for lead-time analysis.
+### [Global Health Supply Chain Optimization](https://michaelcampbell215.github.io/logistics-cost-optimization.html)
+*USAID SCMS | ARV & HRDT Commodities | Python | Tableau*
 
-- **Technologies:** Tableau, Python, SQL
+Analytics platform tracking $1.46B in global health commodity shipments — ARV antiretroviral drugs and HIV rapid diagnostic tests — across international health supply chains. Identified cost concentration driving 99% of logistics spend.
+
+- **Stack:** Python (Pandas), Tableau, SQL, Spend Analytics
+
+---
 
 ### [Inventory Capital Optimizer](https://michaelcampbell215.github.io/inventory-capital-optimizer.html)
+*XGBoost | LightGBM | Python | Supply Chain ML*
 
-ML-driven (XGBoost/LightGBM) demand forecasting and prescriptive liquidation engine. Protected $2.44B in revenue leakage while releasing $10.43M in trapped capital through intelligent, volatility-weighted safety stock buffering.
+ML-driven demand forecasting engine replacing static safety stock rules with dynamic, data-driven buffering. Identified $10.43M in trapped inventory capital through volatility-weighted safety stock optimization.
 
-- **Technologies:** Python, Machine Learning, Supply Chain Optimization
+- **Stack:** Python, XGBoost, LightGBM, Scikit-Learn, Tableau
 
+---
 
-### [Production Throughput Model & Root Cause Analysis](https://michaelcampbell215.github.io/production-throughput-model.html)
+### [Hub Operations Integrity — Digital Twin Simulation](https://michaelcampbell215.github.io/hub-operations-integrity.html)
+*Python | Cost Modeling | FAA Compliance*
 
-Pareto analysis of bottling line downtime. Utilized Power Query for ETL and isolated root causes for inventory shortages.
+Digital twin simulation identifying $122K in net savings by optimizing gate hold vs. push decisions under FAA regulatory constraints. Built on a decade of real-world American Airlines ground operations experience.
 
-- **Technologies:** Excel, Power Query, Root Cause Analysis
+- **Stack:** Python, Simulation, Cost Modeling
 
-### [Inventory Margin Optimization](https://michaelcampbell215.github.io/inventory-margin-optimization.html)
+---
 
-Exploratory SQL analysis of sales trends and menu performance to identify top-performing products.
+### [Retention Modeling & Churn Prediction](https://michaelcampbell215.github.io/retention-modeling-ops.html)
+*Gradient Boosting | SMOTE | Scikit-Learn*
 
-- **Technologies:** SQL, Database Analysis
+ML pipeline achieving 74% churn detection recall using Gradient Boosting with SMOTE class balancing. Methodology directly applicable to patient retention analytics in healthcare settings.
+
+- **Stack:** Python, Scikit-Learn, Gradient Boosting, Random Forest
 
 ---
 
