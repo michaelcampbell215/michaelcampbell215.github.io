@@ -6,7 +6,7 @@
     <title>Hub Operations Integrity | Michael Campbell Analytics</title>
     <meta
       name="description"
-      content="Digital Twin simulation for PHL hub disruption recovery. Decision intelligence identifying $122K in net operational savings through strategic gate hold optimization and regulatory compliance modeling."
+      content="Multi-constraint decision intelligence for hub recovery operations. Cost optimization engine identifying $122K in net operational savings through strategic gate hold optimization and regulatory compliance modeling."
     />
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -19,7 +19,6 @@
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
     />
-    <!-- Prism.js for code highlighting -->
     <link
       href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism-tomorrow.min.css"
       rel="stylesheet"
@@ -72,14 +71,12 @@
       <div
         class="container mx-auto px-6 py-4 flex justify-between items-center"
       >
-        <div class="flex items-center space-x-2">
-          <a
-            href="index.html"
-            class="text-xl font-bold tracking-tighter uppercase transition-opacity hover:opacity-80"
-          >
-            MICHAEL <span class="text-logistics-orange">CAMPBELL</span>
-          </a>
-        </div>
+        <a
+          href="index.html"
+          class="text-xl font-bold tracking-tighter uppercase transition-opacity hover:opacity-80"
+        >
+          MICHAEL <span class="text-logistics-orange">CAMPBELL</span>
+        </a>
         <div class="hidden md:flex space-x-8 text-sm font-medium items-center">
           <a href="index.html" class="hover:text-logistics-orange transition"
             >Home</a
@@ -110,14 +107,16 @@
     </nav>
 
     <main>
-      <!-- Hero -->
+      <!-- ═══════════════════════════════════════
+           HERO
+      ═══════════════════════════════════════ -->
       <section class="py-20 border-b border-slate-800 bg-slate-900/50">
         <div class="container mx-auto px-6">
           <div class="max-w-4xl">
             <div
               class="inline-block px-3 py-1 bg-logistics-orange/10 border border-logistics-orange/20 text-logistics-orange rounded-full text-xs font-bold uppercase tracking-widest mb-6"
             >
-              Digital Twin ➔ Hub Recovery Simulation
+              Operations Intelligence ➔ Multi-Constraint Cost Optimization
             </div>
             <h1 class="text-4xl md:text-6xl font-bold mb-6 leading-tight">
               Hub Operations
@@ -125,16 +124,18 @@
             </h1>
             <p class="text-xl text-slate-400 leading-relaxed font-mono">
               > Identified <strong class="text-white">$122,342.50</strong> in
-              net operational savings during a simulated 4-hour hub disruption by
-              building a multi-constraint decision engine that balances passenger
-              protection costs against regulatory guardrails and network
-              stability.
+              net operational savings during a simulated 4-hour hub disruption
+              by building a multi-constraint decision engine that balances
+              passenger protection costs against regulatory guardrails and
+              network stability.
             </p>
           </div>
         </div>
       </section>
 
-      <!-- Key Insights Overview -->
+      <!-- ═══════════════════════════════════════
+           KEY METRICS
+      ═══════════════════════════════════════ -->
       <section class="py-12 border-b border-slate-800">
         <div class="container mx-auto px-6">
           <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
@@ -173,12 +174,12 @@
               </p>
               <h3 class="text-2xl font-bold">12 Flights</h3>
               <p class="text-slate-400 text-xs mt-2">
-                Cascading Cancellations Avoided
+                Cascading Failures Avoided
               </p>
             </div>
             <div
               class="p-6 bg-slate-900 rounded-2xl border border-slate-800 metric-card"
-              style="border-left-color: #065f46"
+              style="border-left-color: #6366f1"
             >
               <p
                 class="text-slate-500 text-xs font-bold uppercase tracking-widest mb-1"
@@ -194,14 +195,54 @@
         </div>
       </section>
 
-      <!-- Visual Dashboard Section -->
+      <!-- ═══════════════════════════════════════
+           TRANSFERABILITY CALLOUT
+      ═══════════════════════════════════════ -->
+      <section class="py-10 bg-slate-800/30 border-b border-slate-800">
+        <div class="container mx-auto px-6 max-w-4xl">
+          <div class="flex items-start gap-4">
+            <div
+              class="w-10 h-10 bg-logistics-green/20 text-emerald-400 rounded-lg flex items-center justify-center flex-shrink-0 mt-0.5"
+            >
+              <i class="fas fa-exchange-alt text-sm"></i>
+            </div>
+            <div>
+              <p
+                class="text-sm font-bold uppercase tracking-widest text-emerald-400 mb-2"
+              >
+                Operations Analytics — Transferable Framework
+              </p>
+              <p class="text-slate-400 text-sm leading-relaxed">
+                The decision framework here — multi-constraint cost modeling,
+                network integrity analysis, and regulatory guardrail enforcement
+                — maps directly to logistics and supply chain operations. The
+                <strong class="text-slate-300">MCT Cliff model</strong>
+                parallels carrier SLA penalty structures.
+                <strong class="text-slate-300"
+                  >PPBM reconciliation logic</strong
+                >
+                maps to inventory reconciliation workflows.
+                <strong class="text-slate-300"
+                  >Fill-the-Bin capacity optimization</strong
+                >
+                maps to load planning in any distribution environment. The
+                airline domain is the example; the operations analytics patterns
+                are the transferable asset.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ═══════════════════════════════════════
+           SIMULATION OUTPUTS
+      ═══════════════════════════════════════ -->
       <section id="dashboard" class="py-24 bg-slate-900/50">
         <div class="container mx-auto px-6">
           <h2 class="text-3xl font-bold mb-12 text-center">
             Simulation <span class="text-logistics-orange">Outputs</span>
           </h2>
           <div class="grid md:grid-cols-2 gap-8">
-            <!-- Net Savings per Flight -->
             <div
               class="card-gradient p-2 rounded-2xl border border-slate-800 overflow-hidden shadow-2xl"
             >
@@ -218,7 +259,6 @@
                 class="w-full rounded-b-xl"
               />
             </div>
-            <!-- Hub Ops Volumes -->
             <div
               class="card-gradient p-2 rounded-2xl border border-slate-800 overflow-hidden shadow-2xl"
             >
@@ -239,7 +279,9 @@
         </div>
       </section>
 
-      <!-- Logic Section -->
+      <!-- ═══════════════════════════════════════
+           DECISION ENGINE CODE
+      ═══════════════════════════════════════ -->
       <section id="logic" class="py-24 border-t border-slate-800">
         <div class="container mx-auto px-6">
           <div class="max-w-4xl mx-auto">
@@ -251,11 +293,10 @@
               <strong>Cost of Passenger Protection</strong> against the
               <strong>Cost of Holding</strong> (delay + crew risk + gate
               conflict) to make a financially-optimal HOLD or PUSH decision per
-              flight. A
-              <strong>Regulatory Guardrail</strong> overrides when FAA Part 117
-              duty limits are threatened.
+              flight. A <strong>Regulatory Guardrail</strong> overrides the cost
+              comparison when FAA Part 117 duty limits are threatened —
+              regulatory compliance is a hard constraint, not a variable.
             </p>
-
             <div
               class="rounded-2xl border border-slate-800 overflow-hidden shadow-2xl bg-slate-950"
             >
@@ -278,51 +319,54 @@
                 >
                 <i class="fab fa-python text-sky-400"></i>
               </div>
-              <pre
-                class="line-numbers"
-              ><code class="language-python"># COST MODELING: NETWORK RISK (DELAY + CONNECTIONS + CREW)
+              <pre><code class="language-python"># COST MODELING: NETWORK RISK (DELAY + CONNECTIONS + CREW)
 def calculate_network_risk(mins, onboard_pax, crew_risk, fc):
     """
     Aggregates all network costs for a hold.
     Non-linear MCT Cliff: delay costs spike at 15 and 30 min marks.
     """
     base_delay_cost = mins * fc['cost_of_delay_per_min']
-    
+
     # 1. The MCT Cliff (Connection Risk)
     multiplier = 1.0
     if 15 < mins <= 30: multiplier = 2.5
-    elif mins > 30: multiplier = 5.0
-    
+    elif mins > 30:     multiplier = 5.0
+
     connection_penalty = (onboard_pax * fc['missed_connection_penalty_per_pax']) * (mins / 60)
-    
+
     return base_delay_cost + (connection_penalty * multiplier) + crew_risk
+
 
 # REGULATORY GUARDRAIL: FAA Part 117 Duty Limit Check
 def calculate_crew_timeout_risk(hold_time, crew_data, fc):
     remaining_buffer = crew_data['duty_mins_remaining'] - hold_time
-    
-    if remaining_buffer <= 10:  # Red Zone
+
+    if remaining_buffer <= 10:   # Red Zone — Force Push
         total_impact = fc['cost_of_crew_timeout'] + \
             (crew_data['downstream_legs'] * fc['downstream_cancellation_buffer'])
         return total_impact
-    elif remaining_buffer <= 20:  # Yellow Zone
-        return 5000  # Potential sub-out cost
-        
+    elif remaining_buffer <= 20: # Yellow Zone — Sub-out risk
+        return 5000
+
     return 0  # Green Zone: Crew is safe
 
+
 # DECISION LOOP (per flight)
-# if protect_cost > total_hold_cost:    → HOLD 15M (absorb delay, save pax)
-# elif duty_mins_remaining < 15:        → FORCE PUSH (regulatory override)
-# else:                                 → PUSH NOW (cheaper to re-accommodate)</code></pre>
+# if protect_cost > total_hold_cost:  → HOLD 15M (absorb delay, save pax)
+# elif duty_mins_remaining < 15:      → FORCE PUSH (regulatory override)
+# else:                               → PUSH NOW (cheaper to re-accommodate)</code></pre>
             </div>
           </div>
         </div>
       </section>
 
-      <!-- Project Narrative -->
+      <!-- ═══════════════════════════════════════
+           PROJECT NARRATIVE
+      ═══════════════════════════════════════ -->
       <section id="documentation" class="py-24 border-t border-slate-800">
         <div class="container mx-auto px-6">
           <div class="grid lg:grid-cols-3 gap-12">
+            <!-- Main Content -->
             <div class="lg:col-span-2 space-y-12">
               <div>
                 <h3 class="text-2xl font-bold mb-6 text-logistics-orange">
@@ -340,20 +384,23 @@ def calculate_crew_timeout_risk(hold_time, crew_data, fc):
                     </div>
                     <div>
                       <h4 class="text-xl font-bold mb-2">
-                        Gate Sheet Ingestion & Passenger Classification
+                        Manifest Ingestion & Passenger Classification
                       </h4>
                       <p class="text-slate-400 leading-relaxed">
                         Parsed complex JSON gate manifests to distinguish
                         <strong>Local No-Shows</strong> (bags already loaded,
                         requiring pit search) from
-                        <strong>Security Stalls</strong> (passengers delayed at
-                        checkpoints). This classification drives the rework
-                        penalty calculation — a critical variable that proves a
-                        "Push Now" can often yield a longer net delay than a
-                        strategic 15-minute hold.
+                        <strong>Security Stalls</strong>
+                        (passengers delayed at checkpoints, bags not yet at
+                        gate). This classification drives the rework penalty
+                        calculation — a critical variable that proves a "Push
+                        Now" decision can often yield a longer net delay than a
+                        strategic 15-minute hold when high-density cargo pits
+                        require a 7-minute AFT search.
                       </p>
                     </div>
                   </div>
+
                   <div class="flex">
                     <div class="mr-6 flex flex-col items-center">
                       <div
@@ -365,18 +412,21 @@ def calculate_crew_timeout_risk(hold_time, crew_data, fc):
                     </div>
                     <div>
                       <h4 class="text-xl font-bold mb-2">
-                        Non-Linear MCT Cliff & Cost Modeling
+                        Non-Linear MCT Cliff & Network Cost Modeling
                       </h4>
                       <p class="text-slate-400 leading-relaxed">
                         Developed a non-linear delay cost curve where penalties
-                        spike at the 15-minute and 30-minute marks to model hub
-                        misconnections. Integrated gate conflict costs ($180/min
-                        tarmac fuel burn for inbound aircraft), crew timeout
-                        risk, and downstream cancellation exposure into a single
-                        aggregate cost function per flight.
+                        spike at the 15 and 30-minute marks to model hub
+                        misconnection exposure. Integrated gate conflict costs
+                        ($180/min tarmac fuel burn for inbound aircraft on
+                        occupied gates), crew timeout risk, and downstream
+                        cancellation exposure into a single aggregate cost
+                        function per flight — treating the hub as a network, not
+                        a collection of independent departures.
                       </p>
                     </div>
                   </div>
+
                   <div class="flex">
                     <div class="mr-6 flex flex-col items-center">
                       <div
@@ -387,16 +437,17 @@ def calculate_crew_timeout_risk(hold_time, crew_data, fc):
                     </div>
                     <div>
                       <h4 class="text-xl font-bold mb-2">
-                        Capacity Recovery & Expedite Optimization
+                        Capacity Recovery & Fill-the-Bin Optimization
                       </h4>
                       <p class="text-slate-400 leading-relaxed">
-                        Utilized the latent cargo capacity created by passenger
-                        no-shows to clear a 370-bag backlog. Applied a
-                        "Fill-the-Bin" logic constrained by Maximum Zero Fuel
-                        Weight (MZFW), forward cargo volume, and
-                        dispatcher-enforced limits. Marginal fuel cost of
-                        clearing bags was ~$375 vs. ~$37,500 in avoided courier
-                        fees.
+                        Utilized latent cargo capacity created by passenger
+                        no-shows to clear a 370-bag backlog. Applied
+                        Fill-the-Bin logic constrained by Maximum Zero Fuel
+                        Weight (MZFW), forward cargo volume limits, and
+                        dispatcher-enforced weight and balance parameters.
+                        Marginal fuel cost of clearing the backlog: ~$375.
+                        Avoided courier fees: ~$37,500. A 100x return on
+                        operational hold time.
                       </p>
                     </div>
                   </div>
@@ -416,16 +467,17 @@ def calculate_crew_timeout_risk(hold_time, crew_data, fc):
                   </h4>
                   <ul class="text-sm text-slate-400 space-y-3">
                     <li>
-                      • High-Yield segments (LAX, SFO) require a protective
-                      holding strategy due to limited re-accommodation frequency
-                      and protection costs exceeding $1,000/pax.
+                      • High-yield, long-haul segments require protective
+                      holding strategies — re-accommodation options are severely
+                      limited and protection costs exceed $1,000 per passenger.
                     </li>
                     <li>
                       • Implement automated Part 117 monitoring via
                       <code class="text-logistics-orange"
                         >duty_mins_remaining</code
                       >
-                      to establish Hard-Stop Departure Windows.
+                      to establish hard-stop departure windows before crew duty
+                      limits become a network constraint.
                     </li>
                   </ul>
                 </div>
@@ -440,21 +492,25 @@ def calculate_crew_timeout_risk(hold_time, crew_data, fc):
                   </h4>
                   <ul class="text-sm text-slate-400 space-y-3">
                     <li>
-                      • Evolved from linear cost-of-delay calculator into a
-                      Dynamic Hub Ecosystem with multi-constraint network
-                      modeling.
+                      • Evolved from a linear cost-of-delay calculator into a
+                      multi-constraint network model once it became clear that
+                      pushing on-time creates hidden downstream costs a linear
+                      model cannot capture.
                     </li>
                     <li>
-                      • Incorporated Strict Positive Passenger Bag Match (PPBM)
-                      logic to account for mandatory baggage-offload delays and
-                      the 7-minute AFT search latency.
+                      • Incorporated PPBM logic to account for mandatory
+                      baggage-offload delays and the 7-minute AFT search latency
+                      — proving intuition fails in high-density cargo
+                      configurations.
                     </li>
                   </ul>
                 </div>
               </div>
             </div>
 
-            <!-- Sidebar -->
+            <!-- ═══════════════════════════════════════
+                 SIDEBAR
+            ═══════════════════════════════════════ -->
             <div class="space-y-8">
               <div class="p-8 bg-slate-900 rounded-3xl border border-slate-800">
                 <h4
@@ -469,7 +525,7 @@ def calculate_crew_timeout_risk(hold_time, crew_data, fc):
                   >
                   <span
                     class="px-3 py-1 bg-slate-800 rounded-md text-sm border border-slate-700/50"
-                    >JSON / ETL</span
+                    >Pandas</span
                   >
                   <span
                     class="px-3 py-1 bg-slate-800 rounded-md text-sm border border-slate-700/50"
@@ -477,15 +533,35 @@ def calculate_crew_timeout_risk(hold_time, crew_data, fc):
                   >
                   <span
                     class="px-3 py-1 bg-slate-800 rounded-md text-sm border border-slate-700/50"
-                    >Pandas</span
+                    >JSON / ETL</span
                   >
                   <span
                     class="px-3 py-1 bg-slate-800 rounded-md text-sm border border-slate-700/50"
-                    >Cost Optimization</span
+                    >Multi-Constraint Optimization</span
                   >
                   <span
                     class="px-3 py-1 bg-slate-800 rounded-md text-sm border border-slate-700/50"
-                    >Decision Modeling</span
+                    >Non-Linear Cost Modeling</span
+                  >
+                  <span
+                    class="px-3 py-1 bg-slate-800 rounded-md text-sm border border-slate-700/50"
+                    >Regulatory Compliance Logic</span
+                  >
+                  <span
+                    class="px-3 py-1 bg-slate-800 rounded-md text-sm border border-slate-700/50"
+                    >Capacity Optimization</span
+                  >
+                  <span
+                    class="px-3 py-1 bg-slate-800 rounded-md text-sm border border-slate-700/50"
+                    >Network Integrity Analysis</span
+                  >
+                  <span
+                    class="px-3 py-1 bg-slate-800 rounded-md text-sm border border-slate-700/50"
+                    >Decision Support Systems</span
+                  >
+                  <span
+                    class="px-3 py-1 bg-logistics-orange/20 text-logistics-orange font-bold rounded-md text-sm border border-logistics-orange/50"
+                    >MCT Cliff Model</span
                   >
                 </div>
               </div>
@@ -508,43 +584,47 @@ def calculate_crew_timeout_risk(hold_time, crew_data, fc):
                 <a
                   href="https://github.com/michaelcampbell215/Hub-Operations-Integrity"
                   target="_blank"
-                  class="text-gray-400 hover:text-white transition-colors"
+                  class="inline-flex items-center text-sm font-bold text-logistics-orange hover:gap-2 transition-all"
                 >
-                  Github Repository <i class="fas fa-arrow-right ml-2"></i>
+                  GitHub Repository <i class="fas fa-arrow-right ml-2"></i>
                 </a>
               </div>
 
+              <!-- Key Metrics Card -->
               <div class="p-8 bg-slate-900 rounded-3xl border border-slate-800">
                 <h4
                   class="text-sm font-bold uppercase tracking-widest text-slate-500 mb-6"
                 >
-                  Key Metrics
+                  Recovery Metrics
                 </h4>
                 <div class="space-y-4">
                   <div class="flex justify-between items-center">
                     <span class="text-sm text-slate-400">Standbys Cleared</span>
                     <span class="text-sm font-bold text-white">43</span>
                   </div>
-                  <div
-                    class="h-px bg-slate-800"
-                  ></div>
+                  <div class="h-px bg-slate-800"></div>
                   <div class="flex justify-between items-center">
-                    <span class="text-sm text-slate-400">Bags Pulled (PPBM)</span>
+                    <span class="text-sm text-slate-400"
+                      >Bags Pulled (PPBM)</span
+                    >
                     <span class="text-sm font-bold text-white">93</span>
                   </div>
-                  <div
-                    class="h-px bg-slate-800"
-                  ></div>
+                  <div class="h-px bg-slate-800"></div>
                   <div class="flex justify-between items-center">
                     <span class="text-sm text-slate-400">Bags Expedited</span>
                     <span class="text-sm font-bold text-white">370</span>
                   </div>
-                  <div
-                    class="h-px bg-slate-800"
-                  ></div>
+                  <div class="h-px bg-slate-800"></div>
                   <div class="flex justify-between items-center">
                     <span class="text-sm text-slate-400">Flights Analyzed</span>
                     <span class="text-sm font-bold text-white">10</span>
+                  </div>
+                  <div class="h-px bg-slate-800"></div>
+                  <div class="flex justify-between items-center">
+                    <span class="text-sm text-slate-400">Cargo ROI</span>
+                    <span class="text-sm font-bold text-logistics-orange"
+                      >~100x</span
+                    >
                   </div>
                 </div>
               </div>
@@ -553,7 +633,9 @@ def calculate_crew_timeout_risk(hold_time, crew_data, fc):
         </div>
       </section>
 
-      <!-- Contact CTA -->
+      <!-- ═══════════════════════════════════════
+           CONTACT
+      ═══════════════════════════════════════ -->
       <section
         id="contact"
         class="py-24 bg-slate-900 border-t border-slate-800"
@@ -590,7 +672,6 @@ def calculate_crew_timeout_risk(hold_time, crew_data, fc):
       <p>&copy; 2026 Michael Campbell. Optimized for Impact.</p>
     </footer>
 
-    <!-- Prism.js -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-python.min.js"></script>
   </body>

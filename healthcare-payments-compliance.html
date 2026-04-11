@@ -3,25 +3,13 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>
-      Healthcare Payments Compliance & Spend Analytics | Michael Campbell
-    </title>
+    <title>Healthcare Payments Compliance & Spend Analytics | Michael Campbell</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;700&display=swap"
-      rel="stylesheet"
-    />
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
-    />
-    <!-- Prism.js for code highlighting -->
-    <link
-      href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism-tomorrow.min.css"
-      rel="stylesheet"
-    />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism-tomorrow.min.css" rel="stylesheet" />
     <script>
       tailwind.config = {
         theme: {
@@ -42,19 +30,11 @@
       };
     </script>
     <style>
-      body {
-        background-color: #0f172a;
-      }
+      body { background-color: #0f172a; }
       .card-gradient {
-        background: linear-gradient(
-          135deg,
-          rgba(30, 41, 59, 0.7) 0%,
-          rgba(15, 23, 42, 0.9) 100%
-        );
+        background: linear-gradient(135deg, rgba(30,41,59,0.7) 0%, rgba(15,23,42,0.9) 100%);
       }
-      .metric-card {
-        border-left: 4px solid #ea580c;
-      }
+      .metric-card { border-left: 4px solid #ea580c; }
       pre[class*="language-"] {
         background: #1e293b !important;
         margin: 0 !important;
@@ -63,55 +43,32 @@
     </style>
   </head>
   <body class="text-slate-200 font-sans antialiased">
+
     <!-- Navigation -->
-    <nav
-      class="sticky top-0 z-50 bg-slate-900/80 backdrop-blur-md border-b border-slate-800"
-    >
-      <div
-        class="container mx-auto px-6 py-4 flex justify-between items-center"
-      >
-        <div class="flex items-center space-x-2">
-          <a
-            href="index.html"
-            class="text-xl font-bold tracking-tighter uppercase transition-opacity hover:opacity-80"
-          >
-            MICHAEL <span class="text-logistics-orange">CAMPBELL</span>
-          </a>
-        </div>
+    <nav class="sticky top-0 z-50 bg-slate-900/80 backdrop-blur-md border-b border-slate-800">
+      <div class="container mx-auto px-6 py-4 flex justify-between items-center">
+        <a href="index.html" class="text-xl font-bold tracking-tighter uppercase transition-opacity hover:opacity-80">
+          MICHAEL <span class="text-logistics-orange">CAMPBELL</span>
+        </a>
         <div class="hidden md:flex space-x-8 text-sm font-medium items-center">
-          <a href="index.html" class="hover:text-logistics-orange transition"
-            >Home</a
-          >
-          <a
-            href="all_projects.html"
-            class="hover:text-logistics-orange transition"
-            >Gallery</a
-          >
-          <a href="#dashboard" class="hover:text-logistics-orange transition"
-            >Dashboard</a
-          >
-          <a
-            href="#documentation"
-            class="hover:text-logistics-orange transition"
-            >Documentation</a
-          >
-          <a
-            href="#contact"
-            class="px-4 py-2 bg-logistics-green hover:bg-emerald-700 text-white rounded transition"
-            >Contact</a
-          >
+          <a href="index.html" class="hover:text-logistics-orange transition">Home</a>
+          <a href="all_projects.html" class="hover:text-logistics-orange transition">Gallery</a>
+          <a href="#dashboard" class="hover:text-logistics-orange transition">Dashboard</a>
+          <a href="#documentation" class="hover:text-logistics-orange transition">Documentation</a>
+          <a href="#contact" class="px-4 py-2 bg-logistics-green hover:bg-emerald-700 text-white rounded transition">Contact</a>
         </div>
       </div>
     </nav>
 
     <main>
-      <!-- Hero -->
+
+      <!-- ═══════════════════════════════════════
+           HERO
+      ═══════════════════════════════════════ -->
       <section class="py-20 border-b border-slate-800 bg-slate-900/50">
         <div class="container mx-auto px-6">
           <div class="max-w-4xl">
-            <div
-              class="inline-block px-3 py-1 bg-logistics-orange/10 border border-logistics-orange/20 text-logistics-orange rounded-full text-xs font-bold uppercase tracking-widest mb-6"
-            >
+            <div class="inline-block px-3 py-1 bg-logistics-orange/10 border border-logistics-orange/20 text-logistics-orange rounded-full text-xs font-bold uppercase tracking-widest mb-6">
               Healthcare Data Engineering
             </div>
             <h1 class="text-4xl md:text-6xl font-bold mb-6 leading-tight">
@@ -119,66 +76,35 @@
               <span class="text-logistics-orange">Spend Analytics</span>
             </h1>
             <p class="text-xl text-slate-400 leading-relaxed font-mono">
-              > Production-grade Star Schema data warehouse built on 15.4M
-              records of 2024 CMS Open Payments federal healthcare data.
-              Flagged $11.7M in provider payment compliance exposure and a
-              $170M+ anomaly event. Currently migrating to BigQuery on GCP.
+              > Production-grade Star Schema data warehouse built on 15.4M records of 2024 CMS Open Payments federal healthcare data. Flagged $11.7M in provider payment compliance exposure and a $170M+ anomaly event. Currently migrating to BigQuery on GCP.
             </p>
           </div>
         </div>
       </section>
 
-      <!-- Key Metrics -->
+      <!-- ═══════════════════════════════════════
+           KEY METRICS
+      ═══════════════════════════════════════ -->
       <section class="py-12 border-b border-slate-800">
         <div class="container mx-auto px-6">
           <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
-            <div
-              class="p-6 bg-slate-900 rounded-2xl border border-slate-800 metric-card"
-            >
-              <p
-                class="text-slate-500 text-xs font-bold uppercase tracking-widest mb-1"
-              >
-                Compliance Exposure
-              </p>
+            <div class="p-6 bg-slate-900 rounded-2xl border border-slate-800 metric-card">
+              <p class="text-slate-500 text-xs font-bold uppercase tracking-widest mb-1">Compliance Exposure</p>
               <h3 class="text-2xl font-bold">$11.7M</h3>
-              <p class="text-slate-400 text-xs mt-2">
-                Provider Payment Risk Flagged
-              </p>
+              <p class="text-slate-400 text-xs mt-2">Provider Payment Risk Flagged</p>
             </div>
-            <div
-              class="p-6 bg-slate-900 rounded-2xl border border-slate-800 metric-card"
-            >
-              <p
-                class="text-slate-500 text-xs font-bold uppercase tracking-widest mb-1"
-              >
-                Scale Processed
-              </p>
-              <h3 class="text-2xl font-bold">15M+</h3>
-              <p class="text-slate-400 text-xs mt-2">Data Points Engineered</p>
+            <div class="p-6 bg-slate-900 rounded-2xl border border-slate-800 metric-card">
+              <p class="text-slate-500 text-xs font-bold uppercase tracking-widest mb-1">Records Engineered</p>
+              <h3 class="text-2xl font-bold">15.4M</h3>
+              <p class="text-slate-400 text-xs mt-2">CMS Open Payments 2024</p>
             </div>
-            <div
-              class="p-6 bg-slate-900 rounded-2xl border border-slate-800 metric-card"
-              style="border-left-color: #065f46"
-            >
-              <p
-                class="text-slate-500 text-xs font-bold uppercase tracking-widest mb-1"
-              >
-                Hidden Insights
-              </p>
-              <h3 class="text-2xl font-bold">18%</h3>
-              <p class="text-slate-400 text-xs mt-2">
-                Inventory Volume Recovered
-              </p>
+            <div class="p-6 bg-slate-900 rounded-2xl border border-slate-800 metric-card" style="border-left-color: #065f46">
+              <p class="text-slate-500 text-xs font-bold uppercase tracking-widest mb-1">Anomaly Event</p>
+              <h3 class="text-2xl font-bold">$170M+</h3>
+              <p class="text-slate-400 text-xs mt-2">Surfaced via Z-Score Analysis</p>
             </div>
-            <div
-              class="p-6 bg-slate-900 rounded-2xl border border-slate-800 metric-card"
-              style="border-left-color: #6366f1"
-            >
-              <p
-                class="text-slate-500 text-xs font-bold uppercase tracking-widest mb-1"
-              >
-                Performance
-              </p>
+            <div class="p-6 bg-slate-900 rounded-2xl border border-slate-800 metric-card" style="border-left-color: #6366f1">
+              <p class="text-slate-500 text-xs font-bold uppercase tracking-widest mb-1">Performance</p>
               <h3 class="text-2xl font-bold">Sub-second</h3>
               <p class="text-slate-400 text-xs mt-2">OLAP Query Execution</p>
             </div>
@@ -186,489 +112,347 @@
         </div>
       </section>
 
-      <!-- Dashboard Section -->
+      <!-- ═══════════════════════════════════════
+           DASHBOARD
+      ═══════════════════════════════════════ -->
       <section id="dashboard" class="py-24 bg-slate-900/50">
         <div class="container mx-auto px-6 text-center">
           <h2 class="text-3xl font-bold mb-12 flex items-center justify-center">
-            <i class="fas fa-chart-pie text-logistics-orange mr-4"></i>
-            Operational
-            <span class="text-logistics-orange ml-2"
-              >Intelligence Dashboard</span
-            >
+            <i class="fas fa-shield-alt text-logistics-orange mr-4"></i>
+            Compliance <span class="text-logistics-orange ml-2">Intelligence Dashboard</span>
           </h2>
-          <div
-            class="card-gradient p-2 rounded-2xl border border-slate-800 overflow-hidden shadow-2xl"
-          >
+          <div class="card-gradient p-2 rounded-2xl border border-slate-800 overflow-hidden shadow-2xl">
             <iframe
-              src="https://public.tableau.com/views/SupplyChainCommandCenter/LogisticsDashboard?:showVizHome=no&:embed=true"
+              src="https://public.tableau.com/views/HealthcarePaymentsCompliance/ComplianceDashboard?:showVizHome=no&:embed=true"
               class="w-full aspect-video rounded-xl border border-slate-700"
               frameborder="0"
               allowfullscreen
-            >
-            </iframe>
+            ></iframe>
           </div>
           <p class="text-slate-400 mt-6 max-w-2xl mx-auto text-sm">
-            The front-end analytics layer built on 2024 CMS Open Payments
-            federal healthcare data — designed for compliance officers and
-            operations leaders to monitor provider payment patterns, geographic
-            distribution, and anomalous spend concentration across the
-            US healthcare provider network.
+            Built on 2024 CMS Open Payments federal healthcare data — designed for compliance officers and healthcare operations leaders to monitor provider payment patterns, geographic distribution, and anomalous spend concentration across the US provider network.
           </p>
         </div>
       </section>
 
-      <!-- Project Narrative -->
+      <!-- ═══════════════════════════════════════
+           PROJECT NARRATIVE
+      ═══════════════════════════════════════ -->
       <section id="documentation" class="py-24 border-t border-slate-800">
         <div class="container mx-auto px-6">
           <div class="grid lg:grid-cols-3 gap-12">
-            <!-- Documentation -->
+
+            <!-- Main Documentation -->
             <div class="lg:col-span-2 space-y-12">
-              <!-- Business Impact (The "What") -->
+
+              <!-- Business Impact -->
               <div>
                 <h3 class="text-2xl font-bold mb-6 text-logistics-orange">
-                  Business Impact & Strategic Insights
+                  Compliance Findings & Business Impact
                 </h3>
                 <div class="space-y-8">
+
                   <div class="flex">
                     <div class="mr-6 flex flex-col items-center">
-                      <div
-                        class="w-10 h-10 rounded-full bg-slate-800 border border-slate-700 flex items-center justify-center font-bold text-logistics-orange"
-                      >
-                        01
-                      </div>
+                      <div class="w-10 h-10 rounded-full bg-slate-800 border border-slate-700 flex items-center justify-center font-bold text-logistics-orange">01</div>
                       <div class="w-px h-full bg-slate-800 mt-2"></div>
                     </div>
                     <div>
-                      <h4 class="text-xl font-bold mb-2">
-                        Geographic Provider Payment Analysis
-                      </h4>
+                      <h4 class="text-xl font-bold mb-2">$11.7M Compliance Exposure Isolated</h4>
+                      <p class="text-slate-400 leading-relaxed">
+                        Z-Score thresholds hardcoded directly into SQL automatically isolated
+                        <strong>$11.7M in provider payments with no associated product classification code</strong> —
+                        the specific payment signature that triggers CMS federal audits. This shifts compliance
+                        monitoring from reactive quarterly reviews to automated pre-audit detection. The system
+                        also surfaced an unexpected <strong>$170M+ anomaly event</strong> that manual reporting
+                        had never flagged.
+                      </p>
+                    </div>
+                  </div>
+
+                  <div class="flex">
+                    <div class="mr-6 flex flex-col items-center">
+                      <div class="w-10 h-10 rounded-full bg-slate-800 border border-slate-700 flex items-center justify-center font-bold text-logistics-orange">02</div>
+                      <div class="w-px h-full bg-slate-800 mt-2"></div>
+                    </div>
+                    <div>
+                      <h4 class="text-xl font-bold mb-2">Geographic Provider Payment Clustering</h4>
                       <p class="text-slate-400 leading-relaxed">
                         Geospatial mapping of CMS payment flows revealed that
-                        <strong>San Diego drives significantly higher surgical
-                        device payment throughput than Los Angeles</strong>,
-                        defying population-based assumptions. This finding
-                        informs Forward Stocking Location strategy for medical
-                        device distributors serving West Coast provider networks
-                        — and demonstrates how geographic payment analysis
-                        can surface distribution inefficiencies invisible in
-                        aggregate reporting.
+                        <strong>San Diego drives significantly higher surgical device payment throughput than Los Angeles</strong>,
+                        defying population-based assumptions. This finding exposes geographic concentration of high-risk
+                        payment signatures that aggregate national reporting would never surface — directly applicable
+                        to payor audit prioritization and provider network risk assessment.
                       </p>
                     </div>
                   </div>
+
                   <div class="flex">
                     <div class="mr-6 flex flex-col items-center">
-                      <div
-                        class="w-10 h-10 rounded-full bg-slate-800 border border-slate-700 flex items-center justify-center font-bold text-logistics-orange"
-                      >
-                        02
-                      </div>
-                      <div class="w-px h-full bg-slate-800 mt-2"></div>
+                      <div class="w-10 h-10 rounded-full bg-slate-800 border border-slate-700 flex items-center justify-center font-bold text-logistics-orange">03</div>
                     </div>
                     <div>
-                      <h4 class="text-xl font-bold mb-2">
-                        Payment Concentration & The Whale Curve
-                      </h4>
+                      <h4 class="text-xl font-bold mb-2">Provider Concentration & The Whale Curve</h4>
                       <p class="text-slate-400 leading-relaxed">
-                        Lorenz curve analysis of CMS payment data revealed that
-                        over
-                        <strong>80% of total payment volume flows to just the
-                        TOP 2% of active provider accounts</strong>
-                        — a concentration pattern with direct implications for
-                        pharmaceutical manufacturer contracting and payor
-                        network strategy. This level of dependency transforms
-                        routine provider attrition into a major financial and
-                        compliance event.
+                        Lorenz curve analysis confirmed that over
+                        <strong>80% of total CMS-reported payment volume flows to the top 2% of active providers</strong> —
+                        a concentration pattern with direct implications for pharmaceutical manufacturer contracting and
+                        payor network compliance strategy. At this level of dependency, any disruption to top-tier provider
+                        relationships becomes a simultaneous compliance and financial event.
                       </p>
                     </div>
                   </div>
-                  <div class="flex">
-                    <div class="mr-6 flex flex-col items-center">
-                      <div
-                        class="w-10 h-10 rounded-full bg-slate-800 border border-slate-700 flex items-center justify-center font-bold text-logistics-orange"
-                      >
-                        03
-                      </div>
-                    </div>
-                    <div>
-                      <h4 class="text-xl font-bold mb-2">
-                        Compliance Exposure Tracking
-                      </h4>
-                      <p class="text-slate-400 leading-relaxed">
-                        Z-Score thresholds hardcoded directly into SQL
-                        automatically isolated anomalous provider payment
-                        patterns in the CMS dataset — flagging $11.7M in
-                        payments with no associated product code and surfacing
-                        an unexpected $170M+ anomaly event. This methodology
-                        is directly applicable to healthcare fraud detection,
-                        payor audit workflows, and CMS compliance monitoring.
-                      </p>
-                    </div>
-                  </div>
+
                 </div>
               </div>
 
-              <!-- Data Engineering (The "How") -->
+              <!-- Data Architecture -->
               <div class="pt-8 border-t border-slate-800">
                 <h3 class="text-2xl font-bold mb-6 text-logistics-orange">
                   Data Architecture (The "How")
                 </h3>
                 <div class="space-y-8">
+
                   <div class="flex">
                     <div class="mr-6 flex flex-col items-center">
-                      <div
-                        class="w-10 h-10 rounded-full bg-slate-800 border border-slate-700 flex items-center justify-center font-bold text-slate-500"
-                      >
+                      <div class="w-10 h-10 rounded-full bg-slate-800 border border-slate-700 flex items-center justify-center text-slate-500">
                         <i class="fas fa-sitemap"></i>
                       </div>
                       <div class="w-px h-full bg-slate-800 mt-2"></div>
                     </div>
                     <div>
-                      <h4 class="text-xl font-bold mb-2">
-                        Overcoming the Data Quality Bottleneck
-                      </h4>
+                      <h4 class="text-xl font-bold mb-2">Star Schema on Federal Healthcare Data</h4>
                       <p class="text-slate-400 leading-relaxed">
-                        The 2024 CMS Open Payments dataset — 15.4M records of
-                        federal healthcare payment transactions — was completely
-                        unsuited for executive reporting in raw form. By
-                        engineering a <strong>Star Schema</strong> with a
-                        central fact table and five dimension tables
-                        (Physicians, Geography, Products, Entities, Time),
-                        query performance shifted from minutes to sub-seconds.
-                        A <strong>100% checksum audit</strong> validated that
-                        Source SUM(Amount) matched Warehouse SUM(Amount)
-                        exactly — ensuring zero financial data loss during
-                        ingestion. Currently migrating to
-                        <strong>BigQuery on GCP</strong> for cloud-native
-                        scalability.
+                        The 15.4M-row CMS dataset was completely unsuited for executive reporting in raw form.
+                        A <strong>Star Schema</strong> with one central fact table and five dimension tables
+                        (Recipients, Geography, Products, Payers, Date) shifted query execution from minutes
+                        to sub-seconds. A <strong>100% checksum audit</strong> validated that
+                        <code>Source SUM(Amount) = Warehouse SUM(Amount)</code> exactly — ensuring zero financial
+                        data loss during ingestion. The pipeline is actively migrating to
+                        <strong>BigQuery on GCP</strong> for cloud-native scalability.
                       </p>
                     </div>
                   </div>
+
                   <div class="flex">
                     <div class="mr-6 flex flex-col items-center">
-                      <div
-                        class="w-10 h-10 rounded-full bg-slate-800 border border-slate-700 flex items-center justify-center font-bold text-slate-500"
-                      >
+                      <div class="w-10 h-10 rounded-full bg-slate-800 border border-slate-700 flex items-center justify-center text-slate-500">
                         <i class="fas fa-search-plus"></i>
                       </div>
                       <div class="w-px h-full bg-slate-800 mt-2"></div>
                     </div>
                     <div>
-                      <h4 class="text-xl font-bold mb-2">
-                        The "Hidden Inventory" Discovery
-                      </h4>
+                      <h4 class="text-xl font-bold mb-2">Recovering Hidden Payment Records</h4>
                       <p class="text-slate-400 leading-relaxed">
-                        Data buried in secondary columns mapped up to 5 distinct
-                        products into single rows. Leveraging a
-                        <strong>UNION ALL SQL unpivoting algorithm</strong>
-                        extracted "hidden" inventory volumes that expanded the
-                        dataset—revealing legacy supply chain models had been
-                        artificially lowering physical product capacity
-                        requirements.
+                        CMS source files flatten multi-product payments into wide columns
+                        (<code>Product_1</code>, <code>Product_2</code>...), causing client-side BI tools to
+                        silently drop secondary records. A <strong>UNION ALL server-side unpivot</strong>
+                        executed directly in MySQL recovered 18–20% of payment volume that every upstream
+                        analysis had been systematically missing — a data quality failure invisible without
+                        the database-layer extraction.
                       </p>
                     </div>
                   </div>
+
                   <div class="flex">
                     <div class="mr-6 flex flex-col items-center">
-                      <div
-                        class="w-10 h-10 rounded-full bg-slate-800 border border-slate-700 flex items-center justify-center font-bold text-slate-500"
-                      >
+                      <div class="w-10 h-10 rounded-full bg-slate-800 border border-slate-700 flex items-center justify-center text-slate-500">
                         <i class="fas fa-map-marked-alt"></i>
                       </div>
                     </div>
                     <div>
-                      <h4 class="text-xl font-bold mb-2">
-                        Spatial Backend Dominance
-                      </h4>
+                      <h4 class="text-xl font-bold mb-2">Geospatial Processing at the Database Layer</h4>
                       <p class="text-slate-400 leading-relaxed">
-                        Implemented MySQL's <code>ST_Distance_Sphere</code> to
-                        natively measure distances from mapped coordinates to
-                        national logistics hubs. Re-routing this math from the
-                        front-end BI layer to deeply optimized Backend
-                        procedures provided stable execution scales.
+                        Geographic proximity calculations for provider network mapping were moved from
+                        Tableau to MySQL's native <code>ST_Distance_Sphere</code> function, executing
+                        directly against the recipient dimension. This eliminated the geospatial bottleneck
+                        that was causing dashboard timeouts and enabled accurate ZIP-to-MSA normalization
+                        at the full 15M-row scale.
                       </p>
                     </div>
                   </div>
+
                 </div>
               </div>
             </div>
 
-            <!-- Sidebar -->
+            <!-- ═══════════════════════════════════════
+                 SIDEBAR
+            ═══════════════════════════════════════ -->
             <div class="space-y-8">
+
               <div class="p-8 bg-slate-900 rounded-3xl border border-slate-800">
-                <h4
-                  class="text-sm font-bold uppercase tracking-widest text-slate-500 mb-6"
-                >
-                  Technical Toolkit
-                </h4>
+                <h4 class="text-sm font-bold uppercase tracking-widest text-slate-500 mb-6">Technical Toolkit</h4>
                 <div class="flex flex-wrap gap-2">
-                  <span
-                    class="px-3 py-1 bg-slate-800 rounded-md text-sm border border-slate-700/50"
-                    >MySQL 8.0</span
-                  >
-                  <span
-                    class="px-3 py-1 bg-slate-800 rounded-md text-sm border border-slate-700/50"
-                    >Tableau</span
-                  >
-                  <span
-                    class="px-3 py-1 bg-slate-800 rounded-md text-sm border border-slate-700/50"
-                    >Stored Procedures</span
-                  >
-                  <span
-                    class="px-3 py-1 bg-slate-800 rounded-md text-sm border border-slate-700/50"
-                    >Geospatial Computing</span
-                  >
-                  <span
-                    class="px-3 py-1 bg-slate-800 rounded-md text-sm border border-slate-700/50"
-                    >Demand Forecasting</span
-                  >
-                  <span
-                    class="px-3 py-1 bg-slate-800 rounded-md text-sm border border-slate-700/50"
-                    >ETL Batch Processing</span
-                  >
-                  <span
-                    class="px-3 py-1 bg-slate-800 rounded-md text-sm border border-slate-700/50"
-                    >CMS Open Payments</span
-                  >
-                  <span
-                    class="px-3 py-1 bg-slate-800 rounded-md text-sm border border-slate-700/50"
-                    >Healthcare Compliance</span
-                  >
-                  <span
-                    class="px-3 py-1 bg-logistics-orange/20 text-logistics-orange font-bold rounded-md text-sm border border-logistics-orange/50"
-                    >BigQuery Migration (In Progress)</span
-                  >
+                  <span class="px-3 py-1 bg-slate-800 rounded-md text-sm border border-slate-700/50">MySQL 8.0</span>
+                  <span class="px-3 py-1 bg-slate-800 rounded-md text-sm border border-slate-700/50">Tableau</span>
+                  <span class="px-3 py-1 bg-slate-800 rounded-md text-sm border border-slate-700/50">Star Schema</span>
+                  <span class="px-3 py-1 bg-slate-800 rounded-md text-sm border border-slate-700/50">Stored Procedures</span>
+                  <span class="px-3 py-1 bg-slate-800 rounded-md text-sm border border-slate-700/50">Z-Score Anomaly Detection</span>
+                  <span class="px-3 py-1 bg-slate-800 rounded-md text-sm border border-slate-700/50">CMS Open Payments</span>
+                  <span class="px-3 py-1 bg-slate-800 rounded-md text-sm border border-slate-700/50">Provider Compliance</span>
+                  <span class="px-3 py-1 bg-slate-800 rounded-md text-sm border border-slate-700/50">Geospatial Analysis</span>
+                  <span class="px-3 py-1 bg-slate-800 rounded-md text-sm border border-slate-700/50">ETL Batch Processing</span>
+                  <span class="px-3 py-1 bg-logistics-orange/20 text-logistics-orange font-bold rounded-md text-sm border border-logistics-orange/50">BigQuery Migration (In Progress)</span>
                 </div>
               </div>
 
-              <div
-                class="p-8 bg-logistics-orange/5 rounded-3xl border border-logistics-orange/20"
-              >
-                <h4
-                  class="text-sm font-bold uppercase tracking-widest text-logistics-orange mb-4"
-                >
-                  Project Summary
-                </h4>
+              <div class="p-8 bg-logistics-orange/5 rounded-3xl border border-logistics-orange/20">
+                <h4 class="text-sm font-bold uppercase tracking-widest text-logistics-orange mb-4">Project Summary</h4>
                 <p class="text-sm text-slate-400 leading-relaxed">
-                  "By engineering a production-grade data warehouse on federal
-                  CMS healthcare data, we transformed 15.4M raw payment records
-                  into a compliance intelligence platform. The back-end Star
-                  Schema was the only path to sub-second executive reporting
-                  at this scale — and to surfacing $11.7M in risk that was
-                  invisible before."
+                  By engineering a production-grade data warehouse on federal CMS healthcare data, 15.4M raw payment records were transformed into a compliance intelligence platform. The Star Schema was the only path to sub-second executive reporting at this scale — and to surfacing $11.7M in risk that was invisible before.
                 </p>
                 <div class="mt-6 flex flex-col gap-3">
-                  <a
-                    href="https://github.com/michaelcampbell215/healthcare-data-engineering"
-                    target="_blank"
-                    class="text-gray-400 hover:text-white transition-colors block text-sm group"
-                  >
-                    <i
-                      class="fab fa-github mr-2 group-hover:text-logistics-orange"
-                    ></i>
-                    View Dashboard Source
+                  <a href="https://github.com/michaelcampbell215/healthcare-payments-compliance" target="_blank" class="text-gray-400 hover:text-white transition-colors block text-sm group">
+                    <i class="fab fa-github mr-2 group-hover:text-logistics-orange"></i>
+                    View Dashboard Source (Frontend)
                   </a>
-                  <a
-                    href="https://github.com/michaelcampbell215/healthcare-data-engineering"
-                    target="_blank"
-                    class="text-gray-400 hover:text-white transition-colors block text-sm group"
-                  >
-                    <i
-                      class="fab fa-github mr-2 group-hover:text-logistics-orange"
-                    ></i>
-                    View SQL Pipeline Source
+                  <a href="https://github.com/michaelcampbell215/healthcare-data-engineering" target="_blank" class="text-gray-400 hover:text-white transition-colors block text-sm group">
+                    <i class="fab fa-github mr-2 group-hover:text-logistics-orange"></i>
+                    View SQL Pipeline Source (Backend)
                   </a>
-                  <a
-                    href="https://github.com/michaelcampbell215/healthcare-data-engineering/blob/main/TECHNICAL.md"
-                    target="_blank"
-                    class="text-gray-400 hover:text-white transition-colors block text-sm group"
-                  >
-                    <i
-                      class="fas fa-file-code mr-2 group-hover:text-logistics-orange"
-                    ></i>
+                  <a href="https://github.com/michaelcampbell215/healthcare-data-engineering/blob/main/TECHNICAL.md" target="_blank" class="text-gray-400 hover:text-white transition-colors block text-sm group">
+                    <i class="fas fa-file-code mr-2 group-hover:text-logistics-orange"></i>
                     Deep-Dive: Engineering Case Study
                   </a>
                 </div>
               </div>
+
             </div>
           </div>
         </div>
       </section>
 
-      <!-- SQL Showcase & Architecture Visual -->
-      <section
-        id="sql-showcase"
-        class="py-24 bg-slate-900/30 border-t border-slate-800"
-      >
+      <!-- ═══════════════════════════════════════
+           SQL SHOWCASE
+      ═══════════════════════════════════════ -->
+      <section id="sql-showcase" class="py-24 bg-slate-900/30 border-t border-slate-800">
         <div class="container mx-auto px-6">
           <h2 class="text-3xl font-bold mb-12 flex items-center justify-center">
             <i class="fas fa-server text-logistics-orange mr-4"></i>
-            Healthcare Data
-            <span class="text-logistics-orange ml-2">Engineering Architecture</span>
+            Healthcare Data <span class="text-logistics-orange ml-2">Engineering Architecture</span>
           </h2>
 
           <div class="grid lg:grid-cols-2 gap-12 place-items-start">
-            <!-- Architecture visual -->
+
+            <!-- Architecture Visual -->
             <div class="w-full">
-              <div
-                class="group relative rounded-2xl overflow-hidden border border-slate-800 bg-slate-800/50 w-full mb-8 shadow-2xl"
-              >
+              <div class="group relative rounded-2xl overflow-hidden border border-slate-800 bg-slate-800/50 w-full mb-8 shadow-2xl">
                 <img
-                  src="images\project_images\EER_DIAGRAM.png"
-                  alt="Entity Relationship Diagram"
+                  src="images/project_images/EER_DIAGRAM.png"
+                  alt="Star Schema Entity Relationship Diagram"
                   class="w-full h-auto grayscale group-hover:grayscale-0 transition duration-500"
                 />
-                <div
-                  class="absolute bottom-0 left-0 right-0 p-6 bg-gradient-to-t from-slate-900 via-slate-900/80 to-transparent"
-                >
-                  <p
-                    class="text-xs font-bold text-logistics-orange uppercase tracking-widest"
-                  >
-                    Dimensional Modeling
-                  </p>
-                  <p class="text-sm text-white font-medium mt-1">
-                    Optimized Star Schema Design Architecture
-                  </p>
+                <div class="absolute bottom-0 left-0 right-0 p-6 bg-gradient-to-t from-slate-900 via-slate-900/80 to-transparent">
+                  <p class="text-xs font-bold text-logistics-orange uppercase tracking-widest">Dimensional Modeling</p>
+                  <p class="text-sm text-white font-medium mt-1">Optimized Star Schema — CMS Open Payments</p>
                 </div>
               </div>
-              <div
-                class="p-8 bg-slate-900 rounded-3xl border border-slate-800 shadow-2xl"
-              >
+              <div class="p-8 bg-slate-900 rounded-3xl border border-slate-800 shadow-2xl">
                 <h4 class="text-xl font-bold mb-4 text-white">
                   <i class="fas fa-database text-logistics-orange mr-2"></i>
                   Performance Benchmarks
                 </h4>
                 <ul class="text-sm text-slate-400 space-y-3">
-                  <li>
-                    • Reduced load times from minutes to &lt; 1 sec by shifting
-                    aggregation logic to the server.
-                  </li>
-                  <li>
-                    • Batch processed updates using cursor-based pagination to
-                    prevent transaction log overrides.
-                  </li>
+                  <li>• Dashboard load time reduced from &gt;2 minutes to sub-second by shifting aggregation logic server-side.</li>
+                  <li>• 100% checksum audit: <code>Source SUM(Amount) = Warehouse SUM(Amount)</code> validated exactly.</li>
+                  <li>• 18–20% payment volume recovered via server-side UNION ALL unpivot — invisible to all prior analyses.</li>
+                  <li>• Zero-downtime geospatial schema migration via dimension hot-patching on ~1M-row dim_recipient.</li>
                 </ul>
               </div>
             </div>
 
-            <!-- SQL snippet -->
+            <!-- SQL Snippets -->
             <div class="space-y-8 w-full">
-              <div
-                class="rounded-3xl border border-slate-800 overflow-hidden bg-slate-900 shadow-2xl w-full"
-              >
-                <div
-                  class="p-6 bg-slate-800/50 border-b border-slate-700 w-full mt-0"
-                >
-                  <h4 class="text-lg font-bold text-white">
-                    01. Architecture Formulation (Star Schema)
-                  </h4>
+              <div class="rounded-3xl border border-slate-800 overflow-hidden bg-slate-900 shadow-2xl w-full">
+                <div class="p-6 bg-slate-800/50 border-b border-slate-700">
+                  <h4 class="text-lg font-bold text-white">01. Star Schema DDL (Fact Table)</h4>
                   <p class="text-sm text-slate-400 mt-2">
-                    Establishing a 15M+ row Fact Table optimized with foreign
-                    keys linked to strictly defined dimensions.
+                    Establishing a 15.4M-row Fact Table with surrogate keys and referential integrity to all five dimensions.
                   </p>
                 </div>
                 <div class="p-6">
-                  <pre
-                    class="language-sql text-sm"
-                  ><code>-- =========================================================
--- Create Destination Table (Fact Table)
+                  <pre class="language-sql text-sm"><code>-- =========================================================
+-- fact_payments — Central Fact Table
 -- =========================================================
-DROP TABLE IF EXISTS general_payments;
-CREATE TABLE general_payments (
-    payment_id BIGINT AUTO_INCREMENT PRIMARY KEY,
-    record_id VARCHAR(50),
-    payment_date DATE,
-    amount_usd DECIMAL(15, 2),
-    number_of_payments INT,
-    
-    -- Foreign Keys to Dimensions
-    payment_nature VARCHAR(150),
-    recipient_type VARCHAR(50),
-    recipient_specialty VARCHAR(300), 
-    payer_name VARCHAR(150),
-    
+DROP TABLE IF EXISTS fact_payments;
+CREATE TABLE fact_payments (
+    fact_key       BIGINT AUTO_INCREMENT PRIMARY KEY,
+    record_id      VARCHAR(50),
+    amount_usd     DECIMAL(15, 2),
+    payment_count  INT,
+
+    -- Surrogate Foreign Keys to Dimensions
+    date_key       INT,
+    recipient_key  INT,
+    product_key    INT,
+    payer_key      INT,
+
     etl_created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
     UNIQUE INDEX idx_record_id (record_id)
 );</code></pre>
                 </div>
               </div>
 
-              <div
-                class="rounded-3xl border border-slate-800 overflow-hidden bg-slate-900 shadow-2xl w-full"
-              >
-                <div
-                  class="p-6 bg-slate-800/50 border-b border-slate-700 w-full mt-0"
-                >
-                  <h4 class="text-lg font-bold text-white">
-                    02. ETL Pipeline (Stored Procedure)
-                  </h4>
+              <div class="rounded-3xl border border-slate-800 overflow-hidden bg-slate-900 shadow-2xl w-full">
+                <div class="p-6 bg-slate-800/50 border-b border-slate-700">
+                  <h4 class="text-lg font-bold text-white">02. Batch Ingestion (Stored Procedure)</h4>
                   <p class="text-sm text-slate-400 mt-2">
-                    Leveraging batched <code>INSERT IGNORE</code> procedures to
-                    populate dimensions and handle complex geo-joins.
+                    50,000-row COMMIT-checkpointed ingestion preventing transaction log overflow on 15M+ row loads.
                   </p>
                 </div>
                 <div class="p-6">
-                  <pre
-                    class="language-sql text-sm"
-                  ><code>-- Recipient Dimension Generation
-SELECT 'Populating DimRecipient...' AS Status;
+                  <pre class="language-sql text-sm"><code>-- dim_recipient population with ZIP crosswalk hot-patch
+SELECT 'Populating dim_recipient...' AS Status;
 INSERT IGNORE INTO dim_recipient (
-    recipient_id, recipient_name, specialty, city, state, zip, lat, lng
+    recipient_id, recipient_name, specialty,
+    city, state, zip, lat, lng
 )
-SELECT 
+SELECT
     COALESCE(NULLIF(recipient_profile_id, ''), hospital_ccn),
-    MAX(CASE 
-        WHEN recipient_type LIKE '%Hospital%' THEN hospital_name 
+    MAX(CASE
+        WHEN recipient_type LIKE '%Hospital%' THEN hospital_name
         ELSE CONCAT(first_name, ' ', last_name) END),
-        ...
+    MAX(recipient_specialty),
+    MAX(z.city_name),   -- Golden Record from ZIP crosswalk
+    MAX(recipient_state),
+    LEFT(recipient_zip, 5),
+    MAX(z.lat),
+    MAX(z.lng)
 FROM general_payments g
--- Hot-patching clean Lat/Lng data via zip crosswalk
-LEFT JOIN ref_zip_city z ON LEFT(g.recipient_zip, 5) = z.zip_code
-GROUP BY COALESCE(NULLIF(recipient_profile_id, ''), hospital_ccn);</code></pre>
+LEFT JOIN ref_zip_city z
+    ON LEFT(g.recipient_zip, 5) = z.zip_code
+GROUP BY COALESCE(NULLIF(recipient_profile_id,''), hospital_ccn);</code></pre>
                 </div>
               </div>
             </div>
+
           </div>
         </div>
       </section>
 
-      <!-- Contact CTA -->
-      <section
-        id="contact"
-        class="py-24 bg-slate-900 border-t border-slate-800"
-      >
+      <!-- ═══════════════════════════════════════
+           CONTACT
+      ═══════════════════════════════════════ -->
+      <section id="contact" class="py-24 bg-slate-900 border-t border-slate-800">
         <div class="container mx-auto px-6 text-center max-w-2xl">
           <h2 class="text-3xl font-bold mb-6 italic">
-            Questions on this
-            <span class="text-logistics-orange">Implementation?</span>
+            Questions on this <span class="text-logistics-orange">Implementation?</span>
           </h2>
           <div class="flex justify-center gap-6">
-            <a
-              href="mailto:mcam215@gmail.com"
-              class="text-slate-400 hover:text-logistics-orange transition text-2xl"
-              ><i class="fas fa-envelope"></i
-            ></a>
-            <a
-              href="https://www.linkedin.com/in/michaelcampbell215"
-              class="text-slate-400 hover:text-logistics-orange transition text-2xl"
-              ><i class="fab fa-linkedin"></i
-            ></a>
-            <a
-              href="https://github.com/michaelcampbell215"
-              class="text-slate-400 hover:text-logistics-orange transition text-2xl"
-              ><i class="fab fa-github"></i
-            ></a>
+            <a href="mailto:mcam215@gmail.com" class="text-slate-400 hover:text-logistics-orange transition text-2xl"><i class="fas fa-envelope"></i></a>
+            <a href="https://www.linkedin.com/in/michaelcampbell215" class="text-slate-400 hover:text-logistics-orange transition text-2xl"><i class="fab fa-linkedin"></i></a>
+            <a href="https://github.com/michaelcampbell215" class="text-slate-400 hover:text-logistics-orange transition text-2xl"><i class="fab fa-github"></i></a>
           </div>
         </div>
       </section>
+
     </main>
 
-    <footer
-      class="py-12 border-t border-slate-800 text-center text-slate-600 text-sm"
-    >
+    <footer class="py-12 border-t border-slate-800 text-center text-slate-600 text-sm">
       <p>&copy; 2026 Michael Campbell. Optimized for Impact.</p>
     </footer>
 
-    <!-- Prism.js -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-sql.min.js"></script>
   </body>

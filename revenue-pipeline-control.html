@@ -7,14 +7,8 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;700&display=swap"
-      rel="stylesheet"
-    />
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
-    />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
     <script>
       tailwind.config = {
         theme: {
@@ -35,162 +29,95 @@
       };
     </script>
     <style>
-      body {
-        background-color: #0f172a;
-      }
+      body { background-color: #0f172a; }
       .card-gradient {
-        background: linear-gradient(
-          135deg,
-          rgba(30, 41, 59, 0.7) 0%,
-          rgba(15, 23, 42, 0.9) 100%
-        );
+        background: linear-gradient(135deg, rgba(30,41,59,0.7) 0%, rgba(15,23,42,0.9) 100%);
       }
-      .metric-card {
-        border-left: 4px solid #ea580c;
-      }
+      .metric-card { border-left: 4px solid #ea580c; }
     </style>
   </head>
   <body class="text-slate-200 font-sans antialiased">
+
     <!-- Navigation -->
-    <nav
-      class="sticky top-0 z-50 bg-slate-900/80 backdrop-blur-md border-b border-slate-800"
-    >
-      <div
-        class="container mx-auto px-6 py-4 flex justify-between items-center"
-      >
-        <div class="flex items-center space-x-2">
-          <a
-            href="index.html"
-            class="text-xl font-bold tracking-tighter uppercase transition-opacity hover:opacity-80"
-          >
-            MICHAEL <span class="text-logistics-orange">CAMPBELL</span>
-          </a>
-        </div>
+    <nav class="sticky top-0 z-50 bg-slate-900/80 backdrop-blur-md border-b border-slate-800">
+      <div class="container mx-auto px-6 py-4 flex justify-between items-center">
+        <a href="index.html" class="text-xl font-bold tracking-tighter uppercase transition-opacity hover:opacity-80">
+          MICHAEL <span class="text-logistics-orange">CAMPBELL</span>
+        </a>
         <div class="hidden md:flex space-x-8 text-sm font-medium items-center">
-          <a href="index.html" class="hover:text-logistics-orange transition"
-            >Home</a
-          >
-          <a
-            href="all_projects.html"
-            class="hover:text-logistics-orange transition"
-            >Gallery</a
-          >
-          <a href="#dashboard" class="hover:text-logistics-orange transition"
-            >Dashboard</a
-          >
-          <a
-            href="#documentation"
-            class="hover:text-logistics-orange transition"
-            >Documentation</a
-          >
-          <a
-            href="#contact"
-            class="px-4 py-2 bg-logistics-green hover:bg-emerald-700 text-white rounded transition"
-            >Contact</a
-          >
+          <a href="index.html" class="hover:text-logistics-orange transition">Home</a>
+          <a href="all_projects.html" class="hover:text-logistics-orange transition">Gallery</a>
+          <a href="#dashboard" class="hover:text-logistics-orange transition">Dashboard</a>
+          <a href="#documentation" class="hover:text-logistics-orange transition">Documentation</a>
+          <a href="#contact" class="px-4 py-2 bg-logistics-green hover:bg-emerald-700 text-white rounded transition">Contact</a>
         </div>
       </div>
     </nav>
 
     <main>
-      <!-- Hero -->
+
+      <!-- ═══════════════════════════════════════
+           HERO
+      ═══════════════════════════════════════ -->
       <section class="py-20 border-b border-slate-800 bg-slate-900/50">
         <div class="container mx-auto px-6">
           <div class="max-w-4xl">
-            <div
-              class="inline-block px-3 py-1 bg-sky-500/10 border border-sky-500/20 text-sky-400 rounded-full text-xs font-bold uppercase tracking-widest mb-6"
-              style="
-                color: #38bdf8;
-                border-color: rgba(56, 189, 248, 0.2);
-                background-color: rgba(56, 189, 248, 0.1);
-              "
-            >
-              Sales ➔ Tableau Intelligence
+            <div class="inline-block px-3 py-1 bg-logistics-orange/10 border border-logistics-orange/20 text-logistics-orange rounded-full text-xs font-bold uppercase tracking-widest mb-6">
+              BI Engineering ➔ Revenue Operations Intelligence
             </div>
             <h1 class="text-4xl md:text-6xl font-bold mb-6 leading-tight">
               Revenue Pipeline
               <span class="text-logistics-orange">Control</span>
             </h1>
             <p class="text-xl text-slate-400 leading-relaxed font-mono">
-              > Engineering a high-fidelity pipeline monitor to optimize
-              conversion cycles and agent performance.
+              > End-to-end BI engineering replacing static weekly CRM exports with a live Tableau Revenue Operations Command Center — surfacing deal velocity, stage conversion rates, and Win/Loss attribution at the moment decisions need to be made.
             </p>
           </div>
         </div>
       </section>
 
-      <!-- Key Metrics -->
+      <!-- ═══════════════════════════════════════
+           KEY METRICS
+      ═══════════════════════════════════════ -->
       <section class="py-12 border-b border-slate-800">
         <div class="container mx-auto px-6">
           <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
-            <div
-              class="p-6 bg-slate-900 rounded-2xl border border-slate-800 metric-card"
-            >
-              <p
-                class="text-slate-500 text-xs font-bold uppercase tracking-widest mb-1"
-              >
-                Peak Revenue
-              </p>
+            <div class="p-6 bg-slate-900 rounded-2xl border border-slate-800 metric-card">
+              <p class="text-slate-500 text-xs font-bold uppercase tracking-widest mb-1">Peak Revenue</p>
               <h3 class="text-2xl font-bold">$3.09M</h3>
-              <p class="text-slate-400 text-xs mt-2">Q2 Generation</p>
+              <p class="text-slate-400 text-xs mt-2">Q2 Pipeline Generation</p>
             </div>
-            <div
-              class="p-6 bg-slate-900 rounded-2xl border border-slate-800 metric-card"
-            >
-              <p
-                class="text-slate-500 text-xs font-bold uppercase tracking-widest mb-1"
-              >
-                Cycle Time
-              </p>
+            <div class="p-6 bg-slate-900 rounded-2xl border border-slate-800 metric-card">
+              <p class="text-slate-500 text-xs font-bold uppercase tracking-widest mb-1">Avg Cycle Time</p>
               <h3 class="text-2xl font-bold">48 Days</h3>
-              <p class="text-slate-400 text-xs mt-2">Avg Deal Duration</p>
+              <p class="text-slate-400 text-xs mt-2">P50 Deal Duration</p>
             </div>
-            <div
-              class="p-6 bg-slate-900 rounded-2xl border border-slate-800 metric-card"
-              style="border-left-color: #065f46"
-            >
-              <p
-                class="text-slate-500 text-xs font-bold uppercase tracking-widest mb-1"
-              >
-                Win Rate
-              </p>
+            <div class="p-6 bg-slate-900 rounded-2xl border border-slate-800 metric-card" style="border-left-color: #065f46">
+              <p class="text-slate-500 text-xs font-bold uppercase tracking-widest mb-1">Win Rate</p>
               <h3 class="text-2xl font-bold">51%</h3>
               <p class="text-slate-400 text-xs mt-2">Closing Effectiveness</p>
             </div>
-            <div
-              class="p-6 bg-slate-900 rounded-2xl border border-slate-800 metric-card"
-              style="border-left-color: #065f46"
-            >
-              <p
-                class="text-slate-500 text-xs font-bold uppercase tracking-widest mb-1"
-              >
-                Star Asset
-              </p>
-              <h3 class="text-2xl font-bold">GTX Pro</h3>
-              <p class="text-slate-400 text-xs mt-2">
-                Category Performance Leader
-              </p>
+            <div class="p-6 bg-slate-900 rounded-2xl border border-slate-800 metric-card" style="border-left-color: #6366f1">
+              <p class="text-slate-500 text-xs font-bold uppercase tracking-widest mb-1">Velocity Variance</p>
+              <h3 class="text-2xl font-bold">P90: 112d</h3>
+              <p class="text-slate-400 text-xs mt-2">vs. P50: 45d Bimodal Split</p>
             </div>
           </div>
         </div>
       </section>
 
-      <!-- Live Dashboard Section -->
+      <!-- ═══════════════════════════════════════
+           LIVE DASHBOARD
+      ═══════════════════════════════════════ -->
       <section id="dashboard" class="py-24 bg-slate-900/30">
         <div class="container mx-auto px-6">
           <h2 class="text-3xl font-bold mb-12 flex items-center">
             <i class="fas fa-chart-pie text-logistics-orange mr-4"></i>
             Interactive Dashboard
           </h2>
-          <div
-            class="rounded-3xl border border-slate-800 overflow-hidden bg-slate-900 shadow-2xl"
-          >
-            <div
-              class="p-4 bg-slate-800/50 border-b border-slate-700 flex justify-between items-center"
-            >
-              <span class="text-xs font-mono text-slate-400"
-                >TABLEAU_SERVER_ID: CRM_SALES_PRO</span
-              >
+          <div class="rounded-3xl border border-slate-800 overflow-hidden bg-slate-900 shadow-2xl">
+            <div class="p-4 bg-slate-800/50 border-b border-slate-700 flex justify-between items-center">
+              <span class="text-xs font-mono text-slate-400">TABLEAU_SERVER_ID: CRM_SALES_PRO</span>
               <div class="flex space-x-2">
                 <div class="w-3 h-3 rounded-full bg-red-500/20"></div>
                 <div class="w-3 h-3 rounded-full bg-amber-500/20"></div>
@@ -204,269 +131,170 @@
               frameborder="0"
               allowfullscreen
               class="w-full"
-            >
-            </iframe>
+            ></iframe>
           </div>
         </div>
       </section>
 
-      <!-- Project Narrative -->
+      <!-- ═══════════════════════════════════════
+           PROJECT NARRATIVE
+      ═══════════════════════════════════════ -->
       <section id="documentation" class="py-24 border-t border-slate-800">
         <div class="container mx-auto px-6">
           <div class="grid lg:grid-cols-3 gap-12">
-            <!-- Documentation -->
+
+            <!-- Main Content -->
             <div class="lg:col-span-2 space-y-12">
               <div>
-                <h3 class="text-2xl font-bold mb-6 text-logistics-orange">
-                  Building Operational Clarity
-                </h3>
+                <h3 class="text-2xl font-bold mb-6 text-logistics-orange">Building Operational Clarity</h3>
                 <div class="space-y-8">
+
                   <div class="flex">
                     <div class="mr-6 flex flex-col items-center">
-                      <div
-                        class="w-10 h-10 rounded-full bg-slate-800 border border-slate-700 flex items-center justify-center font-bold text-logistics-orange"
-                      >
-                        01
-                      </div>
+                      <div class="w-10 h-10 rounded-full bg-slate-800 border border-slate-700 flex items-center justify-center font-bold text-logistics-orange">01</div>
                       <div class="w-px h-full bg-slate-800 mt-2"></div>
                     </div>
                     <div>
-                      <h4 class="text-xl font-bold mb-2">
-                        Funnel Bottleneck Analysis
-                      </h4>
+                      <h4 class="text-xl font-bold mb-2">Funnel Bottleneck Analysis</h4>
                       <p class="text-slate-400 leading-relaxed">
-                        Visualized the transition from prospecting to engaging.
-                        Identified a significant drop-off (49%) in the late
-                        funnel, pinpointing the exact phase where sales force
-                        training should be prioritized.
+                        Visualized the transition from prospecting to close using LOD expressions to calculate true stage-by-stage conversion rates — not simple opportunity counts. Identified a 49% drop-off concentrated specifically in the Proposal-to-Negotiation transition, pinpointing proposal quality as the bottleneck rather than prospecting volume.
                       </p>
                     </div>
                   </div>
+
                   <div class="flex">
                     <div class="mr-6 flex flex-col items-center">
-                      <div
-                        class="w-10 h-10 rounded-full bg-slate-800 border border-slate-700 flex items-center justify-center font-bold text-logistics-orange"
-                      >
-                        02
-                      </div>
+                      <div class="w-10 h-10 rounded-full bg-slate-800 border border-slate-700 flex items-center justify-center font-bold text-logistics-orange">02</div>
                       <div class="w-px h-full bg-slate-800 mt-2"></div>
                     </div>
                     <div>
                       <h4 class="text-xl font-bold mb-2">Agent Benchmarking</h4>
                       <p class="text-slate-400 leading-relaxed">
-                        Engineered dynamic agent/region filters to isolate top
-                        performer Darcel Schlecht, who outperformed the company
-                        baseline by 60%. Used these insights to define the
-                        "Ideal Closing Script."
+                        Engineered dynamic agent and region filters to isolate top performers — the highest-performing rep outperformed the company baseline by 60%. Used behavior patterns from the top cohort to define an "Ideal Closing Script" and surface the specific stage transitions where laggard reps were losing deals.
                       </p>
                     </div>
                   </div>
+
                   <div class="flex">
                     <div class="mr-6 flex flex-col items-center">
-                      <div
-                        class="w-10 h-10 rounded-full bg-slate-800 border border-slate-700 flex items-center justify-center font-bold text-logistics-orange"
-                      >
-                        03
-                      </div>
+                      <div class="w-10 h-10 rounded-full bg-slate-800 border border-slate-700 flex items-center justify-center font-bold text-logistics-orange">03</div>
                     </div>
                     <div>
-                      <h4 class="text-xl font-bold mb-2">
-                        Pricing Elasticity Tracking
-                      </h4>
+                      <h4 class="text-xl font-bold mb-2">Pricing Elasticity Tracking</h4>
                       <p class="text-slate-400 leading-relaxed">
-                        Developed calculated fields to compare actual close
-                        prices against targets. Revealed value positioning gaps
-                        in product lines that were frequently discounted in Q4.
+                        Developed calculated fields to compare actual close prices against target ASPs. Revealed value positioning gaps in product lines being systematically discounted in Q4 — a pattern invisible in flat revenue reporting but visible the moment price integrity is tracked as a calculated field alongside volume.
                       </p>
                     </div>
                   </div>
+
                 </div>
               </div>
 
               <!-- Impact Cards -->
               <div class="grid md:grid-cols-2 gap-6">
-                <div
-                  class="p-8 bg-slate-900 rounded-3xl border border-slate-800"
-                >
-                  <i
-                    class="fas fa-bullseye text-logistics-orange text-2xl mb-4"
-                  ></i>
-                  <h4 class="text-xl font-bold mb-4 text-white">
-                    Sales Optimization
-                  </h4>
+                <div class="p-8 bg-slate-900 rounded-3xl border border-slate-800">
+                  <i class="fas fa-bullseye text-logistics-orange text-2xl mb-4"></i>
+                  <h4 class="text-xl font-bold mb-4 text-white">Sales Optimization</h4>
                   <ul class="text-sm text-slate-400 space-y-3">
-                    <li>
-                      • Replicate high-performer behaviors across laggard
-                      regions.
-                    </li>
-                    <li>
-                      • Investigate Q4 discount triggers to protect quarterly
-                      margins.
-                    </li>
+                    <li>• Replicate top-performer stage transition behaviors across laggard regions using the benchmarking filter as a coaching tool.</li>
+                    <li>• Investigate Q4 discount triggers to protect quarterly margins — the pricing elasticity view identifies which product lines are most exposed.</li>
                   </ul>
                 </div>
-                <div
-                  class="p-8 bg-slate-900 rounded-3xl border border-slate-800"
-                >
-                  <i
-                    class="fas fa-boxes text-logistics-green text-2xl mb-4"
-                  ></i>
-                  <h4 class="text-xl font-bold mb-4 text-white">
-                    Product Strategy
-                  </h4>
+                <div class="p-8 bg-slate-900 rounded-3xl border border-slate-800">
+                  <i class="fas fa-boxes text-logistics-green text-2xl mb-4"></i>
+                  <h4 class="text-xl font-bold mb-4 text-white">Product Strategy</h4>
                   <ul class="text-sm text-slate-400 space-y-3">
-                    <li>
-                      • Focus inventory on GTX Pro line due to superior price
-                      integrity.
-                    </li>
-                    <li>
-                      • Re-evaluate "MG Special" positioning in underperforming
-                      sectors.
-                    </li>
+                    <li>• Focus pipeline investment on the GTX Pro line due to superior price integrity and deal velocity relative to comparable products.</li>
+                    <li>• Re-evaluate underperforming product positioning in segments where win rate consistently trails the portfolio average.</li>
                   </ul>
                 </div>
               </div>
             </div>
 
-            <!-- Sidebar -->
+            <!-- ═══════════════════════════════════════
+                 SIDEBAR
+            ═══════════════════════════════════════ -->
             <div class="space-y-8">
+
               <div class="p-8 bg-slate-900 rounded-3xl border border-slate-800">
-                <h4
-                  class="text-sm font-bold uppercase tracking-widest text-slate-500 mb-6"
-                >
-                  Technical Toolkit
-                </h4>
+                <h4 class="text-sm font-bold uppercase tracking-widest text-slate-500 mb-6">Technical Toolkit</h4>
                 <div class="flex flex-wrap gap-2">
-                  <span
-                    class="px-3 py-1 bg-slate-800 rounded-md text-sm border border-slate-700/50"
-                    >Tableau Public</span
-                  >
-                  <span
-                    class="px-3 py-1 bg-slate-800 rounded-md text-sm border border-slate-700/50"
-                    >SQL (Salesforce)</span
-                  >
-                  <span
-                    class="px-3 py-1 bg-slate-800 rounded-md text-sm border border-slate-700/50"
-                    >Data Storytelling</span
-                  >
-                  <span
-                    class="px-3 py-1 bg-slate-800 rounded-md text-sm border border-slate-700/50"
-                    >Calculated Fields</span
-                  >
+                  <span class="px-3 py-1 bg-slate-800 rounded-md text-sm border border-slate-700/50">Tableau Public</span>
+                  <span class="px-3 py-1 bg-slate-800 rounded-md text-sm border border-slate-700/50">LOD Expressions</span>
+                  <span class="px-3 py-1 bg-slate-800 rounded-md text-sm border border-slate-700/50">Calculated Fields</span>
+                  <span class="px-3 py-1 bg-slate-800 rounded-md text-sm border border-slate-700/50">Parameter Controls</span>
+                  <span class="px-3 py-1 bg-slate-800 rounded-md text-sm border border-slate-700/50">Dual-Axis Charts</span>
+                  <span class="px-3 py-1 bg-slate-800 rounded-md text-sm border border-slate-700/50">Funnel Architecture</span>
+                  <span class="px-3 py-1 bg-slate-800 rounded-md text-sm border border-slate-700/50">Win/Loss Attribution</span>
+                  <span class="px-3 py-1 bg-slate-800 rounded-md text-sm border border-slate-700/50">Pipeline Velocity</span>
+                  <span class="px-3 py-1 bg-slate-800 rounded-md text-sm border border-slate-700/50">Pricing Elasticity</span>
+                  <span class="px-3 py-1 bg-slate-800 rounded-md text-sm border border-slate-700/50">SQL (Salesforce)</span>
+                  <span class="px-3 py-1 bg-logistics-orange/20 text-logistics-orange font-bold rounded-md text-sm border border-logistics-orange/50">Revenue Operations BI</span>
                 </div>
               </div>
 
-              <div
-                class="p-8 bg-logistics-orange/5 rounded-3xl border border-logistics-orange/20"
-              >
-                <h4
-                  class="text-sm font-bold uppercase tracking-widest text-logistics-orange mb-4"
-                >
-                  Impact Summary
-                </h4>
-                <p class="text-sm text-slate-400 leading-relaxed">
-                  "By visualizing the pipeline as a live flow rather than a
-                  static snapshot, we transformed CRM reporting from a
-                  post-mortem tool into a forward-looking operational radar."
+              <div class="p-8 bg-logistics-orange/5 rounded-3xl border border-logistics-orange/20">
+                <h4 class="text-sm font-bold uppercase tracking-widest text-logistics-orange mb-4">Impact Summary</h4>
+                <p class="text-sm text-slate-400 leading-relaxed mb-4">
+                  "Visualizing the pipeline as a live flow rather than a static snapshot transforms CRM reporting from a post-mortem tool into a forward-looking operational radar — enabling intervention at the moment a deal stalls, not after quarter-end when it's already lost."
                 </p>
-                <a
-                  href="https://github.com/michaelcampbell215/revenue-pipeline-control"
-                  target="_blank"
-                  class="text-gray-400 hover:text-white transition-colors"
-                >
-                  Github Repository <i class="fas fa-arrow-right ml-2"></i>
+                <a href="https://github.com/michaelcampbell215/revenue-pipeline-control" target="_blank"
+                  class="inline-flex items-center text-sm font-bold text-logistics-orange hover:gap-2 transition-all">
+                  GitHub Repository <i class="fas fa-arrow-right ml-2"></i>
                 </a>
               </div>
+
             </div>
           </div>
         </div>
       </section>
 
-      <!-- Visualization Evidence -->
+      <!-- ═══════════════════════════════════════
+           VISUAL EVIDENCE
+      ═══════════════════════════════════════ -->
       <section class="py-24 bg-slate-900">
         <div class="container mx-auto px-6">
           <h3 class="text-2xl font-bold mb-12">Visual Evidence</h3>
           <div class="grid md:grid-cols-2 gap-8">
-            <div
-              class="group relative rounded-2xl overflow-hidden border border-slate-800"
-            >
-              <img
-                src="images/project_images/crm (1).png"
-                alt="Sales Funnel"
-                class="w-full h-80 object-cover opacity-80 group-hover:opacity-100 transition duration-500"
-              />
-              <div
-                class="absolute bottom-0 left-0 right-0 p-6 bg-gradient-to-t from-slate-900 to-transparent"
-              >
-                <p
-                  class="text-xs font-bold text-logistics-orange uppercase tracking-widest"
-                >
-                  Funnel Analysis
-                </p>
-                <p class="text-sm text-white font-medium">
-                  Prospecting to Won Conversion Flow
-                </p>
+            <div class="group relative rounded-2xl overflow-hidden border border-slate-800">
+              <img src="images/project_images/crm (1).png" alt="Sales Funnel"
+                class="w-full h-80 object-cover opacity-80 group-hover:opacity-100 transition duration-500" />
+              <div class="absolute bottom-0 left-0 right-0 p-6 bg-gradient-to-t from-slate-900 to-transparent">
+                <p class="text-xs font-bold text-logistics-orange uppercase tracking-widest">Funnel Analysis</p>
+                <p class="text-sm text-white font-medium">Prospecting to Won Conversion Flow</p>
               </div>
             </div>
-            <div
-              class="group relative rounded-2xl overflow-hidden border border-slate-800"
-            >
-              <img
-                src="images/project_images/crm (2).png"
-                alt="Team Leaderboard"
-                class="w-full h-80 object-cover opacity-80 group-hover:opacity-100 transition duration-500"
-              />
-              <div
-                class="absolute bottom-0 left-0 right-0 p-6 bg-gradient-to-t from-slate-900 to-transparent"
-              >
-                <p
-                  class="text-xs font-bold text-logistics-orange uppercase tracking-widest"
-                >
-                  Performance Benchmarking
-                </p>
-                <p class="text-sm text-white font-medium">
-                  Regional & Individual Sales Rankings
-                </p>
+            <div class="group relative rounded-2xl overflow-hidden border border-slate-800">
+              <img src="images/project_images/crm (2).png" alt="Team Leaderboard"
+                class="w-full h-80 object-cover opacity-80 group-hover:opacity-100 transition duration-500" />
+              <div class="absolute bottom-0 left-0 right-0 p-6 bg-gradient-to-t from-slate-900 to-transparent">
+                <p class="text-xs font-bold text-logistics-orange uppercase tracking-widest">Performance Benchmarking</p>
+                <p class="text-sm text-white font-medium">Regional & Individual Sales Rankings</p>
               </div>
             </div>
           </div>
         </div>
       </section>
 
-            <!-- Contact CTA -->
-      <section
-        id="contact"
-        class="py-24 bg-slate-900 border-t border-slate-800"
-      >
+      <!-- ═══════════════════════════════════════
+           CONTACT
+      ═══════════════════════════════════════ -->
+      <section id="contact" class="py-24 bg-slate-900 border-t border-slate-800">
         <div class="container mx-auto px-6 text-center max-w-2xl">
           <h2 class="text-3xl font-bold mb-6 italic">
-            Questions on this
-            <span class="text-logistics-orange">Analysis?</span>
+            Questions on this <span class="text-logistics-orange">Analysis?</span>
           </h2>
           <div class="flex justify-center gap-6">
-            <a
-              href="mailto:mcam215@gmail.com"
-              class="text-slate-400 hover:text-logistics-orange transition text-2xl"
-              ><i class="fas fa-envelope"></i
-            ></a>
-            <a
-              href="https://www.linkedin.com/in/michaelcampbell215"
-              class="text-slate-400 hover:text-logistics-orange transition text-2xl"
-              ><i class="fab fa-linkedin"></i
-            ></a>
-            <a
-              href="https://github.com/michaelcampbell215"
-              class="text-slate-400 hover:text-logistics-orange transition text-2xl"
-              ><i class="fab fa-github"></i
-            ></a>
+            <a href="mailto:mcam215@gmail.com" class="text-slate-400 hover:text-logistics-orange transition text-2xl"><i class="fas fa-envelope"></i></a>
+            <a href="https://www.linkedin.com/in/michaelcampbell215" class="text-slate-400 hover:text-logistics-orange transition text-2xl"><i class="fab fa-linkedin"></i></a>
+            <a href="https://github.com/michaelcampbell215" class="text-slate-400 hover:text-logistics-orange transition text-2xl"><i class="fab fa-github"></i></a>
           </div>
         </div>
       </section>
+
     </main>
 
-    <footer
-      class="py-12 border-t border-slate-800 text-center text-slate-600 text-sm"
-    >
+    <footer class="py-12 border-t border-slate-800 text-center text-slate-600 text-sm">
       <p>&copy; 2026 Michael Campbell. Optimized for Impact.</p>
     </footer>
   </body>

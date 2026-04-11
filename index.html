@@ -29,9 +29,9 @@
                 900: "#0f172a",
               },
               logistics: {
-                green: "#065F46", // Forest Green
-                orange: "#EA580C", // Industrial Orange
-                slate: "#334155", // Deep Slate
+                green: "#065F46",
+                orange: "#EA580C",
+                slate: "#334155",
               },
             },
           },
@@ -71,77 +71,65 @@
         transform: translateY(-5px);
         border-color: #ea580c;
       }
+
+      /* What I Build track cards */
+      .track-card {
+        background: linear-gradient(135deg, rgba(30,41,59,0.8) 0%, rgba(15,23,42,0.95) 100%);
+        transition: transform 0.25s ease, box-shadow 0.25s ease;
+      }
+      .track-card:hover {
+        transform: translateY(-4px);
+        box-shadow: 0 20px 40px rgba(0,0,0,0.4);
+      }
+      .track-card.featured {
+        border-color: #EA580C !important;
+        box-shadow: 0 0 0 1px rgba(234,88,12,0.3), 0 8px 32px rgba(234,88,12,0.12);
+      }
+      .track-badge {
+        font-size: 0.6rem;
+        letter-spacing: 0.12em;
+      }
     </style>
   </head>
   <body class="text-slate-200 font-sans antialiased">
+
     <!-- Navigation -->
-    <nav
-      class="sticky top-0 z-50 bg-slate-900/80 backdrop-blur-md border-b border-slate-800"
-    >
-      <div
-        class="container mx-auto px-6 py-4 flex justify-between items-center"
-      >
+    <nav class="sticky top-0 z-50 bg-slate-900/80 backdrop-blur-md border-b border-slate-800">
+      <div class="container mx-auto px-6 py-4 flex justify-between items-center">
         <div class="flex items-center space-x-2">
-          <a
-            href="index.html"
-            class="text-xl font-bold tracking-tighter uppercase transition-opacity hover:opacity-80"
-          >
+          <a href="index.html" class="text-xl font-bold tracking-tighter uppercase transition-opacity hover:opacity-80">
             MICHAEL <span class="text-logistics-orange">CAMPBELL</span>
           </a>
         </div>
         <div class="hidden md:flex space-x-8 text-sm font-medium items-center">
-          <a href="#about" class="hover:text-logistics-orange transition"
-            >Experience</a
-          >
-          <a href="#skills" class="hover:text-logistics-orange transition"
-            >Toolkit</a
-          >
-          <a href="#projects" class="hover:text-logistics-orange transition"
-            >Projects</a
-          >
-          <a
-            href="#contact"
-            class="px-4 py-2 bg-logistics-green hover:bg-emerald-700 text-white rounded transition"
-            >Get in Touch</a
-          >
+          <a href="#about" class="hover:text-logistics-orange transition">Experience</a>
+          <a href="#skills" class="hover:text-logistics-orange transition">Toolkit</a>
+          <a href="all_projects.html" class="hover:text-logistics-orange transition">Projects</a>
+          <a href="#contact" class="px-4 py-2 bg-logistics-green hover:bg-emerald-700 text-white rounded transition">Get in Touch</a>
         </div>
       </div>
     </nav>
 
     <main>
-      <!-- Hero / Narrative -->
-      <section
-        id="hero"
-        class="py-20 border-b border-slate-800 relative overflow-hidden"
-      >
+
+      <!-- ═══════════════════════════════════════
+           HERO
+      ═══════════════════════════════════════ -->
+      <section id="hero" class="py-20 border-b border-slate-800 relative overflow-hidden">
         <div class="absolute inset-0 opacity-10 pointer-events-none">
           <svg width="100%" height="100%" xmlns="http://www.w3.org/2000/svg">
             <defs>
-              <pattern
-                id="grid"
-                width="40"
-                height="40"
-                patternUnits="userSpaceOnUse"
-              >
-                <path
-                  d="M 40 0 L 0 0 0 40"
-                  fill="none"
-                  stroke="#94a3b8"
-                  stroke-width="0.5"
-                />
+              <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse">
+                <path d="M 40 0 L 0 0 0 40" fill="none" stroke="#94a3b8" stroke-width="0.5" />
               </pattern>
             </defs>
             <rect width="100%" height="100%" fill="url(#grid)" />
           </svg>
         </div>
 
-        <div
-          class="container mx-auto px-6 grid md:grid-cols-2 gap-12 items-center"
-        >
+        <div class="container mx-auto px-6 grid md:grid-cols-2 gap-12 items-center">
           <div>
-            <div
-              class="inline-block px-3 py-1 bg-logistics-orange/10 border border-logistics-orange/20 text-logistics-orange rounded-full text-xs font-bold uppercase tracking-widest mb-6"
-            >
+            <div class="inline-block px-3 py-1 bg-logistics-orange/10 border border-logistics-orange/20 text-logistics-orange rounded-full text-xs font-bold uppercase tracking-widest mb-6">
               Healthcare Analytics ➔ Supply Chain Intelligence ➔ Data Engineering
             </div>
             <h1 class="text-5xl md:text-6xl font-bold mb-6 leading-tight">
@@ -160,13 +148,13 @@
                 supply chain intelligence, and data engineering.
               </p>
               <p class="text-slate-400 leading-relaxed">
-                My work spans two domains that rarely travel together: healthcare
-                data engineering and supply chain analytics. I've processed 15.4M
-                records of federal CMS Open Payments healthcare data through
-                production-grade ETL pipelines, analyzed global health commodity
-                supply chains tracking $1.46B in ARV and HIV diagnostic
-                shipments, and built ML-driven inventory models that identified
-                $10.43M in trapped capital.
+                My work spans two domains that rarely travel together:
+                healthcare data engineering and supply chain analytics. I've
+                processed 15.4M records of federal CMS Open Payments healthcare
+                data through production-grade ETL pipelines, analyzed global
+                health commodity supply chains tracking $1.46B in ARV and HIV
+                diagnostic shipments, and built ML-driven inventory models that
+                identified $10.43M in trapped capital.
               </p>
               <p class="text-slate-400 leading-relaxed">
                 With 10+ years of operational experience across American
@@ -176,102 +164,55 @@
                 compliance, global health supply chains, and modern data
                 engineering pipelines.
               </p>
-              <div
-                class="bg-slate-800/50 p-4 rounded-xl border border-slate-700"
-              >
-                <h4
-                  class="text-sm font-bold uppercase tracking-widest text-slate-200 mb-2"
-                >
-                  What I Do:
-                </h4>
+              <div class="bg-slate-800/50 p-4 rounded-xl border border-slate-700">
+                <h4 class="text-sm font-bold uppercase tracking-widest text-slate-200 mb-2">What I Do:</h4>
                 <ul class="text-sm text-slate-400 space-y-2">
                   <li class="flex items-start">
-                    <i
-                      class="fas fa-heartbeat text-logistics-orange mt-1 mr-2"
-                    ></i>
-                    <span
-                      ><strong>Healthcare Data Engineering:</strong> Processing
-                      CMS Open Payments federal healthcare data through
-                      production-grade Star Schema ETL pipelines.</span
-                    >
+                    <i class="fas fa-heartbeat text-logistics-orange mt-1 mr-2"></i>
+                    <span><strong>Healthcare Data Engineering:</strong> Processing CMS Open Payments federal healthcare data through production-grade Star Schema ETL pipelines.</span>
                   </li>
                   <li class="flex items-start">
-                    <i
-                      class="fas fa-chart-pie text-logistics-orange mt-1 mr-2"
-                    ></i>
-                    <span
-                      ><strong>Supply Chain Analytics:</strong> Tracking vendor
-                      performance, freight costs, and inventory optimization
-                      across global health commodity and logistics networks.</span
-                    >
+                    <i class="fas fa-chart-pie text-logistics-orange mt-1 mr-2"></i>
+                    <span><strong>Supply Chain Analytics:</strong> Tracking vendor performance, freight costs, and inventory optimization across global health commodity and logistics networks.</span>
                   </li>
                   <li class="flex items-start">
                     <i class="fas fa-database text-logistics-orange mt-1 mr-2"></i>
-                    <span
-                      ><strong>Analytics Engineering:</strong> Building dbt
-                      models, BigQuery pipelines, and Airflow orchestration that
-                      make self-service analytics reliable at scale.</span
-                    >
+                    <span><strong>Analytics Engineering:</strong> Building dbt models, BigQuery pipelines, and Airflow orchestration that make self-service analytics reliable at scale.</span>
                   </li>
                   <li class="flex items-start">
                     <i class="fas fa-robot text-logistics-orange mt-1 mr-2"></i>
-                    <span
-                      ><strong>AI-Assisted Workflows:</strong> Using ChatGPT,
-                      Claude, and GitHub Copilot daily for SQL generation, data
-                      cleaning, and documentation.</span
-                    >
+                    <span><strong>AI-Assisted Workflows:</strong> Using ChatGPT, Claude, and GitHub Copilot daily for SQL generation, data cleaning, and documentation.</span>
                   </li>
                 </ul>
               </div>
               <p class="text-sm text-slate-500 italic">
-                Relocated to the Tampa Bay Area. Open to remote, hybrid, and
-                local roles in healthcare analytics, analytics engineering,
-                supply chain data analytics, and operations-focused tech.
+                Relocated to the Tampa Bay Area. Open to remote, hybrid, and local roles in healthcare analytics, analytics engineering, supply chain data analytics, and operations-focused tech.
               </p>
             </div>
-            <div class="flex flex-wrap gap-4">
-              <a
-                href="#projects"
-                class="px-6 py-3 bg-logistics-orange hover:bg-orange-600 text-white font-bold rounded flex items-center transition"
-              >
-                <i class="fas fa-chart-line mr-2"></i> View Case Studies
+            <!-- Hero CTAs — no resume download here -->
+            <div class="flex flex-wrap gap-4 mt-6">
+              <a href="#what-i-build" class="px-6 py-3 bg-logistics-orange hover:bg-orange-600 text-white font-bold rounded flex items-center transition">
+                <i class="fas fa-chart-line mr-2"></i> View My Work
               </a>
-              <a
-                href="assets/Michael_Campbell_Data_Analyst.pdf"
-                download
-                class="px-6 py-3 border border-logistics-orange/50 text-logistics-orange hover:bg-logistics-orange/10 font-bold rounded flex items-center transition"
-              >
-                <i class="fas fa-file-download mr-2"></i> Download Resume
-              </a>
-              <a
-                href="#about"
-                class="px-6 py-3 border border-slate-700 hover:border-slate-500 font-bold rounded flex items-center transition"
-              >
+              <a href="#about" class="px-6 py-3 border border-slate-700 hover:border-slate-500 font-bold rounded flex items-center transition">
                 Read My Story
               </a>
             </div>
           </div>
+
           <div class="relative">
-            <div
-              class="absolute -inset-4 bg-logistics-green/20 blur-3xl rounded-full"
-            ></div>
+            <div class="absolute -inset-4 bg-logistics-green/20 blur-3xl rounded-full"></div>
             <img
               src="images/headshot2.png"
               alt="Michael Campbell"
               class="relative rounded-2xl border-2 border-slate-800 shadow-2xl grayscale hover:grayscale-0 transition duration-500"
             />
-            <div
-              class="absolute bottom-4 right-4 bg-slate-900 border border-slate-700 p-4 rounded-xl shadow-xl flex items-center space-x-3"
-            >
-              <div
-                class="w-10 h-10 bg-logistics-green rounded-full flex items-center justify-center text-white"
-              >
+            <div class="absolute bottom-4 right-4 bg-slate-900 border border-slate-700 p-4 rounded-xl shadow-xl flex items-center space-x-3">
+              <div class="w-10 h-10 bg-logistics-green rounded-full flex items-center justify-center text-white">
                 <i class="fas fa-plane-arrival"></i>
               </div>
               <div>
-                <div class="text-[10px] text-slate-500 uppercase font-bold">
-                  Latest Milestone
-                </div>
+                <div class="text-[10px] text-slate-500 uppercase font-bold">Latest Milestone</div>
                 <div class="text-sm font-bold">Automated 15M+ Rows</div>
               </div>
             </div>
@@ -279,663 +220,312 @@
         </div>
       </section>
 
-      <!-- Key Metrics / Stats bar -->
+      <!-- ═══════════════════════════════════════
+           STATS BAR
+      ═══════════════════════════════════════ -->
       <section class="py-10 bg-slate-800/50 border-b border-slate-800">
-        <div
-          class="container mx-auto px-6 grid grid-cols-2 md:grid-cols-4 gap-8"
-        >
+        <div class="container mx-auto px-6 grid grid-cols-2 md:grid-cols-4 gap-8">
           <div class="text-center">
-            <div class="text-3xl font-bold text-logistics-orange">
-              10+ Years
-            </div>
-            <div class="text-xs text-slate-500 uppercase tracking-widest mt-1">
-              Operational Exp.
-            </div>
+            <div class="text-3xl font-bold text-logistics-orange">$10.43M</div>
+            <div class="text-xs text-slate-500 uppercase tracking-widest mt-1">Inventory Capital Recovered</div>
           </div>
           <div class="text-center md:border-l border-slate-700">
             <div class="text-3xl font-bold text-logistics-orange">$11.7M</div>
-            <div class="text-xs text-slate-500 uppercase tracking-widest mt-1">
-              Compliance Risk Flagged
-            </div>
+            <div class="text-xs text-slate-500 uppercase tracking-widest mt-1">Compliance Risk Flagged</div>
           </div>
           <div class="text-center md:border-l border-slate-700">
-            <div class="text-3xl font-bold text-logistics-orange">15M+</div>
-            <div class="text-xs text-slate-500 uppercase tracking-widest mt-1">
-              Rows Processed
-            </div>
+            <div class="text-3xl font-bold text-logistics-orange">15.4M</div>
+            <div class="text-xs text-slate-500 uppercase tracking-widest mt-1">Healthcare Records Engineered</div>
           </div>
           <div class="text-center md:border-l border-slate-700">
-            <div class="text-3xl font-bold text-logistics-orange">
-              dbt + BigQuery
-            </div>
-            <div class="text-xs text-slate-500 uppercase tracking-widest mt-1">
-              Cloud Data Stack
-            </div>
+            <div class="text-3xl font-bold text-logistics-orange">$1.46B</div>
+            <div class="text-xs text-slate-500 uppercase tracking-widest mt-1">Supply Chain Network Analyzed</div>
           </div>
         </div>
       </section>
 
-      <!-- About / Career Flow -->
-      <section id="about" class="py-24">
+      <!-- ═══════════════════════════════════════
+           WHAT I BUILD — Three Track Cards
+      ═══════════════════════════════════════ -->
+      <section id="what-i-build" class="py-20 border-b border-slate-800">
         <div class="container mx-auto px-6 max-w-6xl">
-          <div
-            class="flex flex-col md:flex-row gap-16 items-start border-b border-slate-800 pb-16"
-          >
-            <!-- Professional Narrative Left -->
-            <div class="md:w-1/2">
-              <h2 class="text-3xl font-bold mb-6">
-                Healthcare & Supply Chain
-                <span class="text-logistics-orange">Analytics</span>
-              </h2>
-              <div class="space-y-6 text-slate-400 leading-relaxed text-lg">
-                <p>
-                  Most analysts encounter healthcare data as a domain they learn
-                  on the job. I built a production ETL pipeline on
-                  <span class="text-white font-semibold">15.4M records of federal CMS Open Payments healthcare data</span>
-                  before applying for my first healthcare analytics role.
-                </p>
-                <p>
-                  My decade at
-                  <span class="text-logistics-orange font-semibold">American Airlines</span>
-                  and
-                  <span class="text-white font-semibold">Sonder</span>
-                  gave me something harder to teach than SQL: the ability to
-                  look at operational data and understand what it means
-                  physically. When I build a pipeline or a dashboard, I know
-                  what the numbers represent on the ground.
-                </p>
-                <p>
-                  That operational foundation now drives work across two
-                  connected domains: healthcare payments compliance analytics and
-                  global health supply chain optimization — both built on
-                  <span class="text-white font-semibold">SQL</span>,
-                  <span class="text-white font-semibold">Python</span>,
-                  <span class="text-white font-semibold">dbt</span>, and
-                  <span class="text-white font-semibold">BigQuery</span>.
-                </p>
-              </div>
-            </div>
-
-            <!-- Narrative Cards Right -->
-            <div class="md:w-1/2 grid grid-cols-1 sm:grid-cols-2 gap-4">
-              <div class="card-gradient p-6 rounded-xl border border-slate-800">
-                <div
-                  class="w-10 h-10 bg-logistics-orange/20 text-logistics-orange rounded-lg flex items-center justify-center mb-4"
-                >
-                  <i class="fas fa-heartbeat"></i>
-                </div>
-                <h4 class="font-bold mb-2">Healthcare Data Engineering</h4>
-                <p class="text-sm text-slate-500">
-                  CMS Open Payments pipeline processing 15.4M federal healthcare
-                  records through production-grade Star Schema architecture.
-                </p>
-              </div>
-              <div class="card-gradient p-6 rounded-xl border border-slate-800">
-                <div
-                  class="w-10 h-10 bg-logistics-green/20 text-logistics-green rounded-lg flex items-center justify-center mb-4"
-                >
-                  <i class="fas fa-ship"></i>
-                </div>
-                <h4 class="font-bold mb-2">Supply Chain Domain Depth</h4>
-                <p class="text-sm text-slate-500">
-                  $1.46B global health commodity network analysis spanning ARV
-                  and HIV diagnostic supply chains.
-                </p>
-              </div>
-              <div
-                class="card-gradient p-6 rounded-xl border border-slate-800 col-span-full"
-              >
-                <div
-                  class="w-10 h-10 bg-sky-500/20 text-sky-400 rounded-lg flex items-center justify-center mb-4"
-                >
-                  <i class="fas fa-brain"></i>
-                </div>
-                <h4 class="font-bold mb-2">ML & Predictive Modeling</h4>
-                <p class="text-sm text-slate-500">
-                  XGBoost and Gradient Boosting pipelines for inventory
-                  optimization, churn prediction, and anomaly detection at scale.
-                </p>
-              </div>
-            </div>
+          <div class="text-center mb-12">
+            <p class="text-xs font-bold text-logistics-orange uppercase tracking-widest mb-3">Choose Your Track</p>
+            <h2 class="text-3xl font-bold">What I <span class="text-logistics-orange">Build</span></h2>
+            <p class="text-slate-400 mt-3 max-w-xl mx-auto">Three distinct practice areas. One engineering foundation. Select the track most relevant to your role.</p>
           </div>
 
-          <!-- Career Timeline Below -->
-          <div class="mt-24">
-            <h3 class="text-2xl font-bold mb-12 text-center">
-              Career <span class="text-logistics-orange">Timeline</span>
-            </h3>
-            <div class="flow-line max-w-4xl mx-auto">
-              <!-- Marquez MMA -->
-              <div class="ml-16 mb-16 relative">
-                <div
-                  class="absolute -left-16 top-0 w-8 h-8 bg-logistics-orange rounded-full flex items-center justify-center border-4 border-slate-900 z-10 shadow-lg shadow-orange-900/20"
-                >
-                  <i class="fas fa-rocket text-[10px]"></i>
-                </div>
-                <div
-                  class="card-gradient p-8 rounded-2xl border border-slate-800"
-                >
-                  <div class="flex justify-between items-start mb-4">
-                    <div>
-                      <h3 class="text-xl font-bold">
-                        Regional Operations & Analytics
-                      </h3>
-                      <p class="text-logistics-orange font-semibold">
-                        Marquez MMA (Multi-Unit Franchise)
-                      </p>
-                    </div>
-                    <span
-                      class="text-xs font-mono bg-slate-800 px-3 py-1 rounded-full text-slate-400"
-                      >Jan 2023 – Feb 2026</span
-                    >
-                  </div>
-                  <ul class="space-y-3 text-slate-400 leading-relaxed">
-                    <li class="flex items-start">
-                      <i
-                        class="fas fa-check text-logistics-green mt-1.5 mr-3 text-xs"
-                      ></i>
-                      <span
-                        ><strong>Vendor Performance & Procurement:</strong>
-                        Orchestrated performance management and cost
-                        negotiations across 6 regional locations (PA, NJ, DE,
-                        NY, MI); evaluated manufacturer and sponsor SLAs to
-                        optimize procurement and reduce overhead.</span
-                      >
-                    </li>
-                    <li class="flex items-start">
-                      <i
-                        class="fas fa-check text-logistics-green mt-1.5 mr-3 text-xs"
-                      ></i>
-                      <span
-                        ><strong>Supply Chain & Inventory Control:</strong>
-                        Applied Lean methodologies to manage end-to-end
-                        inventory for retail goods and concessions, maintaining
-                        optimal stock levels to drive monthly profitability
-                        across the franchise network.</span
-                      >
-                    </li>
-                    <li class="flex items-start">
-                      <i
-                        class="fas fa-check text-logistics-green mt-1.5 mr-3 text-xs"
-                      ></i>
-                      <span
-                        ><strong>Logistics & Event Operations:</strong> Directed
-                        comprehensive logistics and critical path routing for
-                        multi-location events, managing complex staff allocation
-                        and accommodation requirements.</span
-                      >
-                    </li>
-                    <li class="flex items-start">
-                      <i
-                        class="fas fa-check text-logistics-green mt-1.5 mr-3 text-xs"
-                      ></i>
-                      <span
-                        ><strong>Stakeholder Analytics:</strong> Built automated
-                        KPI reporting pipelines, translating complex data into
-                        actionable dashboards to drive executive-level strategic
-                        pricing decisions.</span
-                      >
-                    </li>
-                  </ul>
-                </div>
-              </div>
+          <div class="grid md:grid-cols-3 gap-6">
 
-              <!-- Sonder -->
-              <div class="ml-16 mb-16 relative">
-                <div
-                  class="absolute -left-16 top-0 w-8 h-8 bg-logistics-green rounded-full flex items-center justify-center border-4 border-slate-900 z-10"
-                >
-                  <i class="fas fa-boxes text-[10px]"></i>
-                </div>
-                <div
-                  class="card-gradient p-8 rounded-2xl border border-slate-800"
-                >
-                  <div class="flex justify-between items-start mb-4">
-                    <div>
-                      <h3 class="text-xl font-bold">Operations Data Analyst</h3>
-                      <p class="text-logistics-orange font-semibold">
-                        Sonder Inc.
-                      </p>
-                    </div>
-                    <span
-                      class="text-xs font-mono bg-slate-800 px-3 py-1 rounded-full text-slate-400"
-                      >Dec 2021 – Dec 2023</span
-                    >
-                  </div>
-                  <ul class="space-y-3 text-slate-400 leading-relaxed">
-                    <li class="flex items-start">
-                      <i
-                        class="fas fa-check text-logistics-green mt-1.5 mr-3 text-xs"
-                      ></i>
-                      <span
-                        ><strong>Systems Integration:</strong> Engineered custom
-                        Salesforce and Asana integrations to act as a
-                        centralized ERP, providing real-time visibility into
-                        cross-functional capacity planning.</span
-                      >
-                    </li>
-                    <li class="flex items-start">
-                      <i
-                        class="fas fa-check text-logistics-green mt-1.5 mr-3 text-xs"
-                      ></i>
-                      <span
-                        ><strong>Demand Modeling:</strong> Developed SQL-driven
-                        demand forecasting models to optimize property supply
-                        levels and inventory consumption, directly reducing
-                        service disruptions.</span
-                      >
-                    </li>
-                    <li class="flex items-start">
-                      <i
-                        class="fas fa-check text-logistics-green mt-1.5 mr-3 text-xs"
-                      ></i>
-                      <span
-                        ><strong>Root Cause Analysis:</strong> Utilized data to
-                        isolate bottlenecks in maintenance workflows,
-                        facilitating the return of units to revenue-generating
-                        status.</span
-                      >
-                    </li>
-                  </ul>
-                </div>
+            <!-- Track 1 — Healthcare Analytics (FEATURED) -->
+            <div class="track-card featured rounded-2xl border border-slate-700 p-8 flex flex-col relative">
+              <div class="absolute top-4 right-4">
+                <span class="track-badge px-2 py-0.5 bg-logistics-orange/20 text-logistics-orange border border-logistics-orange/30 rounded-full font-bold uppercase">Featured</span>
               </div>
-
-              <!-- Cambria Hotel -->
-              <div class="ml-16 mb-16 relative">
-                <div
-                  class="absolute -left-16 top-0 w-8 h-8 bg-sky-600 rounded-full flex items-center justify-center border-4 border-slate-900 z-10"
-                >
-                  <i class="fas fa-file-invoice text-[10px]"></i>
-                </div>
-                <div
-                  class="card-gradient p-8 rounded-2xl border border-slate-800"
-                >
-                  <div class="flex justify-between items-start mb-4">
-                    <div>
-                      <h3 class="text-xl font-bold">Financial Data Analyst</h3>
-                      <p class="text-logistics-orange font-semibold">
-                        Cambria Hotel
-                      </p>
-                    </div>
-                    <span
-                      class="text-xs font-mono bg-slate-800 px-3 py-1 rounded-full text-slate-400"
-                      >Jan 2018 – Sep 2021</span
-                    >
-                  </div>
-                  <ul class="space-y-3 text-slate-400 leading-relaxed">
-                    <li class="flex items-start">
-                      <i
-                        class="fas fa-check text-logistics-green mt-1.5 mr-3 text-xs"
-                      ></i>
-                      <span
-                        ><strong>ETL Automation:</strong> Built automated Excel
-                        Power Query workflows to transform raw transaction logs
-                        into standardized reporting, eliminating manual
-                        calculation errors.</span
-                      >
-                    </li>
-                    <li class="flex items-start">
-                      <i
-                        class="fas fa-check text-logistics-green mt-1.5 mr-3 text-xs"
-                      ></i>
-                      <span
-                        ><strong>Variance Analysis:</strong> Conducted nightly
-                        variance audits across multiple cost centers to ensure
-                        financial integrity and identify operational overhead
-                        reduction opportunities.</span
-                      >
-                    </li>
-                  </ul>
-                </div>
+              <div class="w-12 h-12 bg-logistics-orange/15 rounded-xl flex items-center justify-center mb-5">
+                <i class="fas fa-heartbeat text-logistics-orange text-xl"></i>
               </div>
-
-              <!-- American Airlines -->
-              <div class="ml-16 relative">
-                <div
-                  class="absolute -left-16 top-0 w-8 h-8 bg-logistics-slate rounded-full flex items-center justify-center border-4 border-slate-900 z-10"
-                >
-                  <i class="fas fa-plane text-[10px]"></i>
-                </div>
-                <div
-                  class="card-gradient p-8 rounded-2xl border border-slate-800"
-                >
-                  <div class="flex justify-between items-start mb-4">
-                    <div>
-                      <h3 class="text-xl font-bold">
-                        Operations Team Lead (Logistics & Compliance)
-                      </h3>
-                      <p class="text-logistics-orange font-semibold">
-                        American Airlines
-                      </p>
-                    </div>
-                    <span
-                      class="text-xs font-mono bg-slate-800 px-3 py-1 rounded-full text-slate-400"
-                      >Jun 2008 – Sep 2017</span
-                    >
-                  </div>
-                  <p class="text-slate-300 font-medium italic mb-4">
-                    "Where I learned that a 5-minute delay costs thousands."
-                  </p>
-                  <ul class="space-y-3 text-slate-400 leading-relaxed">
-                    <li class="flex items-start">
-                      <i
-                        class="fas fa-check text-logistics-green mt-1.5 mr-3 text-xs"
-                      ></i>
-                      <span
-                        ><strong>SLA & Regulatory Compliance:</strong> Managed
-                        time-critical routing and FAA regulatory compliance for
-                        cross-connecting flights in a high-volatility
-                        environment.</span
-                      >
-                    </li>
-                    <li class="flex items-start">
-                      <i
-                        class="fas fa-check text-logistics-green mt-1.5 mr-3 text-xs"
-                      ></i>
-                      <span
-                        ><strong>Operational Root Cause Analysis:</strong>
-                        Performed RCA on missing inventory and delays to protect
-                        on-time service level agreements (SLAs).</span
-                      >
-                    </li>
-                  </ul>
-                </div>
+              <h3 class="text-xl font-bold mb-2">Healthcare Analytics</h3>
+              <p class="text-slate-400 text-sm leading-relaxed mb-4">
+                CMS Open Payments compliance analytics and healthcare data engineering. Production Star Schema ETL on federal healthcare data at scale.
+              </p>
+              <div class="flex flex-wrap gap-2 mb-6">
+                <span class="px-2 py-0.5 bg-logistics-orange/10 text-logistics-orange text-xs rounded font-mono">$11.7M compliance exposure</span>
+                <span class="px-2 py-0.5 bg-logistics-orange/10 text-logistics-orange text-xs rounded font-mono">15.4M CMS records</span>
+              </div>
+              <div class="mt-auto flex flex-col gap-3">
+                <a href="all_projects.html?track=healthcare" class="w-full text-center px-4 py-2.5 bg-logistics-orange hover:bg-orange-600 text-white font-bold rounded text-sm transition">
+                  View Healthcare Projects
+                </a>
+                <a href="assets/Michael_Campbell_Healthcare_Analytics.pdf" download class="w-full text-center px-4 py-2.5 border border-logistics-orange/40 text-logistics-orange hover:bg-logistics-orange/10 font-bold rounded text-sm transition">
+                  <i class="fas fa-file-download mr-1.5"></i> Download Resume
+                </a>
               </div>
             </div>
+
+            <!-- Track 2 — Analytics Engineering -->
+            <div class="track-card rounded-2xl border border-slate-700 p-8 flex flex-col">
+              <div class="w-12 h-12 bg-sky-500/15 rounded-xl flex items-center justify-center mb-5">
+                <i class="fas fa-database text-sky-400 text-xl"></i>
+              </div>
+              <h3 class="text-xl font-bold mb-2">Analytics Engineering</h3>
+              <p class="text-slate-400 text-sm leading-relaxed mb-4">
+                dbt, BigQuery, Airflow, and Star Schema data modeling. Production pipelines with checksum auditing, COMMIT checkpointing, and zero-downtime migrations.
+              </p>
+              <div class="flex flex-wrap gap-2 mb-6">
+                <span class="px-2 py-0.5 bg-sky-500/10 text-sky-400 text-xs rounded font-mono">Star Schema warehouse</span>
+                <span class="px-2 py-0.5 bg-sky-500/10 text-sky-400 text-xs rounded font-mono">sub-second OLAP</span>
+                <span class="px-2 py-0.5 bg-sky-500/10 text-sky-400 text-xs rounded font-mono">BigQuery migration</span>
+              </div>
+              <div class="mt-auto flex flex-col gap-3">
+                <a href="all_projects.html?track=engineering" class="w-full text-center px-4 py-2.5 bg-sky-600 hover:bg-sky-500 text-white font-bold rounded text-sm transition">
+                  View Engineering Projects
+                </a>
+                <a href="assets/Michael_Campbell_Data_Engineer.pdf" download class="w-full text-center px-4 py-2.5 border border-sky-500/40 text-sky-400 hover:bg-sky-500/10 font-bold rounded text-sm transition">
+                  <i class="fas fa-file-download mr-1.5"></i> Download Resume
+                </a>
+              </div>
+            </div>
+
+            <!-- Track 3 — Supply Chain & Logistics -->
+            <div class="track-card rounded-2xl border border-slate-700 p-8 flex flex-col">
+              <div class="w-12 h-12 bg-logistics-green/15 rounded-xl flex items-center justify-center mb-5">
+                <i class="fas fa-ship text-emerald-400 text-xl"></i>
+              </div>
+              <h3 class="text-xl font-bold mb-2">Supply Chain & Logistics</h3>
+              <p class="text-slate-400 text-sm leading-relaxed mb-4">
+                OTD analysis, freight cost modeling, inventory optimization, and demand forecasting across global health commodity and logistics networks.
+              </p>
+              <div class="flex flex-wrap gap-2 mb-6">
+                <span class="px-2 py-0.5 bg-emerald-500/10 text-emerald-400 text-xs rounded font-mono">$1.46B network</span>
+                <span class="px-2 py-0.5 bg-emerald-500/10 text-emerald-400 text-xs rounded font-mono">$10.43M capital recovered</span>
+              </div>
+              <div class="mt-auto flex flex-col gap-3">
+                <a href="all_projects.html?track=supply-chain" class="w-full text-center px-4 py-2.5 bg-logistics-green hover:bg-emerald-700 text-white font-bold rounded text-sm transition">
+                  View Supply Chain Projects
+                </a>
+                <a href="assets/Michael_Campbell_Supply_Chain_Analytics.pdf" download class="w-full text-center px-4 py-2.5 border border-emerald-500/40 text-emerald-400 hover:bg-emerald-500/10 font-bold rounded text-sm transition">
+                  <i class="fas fa-file-download mr-1.5"></i> Download Resume
+                </a>
+              </div>
+            </div>
+
           </div>
         </div>
       </section>
 
-      <!-- Skills / Toolbox -->
-      <section
-        id="skills"
-        class="py-24 bg-slate-900/50 border-y border-slate-800"
-      >
+      <!-- ═══════════════════════════════════════
+           CAREER TIMELINE — Slim Strip
+      ═══════════════════════════════════════ -->
+      <section id="about" class="py-12 border-b border-slate-800">
+        <div class="container mx-auto px-6 max-w-5xl">
+          <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-5">
+            <p class="text-xs font-bold uppercase tracking-widest text-slate-500">10+ Years of Operational Experience</p>
+            <p class="text-xs text-slate-600 italic">Full detail in the resume for your track above.</p>
+          </div>
+          <div class="overflow-hidden rounded-xl border border-slate-800">
+            <table class="w-full text-sm">
+              <tbody>
+                <tr class="border-b border-slate-800 hover:bg-slate-800/40 transition">
+                  <td class="px-6 py-3.5 font-semibold text-slate-200 whitespace-nowrap">Regional Operations & Analytics</td>
+                  <td class="px-6 py-3.5 text-logistics-orange font-medium whitespace-nowrap">Marquez MMA</td>
+                  <td class="px-6 py-3.5 text-slate-500 font-mono whitespace-nowrap text-right">2023 – 2026</td>
+                </tr>
+                <tr class="border-b border-slate-800 hover:bg-slate-800/40 transition">
+                  <td class="px-6 py-3.5 font-semibold text-slate-200 whitespace-nowrap">Operations Data Analyst</td>
+                  <td class="px-6 py-3.5 text-logistics-orange font-medium whitespace-nowrap">Sonder Inc.</td>
+                  <td class="px-6 py-3.5 text-slate-500 font-mono whitespace-nowrap text-right">2021 – 2023</td>
+                </tr>
+                <tr class="border-b border-slate-800 hover:bg-slate-800/40 transition">
+                  <td class="px-6 py-3.5 font-semibold text-slate-200 whitespace-nowrap">Financial Data Analyst</td>
+                  <td class="px-6 py-3.5 text-logistics-orange font-medium whitespace-nowrap">Cambria Hotel</td>
+                  <td class="px-6 py-3.5 text-slate-500 font-mono whitespace-nowrap text-right">2018 – 2021</td>
+                </tr>
+                <tr class="hover:bg-slate-800/40 transition">
+                  <td class="px-6 py-3.5 font-semibold text-slate-200 whitespace-nowrap">Operations Team Lead (Logistics & Compliance)</td>
+                  <td class="px-6 py-3.5 text-logistics-orange font-medium whitespace-nowrap">American Airlines</td>
+                  <td class="px-6 py-3.5 text-slate-500 font-mono whitespace-nowrap text-right">2008 – 2017</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </section>
+
+      <!-- ═══════════════════════════════════════
+           SKILLS / TOOLBOX (unchanged)
+      ═══════════════════════════════════════ -->
+      <section id="skills" class="py-24 bg-slate-900/50 border-y border-slate-800">
         <div class="container mx-auto px-6">
           <h2 class="text-3xl font-bold mb-16 text-center">
             My Analytical <span class="text-logistics-orange">Toolbox</span>
           </h2>
-
           <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-            <!-- Tech Stack -->
-            <div
-              class="bg-slate-900 p-8 rounded-2xl border border-slate-800 flex flex-col items-center text-center"
-            >
+            <div class="bg-slate-900 p-8 rounded-2xl border border-slate-800 flex flex-col items-center text-center">
               <i class="fas fa-code text-4xl text-logistics-orange mb-6"></i>
               <h3 class="text-xl font-bold mb-4">Data Engineering</h3>
               <div class="flex flex-wrap justify-center gap-2">
-                <span class="px-3 py-1 bg-slate-800 rounded-md text-sm"
-                  >Python (Pandas, SQLAlchemy)</span
-                >
-                <span class="px-3 py-1 bg-slate-800 rounded-md text-sm"
-                  >SQL (PostgreSQL, MySQL, BigQuery, Snowflake)</span
-                >
-                <span class="px-3 py-1 bg-slate-800 rounded-md text-sm"
-                  >dbt</span
-                >
-                <span class="px-3 py-1 bg-slate-800 rounded-md text-sm"
-                  >Apache Airflow</span
-                >
-                <span class="px-3 py-1 bg-slate-800 rounded-md text-sm"
-                  >Docker</span
-                >
-                <span
-                  class="px-3 py-1 bg-slate-800 rounded-md text-sm border border-slate-700/50"
-                  >Git</span
-                >
+                <span class="px-3 py-1 bg-slate-800 rounded-md text-sm">Python (Pandas, SQLAlchemy)</span>
+                <span class="px-3 py-1 bg-slate-800 rounded-md text-sm">SQL (PostgreSQL, MySQL, BigQuery, Snowflake)</span>
+                <span class="px-3 py-1 bg-slate-800 rounded-md text-sm">dbt</span>
+                <span class="px-3 py-1 bg-slate-800 rounded-md text-sm">Apache Airflow</span>
+                <span class="px-3 py-1 bg-slate-800 rounded-md text-sm">Docker</span>
+                <span class="px-3 py-1 bg-slate-800 rounded-md text-sm border border-slate-700/50">Git</span>
               </div>
             </div>
-            <!-- Analysis -->
-            <div
-              class="bg-slate-900 p-8 rounded-2xl border border-slate-800 flex flex-col items-center text-center"
-            >
-              <i
-                class="fas fa-chart-pie text-4xl text-logistics-green mb-6"
-              ></i>
+            <div class="bg-slate-900 p-8 rounded-2xl border border-slate-800 flex flex-col items-center text-center">
+              <i class="fas fa-chart-pie text-4xl text-logistics-green mb-6"></i>
               <h3 class="text-xl font-bold mb-4">Supply Chain Intel</h3>
               <div class="flex flex-wrap justify-center gap-2">
-                <span class="px-3 py-1 bg-slate-800 rounded-md text-sm"
-                  >Inventory Forecasting</span
-                >
-                <span class="px-3 py-1 bg-slate-800 rounded-md text-sm"
-                  >Variance Analysis</span
-                >
-                <span class="px-3 py-1 bg-slate-800 rounded-md text-sm"
-                  >Root Cause Analysis</span
-                >
-                <span
-                  class="px-3 py-1 bg-slate-800 rounded-md text-sm border border-slate-700/50"
-                  >Supply Chain Optimization</span
-                >
-                <span class="px-3 py-1 bg-slate-800 rounded-md text-sm"
-                  >KPI Tracking</span
-                >
+                <span class="px-3 py-1 bg-slate-800 rounded-md text-sm">Inventory Forecasting</span>
+                <span class="px-3 py-1 bg-slate-800 rounded-md text-sm">Variance Analysis</span>
+                <span class="px-3 py-1 bg-slate-800 rounded-md text-sm">Root Cause Analysis</span>
+                <span class="px-3 py-1 bg-slate-800 rounded-md text-sm border border-slate-700/50">Supply Chain Optimization</span>
+                <span class="px-3 py-1 bg-slate-800 rounded-md text-sm">KPI Tracking</span>
               </div>
             </div>
-            <!-- Viz -->
-            <div
-              class="bg-slate-900 p-8 rounded-2xl border border-slate-800 flex flex-col items-center text-center"
-            >
+            <div class="bg-slate-900 p-8 rounded-2xl border border-slate-800 flex flex-col items-center text-center">
               <i class="fas fa-desktop text-4xl text-sky-500 mb-6"></i>
               <h3 class="text-xl font-bold mb-4">Visualization</h3>
               <div class="flex flex-wrap justify-center gap-2">
-                <span class="px-3 py-1 bg-slate-800 rounded-md text-sm"
-                  >Tableau (Advanced)</span
-                >
-                <span class="px-3 py-1 bg-slate-800 rounded-md text-sm"
-                  >Power BI</span
-                >
-                <span class="px-3 py-1 bg-slate-800 rounded-md text-sm"
-                  >Excel Power Query</span
-                >
-                <span
-                  class="px-3 py-1 bg-slate-800 rounded-md text-sm border border-slate-700/50"
-                  >Real-time Dashboards</span
-                >
+                <span class="px-3 py-1 bg-slate-800 rounded-md text-sm">Tableau (Advanced)</span>
+                <span class="px-3 py-1 bg-slate-800 rounded-md text-sm">Power BI</span>
+                <span class="px-3 py-1 bg-slate-800 rounded-md text-sm">Excel Power Query</span>
+                <span class="px-3 py-1 bg-slate-800 rounded-md text-sm border border-slate-700/50">Real-time Dashboards</span>
               </div>
             </div>
-            <!-- Enterprise Ops -->
-            <div
-              class="bg-slate-900 p-8 rounded-2xl border border-slate-800 flex flex-col items-center text-center"
-            >
+            <div class="bg-slate-900 p-8 rounded-2xl border border-slate-800 flex flex-col items-center text-center">
               <i class="fas fa-shield-alt text-4xl text-amber-500 mb-6"></i>
               <h3 class="text-xl font-bold mb-4">Regulated Environments</h3>
               <div class="flex flex-wrap justify-center gap-2">
-                <span class="px-3 py-1 bg-slate-800 rounded-md text-sm"
-                  >FAA & Homeland Security</span
-                >
-                <span class="px-3 py-1 bg-slate-800 rounded-md text-sm"
-                  >Financial PII Handling</span
-                >
-                <span class="px-3 py-1 bg-slate-800 rounded-md text-sm"
-                  >KYC Verification</span
-                >
-                <span class="px-3 py-1 bg-slate-800 rounded-md text-sm"
-                  >Medical Records</span
-                >
-                <span
-                  class="px-3 py-1 bg-slate-800 rounded-md text-sm border border-slate-700/50"
-                  >HIPAA-Adjacent Governance</span
-                >
+                <span class="px-3 py-1 bg-slate-800 rounded-md text-sm">FAA & Homeland Security</span>
+                <span class="px-3 py-1 bg-slate-800 rounded-md text-sm">Financial PII Handling</span>
+                <span class="px-3 py-1 bg-slate-800 rounded-md text-sm">KYC Verification</span>
+                <span class="px-3 py-1 bg-slate-800 rounded-md text-sm">Medical Records</span>
+                <span class="px-3 py-1 bg-slate-800 rounded-md text-sm border border-slate-700/50">HIPAA-Adjacent Governance</span>
               </div>
             </div>
-            <!-- AI Tools — new card -->
-            <div
-              class="bg-slate-900 p-8 rounded-2xl border border-slate-800 flex flex-col items-center text-center"
-            >
+            <div class="bg-slate-900 p-8 rounded-2xl border border-slate-800 flex flex-col items-center text-center">
               <i class="fas fa-robot text-4xl text-purple-400 mb-6"></i>
               <h3 class="text-xl font-bold mb-4">AI Workflow Tools</h3>
               <div class="flex flex-wrap justify-center gap-2">
-                <span class="px-3 py-1 bg-slate-800 rounded-md text-sm"
-                  >ChatGPT</span
-                >
-                <span class="px-3 py-1 bg-slate-800 rounded-md text-sm"
-                  >Claude</span
-                >
-                <span class="px-3 py-1 bg-slate-800 rounded-md text-sm"
-                  >GitHub Copilot</span
-                >
-                <span class="px-3 py-1 bg-slate-800 rounded-md text-sm"
-                  >Gemini</span
-                >
-                <span
-                  class="px-3 py-1 bg-slate-800 rounded-md text-sm border border-slate-700/50"
-                  >NotebookLM</span
-                >
+                <span class="px-3 py-1 bg-slate-800 rounded-md text-sm">ChatGPT</span>
+                <span class="px-3 py-1 bg-slate-800 rounded-md text-sm">Claude</span>
+                <span class="px-3 py-1 bg-slate-800 rounded-md text-sm">GitHub Copilot</span>
+                <span class="px-3 py-1 bg-slate-800 rounded-md text-sm">Gemini</span>
+                <span class="px-3 py-1 bg-slate-800 rounded-md text-sm border border-slate-700/50">NotebookLM</span>
               </div>
             </div>
           </div>
         </div>
       </section>
 
-      <!-- Projects Grid -->
-      <section
-        id="projects"
-        class="py-24 bg-slate-900 border-b border-slate-800"
-      >
+      <!-- ═══════════════════════════════════════
+           PROJECTS GRID (unchanged — 3 featured)
+      ═══════════════════════════════════════ -->
+      <section id="projects" class="py-24 bg-slate-900 border-b border-slate-800">
         <div class="container mx-auto px-6">
-          <div
-            class="flex flex-col md:flex-row justify-between items-end mb-16 gap-4"
-          >
+          <div class="flex flex-col md:flex-row justify-between items-end mb-16 gap-4">
             <div>
               <h2 class="text-3xl font-bold">
-                Featured
-                <span class="text-logistics-orange">Healthcare & Analytics</span> Cases
+                Featured <span class="text-logistics-orange">Healthcare & Analytics</span> Cases
               </h2>
-              <p class="text-slate-400 mt-2">
-                Healthcare data engineering, supply chain intelligence, and ML-driven analytics.
-              </p>
+              <p class="text-slate-400 mt-2">Healthcare data engineering, supply chain intelligence, and ML-driven analytics.</p>
             </div>
-            <a
-              href="all_projects.html"
-              class="text-sm font-bold text-slate-500 hover:text-logistics-orange transition uppercase tracking-widest flex items-center gap-2"
-            >
-              View Project Gallery
-              <i class="fas fa-chevron-right text-[10px]"></i>
+            <a href="all_projects.html" class="text-sm font-bold text-slate-500 hover:text-logistics-orange transition uppercase tracking-widest flex items-center gap-2">
+              View Project Gallery <i class="fas fa-chevron-right text-[10px]"></i>
             </a>
           </div>
 
           <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-10">
-            <!-- Project 1 (Consolidated CMS) -->
+            <!-- Project 1 -->
             <div class="hover-trigger group">
-              <div
-                class="hover-target card-gradient rounded-3xl border border-slate-800 overflow-hidden transition-all duration-300 flex flex-col h-full"
-              >
-                <img
-                  src="images/project_images/sccc.png"
-                  alt="Supply Chain Optimization"
-                  class="w-full h-56 object-cover opacity-80 group-hover:opacity-100 transition"
-                />
+              <div class="hover-target card-gradient rounded-3xl border border-slate-800 overflow-hidden transition-all duration-300 flex flex-col h-full">
+                <img src="images/project_images/sccc.png" alt="Healthcare Payments Compliance" class="w-full h-56 object-cover opacity-80 group-hover:opacity-100 transition" />
                 <div class="p-8 flex flex-col flex-grow">
                   <div class="flex justify-between items-center mb-4">
-                    <span
-                      class="text-xs font-bold text-logistics-orange uppercase tracking-tighter"
-                      >Healthcare Data Engineering</span
-                    >
+                    <span class="text-xs font-bold text-logistics-orange uppercase tracking-tighter">Healthcare Data Engineering</span>
                     <div class="flex space-x-2 text-slate-500">
                       <i class="fas fa-database" title="SQL"></i>
                       <i class="fas fa-table" title="Tableau"></i>
                     </div>
                   </div>
-                  <h3
-                    class="text-2xl font-bold mb-3 group-hover:text-logistics-orange transition"
-                  >
+                  <h3 class="text-2xl font-bold mb-3 group-hover:text-logistics-orange transition">
                     Healthcare Payments Compliance & Spend Analytics
                   </h3>
                   <p class="text-slate-400 leading-relaxed mb-6 flex-grow">
-                    Production-grade Star Schema data warehouse built on
-                    <strong>15.4M records of 2024 CMS Open Payments</strong>
-                    federal healthcare data. Flagged <strong>$11.7M in provider
-                    payment compliance exposure</strong> and a $170M+ anomaly
-                    event through Z-Score statistical analysis in SQL.
+                    Production-grade Star Schema data warehouse built on <strong>15.4M records of 2024 CMS Open Payments</strong> federal healthcare data. Flagged <strong>$11.7M in provider payment compliance exposure</strong> and a $170M+ anomaly event through Z-Score statistical analysis in SQL.
                   </p>
-                  <a
-                    href="healthcare-payments-compliance.html"
-                    class="inline-flex items-center font-bold text-logistics-orange hover:gap-2 transition-all mt-auto"
-                  >
+                  <a href="healthcare-payments-compliance.html" class="inline-flex items-center font-bold text-logistics-orange hover:gap-2 transition-all mt-auto">
                     Deep Dive <i class="fas fa-arrow-right ml-2 text-sm"></i>
                   </a>
                 </div>
               </div>
             </div>
 
-            <!-- Project 2 (Logistics Cost Optimization) -->
+            <!-- Project 2 -->
             <div class="hover-trigger group">
-              <div
-                class="hover-target card-gradient rounded-3xl border border-slate-800 overflow-hidden transition-all duration-300 flex flex-col h-full"
-              >
-                <img
-                  src="images/project_images/supplychaindashboard.png"
-                  alt="Supply Chain"
-                  class="w-full h-56 object-cover opacity-80 group-hover:opacity-100 transition"
-                />
+              <div class="hover-target card-gradient rounded-3xl border border-slate-800 overflow-hidden transition-all duration-300 flex flex-col h-full">
+                <img src="images/project_images/supplychaindashboard.png" alt="Global Health Supply Chain" class="w-full h-56 object-cover opacity-80 group-hover:opacity-100 transition" />
                 <div class="p-8 flex flex-col flex-grow">
                   <div class="flex justify-between items-center mb-4">
-                    <span
-                      class="text-xs font-bold text-logistics-orange uppercase tracking-tighter"
-                      >Healthcare Supply Chain</span
-                    >
+                    <span class="text-xs font-bold text-logistics-orange uppercase tracking-tighter">Healthcare Supply Chain</span>
                     <div class="flex gap-2 text-slate-500">
                       <i class="fab fa-python" title="Python"></i>
                       <i class="fas fa-table" title="Tableau"></i>
                     </div>
                   </div>
-                  <h3
-                    class="text-2xl font-bold mb-3 group-hover:text-logistics-orange transition"
-                  >
+                  <h3 class="text-2xl font-bold mb-3 group-hover:text-logistics-orange transition">
                     Global Health Supply Chain Optimization
                   </h3>
                   <p class="text-slate-400 leading-relaxed mb-6 flex-grow">
-                    Analytics platform tracking <strong>$1.46B in global health
-                    commodity shipments</strong> — ARV antiretroviral drugs and
-                    HIV diagnostic tests. Identified cost concentration driving
-                    99% of logistics spend across international health programs.
+                    Analytics platform tracking <strong>$1.46B in global health commodity shipments</strong> — ARV antiretroviral drugs and HIV diagnostic tests. Identified cost concentration driving 99% of logistics spend across international health programs.
                   </p>
-                  <a
-                    href="global-health-supply-chain.html"
-                    class="inline-flex items-center font-bold text-logistics-orange hover:gap-2 transition-all mt-auto"
-                  >
+                  <a href="global-health-supply-chain.html" class="inline-flex items-center font-bold text-logistics-orange hover:gap-2 transition-all mt-auto">
                     Deep Dive <i class="fas fa-arrow-right ml-2 text-sm"></i>
                   </a>
                 </div>
               </div>
             </div>
 
-            <!-- Project 3 (Inventory Capital Optimizer) -->
+            <!-- Project 3 -->
             <div class="hover-trigger group">
-              <div
-                class="hover-target card-gradient rounded-3xl border border-slate-800 overflow-hidden transition-all duration-300 flex flex-col h-full"
-              >
-                <img
-                  src="images/project_images/inventory_capital_optimizer.png"
-                  alt="Inventory Capital Optimizer"
-                  class="w-full h-56 object-cover opacity-80 group-hover:opacity-100 transition"
-                />
+              <div class="hover-target card-gradient rounded-3xl border border-slate-800 overflow-hidden transition-all duration-300 flex flex-col h-full">
+                <img src="images/project_images/inventory_capital_optimizer.png" alt="Inventory Capital Optimizer" class="w-full h-56 object-cover opacity-80 group-hover:opacity-100 transition" />
                 <div class="p-8 flex flex-col flex-grow">
                   <div class="flex justify-between items-center mb-4">
-                    <span
-                      class="text-xs font-bold text-logistics-orange uppercase tracking-tighter"
-                      >Machine Learning</span
-                    >
+                    <span class="text-xs font-bold text-logistics-orange uppercase tracking-tighter">Machine Learning</span>
                     <div class="flex gap-2 text-slate-500">
                       <i class="fab fa-python" title="Python"></i>
                     </div>
                   </div>
-                  <h3
-                    class="text-2xl font-bold mb-3 group-hover:text-logistics-orange transition"
-                  >
+                  <h3 class="text-2xl font-bold mb-3 group-hover:text-logistics-orange transition">
                     Inventory Capital Optimizer
                   </h3>
                   <p class="text-slate-400 leading-relaxed mb-6 flex-grow">
-                    ML-driven (XGBoost/LightGBM) demand forecasting and
-                    prescriptive liquidation engine. Protected $2.44B in revenue
-                    leakage while releasing $10.43M in trapped capital through
-                    intelligent, volatility-weighted safety stock buffering.
+                    ML-driven (XGBoost/LightGBM) demand forecasting and prescriptive liquidation engine. Protected $2.44B in revenue leakage while releasing $10.43M in trapped capital through intelligent, volatility-weighted safety stock buffering.
                   </p>
-                  <a
-                    href="inventory-capital-optimizer.html"
-                    class="inline-flex items-center font-bold text-logistics-orange hover:gap-2 transition-all mt-auto"
-                  >
+                  <a href="inventory-capital-optimizer.html" class="inline-flex items-center font-bold text-logistics-orange hover:gap-2 transition-all mt-auto">
                     Deep Dive <i class="fas fa-arrow-right ml-2 text-sm"></i>
                   </a>
                 </div>
@@ -945,49 +535,32 @@
         </div>
       </section>
 
-      <!-- Contact CTA -->
+      <!-- ═══════════════════════════════════════
+           CONTACT CTA — no resume download
+      ═══════════════════════════════════════ -->
       <section id="contact" class="py-24 relative">
         <div class="container mx-auto px-6 text-center max-w-2xl">
           <h2 class="text-4xl font-bold mb-6 italic">
-            Let's build something that
-            <span class="text-logistics-orange">matters.</span>
+            Let's build something that <span class="text-logistics-orange">matters.</span>
           </h2>
           <p class="text-slate-400 mb-10 text-lg">
-            Open to remote, hybrid, and Tampa Bay area roles in healthcare
-            analytics, analytics engineering, and supply chain data analytics.
+            Open to remote, hybrid, and Tampa Bay area roles in healthcare analytics, analytics engineering, and supply chain data analytics.
           </p>
           <div class="flex flex-col sm:flex-row justify-center gap-4">
-            <a
-              href="mailto:mcam215@gmail.com"
-              class="px-8 py-4 bg-white text-slate-900 font-bold rounded-lg hover:bg-slate-200 transition"
-            >
+            <a href="/cdn-cgi/l/email-protection#9ff2fcfef2adaeaadff8f2fef6f3b1fcf0f2" class="px-8 py-4 bg-white text-slate-900 font-bold rounded-lg hover:bg-slate-200 transition">
               Send an Email
             </a>
-            <a
-              href="assets/Michael_Campbell_Data_Analyst.pdf"
-              download
-              class="px-8 py-4 bg-logistics-orange text-white font-bold rounded-lg hover:bg-orange-600 transition"
-            >
-              Download Resume
-            </a>
-            <a
-              href="https://www.linkedin.com/in/michaelcampbell215"
-              class="px-8 py-4 border border-slate-700 font-bold rounded-lg hover:border-slate-500 transition"
-            >
+            <a href="https://www.linkedin.com/in/michaelcampbell215" class="px-8 py-4 border border-slate-700 font-bold rounded-lg hover:border-slate-500 transition">
               LinkedIn
             </a>
           </div>
+          <p class="text-xs text-slate-600 mt-8">
+            Looking for a resume? Select your track above in <a href="#what-i-build" class="text-logistics-orange hover:underline">What I Build</a>.
+          </p>
         </div>
       </section>
+
     </main>
 
-    <footer
-      class="py-12 border-t border-slate-800 text-center text-slate-600 text-sm"
-    >
-      <p>
-        &copy; 2026 Michael Campbell. Optimized for Impact. (v2.0.1 - Launch
-        Verified)
-      </p>
-    </footer>
-  </body>
-</html>
+    <footer class="py-12 border-t border-slate-800 text-center text-slate-600 text-sm">
+      <p>&copy; 2026 Michael Campbell. Optimized for Impact. (v3.0

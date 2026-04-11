@@ -7,14 +7,8 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
-      rel="stylesheet"
-    />
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
-    />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
     <script>
       tailwind.config = {
         theme: {
@@ -24,10 +18,7 @@
               mono: ["JetBrains Mono", "monospace"],
             },
             colors: {
-              slate: {
-                800: "#1e293b",
-                900: "#0f172a",
-              },
+              slate: { 800: "#1e293b", 900: "#0f172a" },
               logistics: {
                 green: "#065F46",
                 orange: "#EA580C",
@@ -39,456 +30,344 @@
       };
     </script>
     <style>
-      body {
-        background-color: #0f172a;
-      }
+      body { background-color: #0f172a; }
       .card-gradient {
-        background: linear-gradient(
-          135deg,
-          rgba(30, 41, 59, 0.7) 0%,
-          rgba(15, 23, 42, 0.8) 100%
-        );
+        background: linear-gradient(135deg, rgba(30,41,59,0.7) 0%, rgba(15,23,42,0.8) 100%);
       }
-      .scroll-indicator {
-        writing-mode: vertical-rl;
-      }
+      .metric-card { border-left: 4px solid #ea580c; }
     </style>
   </head>
   <body class="bg-slate-900 text-slate-200 font-sans antialiased">
+
     <!-- Navigation -->
-    <nav
-      class="sticky top-0 z-50 bg-slate-900/80 backdrop-blur-md border-b border-slate-800"
-    >
-      <div
-        class="container mx-auto px-6 py-4 flex justify-between items-center"
-      >
-        <div class="flex items-center space-x-2">
-          <a
-            href="index.html"
-            class="text-xl font-bold tracking-tighter uppercase transition-opacity hover:opacity-80"
-          >
-            MICHAEL <span class="text-logistics-orange">CAMPBELL</span>
-          </a>
-        </div>
+    <nav class="sticky top-0 z-50 bg-slate-900/80 backdrop-blur-md border-b border-slate-800">
+      <div class="container mx-auto px-6 py-4 flex justify-between items-center">
+        <a href="index.html" class="text-xl font-bold tracking-tighter uppercase transition-opacity hover:opacity-80">
+          MICHAEL <span class="text-logistics-orange">CAMPBELL</span>
+        </a>
         <div class="hidden md:flex space-x-8 text-sm font-medium items-center">
-          <a href="index.html" class="hover:text-logistics-orange transition"
-            >Home</a
-          >
-          <a
-            href="all_projects.html"
-            class="hover:text-logistics-orange transition"
-            >Gallery</a
-          >
-          <a href="#dashboard" class="hover:text-logistics-orange transition"
-            >Dashboard</a
-          >
-          <a href="#insights" class="hover:text-logistics-orange transition"
-            >Insights</a
-          >
-          <a
-            href="#contact"
-            class="px-4 py-2 bg-logistics-green hover:bg-emerald-700 text-white rounded transition"
-            >Contact</a
-          >
+          <a href="index.html" class="hover:text-logistics-orange transition">Home</a>
+          <a href="all_projects.html" class="hover:text-logistics-orange transition">Gallery</a>
+          <a href="#dashboard" class="hover:text-logistics-orange transition">Dashboard</a>
+          <a href="#insights" class="hover:text-logistics-orange transition">Insights</a>
+          <a href="#contact" class="px-4 py-2 bg-logistics-green hover:bg-emerald-700 text-white rounded transition">Contact</a>
         </div>
       </div>
     </nav>
 
-    <main class="pt-24">
-      <!-- Project Hero -->
-      <section class="py-20 border-b border-slate-800 relative overflow-hidden">
+    <main>
+
+      <!-- ═══════════════════════════════════════
+           HERO
+      ═══════════════════════════════════════ -->
+      <section class="py-20 border-b border-slate-800 bg-slate-900/50">
         <div class="container mx-auto px-6">
           <div class="max-w-4xl">
-            <div
-              class="inline-block px-3 py-1 bg-logistics-orange/10 border border-logistics-orange/20 text-logistics-orange rounded-full text-xs font-bold uppercase tracking-widest mb-6"
-            >
+            <div class="inline-block px-3 py-1 bg-logistics-orange/10 border border-logistics-orange/20 text-logistics-orange rounded-full text-xs font-bold uppercase tracking-widest mb-6">
               Healthcare Supply Chain Analytics
             </div>
             <h1 class="text-4xl md:text-6xl font-bold mb-6 leading-tight">
               Global Health Supply Chain
               <span class="text-logistics-orange">Optimization</span>
             </h1>
-            <p class="text-xl text-slate-300 leading-relaxed mb-8">
-              An analytics platform tracking $1.46B in global health commodity
-              shipments — ARV antiretroviral drugs and HIV Rapid Diagnostic
-              Tests (HRDT) — across USAID-funded international health programs.
-              Identifies freight cost concentration, carrier performance gaps,
-              and procurement optimization opportunities.
+            <p class="text-xl text-slate-300 leading-relaxed mb-8 font-mono">
+              > Analytics platform tracking $1.46B in USAID global health commodity shipments — ARV antiretroviral drugs and HIV Rapid Diagnostic Tests. Isolated a structural Ocean OTD failure masked by blended averages, identifying ~$73M in annual cost recovery potential through mode-specific routing enforcement.
             </p>
-
             <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
-              <div class="border-l-2 border-slate-800 pl-4">
-                <div
-                  class="text-xs uppercase tracking-widest text-slate-500 mb-1"
-                >
-                  Tools
-                </div>
-                <div class="font-bold flex flex-wrap gap-1">
-                  <span class="text-slate-300">Tableau,</span>
-                  <span class="text-slate-300">Python,</span>
-                  <span class="text-slate-300">SQL</span>
-                </div>
+              <div class="border-l-2 border-logistics-orange/40 pl-4">
+                <div class="text-xs uppercase tracking-widest text-slate-500 mb-1">Tools</div>
+                <div class="font-bold text-slate-300">Python · Tableau · SQL</div>
               </div>
-              <div class="border-l-2 border-slate-800 pl-4">
-                <div
-                  class="text-xs uppercase tracking-widest text-slate-500 mb-1"
-                >
-                  Impact
-                </div>
-                <div class="font-bold text-slate-300">
-                  88.5% OTD Rate Identified
-                </div>
+              <div class="border-l-2 border-slate-700 pl-4">
+                <div class="text-xs uppercase tracking-widest text-slate-500 mb-1">Cost Recovery</div>
+                <div class="font-bold text-logistics-orange">~$73M Identified</div>
               </div>
-              <div class="border-l-2 border-slate-800 pl-4">
-                <div
-                  class="text-xs uppercase tracking-widest text-slate-500 mb-1"
-                >
-                  Focus
-                </div>
-                <div class="font-bold text-slate-300">
-                  Healthcare Supply Chain
-                </div>
+              <div class="border-l-2 border-slate-700 pl-4">
+                <div class="text-xs uppercase tracking-widest text-slate-500 mb-1">Domain</div>
+                <div class="font-bold text-slate-300">Global Health / PEPFAR</div>
               </div>
-              <div class="border-l-2 border-slate-800 pl-4">
-                <div
-                  class="text-xs uppercase tracking-widest text-slate-500 mb-1"
-                >
-                  Dataset
-                </div>
-                <a
-                  href="https://www.kaggle.com/datasets/apoorvwatsky/supply-chain-shipment-pricing-data"
-                  target="_blank"
-                  class="font-bold text-logistics-orange hover:underline"
-                  >USAID SCMS Dataset</a
-                >
+              <div class="border-l-2 border-slate-700 pl-4">
+                <div class="text-xs uppercase tracking-widest text-slate-500 mb-1">Dataset</div>
+                <a href="https://www.kaggle.com/datasets/apoorvwatsky/supply-chain-shipment-pricing-data" target="_blank" class="font-bold text-logistics-orange hover:underline">USAID SCMS</a>
               </div>
             </div>
           </div>
         </div>
       </section>
 
-      <!-- Dashboard Section -->
+      <!-- ═══════════════════════════════════════
+           KEY METRICS BAR
+      ═══════════════════════════════════════ -->
+      <section class="py-12 border-b border-slate-800">
+        <div class="container mx-auto px-6">
+          <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
+            <div class="p-6 bg-slate-900 rounded-2xl border border-slate-800 metric-card">
+              <p class="text-slate-500 text-xs font-bold uppercase tracking-widest mb-1">Network Analyzed</p>
+              <h3 class="text-2xl font-bold">$1.46B</h3>
+              <p class="text-slate-400 text-xs mt-2">Total Commodity Shipment Value</p>
+            </div>
+            <div class="p-6 bg-slate-900 rounded-2xl border border-slate-800 metric-card">
+              <p class="text-slate-500 text-xs font-bold uppercase tracking-widest mb-1">Cost Recovery</p>
+              <h3 class="text-2xl font-bold">~$73M</h3>
+              <p class="text-slate-400 text-xs mt-2">Annual Opportunity via Mode Isolation</p>
+            </div>
+            <div class="p-6 bg-slate-900 rounded-2xl border border-slate-800 metric-card" style="border-left-color: #065f46">
+              <p class="text-slate-500 text-xs font-bold uppercase tracking-widest mb-1">Spend Concentration</p>
+              <h3 class="text-2xl font-bold">99%</h3>
+              <p class="text-slate-400 text-xs mt-2">ARV + HRDT of Total Spend</p>
+            </div>
+            <div class="p-6 bg-slate-900 rounded-2xl border border-slate-800 metric-card" style="border-left-color: #6366f1">
+              <p class="text-slate-500 text-xs font-bold uppercase tracking-widest mb-1">Ocean OTD Rate</p>
+              <h3 class="text-2xl font-bold">84%</h3>
+              <p class="text-slate-400 text-xs mt-2">Hidden by 88.5% Blended Average</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ═══════════════════════════════════════
+           DASHBOARD
+      ═══════════════════════════════════════ -->
       <section id="dashboard" class="py-24 bg-slate-900/50">
         <div class="container mx-auto px-6 text-center">
           <h2 class="text-3xl font-bold mb-12">
-            Performance <span class="text-logistics-orange">Dashboard</span>
+            Global Delivery Performance <span class="text-logistics-orange">Dashboard</span>
           </h2>
-          <div
-            class="card-gradient p-2 rounded-2xl border border-slate-800 overflow-hidden shadow-2xl"
-          >
+          <div class="card-gradient p-2 rounded-2xl border border-slate-800 overflow-hidden shadow-2xl">
             <iframe
               src="https://public.tableau.com/views/supplychain_17339884476900/GLOBALDELIVERYPERFORMANCEOVERVIEW?:showVizHome=no&:embed=true"
               class="w-full aspect-video rounded-xl border border-slate-700"
               frameborder="0"
               allowfullscreen
-            >
-            </iframe>
+            ></iframe>
           </div>
           <div class="mt-8">
-            <a
-              href="https://github.com/michaelcampbell215/global-health-supply-chain"
-              target="_blank"
-              class="inline-flex items-center px-6 py-3 bg-slate-800 hover:bg-slate-700 text-white font-bold rounded-lg transition border border-slate-700"
-            >
+            <a href="https://github.com/michaelcampbell215/global-health-supply-chain" target="_blank"
+              class="inline-flex items-center px-6 py-3 bg-slate-800 hover:bg-slate-700 text-white font-bold rounded-lg transition border border-slate-700">
               <i class="fab fa-github mr-2"></i> View Project Code
             </a>
           </div>
         </div>
       </section>
 
-      <!-- Documentation Panels -->
-      <section id="documentation" class="py-24 border-t border-slate-800">
+      <!-- ═══════════════════════════════════════
+           KEY FINDINGS + METHODOLOGY
+      ═══════════════════════════════════════ -->
+      <section id="insights" class="py-24 border-t border-slate-800">
         <div class="container mx-auto px-6">
           <div class="grid lg:grid-cols-3 gap-12">
+
             <!-- Main Content -->
             <div class="lg:col-span-2 space-y-12">
+
+              <!-- Key Findings -->
               <div>
-                <h3 class="text-2xl font-bold mb-6 text-logistics-orange">
-                  The Analytical Process
-                </h3>
+                <h3 class="text-2xl font-bold mb-6 text-logistics-orange">Key Findings</h3>
                 <div class="space-y-8">
+
                   <div class="flex">
                     <div class="mr-6 flex flex-col items-center">
-                      <div
-                        class="w-10 h-10 rounded-full bg-slate-800 border border-slate-700 flex items-center justify-center font-bold text-logistics-orange"
-                      >
-                        01
+                      <div class="w-10 h-10 rounded-full bg-slate-800 border border-slate-700 flex items-center justify-center font-bold text-logistics-orange">01</div>
+                      <div class="w-px h-full bg-slate-800 mt-2"></div>
+                    </div>
+                    <div>
+                      <h4 class="text-xl font-bold mb-2">The Blended Average Trap — $73M Hidden</h4>
+                      <p class="text-slate-400 leading-relaxed">
+                        Operations were planning inventory replenishment against an <strong>88.5% blended corporate OTD rate</strong> — a figure that masked a structural failure. Isolating Ocean freight revealed a true <strong>84% OTD rate and 144-day average lead time</strong>, versus Air at 88% OTD and 88 days. The blended 116-day planning assumption did not exist in the physical world and was causing systematic stockouts in PEPFAR destination countries. With <strong>99% of $1.46B in spend concentrated in just two commodity groups</strong> (ARV + HRDT), a 5% freight cost reduction recovers approximately <strong>$73M annually</strong> — but only once mode-level accountability replaces blended averages.
+                      </p>
+                    </div>
+                  </div>
+
+                  <div class="flex">
+                    <div class="mr-6 flex flex-col items-center">
+                      <div class="w-10 h-10 rounded-full bg-slate-800 border border-slate-700 flex items-center justify-center font-bold text-logistics-orange">02</div>
+                      <div class="w-px h-full bg-slate-800 mt-2"></div>
+                    </div>
+                    <div>
+                      <h4 class="text-xl font-bold mb-2">Spend Concentration Pareto</h4>
+                      <p class="text-slate-400 leading-relaxed">
+                        Two commodity groups — <strong>ARV antiretroviral drugs and HRDT HIV Rapid Diagnostic Tests</strong> — account for over 99% of total logistics spend across the entire $1.46B USAID SCMS network. This is the Pareto lever. Every procurement negotiation, routing decision, and OTD improvement effort should be directed at these two groups exclusively. Diffusing effort across the long tail of secondary commodities produces negligible financial return.
+                      </p>
+                    </div>
+                  </div>
+
+                  <div class="flex">
+                    <div class="mr-6 flex flex-col items-center">
+                      <div class="w-10 h-10 rounded-full bg-slate-800 border border-slate-700 flex items-center justify-center font-bold text-logistics-orange">03</div>
+                    </div>
+                    <div>
+                      <h4 class="text-xl font-bold mb-2">Air Charter as Strategic Insurance</h4>
+                      <p class="text-slate-400 leading-relaxed">
+                        Air Charter operates at <strong>100% OTD</strong>. Despite higher per-kg cost, it is the correct routing decision for high-priority, low-weight ARV shipments during peak demand windows. The economics are straightforward when stockout risk is measured against patient health outcomes rather than unit freight cost alone. The analysis provides a clear routing rule: Air Charter for priority ARVs, Ocean restricted to high-volume base stock where OTD variance is financially tolerable.
+                      </p>
+                    </div>
+                  </div>
+
+                </div>
+              </div>
+
+              <!-- Methodology -->
+              <div class="pt-8 border-t border-slate-800">
+                <h3 class="text-2xl font-bold mb-6 text-logistics-orange">Analytical Methodology</h3>
+                <div class="space-y-8">
+
+                  <div class="flex">
+                    <div class="mr-6 flex flex-col items-center">
+                      <div class="w-10 h-10 rounded-full bg-slate-800 border border-slate-700 flex items-center justify-center text-slate-500">
+                        <i class="fab fa-python"></i>
                       </div>
                       <div class="w-px h-full bg-slate-800 mt-2"></div>
                     </div>
                     <div>
-                      <h4 class="text-xl font-bold mb-2">
-                        Data Engineering (Python)
-                      </h4>
-                      <p class="text-slate-400 leading-relaxed mb-4">
-                        Performed extensive wrangling with Pandas to handle
-                        missing capture dates, non-numeric costs, and
-                        multi-country delivery records from the
-                        <strong
-                          >USAID SCMS global health commodity dataset</strong
-                        >
-                        — covering ARV antiretroviral and HIV diagnostic
-                        shipments across Africa, Asia, and Latin America.
+                      <h4 class="text-xl font-bold mb-2">Python Pipeline (Pandas)</h4>
+                      <p class="text-slate-400 leading-relaxed mb-3">
+                        Automated ingestion and programmatic cleansing of fragmented SCMS shipment records — handling missing capture dates, non-numeric cost fields, and multi-country delivery records across Africa, Asia, and Latin America.
                       </p>
-                      <ul class="text-sm text-slate-500 space-y-2 block">
-                        <li class="flex items-start">
-                          <i
-                            class="fas fa-check text-logistics-green mr-2 mt-1"
-                          ></i>
-                          Feature Engineered: Delivery Lead Time & On-Time Flags
-                        </li>
-                        <li class="flex items-start">
-                          <i
-                            class="fas fa-check text-logistics-green mr-2 mt-1"
-                          ></i>
-                          Standardized Weight & Freight Cost conversion
-                        </li>
-                        <li class="flex items-start">
-                          <i
-                            class="fas fa-check text-logistics-green mr-2 mt-1"
-                          ></i>
-                          Imputed NULLs for Line Item Insurance and Shipment
-                          Modes
-                        </li>
+                      <ul class="text-sm text-slate-500 space-y-1.5">
+                        <li class="flex items-start"><i class="fas fa-check text-logistics-green mr-2 mt-0.5"></i>Feature-engineered delivery lead time and on-time flags from scheduled vs. actual dates</li>
+                        <li class="flex items-start"><i class="fas fa-check text-logistics-green mr-2 mt-0.5"></i>Standardized weight and freight cost conversions across mixed unit formats</li>
+                        <li class="flex items-start"><i class="fas fa-check text-logistics-green mr-2 mt-0.5"></i>Imputed NULLs for line item insurance and shipment mode classifications</li>
+                        <li class="flex items-start"><i class="fas fa-check text-logistics-green mr-2 mt-0.5"></i>Cost-per-kg analysis by commodity group and transport mode</li>
                       </ul>
                     </div>
                   </div>
+
                   <div class="flex">
                     <div class="mr-6 flex flex-col items-center">
-                      <div
-                        class="w-10 h-10 rounded-full bg-slate-800 border border-slate-700 flex items-center justify-center font-bold text-logistics-orange"
-                      >
-                        02
-                      </div>
-                      <div class="w-px h-full bg-slate-800 mt-2"></div>
-                    </div>
-                    <div>
-                      <h4 class="text-xl font-bold mb-2">KPI Development</h4>
-                      <p class="text-slate-400 leading-relaxed mb-4">
-                        Identified core metrics critical to logistics spend and
-                        operational reliability.
-                      </p>
-                      <div class="grid grid-cols-2 gap-4">
-                        <div
-                          class="bg-slate-900 p-4 rounded-xl border border-slate-800"
-                        >
-                          <div class="text-logistics-orange font-bold mb-1">
-                            OTD Rate
-                          </div>
-                          <div class="text-xs text-slate-500">
-                            By Country & Vendor
-                          </div>
-                        </div>
-                        <div
-                          class="bg-slate-900 p-4 rounded-xl border border-slate-800"
-                        >
-                          <div class="text-logistics-orange font-bold mb-1">
-                            Freight %
-                          </div>
-                          <div class="text-xs text-slate-500">
-                            Of Line Item Value
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="flex">
-                    <div class="mr-6 flex flex-col items-center">
-                      <div
-                        class="w-10 h-10 rounded-full bg-slate-800 border border-slate-700 flex items-center justify-center font-bold text-logistics-orange"
-                      >
-                        03
+                      <div class="w-10 h-10 rounded-full bg-slate-800 border border-slate-700 flex items-center justify-center text-slate-500">
+                        <i class="fas fa-chart-bar"></i>
                       </div>
                     </div>
                     <div>
-                      <h4 class="text-xl font-bold mb-2">
-                        Interactive Visualization
-                      </h4>
+                      <h4 class="text-xl font-bold mb-2">Mode Isolation & OTD Decomposition</h4>
                       <p class="text-slate-400 leading-relaxed">
-                        Deployed Tableau dashboards with dynamic filters to
-                        allow ad-hoc exploration by country, mode, and product
-                        group.
+                        The core analytical pivot: instead of accepting the corporate blended OTD average, all shipment performance was calculated <strong>strictly by transport mode</strong> (Air Charter / Air / Ocean). This decomposition is what exposed the 84% Ocean OTD rate buried inside the 88.5% corporate figure — and made the $73M cost recovery opportunity calculable.
                       </p>
                     </div>
                   </div>
+
                 </div>
               </div>
 
-              <!-- Recommendation Cards -->
-              <div class="grid md:grid-cols-2 gap-6">
-                <div
-                  class="p-8 bg-slate-900 rounded-3xl border border-slate-800"
-                >
-                  <i
-                    class="fas fa-cubes text-logistics-orange text-2xl mb-4"
-                  ></i>
-                  <h4 class="text-xl font-bold mb-4 text-white">
-                    Cost Concentration
-                  </h4>
-                  <p class="text-sm text-slate-400">
-                    ARV antiretroviral drugs and HRDT HIV Rapid Diagnostic Test
-                    commodity groups account for
-                    <strong>99% of total logistics spend</strong> ($1.46B+)
-                    across global health supply chains — identifying the primary
-                    levers for procurement cost reduction in international
-                    health programs.
-                  </p>
-                </div>
-                <div
-                  class="p-8 bg-slate-900 rounded-3xl border border-slate-800"
-                >
-                  <i class="fas fa-ship text-logistics-green text-2xl mb-4"></i>
-                  <h4 class="text-xl font-bold mb-4 text-white">
-                    Mode Reliability
-                  </h4>
-                  <p class="text-sm text-slate-400">
-                    Ocean shipments (84% OTD) and standard Air (88% OTD)
-                    contribute most to delays compared to 100% OTD for Air
-                    Charter. Average lead times varied from 88 to 144 days.
-                  </p>
-                </div>
-              </div>
             </div>
 
-            <!-- Sidebar -->
+            <!-- ═══════════════════════════════════════
+                 SIDEBAR
+            ═══════════════════════════════════════ -->
             <div class="space-y-8">
+
               <div class="p-8 bg-slate-900 rounded-3xl border border-slate-800">
-                <h4
-                  class="text-sm font-bold uppercase tracking-widest text-slate-500 mb-6"
-                >
-                  Technical Toolkit
-                </h4>
+                <h4 class="text-sm font-bold uppercase tracking-widest text-slate-500 mb-6">Technical Toolkit</h4>
                 <div class="flex flex-wrap gap-2">
-                  <span
-                    class="px-3 py-1 bg-slate-800 rounded-md text-sm border border-slate-700/50"
-                    >Python (Pandas)</span
-                  >
-                  <span
-                    class="px-3 py-1 bg-slate-800 rounded-md text-sm border border-slate-700/50"
-                    >Tableau Desktop</span
-                  >
-                  <span
-                    class="px-3 py-1 bg-slate-800 rounded-md text-sm border border-slate-700/50"
-                    >Data Wrangling</span
-                  >
-                  <span
-                    class="px-3 py-1 bg-slate-800 rounded-md text-sm border border-slate-700/50"
-                    >Spend Analytics</span
-                  >
-                  <span
-                    class="px-3 py-1 bg-slate-800 rounded-md text-sm border border-slate-700/50"
-                    >USAID SCMS Data</span
-                  >
-                  <span
-                    class="px-3 py-1 bg-slate-800 rounded-md text-sm border border-slate-700/50"
-                    >ARV / HRDT Commodities</span
-                  >
-                  <span
-                    class="px-3 py-1 bg-logistics-orange/20 text-logistics-orange font-bold rounded-md text-sm border border-logistics-orange/50"
-                    >Global Health Supply Chain</span
-                  >
+                  <span class="px-3 py-1 bg-slate-800 rounded-md text-sm border border-slate-700/50">Python (Pandas)</span>
+                  <span class="px-3 py-1 bg-slate-800 rounded-md text-sm border border-slate-700/50">Tableau Desktop</span>
+                  <span class="px-3 py-1 bg-slate-800 rounded-md text-sm border border-slate-700/50">OTD Analysis</span>
+                  <span class="px-3 py-1 bg-slate-800 rounded-md text-sm border border-slate-700/50">Spend Analytics</span>
+                  <span class="px-3 py-1 bg-slate-800 rounded-md text-sm border border-slate-700/50">Mode Isolation</span>
+                  <span class="px-3 py-1 bg-slate-800 rounded-md text-sm border border-slate-700/50">USAID SCMS Data</span>
+                  <span class="px-3 py-1 bg-slate-800 rounded-md text-sm border border-slate-700/50">ARV / HRDT Commodities</span>
+                  <span class="px-3 py-1 bg-slate-800 rounded-md text-sm border border-slate-700/50">Pareto / Spend Concentration</span>
+                  <span class="px-3 py-1 bg-logistics-orange/20 text-logistics-orange font-bold rounded-md text-sm border border-logistics-orange/50">Global Health Supply Chain</span>
                 </div>
               </div>
 
-              <div
-                class="p-8 bg-logistics-orange/5 rounded-3xl border border-logistics-orange/20"
-              >
-                <h4
-                  class="text-sm font-bold uppercase tracking-widest text-logistics-orange mb-4"
-                >
-                  Strategic Recommendation
-                </h4>
+              <!-- Mode Performance Card -->
+              <div class="p-8 bg-slate-900 rounded-3xl border border-slate-800">
+                <h4 class="text-sm font-bold uppercase tracking-widest text-slate-500 mb-5">Mode Performance Summary</h4>
+                <div class="space-y-4">
+                  <div class="flex items-center justify-between">
+                    <div>
+                      <div class="font-bold text-sm">Air Charter</div>
+                      <div class="text-xs text-slate-500">Premium priority routing</div>
+                    </div>
+                    <span class="px-3 py-1 bg-logistics-green/20 text-emerald-400 text-sm font-bold rounded-full">100% OTD</span>
+                  </div>
+                  <div class="flex items-center justify-between">
+                    <div>
+                      <div class="font-bold text-sm">Air</div>
+                      <div class="text-xs text-slate-500">88-day avg lead time</div>
+                    </div>
+                    <span class="px-3 py-1 bg-sky-500/20 text-sky-400 text-sm font-bold rounded-full">88% OTD</span>
+                  </div>
+                  <div class="flex items-center justify-between">
+                    <div>
+                      <div class="font-bold text-sm">Ocean</div>
+                      <div class="text-xs text-slate-500">144-day avg lead time</div>
+                    </div>
+                    <span class="px-3 py-1 bg-logistics-orange/20 text-logistics-orange text-sm font-bold rounded-full">84% OTD</span>
+                  </div>
+                  <div class="pt-3 border-t border-slate-800">
+                    <div class="flex items-center justify-between">
+                      <div>
+                        <div class="font-bold text-sm text-slate-500">Blended Average</div>
+                        <div class="text-xs text-slate-600">The figure that hid the problem</div>
+                      </div>
+                      <span class="px-3 py-1 bg-slate-800 text-slate-500 text-sm font-bold rounded-full line-through">88.5%</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="p-8 bg-logistics-orange/5 rounded-3xl border border-logistics-orange/20">
+                <h4 class="text-sm font-bold uppercase tracking-widest text-logistics-orange mb-4">Strategic Recommendation</h4>
                 <p class="text-sm text-slate-400 leading-relaxed italic">
-                  "Concentrate procurement negotiations on Air and Ocean freight
-                  contracts for high-volume ARV and HRDT routes. A 5% cost
-                  reduction on these two commodity groups recovers approximately
-                  $73M annually across the global health supply chain network."
+                  "Concentrate procurement negotiations on Air and Ocean freight contracts for high-volume ARV and HRDT routes. A 5% cost reduction on these two commodity groups recovers approximately $73M annually across the global health supply chain network."
                 </p>
-                <a
-                  href="https://github.com/michaelcampbell215/global-health-supply-chain"
-                  target="_blank"
-                  class="mt-6 inline-flex items-center text-sm font-bold text-logistics-orange hover:gap-2 transition-all"
-                >
-                  Github Repository <i class="fas fa-arrow-right ml-2"></i>
+                <a href="https://github.com/michaelcampbell215/global-health-supply-chain" target="_blank"
+                  class="mt-6 inline-flex items-center text-sm font-bold text-logistics-orange hover:gap-2 transition-all">
+                  GitHub Repository <i class="fas fa-arrow-right ml-2"></i>
                 </a>
               </div>
+
             </div>
           </div>
         </div>
       </section>
 
-      <!-- Visualization Gallery -->
+      <!-- ═══════════════════════════════════════
+           VISUALIZATION GALLERY
+      ═══════════════════════════════════════ -->
       <section class="py-24 border-t border-slate-800">
         <div class="container mx-auto px-6">
           <h2 class="text-3xl font-bold mb-12 text-center italic">
             Supporting <span class="text-logistics-orange">Visuals</span>
           </h2>
           <div class="grid md:grid-cols-3 gap-8">
-            <div
-              class="group overflow-hidden rounded-xl border border-slate-800"
-            >
-              <img
-                src="images/project_images/sc1 (1).png"
-                alt="Dashboard View 1"
-                class="w-full h-auto grayscale group-hover:grayscale-0 transition duration-500"
-              />
+            <div class="group overflow-hidden rounded-xl border border-slate-800">
+              <img src="images/project_images/sc1 (1).png" alt="Global Delivery Performance Overview"
+                class="w-full h-auto grayscale group-hover:grayscale-0 transition duration-500" />
             </div>
-            <div
-              class="group overflow-hidden rounded-xl border border-slate-800"
-            >
-              <img
-                src="images/project_images/sc1 (2).png"
-                alt="Finding Chart"
-                class="w-full h-auto grayscale group-hover:grayscale-0 transition duration-500"
-              />
+            <div class="group overflow-hidden rounded-xl border border-slate-800">
+              <img src="images/project_images/sc1 (2).png" alt="Mode OTD Variance Analysis"
+                class="w-full h-auto grayscale group-hover:grayscale-0 transition duration-500" />
             </div>
-            <div
-              class="group overflow-hidden rounded-xl border border-slate-800"
-            >
-              <img
-                src="images/project_images/sc1 (3).png"
-                alt="Dashboard View 2"
-                class="w-full h-auto grayscale group-hover:grayscale-0 transition duration-500"
-              />
+            <div class="group overflow-hidden rounded-xl border border-slate-800">
+              <img src="images/project_images/sc1 (3).png" alt="Spend Concentration by Commodity"
+                class="w-full h-auto grayscale group-hover:grayscale-0 transition duration-500" />
             </div>
           </div>
         </div>
       </section>
 
-      <!-- Contact CTA -->
-      <section
-        id="contact"
-        class="py-24 bg-slate-900 border-t border-slate-800"
-      >
+      <!-- ═══════════════════════════════════════
+           CONTACT
+      ═══════════════════════════════════════ -->
+      <section id="contact" class="py-24 bg-slate-900 border-t border-slate-800">
         <div class="container mx-auto px-6 text-center max-w-2xl">
           <h2 class="text-3xl font-bold mb-6 italic">
-            Questions on this
-            <span class="text-logistics-orange">Analysis?</span>
+            Questions on this <span class="text-logistics-orange">Analysis?</span>
           </h2>
           <div class="flex justify-center gap-6">
-            <a
-              href="mailto:mcam215@gmail.com"
-              class="text-slate-400 hover:text-logistics-orange transition text-2xl"
-              ><i class="fas fa-envelope"></i
-            ></a>
-            <a
-              href="https://www.linkedin.com/in/michaelcampbell215"
-              class="text-slate-400 hover:text-logistics-orange transition text-2xl"
-              ><i class="fab fa-linkedin"></i
-            ></a>
-            <a
-              href="https://github.com/michaelcampbell215"
-              class="text-slate-400 hover:text-logistics-orange transition text-2xl"
-              ><i class="fab fa-github"></i
-            ></a>
+            <a href="mailto:mcam215@gmail.com" class="text-slate-400 hover:text-logistics-orange transition text-2xl"><i class="fas fa-envelope"></i></a>
+            <a href="https://www.linkedin.com/in/michaelcampbell215" class="text-slate-400 hover:text-logistics-orange transition text-2xl"><i class="fab fa-linkedin"></i></a>
+            <a href="https://github.com/michaelcampbell215" class="text-slate-400 hover:text-logistics-orange transition text-2xl"><i class="fab fa-github"></i></a>
           </div>
         </div>
       </section>
+
     </main>
 
-    <footer
-      class="py-12 border-t border-slate-800 text-center text-slate-600 text-sm"
-    >
+    <footer class="py-12 border-t border-slate-800 text-center text-slate-600 text-sm">
       <p>&copy; 2026 Michael Campbell. Optimized for Impact.</p>
     </footer>
   </body>

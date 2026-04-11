@@ -15,7 +15,6 @@
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
     />
-    <!-- Prism.js for code highlighting -->
     <link
       href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism-tomorrow.min.css"
       rel="stylesheet"
@@ -68,14 +67,12 @@
       <div
         class="container mx-auto px-6 py-4 flex justify-between items-center"
       >
-        <div class="flex items-center space-x-2">
-          <a
-            href="index.html"
-            class="text-xl font-bold tracking-tighter uppercase transition-opacity hover:opacity-80"
-          >
-            MICHAEL <span class="text-logistics-orange">CAMPBELL</span>
-          </a>
-        </div>
+        <a
+          href="index.html"
+          class="text-xl font-bold tracking-tighter uppercase transition-opacity hover:opacity-80"
+        >
+          MICHAEL <span class="text-logistics-orange">CAMPBELL</span>
+        </a>
         <div class="hidden md:flex space-x-8 text-sm font-medium items-center">
           <a href="index.html" class="hover:text-logistics-orange transition"
             >Home</a
@@ -106,7 +103,9 @@
     </nav>
 
     <main>
-      <!-- Hero -->
+      <!-- ═══════════════════════════════════════
+           HERO
+      ═══════════════════════════════════════ -->
       <section class="py-20 border-b border-slate-800 bg-slate-900/50">
         <div class="container mx-auto px-6">
           <div class="max-w-4xl">
@@ -120,15 +119,18 @@
               <span class="text-logistics-orange">Optimizer</span>
             </h1>
             <p class="text-xl text-slate-400 leading-relaxed font-mono">
-              > Protected $2.44B in revenue from stockout risks and released
+              > Protected $2.44B in revenue from stockout risk and released
               $10.43M in trapped capital by replacing static Min/Max reorder
-              rules with a dynamic, ML-driven optimization engine.
+              rules with a dynamic, ML-driven optimization engine across 14,000+
+              SKUs.
             </p>
           </div>
         </div>
       </section>
 
-      <!-- Key Insights Overview -->
+      <!-- ═══════════════════════════════════════
+           KEY METRICS
+      ═══════════════════════════════════════ -->
       <section class="py-12 border-b border-slate-800">
         <div class="container mx-auto px-6">
           <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
@@ -141,7 +143,7 @@
                 Revenue Leakage Protected
               </p>
               <h3 class="text-2xl font-bold">$2.44B</h3>
-              <p class="text-slate-400 text-xs mt-2">from Stockout Risks</p>
+              <p class="text-slate-400 text-xs mt-2">From Stockout Risk</p>
             </div>
             <div
               class="p-6 bg-slate-900 rounded-2xl border border-slate-800 metric-card"
@@ -153,7 +155,7 @@
               </p>
               <h3 class="text-2xl font-bold">$10.43M</h3>
               <p class="text-slate-400 text-xs mt-2">
-                from Intelligent Buffering
+                From Intelligent Buffering
               </p>
             </div>
             <div
@@ -172,23 +174,25 @@
             </div>
             <div
               class="p-6 bg-slate-900 rounded-2xl border border-slate-800 metric-card"
-              style="border-left-color: #065f46"
+              style="border-left-color: #6366f1"
             >
               <p
                 class="text-slate-500 text-xs font-bold uppercase tracking-widest mb-1"
               >
-                Actionable Metric
+                Evaluation Metric
               </p>
               <h3 class="text-2xl font-bold">SPEC Scorer</h3>
               <p class="text-slate-400 text-xs mt-2">
-                Financial Cost > Stats Error
+                Financial Cost &gt; Statistical Error
               </p>
             </div>
           </div>
         </div>
       </section>
 
-      <!-- Dashboard Section -->
+      <!-- ═══════════════════════════════════════
+           DASHBOARD
+      ═══════════════════════════════════════ -->
       <section id="dashboard" class="py-24 bg-slate-900/50">
         <div class="container mx-auto px-6 text-center">
           <h2 class="text-3xl font-bold mb-12">
@@ -202,13 +206,14 @@
               class="w-full aspect-video rounded-xl border border-slate-700"
               frameborder="0"
               allowfullscreen
-            >
-            </iframe>
+            ></iframe>
           </div>
         </div>
       </section>
 
-      <!-- Logic Section -->
+      <!-- ═══════════════════════════════════════
+           SPEC SCORER LOGIC
+      ═══════════════════════════════════════ -->
       <section id="logic" class="py-24 border-t border-slate-800">
         <div class="container mx-auto px-6">
           <div class="max-w-4xl mx-auto">
@@ -217,14 +222,14 @@
             </h2>
             <p class="text-slate-400 mb-12 text-center leading-relaxed">
               Standard metrics like RMSE are symmetric and fail to account for
-              the asymmetric costs of inventory management. Our
+              the asymmetric costs of inventory management. The
               <strong
                 >SPEC (Stock-keeping-oriented Prediction Error Costs)</strong
               >
-              scorer penalizes stockouts more heavily than overstocks to
-              prioritize revenue protection.
+              scorer penalizes stockouts at 0.75 and overstocks at 0.25 —
+              ensuring the model prioritizes revenue protection over statistical
+              tidiness.
             </p>
-
             <div
               class="rounded-2xl border border-slate-800 overflow-hidden shadow-2xl bg-slate-950"
             >
@@ -247,9 +252,7 @@
                 >
                 <i class="fab fa-python text-sky-400"></i>
               </div>
-              <pre
-                class="line-numbers"
-              ><code class="language-python"># Custom Metric: SPEC (Stock-keeping-oriented Prediction Error Costs)
+              <pre><code class="language-python"># Custom Metric: SPEC (Stock-keeping-oriented Prediction Error Costs)
 def calculate_spec_grouped(y_true, y_pred, product_ids):
     """
     Calculates cumulative cost of errors per SKU to prevent cross-product pollution.
@@ -262,21 +265,21 @@ def calculate_spec_grouped(y_true, y_pred, product_ids):
         act, pre = group['Actual'].values, group['Pred'].values
         n = len(act)
         if n == 0: continue
-        
+
         cum_act, cum_pre = np.cumsum(act), np.cumsum(pre)
         cost = 0.0
-        
+
         for t in range(n):
             # Calculate unfulfilled demand and excess inventory
             unfulfilled = np.maximum(0, cum_act[:t+1] - cum_pre[t])
             excess = np.maximum(0, cum_pre[:t+1] - cum_act[t])
-            
+
             # Weighted penalty: Stockout risk is 3x more costly than trapped capital
             penalties = np.maximum(unfulfilled * 0.75, excess * 0.25)
             cost += np.sum(penalties * (t - np.arange(t+1) + 1))
-            
+
         sku_costs.append(cost / n)
-        
+
     return np.mean(sku_costs)
 
 # Example Usage during model tournament
@@ -286,10 +289,14 @@ print(f"SPEC Optimizer Score: {spec_score:.4f}")</code></pre>
           </div>
         </div>
       </section>
-      <!-- Project Narrative -->
+
+      <!-- ═══════════════════════════════════════
+           PROJECT NARRATIVE
+      ═══════════════════════════════════════ -->
       <section id="documentation" class="py-24 border-t border-slate-800">
         <div class="container mx-auto px-6">
           <div class="grid lg:grid-cols-3 gap-12">
+            <!-- Main Content -->
             <div class="lg:col-span-2 space-y-12">
               <div>
                 <h3 class="text-2xl font-bold mb-6 text-logistics-orange">
@@ -307,18 +314,20 @@ print(f"SPEC Optimizer Score: {spec_score:.4f}")</code></pre>
                     </div>
                     <div>
                       <h4 class="text-xl font-bold mb-2">
-                        Quantifying Volatility & Categorization
+                        Quantifying Volatility & Pareto Classification
                       </h4>
                       <p class="text-slate-400 leading-relaxed">
                         Identified the "Vital Few" using Pareto ABC
-                        Classification (Top 20% Revenue = Class A) to
-                        mathematically enforce tiered service levels. Quantified
-                        baseline volatility using Category-specific RMSE and
-                        identified the "Capital Gap" between current stock and
-                        model-predicted needs.
+                        Classification — Top 20% by Revenue = Class A — to
+                        mathematically enforce tiered service levels (99% for
+                        Class A, flexible for Class C). Quantified baseline
+                        demand volatility using Category-specific RMSE and
+                        identified the "Capital Gap" between current stock
+                        levels and model-predicted need across 14,000+ SKUs.
                       </p>
                     </div>
                   </div>
+
                   <div class="flex">
                     <div class="mr-6 flex flex-col items-center">
                       <div
@@ -333,15 +342,18 @@ print(f"SPEC Optimizer Score: {spec_score:.4f}")</code></pre>
                         Pivoting from Stats to Dollars (SPEC Scorer)
                       </h4>
                       <p class="text-slate-400 leading-relaxed">
-                        Initially evaluated using symmetric RMSE. However, an
-                        overstock of $5 shouldn't be treated equally to a
-                        stockout of $500. We developed a custom SPEC
-                        (Stock-keeping-oriented Prediction Error Costs) Scorer,
-                        penalizing stockouts at 0.75 and overstocks at 0.25 to
-                        actively prioritize high-margin revenue protection.
+                        Initial models were evaluated using symmetric RMSE — a
+                        metric that treats a $500 stockout identically to a $5
+                        overstock error. The SPEC Scorer replaced this with
+                        asymmetric financial weighting: stockout penalty 0.75,
+                        overstock penalty 0.25. The model now actively
+                        prioritizes high-margin revenue protection. Class A
+                        items are never stocked out — even at the cost of slight
+                        over-prediction.
                       </p>
                     </div>
                   </div>
+
                   <div class="flex">
                     <div class="mr-6 flex flex-col items-center">
                       <div
@@ -352,15 +364,17 @@ print(f"SPEC Optimizer Score: {spec_score:.4f}")</code></pre>
                     </div>
                     <div>
                       <h4 class="text-xl font-bold mb-2">
-                        Data Architecture Migration
+                        Flat-File to Star Schema Migration
                       </h4>
                       <p class="text-slate-400 leading-relaxed">
-                        Migrated from a flat-file structure to a Star Schema
-                        with Fact (`inventory_fact`) and Dimension
-                        (`product_dim`, `store_dim`) tables to prevent
-                        Aggregated Measure Inflation. This ensured data
-                        integrity and allowed for sub-second performance in
-                        Tableau for "What-If" parameter tuning.
+                        Early iterations used a single wide CSV for Tableau,
+                        causing "Aggregated Measure Inflation" where Category
+                        RMSE was incorrectly summed across dimensions. Migrating
+                        to a Star Schema with Fact (<code>inventory_fact</code>)
+                        and Dimension (<code>product_dim</code>,
+                        <code>store_dim</code>) tables eliminated this and
+                        enabled sub-second "What-If" parameter tuning in the
+                        Tableau decision support layer.
                       </p>
                     </div>
                   </div>
@@ -380,12 +394,14 @@ print(f"SPEC Optimizer Score: {spec_score:.4f}")</code></pre>
                   </h4>
                   <ul class="text-sm text-slate-400 space-y-3">
                     <li>
-                      • Deploy the "Restock Radar" thresholds for all Class A
-                      items to maintain a 99% service level mandate.
+                      • Deploy "Restock Radar" thresholds for all Class A items
+                      to maintain a 99% service level mandate without manual
+                      buyer intervention.
                     </li>
                     <li>
                       • Use the Price Index tool to trigger smart liquidations
-                      specifically when we are priced higher than competitors.
+                      when SKU pricing exceeds competitive market parity by more
+                      than 5%.
                     </li>
                   </ul>
                 </div>
@@ -396,25 +412,27 @@ print(f"SPEC Optimizer Score: {spec_score:.4f}")</code></pre>
                     class="fas fa-chart-line text-logistics-green text-2xl mb-4"
                   ></i>
                   <h4 class="text-xl font-bold mb-4 text-white">
-                    SLA Leverages
+                    SLA Leverage
                   </h4>
                   <ul class="text-sm text-slate-400 space-y-3">
                     <li>
                       • Dynamically link safety stock buffers to lead-time
-                      constraints to expose exactly how much capital is tied up
-                      locally.
+                      constraints to quantify exactly how much capital is tied
+                      up per vendor SLA.
                     </li>
                     <li>
-                      • Use Lead Time Sensitivity model to negotiate faster
-                      delivery with vendors (e.g. Furniture/Electronics) to free
-                      up trapped capital.
+                      • Use the Lead Time Sensitivity model to negotiate faster
+                      delivery in high-holding-cost categories and free trapped
+                      capital at the source.
                     </li>
                   </ul>
                 </div>
               </div>
             </div>
 
-            <!-- Sidebar -->
+            <!-- ═══════════════════════════════════════
+                 SIDEBAR
+            ═══════════════════════════════════════ -->
             <div class="space-y-8">
               <div class="p-8 bg-slate-900 rounded-3xl border border-slate-800">
                 <h4
@@ -429,7 +447,19 @@ print(f"SPEC Optimizer Score: {spec_score:.4f}")</code></pre>
                   >
                   <span
                     class="px-3 py-1 bg-slate-800 rounded-md text-sm border border-slate-700/50"
-                    >XGBoost & LightGBM</span
+                    >XGBoost</span
+                  >
+                  <span
+                    class="px-3 py-1 bg-slate-800 rounded-md text-sm border border-slate-700/50"
+                    >LightGBM</span
+                  >
+                  <span
+                    class="px-3 py-1 bg-slate-800 rounded-md text-sm border border-slate-700/50"
+                    >Random Forest</span
+                  >
+                  <span
+                    class="px-3 py-1 bg-slate-800 rounded-md text-sm border border-slate-700/50"
+                    >Pandas / NumPy</span
                   >
                   <span
                     class="px-3 py-1 bg-slate-800 rounded-md text-sm border border-slate-700/50"
@@ -437,7 +467,27 @@ print(f"SPEC Optimizer Score: {spec_score:.4f}")</code></pre>
                   >
                   <span
                     class="px-3 py-1 bg-slate-800 rounded-md text-sm border border-slate-700/50"
-                    >Dimensional Modeling</span
+                    >Star Schema</span
+                  >
+                  <span
+                    class="px-3 py-1 bg-slate-800 rounded-md text-sm border border-slate-700/50"
+                    >Pareto ABC Classification</span
+                  >
+                  <span
+                    class="px-3 py-1 bg-slate-800 rounded-md text-sm border border-slate-700/50"
+                    >Safety Stock Optimization</span
+                  >
+                  <span
+                    class="px-3 py-1 bg-slate-800 rounded-md text-sm border border-slate-700/50"
+                    >Asymmetric Loss Functions</span
+                  >
+                  <span
+                    class="px-3 py-1 bg-slate-800 rounded-md text-sm border border-slate-700/50"
+                    >Demand Forecasting</span
+                  >
+                  <span
+                    class="px-3 py-1 bg-logistics-orange/20 text-logistics-orange font-bold rounded-md text-sm border border-logistics-orange/50"
+                    >SPEC Scorer (Custom Metric)</span
                   >
                 </div>
               </div>
@@ -451,17 +501,18 @@ print(f"SPEC Optimizer Score: {spec_score:.4f}")</code></pre>
                   Analyst Insight
                 </h4>
                 <p class="text-sm text-slate-400 leading-relaxed mb-4">
-                  "The symmetry trap is real. Evaluating business models with
-                  metrics like RMSE treats an expensive stockout equally to a
-                  minor overstock. Pivoting to dollar-weighting directly changed
-                  the strategy and protected core revenue."
+                  "The symmetry trap is real. Evaluating inventory models with
+                  RMSE treats an expensive stockout equally to a minor
+                  overstock. Pivoting to dollar-weighted scoring directly
+                  changed which models won the tournament — and protected the
+                  revenue that mattered."
                 </p>
                 <a
                   href="https://github.com/michaelcampbell215/Inventory-Capital-Optimizer"
                   target="_blank"
-                  class="text-gray-400 hover:text-white transition-colors"
+                  class="inline-flex items-center text-sm font-bold text-logistics-orange hover:gap-2 transition-all"
                 >
-                  Github Repository <i class="fas fa-arrow-right ml-2"></i>
+                  GitHub Repository <i class="fas fa-arrow-right ml-2"></i>
                 </a>
               </div>
             </div>
@@ -469,7 +520,9 @@ print(f"SPEC Optimizer Score: {spec_score:.4f}")</code></pre>
         </div>
       </section>
 
-      <!-- Contact CTA -->
+      <!-- ═══════════════════════════════════════
+           CONTACT
+      ═══════════════════════════════════════ -->
       <section
         id="contact"
         class="py-24 bg-slate-900 border-t border-slate-800"
@@ -506,8 +559,8 @@ print(f"SPEC Optimizer Score: {spec_score:.4f}")</code></pre>
       <p>&copy; 2026 Michael Campbell. Optimized for Impact.</p>
     </footer>
 
-    <!-- Prism.js -->
+    <!-- Prism.js — Python syntax highlighting -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-sql.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-python.min.js"></script>
   </body>
 </html>
