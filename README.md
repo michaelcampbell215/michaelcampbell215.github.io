@@ -8,7 +8,7 @@
 
 ## About
 
-Most analysts learn healthcare data or supply chain on the job. I built a production ETL pipeline on 15.4M records of federal CMS Open Payments data and analyzed a $1.46B global health commodity network before applying for my first role in either domain. That work is grounded in a decade of operational experience at American Airlines, Sonder, and Marquez MMA — environments where I learned what data means on the ground, not just on a dashboard. That domain depth now drives analytics across healthcare payments compliance, global health supply chains, and modern data engineering pipelines built on SQL, Python, dbt, and BigQuery.
+Most analysts learn healthcare data or supply chain on the job. I built a production ETL pipeline on 15.4M records of federal CMS Open Payments data and analyzed a $1.46B global health commodity network before applying for my first role in either domain. That work is grounded in 5 years of analytics and data engineering experience, backed by a decade of operational work at American Airlines, Sonder, and Marquez MMA — environments where I learned what data means on the ground, not just on a dashboard. That domain depth now drives analytics across healthcare payments compliance, global health supply chains, and modern data engineering pipelines built on SQL, Python, dbt, and BigQuery.
 
 ---
 
@@ -42,7 +42,7 @@ Most analysts learn healthcare data or supply chain on the job. I built a produc
 #### [Healthcare Payments Compliance & Spend Analytics](https://michaelcampbell215.github.io/healthcare-payments-compliance.html)
 *CMS Open Payments 2024 · Star Schema · MySQL · Tableau*
 
-Production-grade Star Schema data warehouse built on 15.4M records of 2024 CMS Open Payments federal healthcare data. Flagged \$11.7M in provider payment compliance exposure and a $170M+ anomaly event through Z-Score statistical analysis in SQL.
+Production-grade Star Schema data warehouse built on 15.4M records of 2024 CMS Open Payments federal healthcare data. Flagged $11.7M in provider payment compliance exposure and a $170M+ anomaly event through Z-Score statistical analysis in SQL.
 
 **Stack:** MySQL 8.0 · Tableau · Stored Procedures · Geospatial Computing · ETL Batch Processing
 
@@ -53,7 +53,7 @@ Production-grade Star Schema data warehouse built on 15.4M records of 2024 CMS O
 #### [Global Health Supply Chain Optimization](https://michaelcampbell215.github.io/global-health-supply-chain.html)
 *USAID SCMS · ARV & HRDT Commodities · Python · Tableau*
 
-Analytics platform tracking \$1.46B in global health commodity shipments — ARV antiretroviral drugs and HIV rapid diagnostic tests — across USAID-funded international health supply chains. Isolated a structural Ocean OTD failure masked by blended averages, identifying ~$73M in annual cost recovery potential.
+Analytics platform tracking $1.46B in global health commodity shipments — ARV antiretroviral drugs and HIV rapid diagnostic tests — across USAID-funded international health supply chains. Isolated a structural Ocean OTD failure masked by blended averages, identifying ~$73M in annual cost recovery potential.
 
 **Stack:** Python (Pandas) · Tableau · OTD Analysis · Spend Analytics · Mode Isolation
 
@@ -75,7 +75,7 @@ Backend data engineering pipeline powering the Healthcare Payments Compliance da
 #### [Inventory Capital Optimizer](https://michaelcampbell215.github.io/inventory-capital-optimizer.html)
 *XGBoost · LightGBM · Python · Supply Chain ML*
 
-ML-driven demand forecasting engine replacing static Min/Max reorder rules with a dynamic SPEC Scorer (asymmetric loss function). Identified \$10.43M in trapped inventory capital and protected $2.44B in revenue leakage through volatility-weighted safety stock optimization across 14,000+ SKUs.
+ML-driven demand forecasting engine replacing static Min/Max reorder rules with a dynamic SPEC Scorer (asymmetric loss function). Identified $10.43M in trapped inventory capital and protected $2.44B in revenue leakage through volatility-weighted safety stock optimization across 14,000+ SKUs.
 
 **Stack:** Python · XGBoost · LightGBM · Scikit-Learn · Star Schema · Tableau
 
