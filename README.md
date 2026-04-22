@@ -30,7 +30,7 @@ Most analysts learn healthcare data or supply chain on the job. I built a produc
 | Track | Resume |
 | :--- | :--- |
 | Healthcare Analytics | [Michael_Campbell_Healthcare_Analytics.pdf](https://michaelcampbell215.github.io/assets/Michael_Campbell_Healthcare_Analytics.pdf) |
-| Analytics Engineering | [Michael_Campbell_Data_Engineer.pdf](https://michaelcampbell215.github.io/assets/Michael_Campbell_Data_Engineer.pdf) |
+| Analytics Engineering | [Michael_Campbell_Analytics_Engineer.pdf](https://michaelcampbell215.github.io/assets/Michael_Campbell_Analytics_Engineer.pdf) |
 | Supply Chain & Logistics | [Michael_Campbell_Supply_Chain_Analytics.pdf](https://michaelcampbell215.github.io/assets/Michael_Campbell_Supply_Chain_Analytics.pdf) |
 
 ---
