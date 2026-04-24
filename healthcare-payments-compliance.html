@@ -76,7 +76,7 @@
               <span class="text-logistics-orange">Spend Analytics</span>
             </h1>
             <p class="text-xl text-slate-400 leading-relaxed font-mono">
-              > Production-grade Star Schema data warehouse built on 15.4M records of 2024 CMS Open Payments federal healthcare data. Flagged $11.7M in provider payment compliance exposure and a $170M+ anomaly event. Currently migrating to BigQuery on GCP.
+              > Production-grade Star Schema data warehouse built on 15.4M records of 2024 CMS Open Payments federal healthcare data. Flagged $11.7M in provider payment compliance exposure and a $170M+ anomaly event. Phase 2 pipeline now live on BigQuery (GCP) with 100% source-to-cloud row validation.
             </p>
           </div>
         </div>
@@ -358,6 +358,7 @@
                   <li>• 100% checksum audit: <code>Source SUM(Amount) = Warehouse SUM(Amount)</code> validated exactly.</li>
                   <li>• 18–20% payment volume recovered via server-side UNION ALL unpivot — invisible to all prior analyses.</li>
                   <li>• Zero-downtime geospatial schema migration via dimension hot-patching on ~1M-row dim_recipient.</li>
+                  <li>• BigQuery Phase 2: source CSV → cloud row count validated at 100% match (15,385,047 rows).</li>
                 </ul>
               </div>
             </div>
@@ -368,7 +369,7 @@
                 <div class="p-6 bg-slate-800/50 border-b border-slate-700">
                   <h4 class="text-lg font-bold text-white">01. Star Schema DDL (Fact Table)</h4>
                   <p class="text-sm text-slate-400 mt-2">
-                    Establishing a 15.4M-row Fact Table with surrogate keys and referential integrity to all five dimensions.
+                    21.9M-row product-level Fact Table — expanded from 15.4M source payments via UNION ALL unpivot across 5 product columns. Surrogate keys enforce referential integrity to all five dimensions.
                   </p>
                 </div>
                 <div class="p-6">
