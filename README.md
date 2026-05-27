@@ -61,6 +61,15 @@ Analytics platform tracking $1.46B in global health commodity shipments — ARV 
 
 ### Track 2 — Analytics Engineering
 
+#### [AI-Powered Job Search Pipeline](https://michaelcampbell215.github.io/airflow-job-search.html)
+*Apache Airflow · Gemini AI · BigQuery · Python*
+
+Automated ELT pipeline using Apache Airflow and Gemini 2.5 AI agents to extract, transform, score, and rank job leads directly into Google Sheets.
+
+**Stack:** Python · Apache Airflow · BigQuery · Gemini AI · ELT
+
+---
+
 #### [Healthcare Data Engineering Pipeline](https://github.com/michaelcampbell215/healthcare-data-engineering)
 *MySQL Star Schema · ETL Pipeline · BigQuery Migration*
 
@@ -133,7 +142,7 @@ End-to-end BI engineering replacing static weekly CRM exports with a live Revenu
 #### [Service Quality Analytics](https://michaelcampbell215.github.io/service-quality-analytics.html)
 *Power BI · Star Schema · NPS Segmentation*
 
-Star Schema on 100K+ passenger survey records — isolating a High-Value Disconnect where Business Travelers were churning due to Wi-Fi reliability while overall satisfaction scores showed green. NPS segmentation and correlation analysis surfaced two completely different cohort interventions from a single dataset. Methodology applies directly to HCAHPS patient satisfaction analytics.
+Star Schema on 100K+ passenger survey records, isolating a High-Value Disconnect where Business Travelers were churning due to Wi-Fi reliability while overall satisfaction scores showed green. NPS segmentation and correlation analysis surfaced two completely different cohort interventions from a single dataset.
 
 **Stack:** Power BI Desktop · DAX · Power Query ETL · Cohort Segmentation · NPS/CSI Methodology
 
